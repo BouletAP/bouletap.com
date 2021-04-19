@@ -2,8 +2,7 @@
 
 namespace BouletAP;
 
-
-if( !defined("GOOGLEMAP_API_KEY") ) define("GOOGLEMAP_API_KEY", "AIzaSyC1QerOM9ZowImf94YWXXz_idGDm5V1Ezw");
+require_once(__DIR__ . "/Config.php");
 
 class Main {
 
@@ -66,7 +65,9 @@ class Main {
 		$path = get_template_directory_uri() . "/medias/css/";
 		wp_enqueue_style('fonts.googleapis', "https://fonts.googleapis.com/css?family=Lato:400,700italic,700,400italic,300italic,300,100italic,100");
 		wp_enqueue_style('animate', "{$path}animate.css");
-		wp_enqueue_style('font-awesome', "{$path}font-awesome.min.css");
+		wp_enqueue_style('font-awesome', "{$path}fontawesome.min.css");
+		// wp_enqueue_style('font-awesome-r', "{$path}regular.min.css");
+		// wp_enqueue_style('font-awesome-s', "{$path}solid.min.css");
 		wp_enqueue_style('owl.carousel', "{$path}owl.carousel.min.css");
 		wp_enqueue_style('owl.theme.default', "{$path}/owl.theme.default.min.css");
 		//wp_enqueue_style('mediaelementplayer', "{$path}mediaelementplayer.min.css");
@@ -75,7 +76,11 @@ class Main {
 		//wp_enqueue_style('bondi-blue', "{$path}bondi-blue.css");
 		//wp_enqueue_style('dark-blue', "{$path}dark-blue.css");
 		wp_enqueue_style('theme-responsive', "{$path}responsive.css");
-		wp_enqueue_style('custom-core', "{$path}custom-core.css");
+		wp_enqueue_style('custom-core', "{$path}custom-core.css?t=".time());
+		
+		wp_enqueue_style('child-theme', "{$path}../../style.css?t=".time());
+
+		wp_enqueue_style('fa-conflict', "https://use.fontawesome.com/releases/v5.15.3/js/conflict-detection.js");
 
 		// js in head
 		wp_enqueue_script('jquery', "{$path}jquery.min.js");
@@ -96,6 +101,7 @@ class Main {
 		wp_enqueue_script('jquery.easing', "{$path}jquery.easing.min.js", array('jquery'));
 		wp_enqueue_script('sector', "{$path}sector.js", array('jquery'));
 		wp_enqueue_script('main', "{$path}main.js", array('jquery'));
+		wp_enqueue_script('custominit', "{$path}custom-init.js", array('jquery'));
 		
 		//wp_enqueue_script('ajaxify', "https://cdnjs.cloudflare.com/ajax/libs/ajaxify/7.2.0/ajaxify.min.js", array('jquery'));
 

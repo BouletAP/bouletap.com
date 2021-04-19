@@ -1,12 +1,498 @@
 /*
 Theme Name: Freelance Coder - Master
 Description: Portfolio theme
-Version: 1.15
+Version: 1.16
 Tags: APB
 Text Domain: bouletap
 */
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
 
 body {
-	margin: 0px;
-}
+  margin: 0px; }
 
+.svgicons {
+  width: 60px;
+  height: 60px;
+  filter: invert(0.9);
+  display: block;
+  margin: -10px auto 10px; }
+
+/*
+responsive fixes 2021 header
+*/
+@media (max-width: 992px) {
+  #main-header .socialnetworks ul {
+    padding-right: 10px; } }
+
+#main-header .socialnetworks ul li a:hover .fa-icon,
+#main-header .socialnetworks ul li a:focus .fa-icon,
+#main-header .socialnetworks ul li a:active .fa-icon {
+  color: #003399; }
+
+#main-header,
+.home #main-header {
+  padding-top: 0px;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 0; }
+  #main-header .main-menu,
+  .home #main-header .main-menu {
+    position: relative;
+    background-color: #003399; }
+    #main-header .main-menu .menu-presentation,
+    .home #main-header .main-menu .menu-presentation {
+      display: flex; }
+      #main-header .main-menu .menu-presentation .menu-toggle,
+      .home #main-header .main-menu .menu-presentation .menu-toggle {
+        color: #FFF;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        display: inline-block;
+        padding: 8px 12px 12px 12px;
+        border-radius: 0px;
+        outline: 0; }
+        #main-header .main-menu .menu-presentation .menu-toggle .icon-toopen,
+        .home #main-header .main-menu .menu-presentation .menu-toggle .icon-toopen {
+          display: inline-block; }
+        #main-header .main-menu .menu-presentation .menu-toggle .icon-toclose,
+        .home #main-header .main-menu .menu-presentation .menu-toggle .icon-toclose {
+          display: none; }
+        #main-header .main-menu .menu-presentation .menu-toggle:hover,
+        .home #main-header .main-menu .menu-presentation .menu-toggle:hover {
+          color: #003399;
+          background-color: #fff; }
+        #main-header .main-menu .menu-presentation .menu-toggle:active,
+        .home #main-header .main-menu .menu-presentation .menu-toggle:active {
+          color: #003399;
+          background-color: #fff; }
+        @media (min-width: 640px) and (max-width: 768px) {
+          #main-header .main-menu .menu-presentation .menu-toggle,
+          .home #main-header .main-menu .menu-presentation .menu-toggle {
+            font-size: 1.8em;
+            line-height: 1.9em; } }
+      #main-header .main-menu .menu-presentation .company-logo,
+      .home #main-header .main-menu .menu-presentation .company-logo {
+        padding: 8px 12px 12px 15px;
+        position: relative;
+        overflow: hidden; }
+        #main-header .main-menu .menu-presentation .company-logo a,
+        .home #main-header .main-menu .menu-presentation .company-logo a {
+          color: #FFF;
+          font-weight: normal;
+          text-align: center;
+          font-size: 1.5em;
+          line-height: 1.5em; }
+        #main-header .main-menu .menu-presentation .company-logo br,
+        #main-header .main-menu .menu-presentation .company-logo img,
+        .home #main-header .main-menu .menu-presentation .company-logo br,
+        .home #main-header .main-menu .menu-presentation .company-logo img {
+          display: none; }
+        @media only screen and (max-width: 767px) {
+          #main-header .main-menu .menu-presentation .company-logo,
+          .home #main-header .main-menu .menu-presentation .company-logo {
+            padding: 8px 50px 12px 15px; } }
+      #main-header .main-menu .menu-presentation .lang-container,
+      .home #main-header .main-menu .menu-presentation .lang-container {
+        position: absolute;
+        right: 8px;
+        top: 8px; }
+        #main-header .main-menu .menu-presentation .lang-container .wpml-ls-legacy-list-horizontal,
+        .home #main-header .main-menu .menu-presentation .lang-container .wpml-ls-legacy-list-horizontal {
+          padding: 0px; }
+        #main-header .main-menu .menu-presentation .lang-container a,
+        .home #main-header .main-menu .menu-presentation .lang-container a {
+          color: #FFF;
+          line-height: 1.5em; }
+      #main-header .main-menu .menu-presentation .home-icon,
+      #main-header .main-menu .menu-presentation .home-span,
+      .home #main-header .main-menu .menu-presentation .home-icon,
+      .home #main-header .main-menu .menu-presentation .home-span {
+        visibility: hidden;
+        position: absolute;
+        top: 8px;
+        left: 45px; }
+      #main-header .main-menu .menu-presentation .home-span,
+      .home #main-header .main-menu .menu-presentation .home-span {
+        opacity: 0;
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: lowercase;
+        font-variant: small-caps;
+        color: #003399; }
+      #main-header .main-menu .menu-presentation .company-logo a.home-icon,
+      .home #main-header .main-menu .menu-presentation .company-logo a.home-icon {
+        color: #FFF;
+        top: 14px;
+        left: 35px;
+        font-size: 1.8em;
+        line-height: 1.5em; }
+      #main-header .main-menu .menu-presentation .company-logo:hover .logo, #main-header .main-menu .menu-presentation .company-logo:active .logo,
+      .home #main-header .main-menu .menu-presentation .company-logo:hover .logo,
+      .home #main-header .main-menu .menu-presentation .company-logo:active .logo {
+        margin-left: -350px;
+        margin-right: 350px;
+        transition: all .5s; }
+      #main-header .main-menu .menu-presentation .company-logo:hover .home-span, #main-header .main-menu .menu-presentation .company-logo:active .home-span,
+      .home #main-header .main-menu .menu-presentation .company-logo:hover .home-span,
+      .home #main-header .main-menu .menu-presentation .company-logo:active .home-span {
+        opacity: 1;
+        visibility: visible;
+        transition: visibility 0s, opacity .5s linear;
+        transition-delay: .25s; }
+    #main-header .main-menu .interactive-menu,
+    .home #main-header .main-menu .interactive-menu {
+      visibility: hidden;
+      list-style-type: none;
+      max-width: 0%;
+      max-height: 0vh;
+      overflow: hidden;
+      margin: unset; }
+    #main-header .main-menu.is-open .interactive-menu,
+    .home #main-header .main-menu.is-open .interactive-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.75em;
+      line-height: 1.75em;
+      font-family: Adriane;
+      padding: 15px 0px;
+      height: 95vh;
+      max-height: 95vh;
+      visibility: visible;
+      max-width: 100%; }
+      #main-header .main-menu.is-open .interactive-menu a,
+      .home #main-header .main-menu.is-open .interactive-menu a {
+        display: block;
+        color: #fff;
+        padding: 5px;
+        padding-left: 2vw;
+        text-align: left; }
+        #main-header .main-menu.is-open .interactive-menu a i,
+        .home #main-header .main-menu.is-open .interactive-menu a i {
+          display: inline-block;
+          margin-right: 10px; }
+        #main-header .main-menu.is-open .interactive-menu a:hover,
+        .home #main-header .main-menu.is-open .interactive-menu a:hover {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%); }
+        #main-header .main-menu.is-open .interactive-menu a:active,
+        .home #main-header .main-menu.is-open .interactive-menu a:active {
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%); }
+      @media only screen and (min-width: 768px) {
+        #main-header .main-menu.is-open .interactive-menu,
+        .home #main-header .main-menu.is-open .interactive-menu {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          height: 80vh;
+          max-height: 80vh;
+          justify-items: center;
+          align-items: center;
+          padding: 0px;
+          transition: max-width 200ms cubic-bezier(0.33, 0.005, 0.125, 1.005) 0s, max-height 200ms cubic-bezier(0.33, 0.005, 0.125, 1.005) 200ms; }
+          #main-header .main-menu.is-open .interactive-menu li,
+          .home #main-header .main-menu.is-open .interactive-menu li {
+            width: 33%;
+            height: 50%; }
+          @supports (display: grid) {
+            #main-header .main-menu.is-open .interactive-menu,
+            .home #main-header .main-menu.is-open .interactive-menu {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 1px; }
+              #main-header .main-menu.is-open .interactive-menu li,
+              .home #main-header .main-menu.is-open .interactive-menu li {
+                width: 100%;
+                height: 100%; } }
+          #main-header .main-menu.is-open .interactive-menu li,
+          .home #main-header .main-menu.is-open .interactive-menu li {
+            list-style-type: none; }
+            #main-header .main-menu.is-open .interactive-menu li:nth-child(1),
+            .home #main-header .main-menu.is-open .interactive-menu li:nth-child(1) {
+              border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+            #main-header .main-menu.is-open .interactive-menu li:nth-child(2), #main-header .main-menu.is-open .interactive-menu li:nth-child(3),
+            .home #main-header .main-menu.is-open .interactive-menu li:nth-child(2),
+            .home #main-header .main-menu.is-open .interactive-menu li:nth-child(3) {
+              border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+              border-left: 1px solid rgba(255, 255, 255, 0.3); }
+            #main-header .main-menu.is-open .interactive-menu li:nth-child(5), #main-header .main-menu.is-open .interactive-menu li:nth-child(6),
+            .home #main-header .main-menu.is-open .interactive-menu li:nth-child(5),
+            .home #main-header .main-menu.is-open .interactive-menu li:nth-child(6) {
+              border-left: 1px solid rgba(255, 255, 255, 0.3); }
+            #main-header .main-menu.is-open .interactive-menu li a,
+            .home #main-header .main-menu.is-open .interactive-menu li a {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              padding: 8rem 2rem 2rem 2rem;
+              color: #FFF;
+              font-size: 2rem; }
+              #main-header .main-menu.is-open .interactive-menu li a i,
+              .home #main-header .main-menu.is-open .interactive-menu li a i {
+                display: block;
+                margin-bottom: 2rem;
+                font-size: 3.5rem; } }
+    #main-header .main-menu.is-open .menu-toggle,
+    .home #main-header .main-menu.is-open .menu-toggle {
+      color: #003399;
+      background-color: #fff; }
+      #main-header .main-menu.is-open .menu-toggle .icon-toopen,
+      .home #main-header .main-menu.is-open .menu-toggle .icon-toopen {
+        display: none; }
+      #main-header .main-menu.is-open .menu-toggle .icon-toclose,
+      .home #main-header .main-menu.is-open .menu-toggle .icon-toclose {
+        display: inline-block; }
+    @media only screen and (min-width: 768px) {
+      #main-header .main-menu .menu-presentation .menu-toggle,
+      .home #main-header .main-menu .menu-presentation .menu-toggle {
+        padding: 15px 25px 12px 25px; }
+      #main-header .main-menu .menu-presentation .company-logo,
+      .home #main-header .main-menu .menu-presentation .company-logo {
+        background-color: #FFF; }
+        #main-header .main-menu .menu-presentation .company-logo br,
+        .home #main-header .main-menu .menu-presentation .company-logo br {
+          display: block; }
+        #main-header .main-menu .menu-presentation .company-logo img,
+        .home #main-header .main-menu .menu-presentation .company-logo img {
+          display: inline-block;
+          max-width: 65px;
+          margin-top: -5px;
+          margin-bottom: -10px;
+          margin-right: 10px; }
+        #main-header .main-menu .menu-presentation .company-logo a,
+        .home #main-header .main-menu .menu-presentation .company-logo a {
+          text-align: left;
+          font-size: 1.2em;
+          line-height: 1.2em;
+          font-weight: bold;
+          color: #003399; }
+        #main-header .main-menu .menu-presentation .company-logo a.home-span,
+        .home #main-header .main-menu .menu-presentation .company-logo a.home-span {
+          top: 12px;
+          left: 45px;
+          font-size: 1.8em; }
+      #main-header .main-menu.is-open .menu-presentation .company-logo,
+      .home #main-header .main-menu.is-open .menu-presentation .company-logo {
+        background-color: #003399; }
+        #main-header .main-menu.is-open .menu-presentation .company-logo .home-span,
+        #main-header .main-menu.is-open .menu-presentation .company-logo .logo,
+        .home #main-header .main-menu.is-open .menu-presentation .company-logo .home-span,
+        .home #main-header .main-menu.is-open .menu-presentation .company-logo .logo {
+          visibility: hidden; }
+        #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon,
+        .home #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon {
+          opacity: 1;
+          visibility: visible;
+          transition: visibility 0s, opacity .5s linear;
+          transition-delay: .25s;
+          padding: 15px 25px;
+          top: 0px;
+          left: 0px; }
+          #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon:hover,
+          .home #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon:hover {
+            color: #003399;
+            background-color: #fff;
+            border-left: 1px solid #003399; }
+          #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon:active,
+          .home #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon:active {
+            color: #003399;
+            background-color: #fff;
+            border-left: 1px solid #003399; } }
+  @media only screen and (max-width: 767px) {
+    #main-header .container-fluid,
+    .home #main-header .container-fluid {
+      padding-left: 0px;
+      padding-right: 0px; } }
+  @media only screen and (max-width: 767px) {
+    #main-header .svgicons,
+    .home #main-header .svgicons {
+      display: inline-block;
+      margin: 0px;
+      width: 35px;
+      height: 35px;
+      margin-right: 20px; } }
+
+@media only screen and (min-width: 768px) {
+  #main-header .main-menu,
+  .home #main-header .main-menu {
+    background-color: transparent;
+    margin-top: 15px; }
+    #main-header .main-menu .menu-toggle,
+    .home #main-header .main-menu .menu-toggle {
+      background-color: #003399; }
+  #main-header .main-menu.is-open,
+  .home #main-header .main-menu.is-open {
+    background-color: #003399; }
+  .lang-container {
+    font-weight: bold; } }
+
+/*
+*
+Astra fixes
+*
+*/
+#main-header .menu-toggle,
+.home #main-header .menu-toggle {
+  background-color: transparent; }
+
+#main-slider {
+  background: #000; }
+
+@media only screen and (max-width: 767px) {
+  #main-slider {
+    padding-bottom: 50px; }
+    #main-slider .slider-text-section {
+      position: relative;
+      margin-top: -25vw; }
+      #main-slider .slider-text-section h2 {
+        font-size: 16px; }
+      #main-slider .slider-text-section p, #main-slider .slider-text-section .list-btn {
+        display: block; }
+      #main-slider .slider-text-section a.btns {
+        line-height: 22px;
+        padding-top: 8px;
+        padding-bottom: 8px; } }
+
+/*
+wtf fix
+*/
+.about-details h1 {
+  max-width: none; }
+
+.services-lead {
+  clear: both;
+  padding: 0px;
+  background: #000;
+  position: relative; }
+  .services-lead .row-leads {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    list-style-type: none;
+    z-index: 5;
+    position: relative; }
+  .services-lead .lead-heading {
+    background-color: #330099;
+    border: 2px solid #000;
+    min-height: 125px;
+    padding: 20px 8px;
+    position: relative;
+    /*.flip-container {display:none;}
+        
+        a:hover,
+        a:active,
+        a:focus {
+            .list-unflipped {display:none;}
+            .flip-container {display:block;}
+        }*/ }
+    .services-lead .lead-heading h2 {
+      color: #FFF;
+      font-size: 20px;
+      line-height: 1.2em; }
+    .services-lead .lead-heading ul {
+      padding-left: 20px;
+      text-align: left; }
+    .services-lead .lead-heading p, .services-lead .lead-heading ul li {
+      color: #FFF; }
+  .services-lead .owl-item:nth-child(5n+1) .lead-heading {
+    background-color: rgba(154, 76, 104, 0.35); }
+  .services-lead .owl-item:nth-child(5n+2) .lead-heading {
+    background-color: rgba(153, 102, 0, 0.35); }
+  .services-lead .owl-item:nth-child(5n+3) .lead-heading {
+    background-color: rgba(91, 68, 106, 0.35); }
+  .services-lead .owl-item:nth-child(5n+4) .lead-heading {
+    background-color: rgba(51, 0, 153, 0.35); }
+  .services-lead .owl-item:nth-child(5n+5) .lead-heading {
+    background-color: rgba(0, 153, 102, 0.35); }
+  .services-lead .owl-theme .owl-dots .owl-dot.active span {
+    background-color: #003399; }
+  .services-lead .owl-theme .owl-dots .owl-dot span,
+  .services-lead .owl-theme .owl-dots .owl-dot span {
+    border: 1px solid #00339955; }
+  .services-lead .owl-theme .owl-dots .owl-dot:hover span,
+  .services-lead .owl-theme .owl-dots .owl-dot:focus span,
+  .services-lead .owl-theme .owl-dots .owl-dot:active span {
+    background-color: #003399; }
+  .services-lead:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url(../../uploads/bg-tourbillons-noir.jpg);
+    opacity: 1; }
+
+.services-lead > .container {
+  margin: 0px;
+  padding: 0px; }
+
+#about-me {
+  background: url(../freelancer/medias/images/dot-pattern.jpg) repeat left top; }
+
+.services-lead {
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  /* This container is needed to position the front and back side */
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* Position the front and back side */
+  /* Style the back side */ }
+  .services-lead .flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */ }
+  .services-lead .flip-card-inner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; }
+  .services-lead .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); }
+    .services-lead .flip-card:hover .flip-card-inner h2 {
+      transform: rotateY(180deg); }
+    .services-lead .flip-card:hover .flip-card-inner .list-unflipped {
+      display: none; }
+    .services-lead .flip-card:hover .flip-card-inner .flip-card-back {
+      display: block; }
+  .services-lead .flip-card-front, .services-lead .flip-card-back {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden; }
+  .services-lead .flip-card-back {
+    transform: rotateY(180deg);
+    display: none; }
+
+@media only screen and (max-width: 559px) {
+  #portfolio .work-item {
+    display: none !important; }
+  #portfolio .work-item:nth-child(3) {
+    display: inline-block !important; }
+  #portfolio .work-item:nth-child(5) {
+    display: inline-block !important; }
+  #portfolio .work-item:nth-child(6) {
+    display: inline-block !important; }
+  #portfolio .work-item:nth-child(9) {
+    display: inline-block !important; } }
+
+.elementor-932 .elementor-element.elementor-element-121fe39b .elementor-button[type="submit"] {
+  background-color: rgba(0, 51, 153, 0.45) !important; }
+
+.elementor-932 .elementor-element.elementor-element-5c171bc .elementor-social-icon {
+  min-width: 40px;
+  min-height: 40px;
+  background-color: transparent; }
+
+.elementor-932 .elementor-element.elementor-element-ca50f0a:not(.elementor-motion-effects-element-type-background),
+.elementor-932 .elementor-element.elementor-element-ca50f0a > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: rgba(0, 51, 153, 0.33); }

@@ -23,8 +23,8 @@ section#my-skills {
     background-color: rgba(0,0,0,0.80);
     padding: 40px 0px 20px;
 }
-.home #main-header { 
-	margin-top: 40px;
+#main-header { 
+	margin-top: 10px;
     background-color: transparent;
     padding: 0px;
 }
@@ -147,8 +147,8 @@ section#my-skills {
 	}
 }
 
-@media (min-width: 1600px) {
-	.slider-text-section {bottom:unset; top:250px;}
+@media (min-width: 1300px) {
+	#main-slider .slider-text-section {bottom:unset; top:250px;}
 }
 
 
@@ -188,6 +188,10 @@ textarea,
 }
 .socialnetworks .language-switcher ul li a span {padding: 0px;}
 
+#main-slider h2 {
+	font-size:26px;
+}
+
 @media (min-width: 641px) {
 	.contact-form-basic #field_1_1 { 
 		width: 47%; 
@@ -202,6 +206,32 @@ textarea,
 		margin-right: 0px;
 		display: inline-block;
 	}
+
+	#main-header .socialnetworks ul {margin-top:10px; margin-right:20px;}
+	#main-header .socialnetworks ul li a {
+		border:0px;white-space: nowrap;
+		font-size:16px;
+	}
+	#main-header .socialnetworks ul .li-phone {width:145px;}
+	#main-header .socialnetworks ul li a .fa-icon {
+		border: solid 1px #fff;
+		border-radius: 100%;
+		background: none;
+		color: #fff;
+		width: 32px;
+		line-height: 32px;
+		display: inline-block;
+		text-align: center;
+		font-size: 16px;
+		padding: 0;
+		margin-right:5px;
+	}
+
+	#main-header .main-menu .menu-presentation .company-logo .logo, 
+	.home #main-header .main-menu .menu-presentation .company-logo .logo {
+		line-height:2.3em;
+	}
+
 }
 
 #main-header a.logo
@@ -210,10 +240,14 @@ textarea,
 	display: inline-block;
 	white-space: nowrap;
 }
-
+#main-slider .slider-text-section {
+	bottom:0px;
+}
 
 @media (max-width: 480px) {
 	#main-header .socialnetworks ul li.li-social {display:none;}
+	.main-top-slider {margin-top: 40px;}
+	
 }
 @media (max-width: 630px) {
 	#main-header .socialnetworks ul li.li-phone {display:none;}
@@ -227,6 +261,11 @@ textarea,
 	bottom: 210px;
 }*/
 
+@media (min-width:768px) {
+	#main-slider .slider-text-section {
+		bottom:50px;
+	}
+}
 
 
 @media (min-width: 640px) and (max-width: 720px) {
@@ -236,7 +275,7 @@ textarea,
 }
 @media (min-width: 1199px) and (max-width: 1300px) {
 	#main-slider.owl-theme .owl-dots {bottom:95px;}
-	#main-slider.owl-theme .slider-text-section {bottom:165px;}
+	#main-slider .slider-text-section {bottom:135px;}
 }
 
 @media (max-width: 1199px) {
@@ -254,9 +293,7 @@ textarea,
 	}
 
 
-	#main-header a.logo,
-	#main-header .socialnetworks ul li a,
-	#main-header .socialnetworks ul li span {color:#000;}
+	
 	
 	#main-header .socialnetworks ul li a {
 		border: solid 1px rgba(0,0,0,.3);

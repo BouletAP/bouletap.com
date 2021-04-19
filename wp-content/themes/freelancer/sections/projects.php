@@ -5,7 +5,14 @@
         'meta_key' => 'start_date',
         'orderby' => 'meta_value_num',
         'order' => 'DESC',
-        'posts_per_page' => "8"
+        'posts_per_page' => "12",
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'type',
+                'field'    => 'slug',
+                'terms'    => 'primeur',
+            ),
+        )
     ]);
 
 ?>
@@ -14,7 +21,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 section-heading text-center">
-        <h2><?php _e("Project done", "bouletap"); ?></h2>
+        <h2><?php _e("Take a look at our projects", "bouletap"); ?></h2>
       </div>
       <div class="col-md-12 text-center">
         <p><?php _e("Here is a preview of some project I did in the past. Some of them I did alone, some are projects that I contributed to or wanted to realize and some of them were while working with awesome people in professional agencies.", "bouletap"); ?></p>
@@ -27,9 +34,8 @@
         <ul class="text-center">
           <li><a href="javascript:;" data-filter="all" class="active filter"><span>All</span></a></li>
           <li><a href="javascript:;" data-filter=".wordpress" class="filter"><span><?php _e("WordPress", "bouletap"); ?></span></a></li>
+          <li><a href="javascript:;" data-filter=".e-commerce" class="filter"><span><?php _e("E-Commerce", "bouletap"); ?></span></a></li> 
           <li><a href="javascript:;" data-filter=".dev-sur-mesure" class="filter"><span><?php _e("Custom Website", "bouletap"); ?></span></a></li>
-          <li><a href="javascript:;" data-filter=".e-commerce" class="filter"><span><?php _e("E-Commerce", "bouletap"); ?></span></a></li>
-          <li><a href="javascript:;" data-filter=".application-mobile" class="filter"><span><?php _e("Mobile App", "bouletap"); ?></span></a></li>          
         </ul>
       </div>
     </div>
@@ -47,7 +53,7 @@
                           <a href="<?php echo get_permalink(get_the_ID()); ?>" title="<?php echo sprintf(__("Website creation of %s - Project developed by BouletAP Software", "bouletap"), get_the_title()); ?>"><?php the_title(); ?></a></div>
                             <p>WordPress website</p>
                         </div>
-                        <p class="icon-links project-view"><a title="<?php echo sprintf(__("Developing website for %s - View details of the project done by BouletAP Software", "bouletap"), get_the_title()); ?>" href="<?php echo get_permalink(get_the_ID()); ?>"><i class="fa fa-eye has-circle"></i></a></p>
+                        <p class="icon-links project-view"><a title="<?php echo sprintf(__("Developing website for %s - View details of the project done by BouletAP Software", "bouletap"), get_the_title()); ?>" href="<?php echo $data['project_website']; ?>" target="_blank"><i class="fa fa-eye has-circle"></i></a></p>
                     </figcaption>
                 </figure>
             </div>

@@ -19,6 +19,22 @@ spl_autoload_register("apb_autoload");
 
 
 
+
+
+function child_enqueue_scripts() {	
+	wp_enqueue_script( 'bouletap-particules', get_stylesheet_directory_uri() . '/medias/particles-js/particles.min.js');
+	wp_enqueue_script( 'bouletap-particules-custom', get_stylesheet_directory_uri() . '/medias/particles-js/custom.js');
+}
+add_action( 'wp_footer', 'child_enqueue_scripts', 15 );
+
+
+function remove_admin_bar() {
+  show_admin_bar(false);
+}
+add_action('after_setup_theme', 'remove_admin_bar');
+
+
+
 add_theme_support( 'title-tag' );
 
 
@@ -27,6 +43,23 @@ function fixWMPLSiteURL($url) {
 }
 
 add_filter('site_url', 'fixWMPLSiteURL');
+
+
+// [cocoon-part src='']
+function cocoon_template_shortcode( $atts ){
+	$a = shortcode_atts( array(
+        'src' => '',
+	), $atts );
+	
+	if( empty($a['src']) ) return "";
+
+	ob_start(); 
+	get_template_part($a['src']);
+	$output = ob_get_clean();
+    return $output;
+}
+add_shortcode( 'cocoon-part', 'cocoon_template_shortcode' );
+
 
 
 

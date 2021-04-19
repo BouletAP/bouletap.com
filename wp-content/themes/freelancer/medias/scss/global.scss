@@ -1,0 +1,36 @@
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;    
+}
+
+body {
+	margin: 0px;
+}
+
+
+
+.svgicons {
+    width:60px; 
+    height:60px; 
+    filter: invert(0.9);
+    display:block;
+    margin:-10px auto 10px;
+}
+
+/*
+responsive fixes 2021 header
+*/
+
+@media (max-width: 992px) {
+    #main-header .socialnetworks ul {
+        padding-right: 10px;
+    }
+}
+
+#main-header .socialnetworks ul li a:hover .fa-icon,
+#main-header .socialnetworks ul li a:focus .fa-icon,
+#main-header .socialnetworks ul li a:active .fa-icon {
+    color:#003399;
+}

@@ -69,11 +69,11 @@ a:hover, a:active, a:focus {
 	outline: none;
 	text-decoration: none;
 }
-i::before {
+/* i::before {
 	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
-}
+} */
 input, textarea {
 	border-radius: 0;
 	-webkit-appearance: none;
@@ -113,7 +113,6 @@ img {
 	letter-spacing: .5px;
 	padding-left: 12px;
 	padding-right: 15px;
-	border: none !important;
 	display: inline-block !important;
 }
 .socialnetworks ul li a {

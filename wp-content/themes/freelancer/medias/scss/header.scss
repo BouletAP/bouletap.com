@@ -1,0 +1,18 @@
+#main-slider {
+    background: #000;
+}
+
+@include mq('tablet', 'max') {  
+    #main-slider {
+        padding-bottom:50px;
+        .slider-text-section {
+            position: relative;
+            margin-top:-25vw;
+    
+            h2 {font-size: 16px;}
+            p, .list-btn {display: block;}
+            a.btns {line-height:22px;padding-top:8px;padding-bottom:8px;}
+            
+        }
+    }
+}
