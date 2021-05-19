@@ -1,9 +1,8 @@
 
 
-// window.addEventListener("scroll", function(event) {
-// 	FixEleStickyMenu.init();
-// });
-
+window.addEventListener("scroll", function(event) {
+	APBStickyMenu.init();
+});
 
 jQuery(document).ready(function(){
 	// jQuery('.services-owl-carousel').owlCarousel({

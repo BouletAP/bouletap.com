@@ -328,9 +328,20 @@
             height: 35px;
             margin-right:20px;
         }
+
     }
 }
 
+#main-header.menu-sticky {        
+    .menu-toggle {
+        position:fixed;
+    }
+
+    &.menu-opened {
+        position:fixed;
+        .menu-toggle {position: relative;}
+    }
+}
 
 @include mq('tablet') {
     #main-header .main-menu, 
@@ -352,6 +363,7 @@
     .lang-container {
         font-weight: bold;
     }
+
 }
 
 

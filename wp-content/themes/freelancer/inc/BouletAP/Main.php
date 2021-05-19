@@ -101,6 +101,7 @@ class Main {
 		wp_enqueue_script('jquery.easing', "{$path}jquery.easing.min.js", array('jquery'));
 		wp_enqueue_script('sector', "{$path}sector.js", array('jquery'));
 		wp_enqueue_script('main', "{$path}main.js", array('jquery'));
+		wp_enqueue_script('sticky', "{$path}stickymenu.js", array('jquery'));
 		wp_enqueue_script('custominit', "{$path}custom-init.js", array('jquery'));
 		
 		//wp_enqueue_script('ajaxify', "https://cdnjs.cloudflare.com/ajax/libs/ajaxify/7.2.0/ajaxify.min.js", array('jquery'));

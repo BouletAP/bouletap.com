@@ -3,7 +3,7 @@
         jQuery('.main-menu .menu-toggle').on('click', function() {
             var mainMenu = jQuery(this).parents('.main-menu');
             mainMenu.toggleClass('is-open');
-            //mainMenu.find('.interactive-menu').toggleClass('is-open');
+            mainMenu.parents('#main-header').toggleClass('menu-opened');
         }); 
     });
 </script>
