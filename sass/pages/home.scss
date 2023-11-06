@@ -1,0 +1,12 @@
+@import "../base/variables";
+@import "../utils/mixins";
+
+
+.home {
+    background-color:$primary-color;
+    color: #fff;
+}
+
+.page-content {
+    margin-top:60px;
+}

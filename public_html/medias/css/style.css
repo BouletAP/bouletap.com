@@ -1,0 +1,17 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #003399;
+}
+
+#header {
+  padding: 10px 20px;
+}
+#header ul {
+  padding: 0px;
+}
+#header li a {
+  background-color: red;
+  font-size: 1.2em;
+  color: black;
+  font-weight: bold;
+}

@@ -7,6 +7,9 @@ var ftpinfo = require('./gulp-private');
 var ftp = require( 'vinyl-ftp' );
 
 
+const sass = require('gulp-sass')(require('sass'));
+
+
 var projectdata = {
   "sync_dev" : [
     './',
@@ -34,4 +37,21 @@ gulp.task('ftp-deploy-watch', function() {
   });
 });
 
-gulp.task('watcher', gulp.parallel ('ftp-deploy-watch'));   
+
+// gulp.task('sass', function () {
+//   return gulp.src('./sass/**/*.scss')
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(gulp.dest('./public_html/medias/css'));
+// });
+
+gulp.task('sass-watch', function () {
+  gulp.watch('./sass/**/*.scss', function () {
+    return gulp.src('./sass/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest('./public_html/medias/css'));
+  });
+});
+
+
+gulp.task('watcher', gulp.parallel ('sass-watch', 'ftp-deploy-watch'));   
+

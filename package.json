@@ -9,8 +9,10 @@
   },
   "devDependencies": {
     "gulp": "^4.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sftp": "^0.1.5",
-    "gulp-util": "^1.0.0"
+    "gulp-util": "^1.0.0",
+    "sass": "^1.69.5"
   },
   "scripts": {
     "test": "test"
