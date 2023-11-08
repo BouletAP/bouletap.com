@@ -1,7 +1,4 @@
-
-
-#main-header,
-.home #main-header {
+#main-header {
 
     padding-top: 0px;
     position:absolute;
@@ -12,20 +9,18 @@
     .main-menu {
 
         position:relative;
-        background-color: $color-primary; 
+        background-color: #FFF; 
 
         .menu-presentation {
 
             display:flex;     
 
-            
-
             .menu-toggle {
-                color:#FFF;
-                font-size: 1.5em;
-                line-height: 1.5em;
+                color:#000;
+                font-size: 1.8em;
+                line-height: 2.3em;
                 display: inline-block;
-                padding: 8px 12px 12px 12px;
+                padding: 10px 12px 12px 12px;
                 border-radius:0px;
                 outline:0;
 
@@ -35,6 +30,8 @@
                 @include touch() {                    
                     color: $color-primary;
                     background-color: #fff;
+                    font-size:2.1em;
+                    line-height:2em;
                 }
 
                 @media (min-width:640px) and (max-width:768px){
@@ -50,11 +47,11 @@
                 overflow: hidden;       
 
                 a {
-                    color:#FFF;
+                    color:#000;
                     font-weight: normal;
                     text-align: center;
                     font-size: 1.5em;
-                    line-height: 1.5em;
+                    line-height: 2.5em;
                 }
                 br ,
                 img {
@@ -73,8 +70,9 @@
 
                 .wpml-ls-legacy-list-horizontal {padding:0px;}
                 a {
-                    color:#FFF;
-                    line-height: 1.5em;
+                    color:#000;
+                    line-height: 2.5em;
+                    font-size:1.5em;
                 }
             }
 
@@ -92,10 +90,10 @@
                 font-size:16px;
                 text-transform: lowercase;
                 font-variant: small-caps;
-                color:#003399;
+                color:#000;
             }
             .company-logo a.home-icon {                
-                color:#FFF;	
+                color:#000;	
                 top: 14px;
                 left: 35px;
 
@@ -110,13 +108,13 @@
                     .logo {
                         margin-left:-350px;
                         margin-right:350px;
-                        transition: all .5s;
+                        transition: all .25s;
                     }
                     .home-span {
                         opacity:1;
                         visibility:visible;
-                        transition: visibility 0s, opacity .5s linear;
-                        transition-delay: .25s;	
+                        transition: visibility 0s, opacity .25s linear;
+                        transition-delay: .15s;	
                     }
                 }   
             }
@@ -153,10 +151,11 @@
                 a {
                     
                     display: block;
-                    color: #fff;
+                    color: #000;
                     padding:5px;
                     padding-left:2vw;
                     text-align:left;
+                    
 
                     i {
                         display:inline-block;
@@ -219,7 +218,7 @@
                             height:100%;
                             text-align: center;
                             padding: 8rem 2rem 2rem 2rem;
-                            color: #FFF;
+                            color: #000;
                             font-size: 2rem;
         
                             i {
@@ -233,7 +232,7 @@
             }
 
             .menu-toggle {                  
-                color: $color-primary;
+                color: #000;
                 background-color: #fff;
                 
                 .icon-toopen {display:none;}
@@ -266,7 +265,7 @@
                         font-size: 1.2em;
                         line-height: 1.2em;
                         font-weight:bold;
-                        color: $color-primary;
+                        color: #000;
                     }
 
                     a.home-span {
@@ -282,7 +281,7 @@
             &.is-open {
                 .menu-presentation {
                     .company-logo { 
-                        background-color: $color-primary;
+                        background-color: #FFF;
 
                         .home-span,
                         .logo {
@@ -300,9 +299,9 @@
                             left: 0px;
 
                             @include touch() {                    
-                                color: $color-primary;
+                                color: #000;
                                 background-color: #fff;
-                                border-left:1px solid $color-primary;
+                                border-left:1px solid #FFF;
                             }
                         }
                     }
@@ -310,13 +309,6 @@
             }
         }
         
-    }
-
-    @include mq('tablet', 'max') {
-        .container-fluid { 
-            padding-left:0px;
-            padding-right:0px;
-        }
     }
 
 
@@ -327,6 +319,12 @@
             width: 35px;
             height: 35px;
             margin-right:20px;
+        }
+
+        li {
+            @include touch() {                
+                background-color: #EEE;                
+            }
         }
 
     }
@@ -350,14 +348,22 @@
         margin-top:15px;
 
         .menu-toggle {
-            background-color: $color-primary;
+            background-color: #FFF;
         }
     }           
 
     #main-header .main-menu.is-open, 
     .home #main-header .main-menu.is-open {
-        background-color: $color-primary;
+        background-color: #FFF;
 
+        li {
+            display:flex;
+            span {
+                display: block;
+
+            }
+        }
+        object {max-width:25%;}
     }
 
     .lang-container {
@@ -366,22 +372,5 @@
 
 }
 
-
-
-
-/*
-*
-Astra fixes
-*
-*/
-
-#main-header,
-.home #main-header {
-        
-    .menu-toggle {
-        background-color: transparent;         
-    }
-
-}
 
 

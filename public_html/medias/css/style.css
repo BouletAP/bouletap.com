@@ -1,17 +1,519 @@
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #003399;
+@charset "UTF-8";
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
 }
 
-#header {
-  padding: 10px 20px;
+main, article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
 }
-#header ul {
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+} /* we'll restore bullets as needed for content */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+td img {
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #999;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre-line;
+}
+
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+input[type=checkbox] {
+  vertical-align: bottom;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+sub, sup {
+  font-size: 0.8rem;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5rem;
+}
+
+sub {
+  bottom: -0.25rem;
+}
+
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+label, input[type=button], input[type=submit], input[type=file], button {
+  cursor: pointer;
+}
+
+button, input, select, textarea {
+  margin: 0;
+}
+
+ins {
+  background-color: var(--highlight-color);
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: var(--highlight-color);
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+blockquote {
+  padding: 2rem;
+  border-left: 1px solid #333;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+} /* https://css-tricks.com/snippets/css/clear-fix/ */
+/* ———— END THE GENERIC RESETS ———— */
+:root {
+  --font-system: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* https://css-tricks.com/snippets/css/system-font-stack */
+  --text-color: #333;
+  --featured-color: #03f;
+  --featured-color-hover: #69f;
+  --highlight-color: #fcd700;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-system);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--featured-color);
+}
+
+a:hover {
+  color: var(--featured-color-hover);
+}
+
+body {
+  font: 14px Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#main-header {
+  padding-top: 0px;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+}
+#main-header .main-menu {
+  position: relative;
+  background-color: #FFF;
+}
+#main-header .main-menu .menu-presentation {
+  display: flex;
+}
+#main-header .main-menu .menu-presentation .menu-toggle {
+  color: #000;
+  font-size: 1.8em;
+  line-height: 2.3em;
+  display: inline-block;
+  padding: 10px 12px 12px 12px;
+  border-radius: 0px;
+  outline: 0;
+}
+#main-header .main-menu .menu-presentation .menu-toggle .icon-toopen {
+  display: inline-block;
+}
+#main-header .main-menu .menu-presentation .menu-toggle .icon-toclose {
+  display: none;
+}
+#main-header .main-menu .menu-presentation .menu-toggle:hover {
+  color: #003399;
+  background-color: #fff;
+  font-size: 2.1em;
+  line-height: 2em;
+}
+#main-header .main-menu .menu-presentation .menu-toggle:active {
+  color: #003399;
+  background-color: #fff;
+  font-size: 2.1em;
+  line-height: 2em;
+}
+@media (min-width: 640px) and (max-width: 768px) {
+  #main-header .main-menu .menu-presentation .menu-toggle {
+    font-size: 1.8em;
+    line-height: 1.9em;
+  }
+}
+#main-header .main-menu .menu-presentation .company-logo {
+  padding: 8px 12px 12px 15px;
+  position: relative;
+  overflow: hidden;
+}
+#main-header .main-menu .menu-presentation .company-logo a {
+  color: #000;
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 2.5em;
+}
+#main-header .main-menu .menu-presentation .company-logo br,
+#main-header .main-menu .menu-presentation .company-logo img {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  #main-header .main-menu .menu-presentation .company-logo {
+    padding: 8px 50px 12px 15px;
+  }
+}
+#main-header .main-menu .menu-presentation .lang-container {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+#main-header .main-menu .menu-presentation .lang-container .wpml-ls-legacy-list-horizontal {
   padding: 0px;
 }
-#header li a {
-  background-color: red;
-  font-size: 1.2em;
-  color: black;
+#main-header .main-menu .menu-presentation .lang-container a {
+  color: #000;
+  line-height: 2.5em;
+  font-size: 1.5em;
+}
+#main-header .main-menu .menu-presentation .home-icon,
+#main-header .main-menu .menu-presentation .home-span {
+  visibility: hidden;
+  position: absolute;
+  top: 8px;
+  left: 45px;
+}
+#main-header .main-menu .menu-presentation .home-span {
+  opacity: 0;
   font-weight: bold;
+  font-size: 16px;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: #000;
+}
+#main-header .main-menu .menu-presentation .company-logo a.home-icon {
+  color: #000;
+  top: 14px;
+  left: 35px;
+  font-size: 1.8em;
+  line-height: 1.5em;
+}
+#main-header .main-menu .menu-presentation .company-logo:hover .logo, #main-header .main-menu .menu-presentation .company-logo:active .logo {
+  margin-left: -350px;
+  margin-right: 350px;
+  transition: all 0.25s;
+}
+#main-header .main-menu .menu-presentation .company-logo:hover .home-span, #main-header .main-menu .menu-presentation .company-logo:active .home-span {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.25s linear;
+  transition-delay: 0.15s;
+}
+#main-header .main-menu .interactive-menu {
+  visibility: hidden;
+  list-style-type: none;
+  max-width: 0%;
+  max-height: 0vh;
+  overflow: hidden;
+  margin: unset;
+}
+#main-header .main-menu.is-open .interactive-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.75em;
+  line-height: 1.75em;
+  font-family: Adriane;
+  padding: 15px 0px;
+  height: 95vh;
+  max-height: 95vh;
+  visibility: visible;
+  max-width: 100%;
+}
+#main-header .main-menu.is-open .interactive-menu a {
+  display: block;
+  color: #000;
+  padding: 5px;
+  padding-left: 2vw;
+  text-align: left;
+}
+#main-header .main-menu.is-open .interactive-menu a i {
+  display: inline-block;
+  margin-right: 10px;
+}
+#main-header .main-menu.is-open .interactive-menu a:hover {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
+}
+#main-header .main-menu.is-open .interactive-menu a:active {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
+}
+@media only screen and (min-width: 768px) {
+  #main-header .main-menu.is-open .interactive-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 80vh;
+    max-height: 80vh;
+    justify-items: center;
+    align-items: center;
+    padding: 0px;
+    transition: max-width 200ms cubic-bezier(0.33, 0.005, 0.125, 1.005) 0s, max-height 200ms cubic-bezier(0.33, 0.005, 0.125, 1.005) 200ms;
+  }
+  #main-header .main-menu.is-open .interactive-menu li {
+    width: 33%;
+    height: 50%;
+  }
+  @supports (display: grid) {
+    #main-header .main-menu.is-open .interactive-menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 1px;
+    }
+    #main-header .main-menu.is-open .interactive-menu li {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  #main-header .main-menu.is-open .interactive-menu li {
+    list-style-type: none;
+  }
+  #main-header .main-menu.is-open .interactive-menu li:nth-child(1) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  #main-header .main-menu.is-open .interactive-menu li:nth-child(2), #main-header .main-menu.is-open .interactive-menu li:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  #main-header .main-menu.is-open .interactive-menu li:nth-child(5), #main-header .main-menu.is-open .interactive-menu li:nth-child(6) {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  #main-header .main-menu.is-open .interactive-menu li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 8rem 2rem 2rem 2rem;
+    color: #000;
+    font-size: 2rem;
+  }
+  #main-header .main-menu.is-open .interactive-menu li a i {
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+  }
+}
+#main-header .main-menu.is-open .menu-toggle {
+  color: #000;
+  background-color: #fff;
+}
+#main-header .main-menu.is-open .menu-toggle .icon-toopen {
+  display: none;
+}
+#main-header .main-menu.is-open .menu-toggle .icon-toclose {
+  display: inline-block;
+}
+@media only screen and (min-width: 768px) {
+  #main-header .main-menu .menu-presentation .menu-toggle {
+    padding: 15px 25px 12px 25px;
+  }
+  #main-header .main-menu .menu-presentation .company-logo {
+    background-color: #FFF;
+  }
+  #main-header .main-menu .menu-presentation .company-logo br {
+    display: block;
+  }
+  #main-header .main-menu .menu-presentation .company-logo img {
+    display: inline-block;
+    max-width: 65px;
+    margin-top: -5px;
+    margin-bottom: -10px;
+    margin-right: 10px;
+  }
+  #main-header .main-menu .menu-presentation .company-logo a {
+    text-align: left;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: bold;
+    color: #000;
+  }
+  #main-header .main-menu .menu-presentation .company-logo a.home-span {
+    top: 12px;
+    left: 45px;
+    font-size: 1.8em;
+  }
+  #main-header .main-menu.is-open .menu-presentation .company-logo {
+    background-color: #FFF;
+  }
+  #main-header .main-menu.is-open .menu-presentation .company-logo .home-span,
+  #main-header .main-menu.is-open .menu-presentation .company-logo .logo {
+    visibility: hidden;
+  }
+  #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s, opacity 0.5s linear;
+    transition-delay: 0.25s;
+    padding: 15px 25px;
+    top: 0px;
+    left: 0px;
+  }
+  #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon:hover {
+    color: #000;
+    background-color: #fff;
+    border-left: 1px solid #FFF;
+  }
+  #main-header .main-menu.is-open .menu-presentation .company-logo a.home-icon:active {
+    color: #000;
+    background-color: #fff;
+    border-left: 1px solid #FFF;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #main-header .svgicons {
+    display: inline-block;
+    margin: 0px;
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+  }
+  #main-header li:hover {
+    background-color: #EEE;
+  }
+  #main-header li:active {
+    background-color: #EEE;
+  }
+}
+
+#main-header.menu-sticky .menu-toggle {
+  position: fixed;
+}
+#main-header.menu-sticky.menu-opened {
+  position: fixed;
+}
+#main-header.menu-sticky.menu-opened .menu-toggle {
+  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  #main-header .main-menu,
+  .home #main-header .main-menu {
+    background-color: transparent;
+    margin-top: 15px;
+  }
+  #main-header .main-menu .menu-toggle,
+  .home #main-header .main-menu .menu-toggle {
+    background-color: #FFF;
+  }
+  #main-header .main-menu.is-open,
+  .home #main-header .main-menu.is-open {
+    background-color: #FFF;
+  }
+  #main-header .main-menu.is-open li,
+  .home #main-header .main-menu.is-open li {
+    display: flex;
+  }
+  #main-header .main-menu.is-open li span,
+  .home #main-header .main-menu.is-open li span {
+    display: block;
+  }
+  #main-header .main-menu.is-open object,
+  .home #main-header .main-menu.is-open object {
+    max-width: 25%;
+  }
+  .lang-container {
+    font-weight: bold;
+  }
 }
