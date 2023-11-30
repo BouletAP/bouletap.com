@@ -1,21 +1,129 @@
 .page-content {
-  margin-top: 60px;
+  padding-top: 80px;
 }
 .page-content .hero {
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .page-content .hero:before {
   background-image: url("../../images/bg-ambience-apb.png");
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.1;
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: -1;
+}
+.page-content .hero .hero-pitch {
+  padding: 50px 60px;
+}
+.page-content .hero h1 {
+  font-size: 5em;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.page-content .hero .picture {
+  width: 50%;
+}
+.page-content .hero .pitch {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  margin-bottom: 80px;
+  font-weight: bold;
 }
 .page-content .hero .image-ap {
   transform: scaleX(-1);
+}
+.page-content .hero .lead h3 {
+  font-size: 3em;
+  font-weight: bold;
+}
+.page-content .hero .lead p {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 10px 0px 20px 0px;
+}
+.page-content .hero .lead li {
+  font-size: 1.5em;
+}
+.page-content .stats {
+  padding: 20px;
+  background-color: #003399;
+  border: 3px solid #FFF;
+  border-radius: 50px;
+  width: 70%;
+  margin: -30px auto;
+  position: relative;
+  z-index: 30;
+}
+.page-content .stats .badge-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.page-content .stats .badge-stats .col {
+  padding: 20px;
+}
+.page-content .stats .badge-stats h4 {
+  color: #FFF;
+  font-size: 2em;
+  font-weight: bold;
+}
+.page-content .stats .badge-stats p {
+  color: #FFF;
+  font-size: 1.3em;
+}
+.page-content .fresh-websites {
+  background-image: linear-gradient(180deg, #003399 10%, #356EE0 100%);
+  padding: 30px;
+  text-align: center;
+  color: #FFF;
+}
+.page-content .fresh-websites h2 {
+  font-size: 4em;
+  line-height: 0.9em;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.page-content .fresh-websites p.pitch {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+.page-content .fresh-websites .options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media only screen and (min-width: 1248px) {
+  .page-content .fresh-websites .options {
+    width: 70%;
+    margin: 0px auto;
+  }
+}
+.page-content .fresh-websites .options .option {
+  padding: 30px 15px 30px 15px;
+  background-image: linear-gradient(160deg, #003399 30%, #282F4B 70%);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  margin: 0px 0px 0px 10px;
+  min-height: 45vh;
+}
+.page-content .fresh-websites .options .option h3 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.page-content .fresh-websites .options .option p {
+  font-size: 1.2em;
+  line-height: 1.3em;
+  letter-spacing: 0.6px;
+}
+.page-content .fresh-websites .options .option .icon-service-svg {
+  width: 50%;
+  height: auto;
 }

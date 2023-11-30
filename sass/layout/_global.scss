@@ -1,7 +1,33 @@
 body {
-  font: 14px $font-stack;
+  font: 16px $font-stack;
+  color:#000;
 }
 
 a {
   text-decoration: none;
 }
+
+.btn-cta {
+    white-space: pre;
+    color:#FFF;
+    .lni {color:#FFF;}
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    background-color: #003399;
+    border-radius: 30px 30px 30px 30px;
+    padding: 15px 30px 15px 20px;
+    border:1px solid #003399;
+
+    @include touch() {
+      border:1px solid #FFF;
+      color:#FFF;
+    }
+}
+
+
+.mt-1 {margin-top:1em;}
+.mt-2 {margin-top:2em;}
+.waves-blue { fill: #003399; }
+.color-black { fill: #000; }

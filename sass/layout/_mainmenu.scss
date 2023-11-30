@@ -6,14 +6,24 @@
     width: 100%;
     top: 0;
 
+
     .main-menu {
 
         position:relative;
         background-color: #FFF; 
 
+
         .menu-presentation {
 
             display:flex;     
+
+            .lang-container .socialnetworks {
+                a,
+                .lni {
+                    color: #FFF;
+                }
+                align-items: center;
+            }
 
             .menu-toggle {
                 color:#000;
@@ -67,6 +77,11 @@
                 position:absolute;
                 right:8px;
                 top:8px;
+
+                @include mq('tablet') {
+                    right:25px;
+                    top:0px;                    
+                }
 
                 .wpml-ls-legacy-list-horizontal {padding:0px;}
                 a {
@@ -256,22 +271,26 @@
                     img {
                         display: inline-block;
                         max-width: 65px;
-                        margin-top: -5px;
-                        margin-bottom: -10px;
                         margin-right:10px;
                     }
                     a {
                         text-align: left;
-                        font-size: 1.2em;
-                        line-height: 1.2em;
+                        font-size: 1.4em;
+                        line-height: 1.4em;
                         font-weight:bold;
                         color: #000;
                     }
+                    .logo {
+                        display: flex;
+                        align-items: center;
+                    }
+
 
                     a.home-span {
-                        top: 12px;
+                        top: 20px;
                         left: 45px;
                         font-size: 1.8em;
+                        padding-right:30%;
                     }
                 }
 
@@ -363,7 +382,10 @@
 
             }
         }
-        object {max-width:25%;}
+        .svgicons {
+            max-width:25%;
+            height:auto;
+        }
     }
 
     .lang-container {
@@ -372,5 +394,60 @@
 
 }
 
+.menu-vitrine {
+    @include touch() {                
+        .bouton1, .bouton3 {
+            transform: translateY(-20px);
+            transition: transform 0.5s;
+        }  
+        .bouton2, .bouton4 {
+            transform: translateY(20px);
+            transition: transform 0.5s;
+        }                     
+    }
+}
+
+.menu-portfolio {
+    @include touch() {                
+        .svgicons .star-middle {
+            fill:#003399;
+            filter: drop-shadow(2px 2px 4px yellow);
+        }             
+        .star-left, .star-right {
+            fill:#003399;
+        }   
+        .star-left {
+            transform: translateX(-3px);
+        }
+        .star-right {
+            transform: translateX(3px);
+        }              
+    }
+}
 
 
+.menu-contact {    
+    @include touch() {                
+        .line-phone {
+            animation-name: bouncing;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            transform-origin: center center;
+        }                        
+    }
+}
+
+
+@keyframes bouncing {
+    from { transform: rotate(0deg); }
+    19% { transform: rotate(0deg); }    
+    20% { transform: rotate(-6deg); }
+    25% { transform: rotate(0deg); }
+    30% { transform: rotate(6deg); }     
+    31% { transform: rotate(6deg); }
+    40% { transform: rotate(-3deg); }
+    50% { transform: rotate(0deg); }
+    60% { transform: rotate(3deg); }
+    61% { transform: rotate(0deg); }  
+    to { transform: rotate(0deg); }
+  }

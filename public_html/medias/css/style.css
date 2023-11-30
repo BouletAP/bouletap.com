@@ -180,11 +180,52 @@ a:hover {
 }
 
 body {
-  font: 14px Helvetica, sans-serif;
+  font: 16px Helvetica, sans-serif;
+  color: #000;
 }
 
 a {
   text-decoration: none;
+}
+
+.btn-cta {
+  white-space: pre;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  background-color: #003399;
+  border-radius: 30px 30px 30px 30px;
+  padding: 15px 30px 15px 20px;
+  border: 1px solid #003399;
+}
+.btn-cta .lni {
+  color: #FFF;
+}
+.btn-cta:hover {
+  border: 1px solid #FFF;
+  color: #FFF;
+}
+.btn-cta:active {
+  border: 1px solid #FFF;
+  color: #FFF;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.mt-2 {
+  margin-top: 2em;
+}
+
+.waves-blue {
+  fill: #003399;
+}
+
+.color-black {
+  fill: #000;
 }
 
 #main-header {
@@ -200,6 +241,13 @@ a {
 }
 #main-header .main-menu .menu-presentation {
   display: flex;
+}
+#main-header .main-menu .menu-presentation .lang-container .socialnetworks {
+  align-items: center;
+}
+#main-header .main-menu .menu-presentation .lang-container .socialnetworks a,
+#main-header .main-menu .menu-presentation .lang-container .socialnetworks .lni {
+  color: #FFF;
 }
 #main-header .main-menu .menu-presentation .menu-toggle {
   color: #000;
@@ -259,6 +307,12 @@ a {
   position: absolute;
   right: 8px;
   top: 8px;
+}
+@media only screen and (min-width: 768px) {
+  #main-header .main-menu .menu-presentation .lang-container {
+    right: 25px;
+    top: 0px;
+  }
 }
 #main-header .main-menu .menu-presentation .lang-container .wpml-ls-legacy-list-horizontal {
   padding: 0px;
@@ -418,21 +472,24 @@ a {
   #main-header .main-menu .menu-presentation .company-logo img {
     display: inline-block;
     max-width: 65px;
-    margin-top: -5px;
-    margin-bottom: -10px;
     margin-right: 10px;
   }
   #main-header .main-menu .menu-presentation .company-logo a {
     text-align: left;
-    font-size: 1.2em;
-    line-height: 1.2em;
+    font-size: 1.4em;
+    line-height: 1.4em;
     font-weight: bold;
     color: #000;
   }
+  #main-header .main-menu .menu-presentation .company-logo .logo {
+    display: flex;
+    align-items: center;
+  }
   #main-header .main-menu .menu-presentation .company-logo a.home-span {
-    top: 12px;
+    top: 20px;
     left: 45px;
     font-size: 1.8em;
+    padding-right: 30%;
   }
   #main-header .main-menu.is-open .menu-presentation .company-logo {
     background-color: #FFF;
@@ -509,11 +566,286 @@ a {
   .home #main-header .main-menu.is-open li span {
     display: block;
   }
-  #main-header .main-menu.is-open object,
-  .home #main-header .main-menu.is-open object {
+  #main-header .main-menu.is-open .svgicons,
+  .home #main-header .main-menu.is-open .svgicons {
     max-width: 25%;
+    height: auto;
   }
   .lang-container {
     font-weight: bold;
+  }
+}
+.menu-vitrine:hover .bouton1, .menu-vitrine:hover .bouton3 {
+  transform: translateY(-20px);
+  transition: transform 0.5s;
+}
+.menu-vitrine:hover .bouton2, .menu-vitrine:hover .bouton4 {
+  transform: translateY(20px);
+  transition: transform 0.5s;
+}
+.menu-vitrine:active .bouton1, .menu-vitrine:active .bouton3 {
+  transform: translateY(-20px);
+  transition: transform 0.5s;
+}
+.menu-vitrine:active .bouton2, .menu-vitrine:active .bouton4 {
+  transform: translateY(20px);
+  transition: transform 0.5s;
+}
+
+.menu-portfolio:hover .svgicons .star-middle {
+  fill: #003399;
+  filter: drop-shadow(2px 2px 4px yellow);
+}
+.menu-portfolio:hover .star-left, .menu-portfolio:hover .star-right {
+  fill: #003399;
+}
+.menu-portfolio:hover .star-left {
+  transform: translateX(-3px);
+}
+.menu-portfolio:hover .star-right {
+  transform: translateX(3px);
+}
+.menu-portfolio:active .svgicons .star-middle {
+  fill: #003399;
+  filter: drop-shadow(2px 2px 4px yellow);
+}
+.menu-portfolio:active .star-left, .menu-portfolio:active .star-right {
+  fill: #003399;
+}
+.menu-portfolio:active .star-left {
+  transform: translateX(-3px);
+}
+.menu-portfolio:active .star-right {
+  transform: translateX(3px);
+}
+
+.menu-contact:hover .line-phone {
+  animation-name: bouncing;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  transform-origin: center center;
+}
+.menu-contact:active .line-phone {
+  animation-name: bouncing;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  transform-origin: center center;
+}
+
+@keyframes bouncing {
+  from {
+    transform: rotate(0deg);
+  }
+  19% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-6deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(6deg);
+  }
+  31% {
+    transform: rotate(6deg);
+  }
+  40% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  61% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+footer .call-to-action {
+  padding: 50px 10vw 30px 10vw;
+  background-image: linear-gradient(180deg, #000000 0%, #003399 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: rgb(122, 122, 122);
+}
+footer .call-to-action .company {
+  display: flex;
+  flex-direction: row;
+  border-right: 2px solid #FFF;
+  align-items: center;
+}
+footer .call-to-action .company img {
+  width: 120px;
+  margin-right: 5px;
+}
+footer .call-to-action .company p {
+  font-size: 2em;
+  margin-right: 15px;
+}
+footer .call-to-action .description {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  padding: 0px 20px;
+  font-size: 1.3em;
+  line-height: 1.8em;
+}
+footer .call-to-action .action {
+  display: flex;
+  align-items: center;
+}
+footer .links {
+  margin-top: -5px;
+  position: relative;
+  background-color: #000;
+  background-color: #000;
+  padding: 30px 50px 30px 50px;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #FFF;
+}
+footer .links:before {
+  background-image: url("../images/bg-tourbillons-noir.jpg");
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+footer .links a {
+  color: #FFF;
+}
+footer .links a:hover {
+  opacity: 0.5;
+}
+footer .links a:hover .lni {
+  opacity: 0.5;
+}
+footer .links a:active {
+  opacity: 0.5;
+}
+footer .links a:active .lni {
+  opacity: 0.5;
+}
+footer .links div.col {
+  position: relative;
+  z-index: 40;
+}
+footer .links span.title {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 19px;
+  letter-spacing: 0.87px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+footer .links .list-with-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+footer .links .list-with-icons i {
+  margin-right: 8px;
+}
+footer .links .navigation {
+  line-height: 2em;
+}
+footer .copyrights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #07183A;
+  padding: 20px 30px;
+}
+footer .copyrights a,
+footer .copyrights li a .lni {
+  color: #FFF;
+}
+footer .copyrights a:hover {
+  opacity: 0.5;
+}
+footer .copyrights a:hover .lni {
+  opacity: 0.5;
+}
+footer .copyrights a:active {
+  opacity: 0.5;
+}
+footer .copyrights a:active .lni {
+  opacity: 0.5;
+}
+footer .copyrights .left {
+  text-align: left;
+}
+footer .copyrights .right {
+  text-align: right;
+}
+
+.waves-footer svg {
+  background-image: url(../images/bg-tourbillons-noir.jpg);
+  background-color: #000;
+  fill: #003399;
+}
+.waves-footer svg path {
+  transform: scaleY(0.3);
+  z-index: 10;
+}
+
+.socials ul {
+  display: flex;
+  flex-direction: row;
+}
+.socials ul li {
+  margin: 0px 10px;
+  font-size: 1.3em;
+}
+.socials ul li:first-child {
+  margin-left: 0px;
+}
+
+@media only screen and (max-width: 639px) {
+  footer .call-to-action .company {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer .call-to-action {
+    padding: 50px 0px 30px 0px;
+    flex-wrap: wrap;
+  }
+  footer .call-to-action .company {
+    width: 40%;
+  }
+  footer .call-to-action .description {
+    width: 60%;
+  }
+  footer .call-to-action .action {
+    width: 100%;
+    clear: both;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  footer .links {
+    flex-wrap: wrap;
+    padding: 30px 10px 30px 10px;
+  }
+  footer .links .col {
+    width: 50%;
+    margin-top: 20px;
   }
 }
