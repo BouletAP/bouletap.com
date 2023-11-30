@@ -1,0 +1,145 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ff5056b11d8fe5dac55e2921e7eade4b",
+    "packages": [
+        {
+            "name": "bouletap/forms",
+            "version": "0.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BouletAP/forms.git",
+                "reference": "9c808fc3e1d0cc09a1234b9463ec24c48a75dc76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BouletAP/forms/zipball/9c808fc3e1d0cc09a1234b9463ec24c48a75dc76",
+                "reference": "9c808fc3e1d0cc09a1234b9463ec24c48a75dc76",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BouletAP\\Forms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Logiciels BouletAP",
+                    "email": "apb@bouletap.com"
+                }
+            ],
+            "description": "Core layer",
+            "support": {
+                "issues": "https://github.com/BouletAP/forms/issues",
+                "source": "https://github.com/BouletAP/forms/tree/0.1.7"
+            },
+            "time": "2022-10-03T14:14:28+00:00"
+        },
+        {
+            "name": "bouletap/tools",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BouletAP/tools.git",
+                "reference": "6029085258a93b17861dd1dc0626d4bd8c925c1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BouletAP/tools/zipball/6029085258a93b17861dd1dc0626d4bd8c925c1e",
+                "reference": "6029085258a93b17861dd1dc0626d4bd8c925c1e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BouletAP\\Tools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Logiciels BouletAP",
+                    "email": "apb@bouletap.com"
+                }
+            ],
+            "description": "Core layer",
+            "support": {
+                "issues": "https://github.com/BouletAP/tools/issues",
+                "source": "https://github.com/BouletAP/tools/tree/0.0.1"
+            },
+            "time": "2021-10-30T23:44:44+00:00"
+        },
+        {
+            "name": "thingengineer/mysqli-database-class",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class.git",
+                "reference": "5159467ae081adbe96586e45e65a58c0fe7a32ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ThingEngineer/PHP-MySQLi-Database-Class/zipball/5159467ae081adbe96586e45e65a58c0fe7a32ce",
+                "reference": "5159467ae081adbe96586e45e65a58c0fe7a32ce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "MysqliDb.php",
+                    "dbObject.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Campbell",
+                    "email": "josh.lee.campbell@gmail.com",
+                    "homepage": "https://github.com/thingengineer",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Alexander V. Butenko",
+                    "email": "a.butenka@gmail.com",
+                    "homepage": "http://smarttechdo.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP MySQL Wrapper and object mapper which utilizes MySQLi and prepared statements",
+            "support": {
+                "issues": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class/issues",
+                "source": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class/tree/master"
+            },
+            "time": "2022-09-13T15:42:11+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "thingengineer/mysqli-database-class": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

@@ -1,0 +1,7 @@
+{
+    "require": {
+        "bouletap/tools": "^0.0.1",
+        "bouletap/forms": "^0.1.0",
+        "thingengineer/mysqli-database-class": "dev-master"
+    }
+}

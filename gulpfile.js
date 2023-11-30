@@ -13,7 +13,9 @@ const sass = require('gulp-sass')(require('sass'));
 var projectdata = {
   "sync_dev" : [
     './',
-    './public_html/'
+    './public_html/',
+    './app/',
+    './.env'
   ],
   "scss" : ["./scss/"]
 };

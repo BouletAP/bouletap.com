@@ -3,3 +3,5 @@ node_modules/
 package-lock.json
 public_html/projects-sandbox/
 public_html/medias/vendors/
+.env
+vendor/
