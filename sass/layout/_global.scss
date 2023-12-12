@@ -1,17 +1,76 @@
-body {
-  font: 16px $font-stack;
-  color:#000;
+
+::-webkit-scrollbar {
+  width: 20px;
 }
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003399;
+  border-radius:12px;
+  @include touch() {
+    background: #003399AA;
+  }
+}
+
+body {
+  font-family:  $font-stack;
+  font-size: calc(10px + 0.8vw);
+  color:#000;
+
+  @include mq('tablet') {
+    font-size: calc(12px + 0.4vw);
+  }
+}
+
 
 a {
   text-decoration: none;
 }
 
+b {font-weight: bold;}
+
+
+.form-col2 {
+  display:flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-underlined {
+
+  input[type="text"] {
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 0.5rem 1rem;
+    color: #DADADA;
+    border-color: #FFFFFF;
+    border-width: 0px 0px 1px 0px;
+    border-radius: 0px 0px 0px 0px;
+
+    width: 100%;
+    max-width: 100%;
+    border: 0px;
+    border-bottom: 1px solid #818a91;
+    background-color: transparent;
+    vertical-align: middle;
+  }
+
+  button[type="submit"] {
+    @extend .btn-rect;
+    @extend .btn-icon;
+    @extend .btn-color-primary-trans;
+  }
+}
+
+
 .btn-cta {
     white-space: pre;
     color:#FFF;
     .lni {color:#FFF;}
-    font-size: 14px;
+    font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.7px;
@@ -24,6 +83,35 @@ a {
       border:1px solid #FFF;
       color:#FFF;
     }
+}
+
+.btn-rect {  
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  border: 1px solid #FFF;
+  padding: 10px 20px 10px 20px;
+
+  @include touch() {
+    color:#AAA;
+    border-color: #003399;
+  }
+}
+
+.btn-color-primary-trans {
+  background-color: #00339977;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-icon {
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
 }
 
 

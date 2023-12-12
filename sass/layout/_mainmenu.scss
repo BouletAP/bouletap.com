@@ -10,7 +10,8 @@
     .main-menu {
 
         position:relative;
-        background-color: #FFF; 
+        //background-color: #FFF; 
+        background-color: #FFFFFFDD; 
 
 
         .menu-presentation {
@@ -350,13 +351,20 @@
 }
 
 #main-header.menu-sticky {        
-    .menu-toggle {
+    .main-menu .menu-toggle {
         position:fixed;
+        left:3px;
+        border: 3px solid #003399;
+        padding: 6px 15px 0px 15px;
     }
 
     &.menu-opened {
         position:fixed;
-        .menu-toggle {position: relative;}
+        
+        .menu-toggle {
+            position: relative;
+            border:0px;
+        }
     }
 }
 
@@ -394,6 +402,18 @@
 
 }
 
+
+.menu-nouvelles {            
+    .svgicons {
+        @include touch() {    
+            .news-globe {            
+                transform-origin: center center;
+                animation:spin 4s linear infinite;
+            }
+        }                    
+    }
+}
+
 .menu-vitrine {
     @include touch() {                
         .bouton1, .bouton3 {
@@ -411,7 +431,6 @@
     @include touch() {                
         .svgicons .star-middle {
             fill:#003399;
-            filter: drop-shadow(2px 2px 4px yellow);
         }             
         .star-left, .star-right {
             fill:#003399;
@@ -437,6 +456,30 @@
     }
 }
 
+.menu-services {
+    .svgicons {
+        @include touch() { 
+            //key ke
+            .key-icon { animation:keytouch 0.5s infinite; } 
+            .key17 { animation-delay: 0.5s; }       
+            .key25 { animation-delay: 0.8s; }       
+            .key24 { animation-delay: 0.2s; }       
+            .key36 { animation-delay: 1.5s; }       
+            .key32 { animation-delay: 1.1s; }                    
+            .key41 { animation-delay: 2.5s; }       
+        }
+    }
+}
+
+@keyframes keytouch { 
+    to {  fill: #DDD; }
+}
+
+@keyframes spin { 
+    100% { 
+        transform:rotate(360deg); 
+    } 
+}
 
 @keyframes bouncing {
     from { transform: rotate(0deg); }

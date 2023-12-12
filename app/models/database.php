@@ -1,7 +1,5 @@
 <?php
-
-namespace BouletAP;
-
+// https://github.com/ThingEngineer/PHP-MySQLi-Database-Class
 class Database {
 
     static $instance = false;

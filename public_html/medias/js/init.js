@@ -4,6 +4,7 @@ window.addEventListener("scroll", function(event) {
 	APBStickyMenu.init();
 });
 
+/*
 jQuery(document).ready(function(){
 	// jQuery('.services-owl-carousel').owlCarousel({
 	// 	loop:true,
@@ -27,10 +28,10 @@ jQuery(document).ready(function(){
 
 	setTimeout(resizeLeads, 500);
 
-});
+});*/
 
 
-
+/*
 function resizeLeads() {
 	var maxheight = 0;
 	jQuery('.lead-heading').each(function() {
@@ -44,4 +45,4 @@ function resizeLeads() {
 			"min-height" : maxheight+"px"
 		});
 	});
-}
+}*/

@@ -1,0 +1,12 @@
+.page404 .hero {
+  padding: 50px;
+  text-align: center;
+}
+.page404 .hero h1 {
+  font-size: 5em;
+  font-weight: bold;
+}
+.page404 .hero p {
+  margin-top: 25px;
+  font-size: 1.5em;
+}

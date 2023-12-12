@@ -1,3 +1,7 @@
+<?php
+    require_once APP_PATH . '/forms/audit_seo.php';
+    $audit_form = new AuditSEO();
+?>
 <footer>
     <div class="call-to-action">
         <div class="company">
@@ -72,10 +76,15 @@
             <span class="h3 title">Audit SEO Gratuit</span>
             <p>Nous auditons gratuitement votre site dans les 72h, sans frais ni engagement</p>
             <div class="audit-form">
-                <form action="/" method="post" enctype="multipart/form-data">
-                    <input type="text" placeholder="Votre courriel" />
-                    <input type="text" placeholder="https://" />
-                    <input type="submit" value="Envoyer la demande">
+                <form action="/" class="form-underlined" method="post" enctype="multipart/form-data">
+                    <div class="form-col2">
+                        <?php echo $audit_form->getField('courriel')->display(); ?>
+                        <?php echo $audit_form->getField('website')->display(); ?>
+                    </div>                    
+                    
+                    <button type="submit">
+                        <span>Envoyer la demande <i class="lni lni-arrow-right"></i></span>
+                    </button>
                 </form>
             </div>
         </div>
