@@ -217,6 +217,10 @@ b {
   font-weight: bold;
 }
 
+.hide {
+  display: none;
+}
+
 .form-col2 {
   display: flex;
   justify-content: space-between;
@@ -224,8 +228,8 @@ b {
 }
 
 .form-underlined input[type=text] {
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 1em;
+  line-height: 1.2em;
   padding: 0.5rem 1rem;
   color: #DADADA;
   border-color: #FFFFFF;
@@ -262,42 +266,34 @@ b {
   color: #FFF;
 }
 
-.btn-rect, .form-underlined button[type=submit] {
-  font-size: 14px;
-  line-height: 16px;
+.btn-rect, .form-underlined .btn-submit {
+  font-size: 1em;
+  line-height: 1.2em;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2px;
   border: 1px solid #FFF;
   padding: 10px 20px 10px 20px;
 }
-.btn-rect:hover, .form-underlined button[type=submit]:hover {
+.btn-rect:hover, .form-underlined .btn-submit:hover {
   color: #AAA;
   border-color: #003399;
 }
-.btn-rect:active, .form-underlined button[type=submit]:active {
+.btn-rect:active, .form-underlined .btn-submit:active {
   color: #AAA;
   border-color: #003399;
 }
 
-.btn-color-primary-trans, .form-underlined button[type=submit] {
+.btn-color-primary-trans, .form-underlined .btn-submit {
   background-color: rgba(0, 51, 153, 0.4666666667);
   color: #FFFFFF;
   border-color: #FFFFFF;
 }
 
-.btn-icon span, .form-underlined button[type=submit] span {
+.btn-icon span, .form-underlined .btn-submit span {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.mt-1 {
-  margin-top: 1em;
-}
-
-.mt-2 {
-  margin-top: 2em;
 }
 
 .waves-blue {
@@ -306,6 +302,23 @@ b {
 
 .color-black {
   fill: #000;
+}
+
+.form-state-error .form-error-message {
+  color: #7F0000;
+  font-size: 1em;
+}
+.form-state-error .form-error-message span {
+  font-weight: bold;
+}
+.form-state-error .form-error-message ul {
+  padding-left: 25px;
+}
+.form-state-error .form-error-message li {
+  list-style-type: disc;
+}
+.form-state-error.form-underlined input[type=text].field-error {
+  border-color: #7F0000;
 }
 
 #main-header {
@@ -812,18 +825,23 @@ b {
   }
 }
 footer .call-to-action {
-  padding: 50px 10vw 30px 10vw;
-  background-image: linear-gradient(180deg, #000000 0%, #003399 100%);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  padding: 30px 10px;
+  background-image: linear-gradient(180deg, #000000 0%, #003399 100%);
   color: rgb(122, 122, 122);
 }
 footer .call-to-action .company {
   display: flex;
   flex-direction: row;
-  border-right: 2px solid #FFF;
+  justify-content: center;
   align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  footer .call-to-action .company {
+    border-right: 2px solid #FFF;
+  }
 }
 footer .call-to-action .company img {
   width: 120px;
@@ -836,29 +854,61 @@ footer .call-to-action .company p {
 footer .call-to-action .description {
   display: flex;
   align-items: center;
-  width: 60%;
-  padding: 0px 20px;
+  padding: 20px;
   font-size: 1.3em;
   line-height: 1.8em;
 }
 footer .call-to-action .action {
-  display: flex;
-  align-items: center;
+  text-align: center;
+  align-self: center;
+  margin-top: 20px;
 }
-footer .links {
+@media only screen and (min-width: 768px) {
+  footer .call-to-action {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer .call-to-action .company {
+    width: 40%;
+    justify-content: flex-end;
+  }
+  footer .call-to-action .description {
+    width: 60%;
+  }
+  footer .call-to-action .action {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1248px) {
+  footer .call-to-action .company {
+    width: 30%;
+  }
+  footer .call-to-action .description {
+    width: 50%;
+  }
+  footer .call-to-action .action {
+    width: 20%;
+    justify-content: flex-start;
+    margin-top: 0px;
+    text-align: unset;
+  }
+}
+footer .footer-main {
   margin-top: -5px;
   position: relative;
   background-color: #000;
-  background-color: #000;
-  padding: 30px 50px 30px 50px;
+  padding: 30px 10px;
   font-size: 1.2em;
   line-height: 1.4em;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
   color: #FFF;
+  text-align: center;
 }
-footer .links:before {
+footer .footer-main:before {
   background-image: url("../images/bg-tourbillons-noir-faded.jpg");
   content: "";
   position: absolute;
@@ -868,83 +918,143 @@ footer .links:before {
   left: 0;
   z-index: 1;
 }
-footer .links a {
-  color: #FFF;
+@media only screen and (min-width: 1248px) {
+  footer .footer-main {
+    padding: 30px;
+    justify-content: space-between;
+    font-size: 1em;
+    line-height: 1.3em;
+  }
+  footer .footer-main .col-audit {
+    flex-basis: 35%;
+  }
 }
-footer .links a:hover {
-  opacity: 0.5;
-}
-footer .links a:hover .lni {
-  opacity: 0.5;
-}
-footer .links a:active {
-  opacity: 0.5;
-}
-footer .links a:active .lni {
-  opacity: 0.5;
-}
-footer .links div.col {
+footer .footer-main .col {
   position: relative;
   z-index: 40;
+  margin-bottom: 40px;
 }
-footer .links span.title {
+footer .footer-main .col a {
+  color: #FFF;
+}
+footer .footer-main .col a:hover {
+  opacity: 0.5;
+}
+footer .footer-main .col a:hover .lni {
+  opacity: 0.5;
+}
+footer .footer-main .col a:active {
+  opacity: 0.5;
+}
+footer .footer-main .col a:active .lni {
+  opacity: 0.5;
+}
+footer .footer-main .col span.title {
   color: #FFFFFF;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: bold;
   text-transform: uppercase;
   line-height: 19px;
   letter-spacing: 0.87px;
   display: inline-block;
   margin-bottom: 10px;
 }
-footer .links .list-with-icons {
+footer .footer-main .col .list-with-icons {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
 }
-footer .links .list-with-icons i {
+footer .footer-main .col .list-with-icons i {
   margin-right: 8px;
 }
-footer .links .navigation {
+footer .footer-main .col .navigation {
   line-height: 2em;
+}
+footer .footer-main .socials ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
+}
+footer .footer-main .socials ul li {
+  margin: 0px 10px;
+  font-size: 1.3em;
+}
+footer .footer-main .socials ul li:first-child {
+  margin-left: 0px;
 }
 footer .audit-form {
   margin-top: 20px;
-  width: 50%;
+  font-size: 0.8em;
+}
+footer .audit-form li {
+  text-align: left;
 }
 footer .audit-form button {
   margin-top: 10px;
   width: 100%;
 }
+footer .audit-form .form-error-message {
+  margin-bottom: 15px;
+}
+footer .audit-form .form-error-message ul {
+  margin-top: 10px;
+}
 footer .copyrights {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   background-color: #07183A;
-  padding: 20px 30px;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 1.3em;
 }
-footer .copyrights a,
-footer .copyrights li a .lni {
+@media only screen and (min-width: 640px) {
+  footer .copyrights {
+    font-size: 1em;
+    flex-direction: row;
+    padding: 20px 30px;
+  }
+}
+footer .copyrights a {
   color: #FFF;
 }
 footer .copyrights a:hover {
   opacity: 0.5;
 }
-footer .copyrights a:hover .lni {
-  opacity: 0.5;
-}
 footer .copyrights a:active {
   opacity: 0.5;
 }
-footer .copyrights a:active .lni {
-  opacity: 0.5;
+footer .copyrights .socials ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px;
 }
-footer .copyrights .left {
-  text-align: left;
+footer .copyrights .socials ul li {
+  font-size: 2em;
 }
-footer .copyrights .right {
-  text-align: right;
+@media only screen and (min-width: 640px) {
+  footer .copyrights .socials ul {
+    margin-top: 0px;
+    gap: 20px;
+  }
+  footer .copyrights .socials ul li {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (min-width: 640px) {
+  footer .copyrights {
+    flex-direction: row;
+  }
+  footer .copyrights ul {
+    margin-top: 0px;
+  }
+  footer .copyrights li {
+    font-size: 1.3em;
+    gap: 10px;
+  }
 }
 
 .waves-footer svg {
@@ -955,48 +1065,4 @@ footer .copyrights .right {
 .waves-footer svg path {
   transform: scaleY(0.3);
   z-index: 10;
-}
-
-.socials ul {
-  display: flex;
-  flex-direction: row;
-}
-.socials ul li {
-  margin: 0px 10px;
-  font-size: 1.3em;
-}
-.socials ul li:first-child {
-  margin-left: 0px;
-}
-
-@media only screen and (max-width: 639px) {
-  footer .call-to-action .company {
-    flex-direction: column;
-  }
-}
-@media only screen and (max-width: 767px) {
-  footer .call-to-action {
-    padding: 50px 0px 30px 0px;
-    flex-wrap: wrap;
-  }
-  footer .call-to-action .company {
-    width: 40%;
-  }
-  footer .call-to-action .description {
-    width: 60%;
-  }
-  footer .call-to-action .action {
-    width: 100%;
-    clear: both;
-    justify-content: center;
-    margin-top: 15px;
-  }
-  footer .links {
-    flex-wrap: wrap;
-    padding: 30px 10px 30px 10px;
-  }
-  footer .links .col {
-    width: 50%;
-    margin-top: 20px;
-  }
 }

@@ -22,8 +22,8 @@
         </svg>
     </div>
     
-    <div class="links">
-        <div class="col">
+    <div class="footer-main">
+        <div class="col col-contact">
             <span class="h3 title">Comment nous joindre</span>
             <ul>
                 <li class="list-with-icons">
@@ -40,7 +40,7 @@
                     <span><a href="/contact">info@bouletap.com</a></span>
                 </li>
             </ul>
-            <div class="socials mt-2">
+            <div class="socials">
                 <ul>
                     <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
                     <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
@@ -49,7 +49,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col">
+        <div class="col col-horaire">
             <span class="h3 title">Heures d'ouverture</span>
             
             <p>
@@ -62,30 +62,93 @@
             </p>
 
         </div>
-        <div class="col">
+        <div class="col col-navigation">
             <span class="h3 title">Navigation</span>
             <ul class="navigation">
-                <li><a href="#">À Propos</a></li>
+                <li><a href="/a-propos">À Propos</a></li>
                 <li><a href="#">Services offerts</a></li>
                 <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Articles et Nouvelles</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/nouvelles">Articles et Nouvelles</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
-        <div class="col">
+        <div class="col col-audit">
             <span class="h3 title">Audit SEO Gratuit</span>
             <p>Nous auditons gratuitement votre site dans les 72h, sans frais ni engagement</p>
             <div class="audit-form">
-                <form action="/" class="form-underlined" method="post" enctype="multipart/form-data">
+                
+
+
+
+
+
+
+
+            
+                <form action="/" class="form-seo-audit-1 form-state-error form-underlined" method="post" enctype="multipart/form-data">
+                    <div class="form-error-message hide">
+                        <span class="error-title">Le formulaire est invalide :</span>
+                        <ul>
+                            <li class="error_seoaudit1_courriel">Le format du courriel ne fonctionne pas</li>
+                            <li class="error_seoaudit1_website">L'adresse URL ne fonctionne pas</li>
+                        </ul>
+                    </div>
                     <div class="form-col2">
-                        <?php echo $audit_form->getField('courriel')->display(); ?>
-                        <?php echo $audit_form->getField('website')->display(); ?>
+                        <?php echo $audit_form->getField('seoaudit1_courriel')->display(); ?>
+                        <?php echo $audit_form->getField('seoaudit1_website')->display(); ?>
                     </div>                    
                     
-                    <button type="submit">
+                    <button type="button" class="btn-submit" id="btn-submit-audit">
                         <span>Envoyer la demande <i class="lni lni-arrow-right"></i></span>
                     </button>
                 </form>
+                <script>
+
+                    function submitSEOForm() {
+
+                        var form_email = document.querySelector('input[name="seoaudit1_courriel"]').value;
+                        var form_website = document.querySelector('input[name="seoaudit1_website"]').value;
+
+                        var data = {
+                            'request_type': 'form-audit-seo-2',
+                            'email': form_email,
+                            'website': form_website
+                        };
+
+                        var url = new URLSearchParams(data).toString(); 
+
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('POST', '/ajax');
+                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        xhr.send(url);
+                    }
+
+                    // "#btn-submit-audit"
+                    var btn_submit_seo1 = document.querySelector("#btn-submit-audit");
+                    btn_submit_seo1.addEventListener("click", submitSEOForm);
+
+
+                    // validations
+
+
+
+                    // submit
+
+
+
+                    // callback
+
+
+
+                    
+                </script>
+
+
+
+
+
+
+
             </div>
         </div>
     </div>

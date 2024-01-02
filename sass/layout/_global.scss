@@ -32,6 +32,8 @@ a {
 
 b {font-weight: bold;}
 
+.hide {display:none;}
+
 
 .form-col2 {
   display:flex;
@@ -42,8 +44,8 @@ b {font-weight: bold;}
 .form-underlined {
 
   input[type="text"] {
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 1em;;
+    line-height: 1.2em;
     padding: 0.5rem 1rem;
     color: #DADADA;
     border-color: #FFFFFF;
@@ -58,7 +60,7 @@ b {font-weight: bold;}
     vertical-align: middle;
   }
 
-  button[type="submit"] {
+  .btn-submit {
     @extend .btn-rect;
     @extend .btn-icon;
     @extend .btn-color-primary-trans;
@@ -86,8 +88,8 @@ b {font-weight: bold;}
 }
 
 .btn-rect {  
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 1em;
+  line-height: 1.2em;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2px;
@@ -114,8 +116,25 @@ b {font-weight: bold;}
   }  
 }
 
-
-.mt-1 {margin-top:1em;}
-.mt-2 {margin-top:2em;}
 .waves-blue { fill: #003399; }
 .color-black { fill: #000; }
+
+
+.form-state-error {
+  .form-error-message {
+    color:#7F0000;
+    font-size: 1em;;
+    span {font-weight: bold;}
+    ul {padding-left:25px;}
+    li {
+      list-style-type: disc;    
+    }
+  }
+
+
+  &.form-underlined {
+    input[type="text"].field-error {
+      border-color: #7F0000;
+    }
+  }
+}

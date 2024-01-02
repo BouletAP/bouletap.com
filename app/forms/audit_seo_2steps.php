@@ -5,9 +5,9 @@ use \BouletAP\Forms\Fields\Hidden;
 use \BouletAP\Forms\Fields\Text;
 use \BouletAP\Forms\Validations\Required;
 
-class AuditSEO extends Forms {
+class AuditSEO_2steps extends Forms {
 	
-	public $name = 'seo-audit-form';
+	public $name = 'seo-audit-form-2steps';
 
 	public function fields() {           
 
@@ -15,11 +15,11 @@ class AuditSEO extends Forms {
         $contactType->setValue( 'general' );
 
 
-        $courriel = new Text('seoaudit1_courriel');
+        $courriel = new Text('seoaudit2_courriel');
         $courriel->addAttribute( 'placeholder', 'Votre courriel' );
         $courriel->addValidation( new Required );
 
-        $website = new Text('seoaudit1_website');
+        $website = new Text('seoaudit2_website');
         $website->addAttribute( 'placeholder', 'https://' );
         $website->addValidation( new Required );
         

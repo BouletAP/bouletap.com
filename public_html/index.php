@@ -22,5 +22,6 @@
     include(__DIR__ . "/" . $page);
     include(__DIR__ . "/template-parts/layouts/layout-footer.php");
 
+
     Tracking::lifecycle_end();
 ?>
