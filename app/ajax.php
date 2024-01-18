@@ -23,15 +23,52 @@ if( $_POST['request_type'] == "appdata" ) {
 
 if( $_POST['request_type'] == "form-audit-seo-2" ) {
 
-    echo '<pre>'; print_r($_POST); echo '</pre>'; die();
-    //$tracker = static::i()->get();
-    //static::i()->lifecycle_start()
+    error_reporting(E_ALL);
+    ini_set('display_errors', 'On');
 
-    // width ; height ; colorDepth ; pixelDepth 
-    $t = (int)$_POST['t'];
-    $unsecured_infos = explode(';', $_POST['i']);
-    $info = array_map('intval', $unsecured_infos);
-    Analytics::i()->save_frontinfos($t, $info);
+    require_once APP_PATH . '/models/forms/audit_seo.php';
+    require_once APP_PATH . '/models/entities/entry.php';
+    $form = new Models\Forms\AuditSEO();
+
+    $output = array(
+        "state" => "500",
+        "return" => "Error unknown"
+    );
+
+
+    if( $form->validate() ) {
+
+        $form_data = [
+            'courriel' => $form->getField('courriel')->getValue(),
+            'website' => $form->getField('website')->getValue()
+        ];
+
+        Models\Entities\Entry::save($form_data);
+
+        $output['state'] = "300";
+        $output['data'] = ['success'];
+
+        $headers = 'From: info@bouletap.com' . "\r\n" .
+        'Reply-To: '.$form_data['courriel'] . "\r\n" .
+        'Content-Type: text/html; charset=ISO-8859-1' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+        $to = 'info@bouletap.com';
+
+        $message = "Une demande d'audit SEO est entrée";
+        $message .= "<br/><br/> Website: ".$form_data['website'];
+
+        if( mail($to, "Demande d'audit SEO", $message, $headers) ) {        
+            $output['state'] = "200";
+        }
+    }
+    else {
+        $output['state'] = "400";
+        $output['data'] = $form->getErrors('flat');
+    }
+
+    echo json_encode($output);
+    die();
 }
 
 
@@ -52,7 +89,7 @@ if( $_POST['request_type'] == "form-contact" ) {
 
     require_once APP_PATH . '/models/forms/contact.php';
     require_once APP_PATH . '/models/entities/entry.php';
-    $contact_form = new Models\Forms\ContactForm();
+    $form = new Models\Forms\ContactForm();
 
     $output = array(
         "state" => "500",
@@ -63,14 +100,14 @@ if( $_POST['request_type'] == "form-contact" ) {
     $subject = "";
     $message = "";
 
-    if( $contact_form->validate() ) {
+    if( $form->validate() ) {
 
         $form_data = [
-            'email' => $contact_form->getField('courriel')->getValue(),
-            'subject' => $contact_form->getField('subject')->getValue(),
-            'message' => $contact_form->getField('message')->getValue(),
-            'full_name' => $contact_form->getField('full_name')->getValue(),
-            'phone' => $contact_form->getField('phone')->getValue()
+            'email' => $form->getField('courriel')->getValue(),
+            'subject' => $form->getField('subject')->getValue(),
+            'message' => $form->getField('message')->getValue(),
+            'full_name' => $form->getField('full_name')->getValue(),
+            'phone' => $form->getField('phone')->getValue()
         ];
 
         Models\Entities\Entry::save($form_data);
@@ -95,7 +132,7 @@ if( $_POST['request_type'] == "form-contact" ) {
     }
     else {
         $output['state'] = "400";
-        $output['data'] = $contact_form->getErrors('flat');
+        $output['data'] = $form->getErrors('flat');
     }
 
     echo json_encode($output);

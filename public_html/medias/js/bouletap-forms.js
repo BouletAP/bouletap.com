@@ -1,11 +1,13 @@
-var BouletAPForms = {
+function BouletAPForms(request_type, msg_success) {
 
-    //toggleStickyMenuHolder : false, 
-    form_is_submitting : false,
-    current_form : false,
+    
+    this.form_is_submitting = false;
+    this.current_form = false;
+    this.msg_success = msg_success;
+    this.request_type = request_type;
 
     // idea taken from Bryan Kyle (https://stackoverflow.com/questions/588263/how-can-i-get-all-a-forms-values-that-would-be-submitted-without-submitting)
-    getFormData : function() {
+    this.getFormData = function() {
         var kvpairs = [];
         for ( var i = 0; i < this.current_form.elements.length; i++ ) {
             var key = encodeURIComponent(this.current_form.elements[i].name);
@@ -14,10 +16,10 @@ var BouletAPForms = {
                 kvpairs[key] = encodeURIComponent(this.current_form.elements[i].value);
         }
         return kvpairs;
-    },
+    };
 
     // state = true is form is submittable, false if we are sending the form
-    toggleFormSubmissionState : function(state) {
+    this.toggleFormSubmissionState = function(state) {
         var btn_submit = this.current_form.querySelector('button[type="submit"]');
 
         if( !state ) {
@@ -31,9 +33,9 @@ var BouletAPForms = {
             self.form_is_submitting = false;
             btn_submit.innerHTML = 'Envoyez de nouveau <i class="lni lni-arrow-right"></i></span>';
         }        
-    },
+    };
 
-    submit : function (form) {
+    this.submit = function(form) {
 
         var self = this;
         self.current_form = form;
@@ -44,7 +46,7 @@ var BouletAPForms = {
         self.toggleFormSubmissionState(false);
 
         var data_array = self.getFormData();
-        data_array["request_type"] = 'form-contact';
+        data_array["request_type"] = self.request_type;
         var data = {...data_array};
         
         var url = new URLSearchParams(data).toString(); 
@@ -66,13 +68,13 @@ var BouletAPForms = {
         }; 
 
         xhr.send(url);
-    },
+    };
     
     
     // num500 = invalid form or classified as robot spam
     // num400 = field validation failed
     // num200 = form saved and email sent 
-    dispatchResponse : function(response) {
+    this.dispatchResponse = function(response) {
         if( response['state'] == null )
             response['state'] = "400";
 
@@ -97,9 +99,9 @@ var BouletAPForms = {
                 break;
         }
 
-    },
+    };
 
-    show_success_message : function() {
+    this.show_success_message = function() {
         var error_bloc = this.current_form.querySelector('.form-error-message');
         error_bloc.classList.add('hide');
 
@@ -112,12 +114,12 @@ var BouletAPForms = {
 
         var success_message = document.createElement('div');
         success_message.classList.add('success-message');
-        success_message.innerHTML = 'Merci, votre message est envoyé';
+        success_message.innerHTML = this.msg_success;
 
         this.current_form.append(success_message);
-    },
+    };
 
-    show_validation_error : function(data) {
+    this.show_validation_error = function(data) {
 
         // add error class to invalid fields
         for ( var i = 0; i < this.current_form.elements.length; i++ ) {
@@ -147,25 +149,5 @@ var BouletAPForms = {
         } 
         error_bloc.appendChild(ul);
         error_bloc.classList.remove('hide');        
-    },
-
-
-
-	init: function() {
-		// if( !this.toggleStickyMenuHolder ) {
-        //     var self = this;
-        //     self.toggleStickyMenuHolder = true;
-        //     setTimeout(function() {
-        //         var scroll = window.scrollY;
-        //         var sectionHeader = document.getElementById('main-header');
-        //         if( scroll > 0 ) {
-        //             sectionHeader.classList.add('menu-sticky');
-        //         }
-        //         else {
-        //             sectionHeader.classList.remove('menu-sticky');
-        //         }
-        //         self.toggleStickyMenuHolder = false;
-        //     }, 100);
-        // }
-    }
+    };
 };

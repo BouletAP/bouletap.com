@@ -329,27 +329,29 @@ section {
   fill: #000;
 }
 
-.form-state-error .form-error-message {
+.form-error-message {
   color: #7F0000;
   font-size: 1em;
 }
-.form-state-error .form-error-message span {
+.form-error-message span {
   font-weight: bold;
 }
-.form-state-error .form-error-message ul {
+.form-error-message ul {
   padding-left: 25px;
 }
-.form-state-error .form-error-message li {
+.form-error-message li {
   list-style-type: disc;
   font-size: 0.8em;
 }
-.form-state-error.form-underlined input[type=text].field-error {
+
+.form-underlined input[type=text].field-error {
   border-color: #7F0000;
 }
-.form-state-error .form-error-message {
+
+.form-error-message {
   margin-bottom: 15px;
 }
-.form-state-error .form-error-message ul {
+.form-error-message ul {
   margin-top: 10px;
 }
 
@@ -1081,6 +1083,9 @@ footer .audit-form button {
 }
 footer .audit-form .form-underlined input[type=text] {
   color: #DADADA;
+}
+footer .audit-form .success-message {
+  margin-top: 10px;
 }
 footer .copyrights {
   display: flex;

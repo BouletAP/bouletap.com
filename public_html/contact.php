@@ -30,20 +30,20 @@
                 <p>Si vous avez besoin d'aide avec votre site Internet, vous pouvez ouvrir un ticket avec nous, il nous fera plaisir de vous assister. Choisissez une catégorie ci-dessous et nous vous reviendrons dès que possible.</p>
 
                 <ul>
-                    <li>Question ou commentaire générale</li>    
-                    <li>Nouveau site Internet</li>
-                    <li>Ajouts à mon site existant</li>
-                    <li>Correctifs à mon site existant</li>
-                    <li>Vérification de la qualité de mon site</li>
-                    <li>Problème avec mon commerce électronique</li>
-                    <li>Question sur la facturation</li>
+                    <li onclick="focusContactForm(this)">Question ou commentaire général</li>    
+                    <li onclick="focusContactForm(this)">Nouveau site Internet</li>
+                    <li onclick="focusContactForm(this)">Ajouts à mon site existant</li>
+                    <li onclick="focusContactForm(this)">Correctifs à mon site existant</li>
+                    <li onclick="focusContactForm(this)">Vérification de la qualité de mon site</li>
+                    <li onclick="focusContactForm(this)">Problème avec mon commerce électronique</li>
+                    <li onclick="focusContactForm(this)">Question sur une facture</li>
                 </ul>
             </div>
 
 
             <div class="form-contact">
                 
-                <form id="form-contact" class="form-underlined form-state-error" onsubmit="return false;" method="post" enctype="multipart/form-data">
+                <form id="form-contact" class="form-underlined" onsubmit="return false;" method="post" enctype="multipart/form-data">
                     <div class="form-error-message hide"><span class="error-title">Le formulaire est invalide :</span></div>
                     <?php echo $contact_form->getField('courriel')->display(); ?>
                     <div class="form-col2">
@@ -66,6 +66,40 @@
                 <span class="subtitle">VOS PROJETS NOUS INTÉRESSENT!</span>
                 <h2>Discutons ensemble de vos projets</h2>
                 <p>Nous avons à cœur le respect de vos valeurs et de votre unicité. Notre équipe est 100% en télétravail, ce qui nous permet de répondre à vos besoins partout au Québec. Nous ferons en sorte de satisfaire vos exigences, tout en repoussant constamment les limites de notre créativité!</p>
+                
+                <div class="methodes">
+                    <div class="methode">
+                        <i class="lni lni-inbox"></i>
+                        <h3>Par courriel</h3>
+                        <p><a href="#contact-form">apb@bouletap.com</a></p>
+                    </div>
+                    <div class="methode">
+                        <i class="lni lni-link"></i>
+                        <h3>Sur le web</h3>
+                        <div class="socials">
+                            <ul>
+                                <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github-original"></i></a></li>
+                                <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>      
+                    <div class="methode">
+                        <i class="lni lni-phone-set"></i>
+                        <h3>Par téléphone</h3>
+                        <p>Notre numéro personnel n'est plus publiquement disponible</p>
+                    </div>    
+                    <div class="methode">
+                        <i class="lni lni-map-marker"></i>
+                        <h3>Par la poste</h3>
+                        <p>196 rue du Richelieu, Dunham, J0E 1M0</p>
+                    </div>         
+                </div>
+            </div>
+            
+
+            <div class="booking-calendar">
                 <div class="methode">
                     <i class="lni lni-timer"></i>
                     <h3>Heures de disponibilité</h3>
@@ -78,23 +112,10 @@
                         Fermé
                     </p>
                 </div>
-            </div>
-            <div class="methodes">
-                <div class="methode">
-                    <i class="lni lni-inbox"></i>
-                    <h3>Par courriel</h3>
-                    <p><a href="#contact-form">apb@bouletap.com</a></p>
+                <div class="calendar">
+                    <img src="/medias/images/temp-calendrier.JPG" alt="Calendrier de rendez-vous">
+                    <span class="coming-soon">Bientôt disponible</span>
                 </div>
-                <div class="methode">
-                    <i class="lni lni-map-marker"></i>
-                    <h3>Par la poste</h3>
-                    <p>196 rue du Richelieu, Dunham, J0E 1M0</p>
-                </div>
-                <div class="methode">
-                    <i class="lni lni-phone-set"></i>
-                    <h3>Par téléphone</h3>
-                    <p>Notre numéro personnel n'est plus publiquement disponible</p>
-                </div>             
             </div>
         </section>
 
@@ -104,6 +125,40 @@
     var submit = document.querySelector("#btn-contact-submit");
     submit.addEventListener("click", () => {
         var form = document.querySelector('#form-contact');
-        BouletAPForms.submit(form);
+        var contact_form = new BouletAPForms('form-contact', 'Merci, votre message est envoyé');
+        contact_form.submit(form);
     });
+
+
+
+    function focusContactForm(element) {
+        var subjectText = element.innerHTML;
+        
+        var subjectInput = document.querySelector('input[name="subject"]');
+        subjectAutoTyping(subjectText, subjectInput, 500);
+
+        var formContainer = document.querySelector('#form-contact').parentNode;
+        formContainer.classList.add('fresh-focus');
+        setTimeout(() => {
+            document.querySelector('input[name="courriel"]').focus();
+            formContainer.classList.remove('fresh-focus');
+        }, 500);
+    }
+
+    function subjectAutoTyping(txt, target, maxTime) {
+        var i = 0;
+        var speed = parseInt(maxTime / txt.length);
+        target.value = "";
+        typeWriter(txt, target, i, speed);
+    }
+
+    function typeWriter(txt, target, i, speed) {
+        if (i < txt.length) {
+            target.value += txt.charAt(i);
+            i++;
+            setTimeout(() => {
+                typeWriter(txt, target, i, speed);
+            }, speed);
+        }
+    }
 </script>

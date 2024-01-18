@@ -6,6 +6,18 @@
 .section-form {
   display: flex;
   padding-top: 30px;
+  flex-direction: column;
+}
+.section-form p {
+  font-size: 1.3em;
+}
+@media only screen and (min-width: 768px) {
+  .section-form {
+    flex-direction: row;
+  }
+  .section-form p {
+    font-size: 1.1em;
+  }
 }
 @media only screen and (min-width: 1248px) {
   .section-form {
@@ -13,17 +25,17 @@
     padding-right: 30px;
   }
 }
-.section-form ul {
+.section-form .contact-description ul {
   list-style-type: circle;
   padding-left: 30px;
   margin-top: 30px;
   font-size: 1.2em;
   line-height: 1.3em;
 }
-.section-form ul:hover {
+.section-form .contact-description ul:hover {
   cursor: pointer;
 }
-.section-form ul:active {
+.section-form .contact-description ul:active {
   cursor: pointer;
 }
 .section-form .form-contact {
@@ -43,6 +55,11 @@
   width: 100%;
   height: 150px;
 }
+.section-form .form-contact.fresh-focus,
+.section-form .form-contact .fresh-focus {
+  transition: border-color 500ms linear;
+  border-color: #007F0E;
+}
 
 .contact-methodes {
   display: flex;
@@ -58,6 +75,8 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 @media only screen and (min-width: 1248px) {
@@ -79,6 +98,13 @@
 .contact-methodes .rendez-vous h2 {
   margin-bottom: 20px;
 }
+.contact-methodes .rendez-vous .booking {
+  display: flex;
+}
+.contact-methodes .rendez-vous .booking img {
+  width: 100%;
+  height: auto;
+}
 .contact-methodes .methodes {
   display: flex;
   flex-wrap: wrap;
@@ -97,4 +123,42 @@
   font-size: 1.1em;
   font-weight: bold;
   line-height: 3em;
+}
+.contact-methodes .methode .socials ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.contact-methodes .methode .socials ul li {
+  margin: 0px 10px;
+  font-size: 1em;
+}
+.contact-methodes .methode .socials ul li a {
+  color: #000;
+}
+.contact-methodes .methode .socials ul li:first-child {
+  margin-left: 0px;
+}
+.contact-methodes .booking-calendar .calendar {
+  position: relative;
+}
+.contact-methodes .booking-calendar .calendar:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  content: "";
+}
+.contact-methodes .booking-calendar .calendar .coming-soon {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: rotate(-45deg);
+  transform-origin: center center;
+  color: #FFF;
+  font-size: 2em;
+  font-weight: bold;
 }
