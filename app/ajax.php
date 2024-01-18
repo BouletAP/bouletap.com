@@ -1,17 +1,23 @@
 <?php
 require_once __DIR__ . '/../app/bootstrap.php';
 
+use Models\Services\Analytics;
 
-if( $_POST['request_type'] == "kingdata" ) {
 
-    //$tracker = static::i()->get();
-    //static::i()->lifecycle_start()
+if( $_POST['request_type'] == "appdata" ) {
+
+    $visitor_id = (int)$_POST['t'];
+
+    if( Analytics::i()->getId() != $visitor_id ) 
+        return false;
 
     // width ; height ; colorDepth ; pixelDepth 
-    $t = (int)$_POST['t'];
     $unsecured_infos = explode(';', $_POST['i']);
-    $info = array_map('intval', $unsecured_infos);
-    Tracking::i()->save_frontinfos($t, $info);
+    $screen_data = array_map('intval', $unsecured_infos); 
+    $screen_info = "{$screen_data[0]};{$screen_data[1]};{$screen_data[2]};{$screen_data[3]}";
+
+    $data = ['screen_info' => $screen_info];
+    Analytics::i()->visitor->update($data);   
 }
 
 
@@ -25,7 +31,7 @@ if( $_POST['request_type'] == "form-audit-seo-2" ) {
     $t = (int)$_POST['t'];
     $unsecured_infos = explode(';', $_POST['i']);
     $info = array_map('intval', $unsecured_infos);
-    Tracking::i()->save_frontinfos($t, $info);
+    Analytics::i()->save_frontinfos($t, $info);
 }
 
 
@@ -44,9 +50,9 @@ if( $_POST['request_type'] == "form-contact" ) {
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
 
-    require_once APP_PATH . '/forms/contact.php';
-    require_once APP_PATH . '/models/form_submission.php';
-    $contact_form = new ContactForm();
+    require_once APP_PATH . '/models/forms/contact.php';
+    require_once APP_PATH . '/models/entities/entry.php';
+    $contact_form = new Models\Forms\ContactForm();
 
     $output = array(
         "state" => "500",
@@ -67,7 +73,7 @@ if( $_POST['request_type'] == "form-contact" ) {
             'phone' => $contact_form->getField('phone')->getValue()
         ];
 
-        Form_submission::save($form_data);
+        Models\Entities\Entry::save($form_data);
 
         $output['state'] = "300";
         $output['data'] = ['success'];

@@ -1,7 +1,8 @@
 <?php
 
+namespace Models\Core;
 
-class Routes {
+class Router {
 
     static public $routes = [];
 

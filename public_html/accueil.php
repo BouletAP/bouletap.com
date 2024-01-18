@@ -1,6 +1,6 @@
 <?php
-    require_once APP_PATH . '/forms/audit_seo_2steps.php';
-    $audit_form = new AuditSEO_2steps();
+    require_once APP_PATH . '/models/forms/audit_seo_2steps.php';
+    $audit_form = new Models\Forms\AuditSEO_2steps();
 ?>
 
 <title>Portfolio André-Philippe Boulet</title>

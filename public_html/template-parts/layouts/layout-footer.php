@@ -15,14 +15,8 @@
         });
 
 
-        <?php if(Tracking::i()->newly_created): ?>
-            var king_t = '<?php echo Tracking::i()->tracker_id; ?>';
-            var king_info = screen.width + ";" + screen.height + ";" + screen.colorDepth + ";" + screen.pixelDepth;
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/ajax');
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("request_type=kingdata&t="+king_t+"+&i="+encodeURIComponent(king_info));
-        <?php endif; ?>
     </script>
+
+    <?php Models\Services\Analytics::i()->add_footer_script(); ?>
 </body>
 </html>

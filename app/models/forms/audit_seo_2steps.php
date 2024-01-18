@@ -1,5 +1,7 @@
 <?php
 
+namespace Models\Forms;
+
 use \BouletAP\Forms\Forms;
 use \BouletAP\Forms\Fields\Hidden;
 use \BouletAP\Forms\Fields\Text;

@@ -1,6 +1,6 @@
 <?php
-    require_once APP_PATH . '/forms/contact.php';
-    $contact_form = new ContactForm();
+    require_once APP_PATH . '/models/forms/contact.php';
+    $contact_form = new Models\Forms\ContactForm();
 ?>
 
 <link rel="stylesheet" href="medias/css/pages/contact.css" />       

@@ -1,4 +1,7 @@
 <?php
+
+namespace Models\Core;
+
 // https://github.com/ThingEngineer/PHP-MySQLi-Database-Class
 class Database {
 

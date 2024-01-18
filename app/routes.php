@@ -1,20 +1,21 @@
 <?php
 
+use Models\Core\Router;
 
-Routes::add('/ajax', 'ajax.php');
+Router::add('/ajax', 'ajax.php');
 
-Routes::add('/', 'accueil.php');
-Routes::add('/accueil', 'accueil.php');
-
-
-Routes::add('/nouvelles', 'nouvelles-list.php');
-Routes::add('/nouvelles/*', 'nouvelles-details.php');
+Router::add('/', 'accueil.php');
+Router::add('/accueil', 'accueil.php');
 
 
-Routes::add('/a-propos/*', 'a-propos.php');
-Routes::add('/contact', 'contact.php');
+Router::add('/nouvelles', 'nouvelles-list.php');
+Router::add('/nouvelles/*', 'nouvelles-details.php');
 
 
-Routes::add('*', '404.php');
+Router::add('/a-propos/*', 'a-propos.php');
+Router::add('/contact', 'contact.php');
+
+
+Router::add('*', '404.php');
 
 

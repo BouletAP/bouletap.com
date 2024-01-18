@@ -1,6 +1,6 @@
 <?php
-    require_once APP_PATH . '/forms/audit_seo.php';
-    $audit_form = new AuditSEO();
+    require_once APP_PATH . '/models/forms/audit_seo.php';
+    $audit_form = new Models\Forms\AuditSEO();
 ?>
 <footer>
     <div class="call-to-action">
