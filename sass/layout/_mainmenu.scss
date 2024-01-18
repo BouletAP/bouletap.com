@@ -11,7 +11,7 @@
 
         position:relative;
         //background-color: #FFF; 
-        background-color: #FFFFFFDD; 
+        background-color: rgba(255,255,255,.97); 
 
 
         .menu-presentation {
@@ -29,7 +29,7 @@
             .menu-toggle {
                 color:#000;
                 font-size: 1.8em;
-                line-height: 2.3em;
+                line-height: 2em;
                 display: inline-block;
                 padding: 10px 12px 12px 12px;
                 border-radius:0px;
@@ -41,8 +41,10 @@
                 @include touch() {                    
                     color: $color-primary;
                     background-color: #fff;
-                    font-size:2.1em;
+                    font-size:1.8em;
                     line-height:2em;
+                    
+                    i { transform: rotate(-10deg); }
                 }
 
                 @media (min-width:640px) and (max-width:768px){
@@ -53,7 +55,7 @@
 
             .company-logo {
                 
-                padding: 8px 12px 12px 15px;
+                padding: 8px 12px 8px 15px;
                 position:relative;
                 overflow: hidden;       
 
@@ -62,7 +64,7 @@
                     font-weight: normal;
                     text-align: center;
                     font-size: 1.5em;
-                    line-height: 2.5em;
+                    line-height: 2.3em;
                 }
                 br ,
                 img {
@@ -96,8 +98,8 @@
             .home-span {
                 visibility: hidden;
                 position:absolute;
-                top:8px;
-                left:45px;
+                top: 5px;
+                left: 20px;
             }
 
             .home-span {
@@ -233,9 +235,9 @@
                             width:100%;
                             height:100%;
                             text-align: center;
-                            padding: 8rem 2rem 2rem 2rem;
+                            padding: 2rem 1rem 1rem 1rem;
                             color: #000;
-                            font-size: 2rem;
+                            font-size: 1em;
         
                             i {
                                 display: block;
@@ -261,7 +263,7 @@
             .menu-presentation {
 
                 .menu-toggle {
-                    padding: 15px 25px 12px 25px;
+                    padding: 10px 25px 0px 25px;
                 }
 
                 .company-logo {
@@ -288,7 +290,7 @@
 
 
                     a.home-span {
-                        top: 20px;
+                        top: 14px;
                         left: 45px;
                         font-size: 1.8em;
                         padding-right:30%;
@@ -356,6 +358,18 @@
         left:3px;
         border: 3px solid #003399;
         padding: 6px 15px 0px 15px;
+        line-height: 1.8em;
+        background-color: rgba(255,255,255,.9);        
+    }
+
+    .main-menu:not(.is-open) .menu-toggle {
+        @include touch() {
+            line-height: 1.8em;
+            color: #FFF;
+            background-color: #003399;
+            border: 3px solid #000;
+            i { transform: rotate(0deg); }
+        }
     }
 
     &.menu-opened {
@@ -382,6 +396,7 @@
     #main-header .main-menu.is-open, 
     .home #main-header .main-menu.is-open {
         background-color: #FFF;
+        box-shadow: 3px 3px 10px #000;
 
         li {
             display:flex;

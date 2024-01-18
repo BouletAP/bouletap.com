@@ -209,12 +209,20 @@ body {
   }
 }
 
+input, textarea {
+  font-family: Helvetica, sans-serif;
+}
+
 a {
   text-decoration: none;
 }
 
 b {
   font-weight: bold;
+}
+
+section {
+  padding: 10px;
 }
 
 .hide {
@@ -227,11 +235,12 @@ b {
   gap: 20px;
 }
 
-.form-underlined input[type=text] {
+.form-underlined input[type=text],
+.form-underlined textarea {
   font-size: 1em;
   line-height: 1.2em;
   padding: 0.5rem 1rem;
-  color: #DADADA;
+  color: #000;
   border-color: #FFFFFF;
   border-width: 0px 0px 1px 0px;
   border-radius: 0px 0px 0px 0px;
@@ -242,6 +251,22 @@ b {
   background-color: transparent;
   vertical-align: middle;
 }
+.form-underlined input[type=text].validation-error,
+.form-underlined textarea.validation-error {
+  border-bottom: 2px solid #7F0000;
+  outline-color: #7F0000;
+}
+.form-underlined textarea {
+  border-right: 1px solid #818a91;
+}
+.form-underlined textarea.validation-error {
+  border-right: 2px solid #7F0000;
+}
+.form-underlined .success-message {
+  color: #007F0E;
+  font-weight: bold;
+}
+
 .btn-cta {
   white-space: pre;
   color: #FFF;
@@ -316,9 +341,16 @@ b {
 }
 .form-state-error .form-error-message li {
   list-style-type: disc;
+  font-size: 0.8em;
 }
 .form-state-error.form-underlined input[type=text].field-error {
   border-color: #7F0000;
+}
+.form-state-error .form-error-message {
+  margin-bottom: 15px;
+}
+.form-state-error .form-error-message ul {
+  margin-top: 10px;
 }
 
 #main-header {
@@ -330,7 +362,7 @@ b {
 }
 #main-header .main-menu {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8666666667);
+  background-color: rgba(255, 255, 255, 0.97);
 }
 #main-header .main-menu .menu-presentation {
   display: flex;
@@ -345,7 +377,7 @@ b {
 #main-header .main-menu .menu-presentation .menu-toggle {
   color: #000;
   font-size: 1.8em;
-  line-height: 2.3em;
+  line-height: 2em;
   display: inline-block;
   padding: 10px 12px 12px 12px;
   border-radius: 0px;
@@ -360,14 +392,20 @@ b {
 #main-header .main-menu .menu-presentation .menu-toggle:hover {
   color: #003399;
   background-color: #fff;
-  font-size: 2.1em;
+  font-size: 1.8em;
   line-height: 2em;
+}
+#main-header .main-menu .menu-presentation .menu-toggle:hover i {
+  transform: rotate(-10deg);
 }
 #main-header .main-menu .menu-presentation .menu-toggle:active {
   color: #003399;
   background-color: #fff;
-  font-size: 2.1em;
+  font-size: 1.8em;
   line-height: 2em;
+}
+#main-header .main-menu .menu-presentation .menu-toggle:active i {
+  transform: rotate(-10deg);
 }
 @media (min-width: 640px) and (max-width: 768px) {
   #main-header .main-menu .menu-presentation .menu-toggle {
@@ -376,7 +414,7 @@ b {
   }
 }
 #main-header .main-menu .menu-presentation .company-logo {
-  padding: 8px 12px 12px 15px;
+  padding: 8px 12px 8px 15px;
   position: relative;
   overflow: hidden;
 }
@@ -385,7 +423,7 @@ b {
   font-weight: normal;
   text-align: center;
   font-size: 1.5em;
-  line-height: 2.5em;
+  line-height: 2.3em;
 }
 #main-header .main-menu .menu-presentation .company-logo br,
 #main-header .main-menu .menu-presentation .company-logo img {
@@ -419,8 +457,8 @@ b {
 #main-header .main-menu .menu-presentation .home-span {
   visibility: hidden;
   position: absolute;
-  top: 8px;
-  left: 45px;
+  top: 5px;
+  left: 20px;
 }
 #main-header .main-menu .menu-presentation .home-span {
   opacity: 0;
@@ -532,9 +570,9 @@ b {
     width: 100%;
     height: 100%;
     text-align: center;
-    padding: 8rem 2rem 2rem 2rem;
+    padding: 2rem 1rem 1rem 1rem;
     color: #000;
-    font-size: 2rem;
+    font-size: 1em;
   }
   #main-header .main-menu.is-open .interactive-menu li a i {
     display: block;
@@ -554,7 +592,7 @@ b {
 }
 @media only screen and (min-width: 768px) {
   #main-header .main-menu .menu-presentation .menu-toggle {
-    padding: 15px 25px 12px 25px;
+    padding: 10px 25px 0px 25px;
   }
   #main-header .main-menu .menu-presentation .company-logo {
     background-color: #FFF;
@@ -579,7 +617,7 @@ b {
     align-items: center;
   }
   #main-header .main-menu .menu-presentation .company-logo a.home-span {
-    top: 20px;
+    top: 14px;
     left: 45px;
     font-size: 1.8em;
     padding-right: 30%;
@@ -632,6 +670,26 @@ b {
   left: 3px;
   border: 3px solid #003399;
   padding: 6px 15px 0px 15px;
+  line-height: 1.8em;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+#main-header.menu-sticky .main-menu:not(.is-open) .menu-toggle:hover {
+  line-height: 1.8em;
+  color: #FFF;
+  background-color: #003399;
+  border: 3px solid #000;
+}
+#main-header.menu-sticky .main-menu:not(.is-open) .menu-toggle:hover i {
+  transform: rotate(0deg);
+}
+#main-header.menu-sticky .main-menu:not(.is-open) .menu-toggle:active {
+  line-height: 1.8em;
+  color: #FFF;
+  background-color: #003399;
+  border: 3px solid #000;
+}
+#main-header.menu-sticky .main-menu:not(.is-open) .menu-toggle:active i {
+  transform: rotate(0deg);
 }
 #main-header.menu-sticky.menu-opened {
   position: fixed;
@@ -654,6 +712,7 @@ b {
   #main-header .main-menu.is-open,
   .home #main-header .main-menu.is-open {
     background-color: #FFF;
+    box-shadow: 3px 3px 10px #000;
   }
   #main-header .main-menu.is-open li,
   .home #main-header .main-menu.is-open li {
@@ -824,6 +883,31 @@ b {
     transform: rotate(0deg);
   }
 }
+.hero .page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.hero .page-header h2 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+.hero .page-header .subtitle {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #003399;
+}
+.hero .page-header p {
+  font-size: 1.3em;
+  line-height: 1.2em;
+  margin-bottom: 15px;
+}
+.hero .page-header b {
+  font-weight: bold;
+}
+
 footer .call-to-action {
   display: flex;
   flex-direction: column;
@@ -995,11 +1079,8 @@ footer .audit-form button {
   margin-top: 10px;
   width: 100%;
 }
-footer .audit-form .form-error-message {
-  margin-bottom: 15px;
-}
-footer .audit-form .form-error-message ul {
-  margin-top: 10px;
+footer .audit-form .form-underlined input[type=text] {
+  color: #DADADA;
 }
 footer .copyrights {
   display: flex;

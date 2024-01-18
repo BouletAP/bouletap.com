@@ -10,10 +10,6 @@
 // new: ip_address (varchar)
 // new: screen_size (varchar)
 // new: remote_port (varchar)
-// created (int)
-// session_funnel (text)
-// 
-
 use BouletAP\Tools\Cookies;
 
 class Tracking {
@@ -44,11 +40,10 @@ class Tracking {
                 "user_agent" => $_SERVER['HTTP_USER_AGENT'],
                 "fingerprint" => 'n/a',
                 "cookie_id" => $cookie_token,
-                "ip_address" => $_SERVER['SERVER_ADDR'],
-                "remote_port" => $_SERVER['REMOTE_PORT'],
-                "created" => time()
+                "ip_address" => $_SERVER['REMOTE_ADDR'],
+                "remote_port" => $_SERVER['REMOTE_PORT']
             ];
-
+            
             Cookies::add('user_token', $cookie_token, 3600*24*180);
             $id = Database::query()->insert ('tracking', $data);
 

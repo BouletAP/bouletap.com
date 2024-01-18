@@ -24,13 +24,17 @@ body {
     font-size: calc(12px + 0.4vw);
   }
 }
-
+input,textarea {  
+  font-family:  $font-stack;
+}
 
 a {
   text-decoration: none;
 }
 
 b {font-weight: bold;}
+
+section {padding:10px;}
 
 .hide {display:none;}
 
@@ -43,11 +47,12 @@ b {font-weight: bold;}
 
 .form-underlined {
 
-  input[type="text"] {
+  input[type="text"],
+  textarea {
     font-size: 1em;;
     line-height: 1.2em;
     padding: 0.5rem 1rem;
-    color: #DADADA;
+    color: #000;
     border-color: #FFFFFF;
     border-width: 0px 0px 1px 0px;
     border-radius: 0px 0px 0px 0px;
@@ -58,12 +63,29 @@ b {font-weight: bold;}
     border-bottom: 1px solid #818a91;
     background-color: transparent;
     vertical-align: middle;
+
+    &.validation-error {
+      //color: #7F0000;
+      border-bottom: 2px solid #7F0000;
+      outline-color: #7F0000;
+    }
+  }
+  textarea { 
+    border-right: 1px solid #818a91;
+    &.validation-error {
+      border-right: 2px solid #7F0000;
+    }
   }
 
   .btn-submit {
     @extend .btn-rect;
     @extend .btn-icon;
     @extend .btn-color-primary-trans;
+  }
+
+  .success-message {
+    color:#007F0E;
+    font-weight: bold;
   }
 }
 
@@ -123,11 +145,12 @@ b {font-weight: bold;}
 .form-state-error {
   .form-error-message {
     color:#7F0000;
-    font-size: 1em;;
+    font-size: 1em;
     span {font-weight: bold;}
     ul {padding-left:25px;}
     li {
-      list-style-type: disc;    
+      list-style-type: disc;  
+      font-size: 0.8em;  
     }
   }
 
@@ -136,5 +159,10 @@ b {font-weight: bold;}
     input[type="text"].field-error {
       border-color: #7F0000;
     }
+  }
+
+  .form-error-message {
+    margin-bottom:15px;
+    ul {margin-top:10px;}
   }
 }

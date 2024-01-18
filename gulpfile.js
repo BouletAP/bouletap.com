@@ -15,7 +15,8 @@ var projectdata = {
     './',
     './public_html/',
     './app/',
-    './.env'
+    './.env',
+    './vendor/bouletap/forms/src/'
   ],
   "scss" : ["./scss/"]
 };
