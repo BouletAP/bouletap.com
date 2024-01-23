@@ -2,6 +2,10 @@
 
 namespace Models\Entities;
 
+use BouletAP\Tools\Cookies;
+use Models\Core\Database;
+
+
 // DB structure
 // (table: visitors)
 // id (int)
@@ -12,9 +16,6 @@ namespace Models\Entities;
 // new: ip_address (varchar)
 // new: screen_size (varchar)
 // new: data (text)
-use BouletAP\Tools\Cookies;
-use Models\Core\Database;
-
 class Visitor {
 
     // id (int)
@@ -33,15 +34,6 @@ class Visitor {
         return !empty($this->data[$key]) ? $this->data[$key] : false;
     }
 
-    public function update($data) {
-
-        $id = $this->getData('id');        
-        if(!$id) return false; 
-        
-        $db = Database::query();
-        $db->where('id', $id);
-        $db->update ('visitors', $data);
-    }
 
 
     static public function init() {
@@ -88,6 +80,17 @@ class Visitor {
         $visitor = new Visitor();
         $visitor->data = $data;
         return $visitor;
+    }
+    
+    
+    public function update($data) {
+
+        $id = $this->getData('id');        
+        if(!$id) return false; 
+        
+        $db = Database::query();
+        $db->where('id', $id);
+        $db->update ('visitors', $data);
     }
     
     // get id by cookie or by session id

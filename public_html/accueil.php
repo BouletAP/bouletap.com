@@ -449,7 +449,7 @@
                 <div class="correctifs-responsive slide slide-reverse">
                     <div class="slide-text">
                         <h3><b>Téléphones mobiles</b> et la <b>présentation</b> de votre site sur <b>différents appareils</b></h3>
-                        <p>Il ne faut jamais négliger l'expérience des utilisateurs mobiles qui visiteront votre site à partir de leur téléphone. Ces visiteurs seront particulièrement enclins à accepter ce que vous leur proposer s'ils trouvent rapidement l'information désirée.</p>
+                        <p>Il ne faut jamais négliger l'expérience mobile des utilisateurs qui visiteront votre site à partir de leur téléphone. Ces visiteurs seront particulièrement enclins à accepter ce que vous leur proposer s'ils trouvent rapidement l'information désirée.</p>
                         <a href="#" class="btn-cta">Vérifier l'accessibilité de votre site</a>
                     </div>
                     <img src="/medias/images/services/undraw_in_sync_re_jlqd3.svg" alt="">

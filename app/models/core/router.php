@@ -6,6 +6,8 @@ class Router {
 
     static public $routes = [];
 
+    static public $current_route;
+
     static public function add($name, $path) {
         self::$routes[$name] = $path;
     }
@@ -34,8 +36,10 @@ class Router {
     
         if(!$route) {
             $route = static::$routes['*'];
-        }
-    
+        }    
+
+        static::$current_route = $route;
+
         return $route;
     }
     
