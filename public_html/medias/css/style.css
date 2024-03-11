@@ -299,14 +299,19 @@ section {
   letter-spacing: 0.2px;
   border: 1px solid #FFF;
   padding: 10px 20px 10px 20px;
+  color: #FFF;
+  white-space: nowrap;
+  display: inline-block;
 }
 .btn-rect:hover, .form-underlined .btn-submit:hover {
-  color: #AAA;
   border-color: #003399;
+  background-color: #AAA;
+  color: #003399;
 }
 .btn-rect:active, .form-underlined .btn-submit:active {
-  color: #AAA;
   border-color: #003399;
+  background-color: #AAA;
+  color: #003399;
 }
 
 .btn-color-primary-trans, .form-underlined .btn-submit {

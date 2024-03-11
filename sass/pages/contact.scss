@@ -134,8 +134,11 @@
 
     .methode {
         flex: 1 1 40%;
-        margin: 20px;
-        padding:2em;
+        //margin: 20px;
+        //padding:2em;
+        margin-top:30px;
+        margin-bottom:20px;
+
         i.lni {
             font-size:2em;           
         }
@@ -161,6 +164,15 @@
 
 
     .booking-calendar {
+
+        .disponibilite-time {
+
+            display:flex;
+
+            .col3 {
+                flex: 1 1 33%;
+            }
+        }
 
         .calendar {
             position:relative;

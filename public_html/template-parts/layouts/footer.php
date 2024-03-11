@@ -79,11 +79,6 @@
                 
 
 
-
-
-
-
-
             
                 <form id="form-audit-seo" action="/" class="form-seo-audit-1 form-underlined" method="post" enctype="multipart/form-data" onsubmit="return false;">
                     <div class="form-error-message hide"><span class="error-title">Le formulaire est invalide :</span></div>
@@ -105,50 +100,8 @@
                         audit_form.submit(form);
                     });
 
-                    // function submitSEOForm() {
-
-                    //     var form_email = document.querySelector('input[name="seoaudit1_courriel"]').value;
-                    //     var form_website = document.querySelector('input[name="seoaudit1_website"]').value;
-
-                    //     var data = {
-                    //         'request_type': 'form-audit-seo-2',
-                    //         'email': form_email,
-                    //         'website': form_website
-                    //     };
-
-                    //     var url = new URLSearchParams(data).toString(); 
-
-                    //     var xhr = new XMLHttpRequest();
-                    //     xhr.open('POST', '/ajax');
-                    //     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    //     xhr.send(url);
-                    // }
-
-                    // // "#btn-submit-audit"
-                    // var btn_submit_seo1 = document.querySelector("#btn-submit-audit");
-                    // btn_submit_seo1.addEventListener("click", submitSEOForm);
-
-
-                    // validations
-
-
-
-                    // submit
-
-
-
-                    // callback
-
-
-
                     
                 </script>
-
-
-
-
-
-
 
             </div>
         </div>

@@ -1,0 +1,99 @@
+.page-a-propos .tech-and-testimonials {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 30px;
+  gap: 20px;
+}
+.page-a-propos .tech-and-testimonials h3 {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+.page-a-propos .tech-and-testimonials .technologies {
+  width: 50%;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-around;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button.active {
+  background-color: #ddd;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button:hover {
+  background-color: #ddd;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button:active {
+  background-color: #ddd;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab.active {
+  display: block;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 {
+  display: flex;
+  align-items: center;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 .svg-icon {
+  padding: 15px;
+  position: relative;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 .svg-icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description p {
+  display: none;
+}
+.page-a-propos .tech-and-testimonials .testimonials {
+  width: 50%;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial {
+  padding: 0px 35px 35px 0px;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .content {
+  padding: 35px;
+  background-color: #DDD;
+  border-radius: 25px;
+  border-bottom-left-radius: 0px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .content::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: -50px;
+  left: 0px;
+  height: 50px;
+  width: 25px;
+  border-top-left-radius: 25px;
+  box-shadow: 0 -25px 0 0 #DDD;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .who {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .business {
+  font-size: 0.8em;
+  font-weight: bold;
+}

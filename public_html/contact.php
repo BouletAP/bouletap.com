@@ -65,7 +65,7 @@
             <div class="rendez-vous">
                 <span class="subtitle">VOS PROJETS NOUS INTÉRESSENT!</span>
                 <h2>Discutons ensemble de vos projets</h2>
-                <p>Nous avons à cœur le respect de vos valeurs et de votre unicité. Notre équipe est 100% en télétravail, ce qui nous permet de répondre à vos besoins partout au Québec. Nous ferons en sorte de satisfaire vos exigences, tout en repoussant constamment les limites de notre créativité!</p>
+                <p>Nous avons à cœur le respect de vos valeurs et de votre identité. Notre équipe est 100% en télétravail, ce qui nous permet de répondre rapidement à vos besoins peu importe où votre entreprise est située. Parlez-nous des exigences de vos projets et nous ferons en sorte de convertir les technologies de l'information en résultats !</p>
                 
                 <div class="methodes">
                     <div class="methode">
@@ -88,12 +88,12 @@
                     <div class="methode">
                         <i class="lni lni-phone-set"></i>
                         <h3>Par téléphone</h3>
-                        <p>Notre numéro personnel n'est plus publiquement disponible</p>
+                        <p>Le numéro pour nous rejoindre est disponible sur demande</p>
                     </div>    
                     <div class="methode">
                         <i class="lni lni-map-marker"></i>
                         <h3>Par la poste</h3>
-                        <p>196 rue du Richelieu, Dunham, J0E 1M0</p>
+                        <p>196 rue du Richelieu,<br /> Dunham, J0E 1M0</p>
                     </div>         
                 </div>
             </div>
@@ -103,14 +103,17 @@
                 <div class="methode">
                     <i class="lni lni-timer"></i>
                     <h3>Heures de disponibilité</h3>
-                    <p>
-                        Lundi et Vendredi<br />
-                        9.00AM - 11.30AM<br /><br />
-                        Mardi au Jeudi<br />
-                        9.00AM - 15.00PM<br /><br />
-                        Samedi et Dimanche<br />
-                        Fermé
-                    </p>
+                    <div class="disponibilite-time">
+                        <div class="col3">
+                            <p>Lundi et Vendredi<br />9.00AM - 11.30AM</p>
+                        </div>
+                        <div class="col3">
+                            <p>Mardi au Jeudi<br />9.00AM - 15.00PM</p>
+                        </div>
+                        <div class="col3">
+                            <p>Samedi et Dimanche<br />Fermé</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="calendar">
                     <img src="/medias/images/temp-calendrier.JPG" alt="Calendrier de rendez-vous">
