@@ -1,0 +1,511 @@
+#main-header {
+
+    padding-top: 0px;
+    position:absolute;
+    z-index:999;
+    width: 100%;
+    top: 0;
+
+
+    .main-menu {
+
+        position:relative;
+        //background-color: #FFF; 
+        background-color: rgba(255,255,255,.97); 
+
+
+        .menu-presentation {
+
+            display:flex;     
+
+            .lang-container .socialnetworks {
+                a,
+                .lni {
+                    color: #FFF;
+                }
+                align-items: center;
+            }
+
+            .menu-toggle {
+                color:#000;
+                font-size: 1.8em;
+                line-height: 2em;
+                display: inline-block;
+                padding: 10px 12px 12px 12px;
+                border-radius:0px;
+                outline:0;
+
+                .icon-toopen {display:inline-block;}
+                .icon-toclose {display:none}
+
+                @include touch() {                    
+                    color: $color-primary;
+                    background-color: #fff;
+                    font-size:1.8em;
+                    line-height:2em;
+                    
+                    i { transform: rotate(-10deg); }
+                }
+
+                @media (min-width:640px) and (max-width:768px){
+                    font-size: 1.8em;
+                    line-height: 1.9em;
+                }
+            }
+
+            .company-logo {
+                
+                padding: 8px 12px 8px 15px;
+                position:relative;
+                overflow: hidden;       
+
+                a {
+                    color:#000;
+                    font-weight: normal;
+                    text-align: center;
+                    font-size: 1.5em;
+                    line-height: 2.3em;
+                }
+                br ,
+                img {
+                    display: none;
+                }
+
+                @include mq('tablet', 'max') {
+                    padding: 8px 50px 12px 15px;
+                }
+            }
+            
+            .lang-container {
+                position:absolute;
+                right:8px;
+                top:8px;
+
+                @include mq('tablet') {
+                    right:25px;
+                    top:0px;                    
+                }
+
+                .wpml-ls-legacy-list-horizontal {padding:0px;}
+                a {
+                    color:#000;
+                    line-height: 2.5em;
+                    font-size:1.5em;
+                }
+            }
+
+            .home-icon,
+            .home-span {
+                visibility: hidden;
+                position:absolute;
+                top: 5px;
+                left: 20px;
+            }
+
+            .home-span {
+                opacity:0;
+                font-weight: bold;
+                font-size:16px;
+                text-transform: lowercase;
+                font-variant: small-caps;
+                color:#000;
+            }
+            .company-logo a.home-icon {                
+                color:#000;	
+                top: 14px;
+                left: 35px;
+
+                font-size: 1.8em;
+                line-height: 1.5em;
+            }
+
+            .company-logo {
+                    
+                &:hover,
+                &:active  {
+                    .logo {
+                        margin-left:-350px;
+                        margin-right:350px;
+                        transition: all .25s;
+                    }
+                    .home-span {
+                        opacity:1;
+                        visibility:visible;
+                        transition: visibility 0s, opacity .25s linear;
+                        transition-delay: .15s;	
+                    }
+                }   
+            }
+                
+        }
+
+        
+
+        .interactive-menu {
+            visibility: hidden;
+            list-style-type: none;
+            max-width: 0%;
+            max-height:0vh;
+            overflow:hidden;
+            margin:unset;
+        }
+
+        &.is-open {
+            .interactive-menu {
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: 1.75em;
+                line-height: 1.75em;
+                font-family: Adriane;
+                padding: 15px 0px;
+                height: 95vh;
+                max-height:95vh;
+
+                visibility:visible;
+                max-width: 100%;
+                
+                a {
+                    
+                    display: block;
+                    color: #000;
+                    padding:5px;
+                    padding-left:2vw;
+                    text-align:left;
+                    
+
+                    i {
+                        display:inline-block;
+                        margin-right:10px;
+                    }
+
+                    @include touch() {
+                        background: linear-gradient(to right, rgba(255,255,255,0) 0, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+                    }
+                }
+                
+
+                @include mq('tablet') {    
+    
+                    display:flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    li {width:33%;height:50%;}
+
+                    @supports (display: grid) {
+                        display:grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 1px;
+
+                        li {width:100%;height:100%;}
+                    }
+                    
+                    height:80vh;
+                    max-height:80vh;
+                    justify-items:center;
+                    align-items: center;
+                    padding: 0px;
+                        
+                    transition: 
+                        max-width 200ms cubic-bezier(.33, .005, .125, 1.005) 0s,
+                        max-height 200ms cubic-bezier(.33, .005, .125, 1.005) 200ms;
+                        
+
+                    li {
+                        list-style-type: none;
+                        //width: 100%;
+                        //height:100%;
+                        
+                        &:nth-child(1) {
+                            border-bottom: 1px solid rgba(255,255,255,0.3);
+                        }
+                        &:nth-child(2),
+                        &:nth-child(3) {
+                            border-bottom: 1px solid rgba(255,255,255,0.3);
+                            border-left: 1px solid rgba(255,255,255,0.3);
+                        }
+                        &:nth-child(5),
+                        &:nth-child(6) {
+                            border-left: 1px solid rgba(255,255,255,0.3);
+                        }
+        
+                        a {
+                            display:inline-block;
+                            width:100%;
+                            height:100%;
+                            text-align: center;
+                            padding: 2rem 1rem 1rem 1rem;
+                            color: #000;
+                            font-size: 1em;
+        
+                            i {
+                                display: block;
+                                margin-bottom: 2rem;
+                                font-size: 3.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu-toggle {                  
+                color: #000;
+                background-color: #fff;
+                
+                .icon-toopen {display:none;}
+                .icon-toclose {display:inline-block}
+            }
+        }
+        
+        @include mq('tablet') {
+            
+            .menu-presentation {
+
+                .menu-toggle {
+                    padding: 10px 25px 0px 25px;
+                }
+
+                .company-logo {
+
+                    background-color: #FFF;
+                    
+                    br {display: block;}
+                    img {
+                        display: inline-block;
+                        max-width: 65px;
+                        margin-right:10px;
+                    }
+                    a {
+                        text-align: left;
+                        font-size: 1.4em;
+                        line-height: 1.4em;
+                        font-weight:bold;
+                        color: #000;
+                    }
+                    .logo {
+                        display: flex;
+                        align-items: center;
+                    }
+
+
+                    a.home-span {
+                        top: 14px;
+                        left: 45px;
+                        font-size: 1.8em;
+                        padding-right:30%;
+                    }
+                }
+
+                
+            }
+
+            &.is-open {
+                .menu-presentation {
+                    .company-logo { 
+                        background-color: #FFF;
+
+                        .home-span,
+                        .logo {
+                            visibility: hidden;
+                        }
+
+                        a.home-icon {
+                            opacity:1;
+                            visibility:visible;
+                            transition: visibility 0s, opacity .5s linear;
+                            transition-delay: .25s;
+
+                            padding: 15px 25px;
+                            top: 0px;
+                            left: 0px;
+
+                            @include touch() {                    
+                                color: #000;
+                                background-color: #fff;
+                                border-left:1px solid #FFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+    @include mq('tablet', 'max') {
+        .svgicons { 
+            display: inline-block;
+            margin: 0px;
+            width: 35px;
+            height: 35px;
+            margin-right:20px;
+        }
+
+        li {
+            @include touch() {                
+                background-color: #EEE;                
+            }
+        }
+
+    }
+}
+
+#main-header.menu-sticky {        
+    .main-menu .menu-toggle {
+        position:fixed;
+        left:3px;
+        border: 3px solid #003399;
+        padding: 6px 15px 0px 15px;
+        line-height: 1.8em;
+        background-color: rgba(255,255,255,.9);        
+    }
+
+    .main-menu:not(.is-open) .menu-toggle {
+        @include touch() {
+            line-height: 1.8em;
+            color: #FFF;
+            background-color: #003399;
+            border: 3px solid #000;
+            i { transform: rotate(0deg); }
+        }
+    }
+
+    &.menu-opened {
+        position:fixed;
+        
+        .menu-toggle {
+            position: relative;
+            border:0px;
+        }
+    }
+}
+
+@include mq('tablet') {
+    #main-header .main-menu, 
+    .home #main-header .main-menu {
+        background-color: transparent;
+        margin-top:15px;
+
+        .menu-toggle {
+            background-color: #FFF;
+        }
+    }           
+
+    #main-header .main-menu.is-open, 
+    .home #main-header .main-menu.is-open {
+        background-color: #FFF;
+        box-shadow: 3px 3px 10px #000;
+
+        li {
+            display:flex;
+            span {
+                display: block;
+
+            }
+        }
+        .svgicons {
+            max-width:25%;
+            height:auto;
+        }
+    }
+
+    .lang-container {
+        font-weight: bold;
+    }
+
+}
+
+
+.menu-nouvelles {            
+    .svgicons {
+        @include touch() {    
+            .news-globe {            
+                transform-origin: center center;
+                animation:spin 4s linear infinite;
+            }
+        }                    
+    }
+}
+
+.menu-vitrine {
+    @include touch() {                
+        .bouton1, .bouton3 {
+            transform: translateY(-20px);
+            transition: transform 0.5s;
+        }  
+        .bouton2, .bouton4 {
+            transform: translateY(20px);
+            transition: transform 0.5s;
+        }                     
+    }
+}
+
+.menu-portfolio {
+    @include touch() {                
+        .svgicons .star-middle {
+            fill:#003399;
+        }             
+        .star-left, .star-right {
+            fill:#003399;
+        }   
+        .star-left {
+            transform: translateX(-3px);
+        }
+        .star-right {
+            transform: translateX(3px);
+        }              
+    }
+}
+
+
+.menu-contact {    
+    @include touch() {                
+        .line-phone {
+            animation-name: bouncing;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            transform-origin: center center;
+        }                        
+    }
+}
+
+.menu-services {
+    .svgicons {
+        @include touch() { 
+            //key ke
+            .key-icon { animation:keytouch 0.5s infinite; } 
+            .key17 { animation-delay: 0.5s; }       
+            .key25 { animation-delay: 0.8s; }       
+            .key24 { animation-delay: 0.2s; }       
+            .key36 { animation-delay: 1.5s; }       
+            .key32 { animation-delay: 1.1s; }                    
+            .key41 { animation-delay: 2.5s; }       
+        }
+    }
+}
+
+@keyframes keytouch { 
+    to {  fill: #DDD; }
+}
+
+@keyframes spin { 
+    100% { 
+        transform:rotate(360deg); 
+    } 
+}
+
+@keyframes bouncing {
+    from { transform: rotate(0deg); }
+    19% { transform: rotate(0deg); }    
+    20% { transform: rotate(-6deg); }
+    25% { transform: rotate(0deg); }
+    30% { transform: rotate(6deg); }     
+    31% { transform: rotate(6deg); }
+    40% { transform: rotate(-3deg); }
+    50% { transform: rotate(0deg); }
+    60% { transform: rotate(3deg); }
+    61% { transform: rotate(0deg); }  
+    to { transform: rotate(0deg); }
+  }

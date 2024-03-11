@@ -1,0 +1,17 @@
+@import "../base/variables";
+@import "../utils/mixins";
+
+.page404 {
+    .hero {
+        padding:50px;
+        text-align: center;
+        h1 {
+            font-size:5em; 
+            font-weight:bold;
+        }
+        p {
+            margin-top:25px;
+            font-size:1.5em;
+        }
+    }
+}

@@ -1,2 +1,7 @@
 gulp-private.json
 node_modules/
+package-lock.json
+.env
+app/.env
+vendor/
+medias/vendors/
