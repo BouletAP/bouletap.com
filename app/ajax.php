@@ -32,6 +32,7 @@ if( $_POST['request_type'] == "form-audit-seo-2" ) {
 
     $output = array(
         "state" => "500",
+        "data" => "",
         "return" => "Error unknown"
     );
 
@@ -46,7 +47,6 @@ if( $_POST['request_type'] == "form-audit-seo-2" ) {
         Models\Entities\Entry::save($form_data);
 
         $output['state'] = "300";
-        $output['data'] = ['success'];
 
         $headers = 'From: info@bouletap.com' . "\r\n" .
         'Reply-To: '.$form_data['courriel'] . "\r\n" .
@@ -54,12 +54,20 @@ if( $_POST['request_type'] == "form-audit-seo-2" ) {
         'X-Mailer: PHP/' . phpversion();
 
         $to = 'info@bouletap.com';
+        $to = 'bouletap@gmail.com';
 
         $message = "Une demande d'audit SEO est entrée";
         $message .= "<br/><br/> Website: ".$form_data['website'];
 
         if( mail($to, "Demande d'audit SEO", $message, $headers) ) {        
             $output['state'] = "200";
+            $output['data'] = ['success'];
+        }
+        else {
+            $errorMessage = error_get_last();
+            $output['state'] = "400";
+            //echo '<pre>'; print_r($errorMessage); echo '</pre>'; die();
+            $output['return'] = $errorMessage;
         }
     }
     else {
@@ -121,6 +129,7 @@ if( $_POST['request_type'] == "form-contact" ) {
         'X-Mailer: PHP/' . phpversion();
 
         $to = 'info@bouletap.com';
+        $to = 'bouletap@gmail.com';
 
         $message = $form_data['message'];
         $message .= "<br/><br/> De: ".$form_data['full_name'];

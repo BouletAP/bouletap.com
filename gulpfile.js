@@ -13,9 +13,12 @@ const sass = require('gulp-sass')(require('sass'));
 var projectdata = {
   "sync_dev" : [
     './',
-    './public_html/',
     './app/',
-    './.env',
+    './contact.php',
+    './accueil.php',
+    './en-construction.php',
+    './medias/',
+    './template-parts/',
     './vendor/bouletap/forms/src/'
   ],
   "scss" : ["./scss/"]
@@ -51,7 +54,7 @@ gulp.task('sass-watch', function () {
   gulp.watch('./sass/**/*.scss', function () {
     return gulp.src('./sass/**/*.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./public_html/medias/css'));
+      .pipe(gulp.dest('./medias/css'));
   });
 });
 

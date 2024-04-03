@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <div class="calendar">
-                    <img src="/medias/images/temp-calendrier.JPG" alt="Calendrier de rendez-vous">
+                    <img src="/medias/images/temp-calendrier2.JPG" alt="Calendrier de rendez-vous">
                     <span class="coming-soon">Bientôt disponible</span>
                 </div>
             </div>

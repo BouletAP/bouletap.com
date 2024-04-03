@@ -33,7 +33,7 @@
                         <li>Petits mandats ponctuels</li>
                     </ul>
                 </div>
-                <div class="lead-box">
+                <div class="lead-box hide">
                     <img src="/medias/images/audit-form-preview-image.png" alt="Aperçu d'un test SEO gratuit">  
                     <span class="h3">Audit SEO gratuit</span>
                     <p>Nous auditons gratuitement votre site dans les 72h, sans frais ni engagement</p>
