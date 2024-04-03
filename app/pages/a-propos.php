@@ -5,7 +5,7 @@
 </head>
 <body class="page-a-propos page-content">
     <div class="header-container">        
-        <?php include('template-parts/layouts/header.php'); ?>
+        <?php include('templates/header.php'); ?>
     </div>
     <div class="page-content">     
        

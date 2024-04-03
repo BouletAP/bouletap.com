@@ -15,7 +15,16 @@
         }
     }
     
-    include(PUBLIC_HTML . "/template-parts/layouts/layout-header.php");
-    include(PUBLIC_HTML . "/{$page}");
-    include(PUBLIC_HTML . "/template-parts/layouts/layout-footer.php");
+
+    // merge layout + page content and print the html
+    ob_start();
+    include(APP_PATH . "/pages/{$page}");
+    $content = ob_get_clean();
+
+    ob_start();
+    include(APP_PATH . "/pages/templates/layout.php");
+    $layout = ob_get_clean();
+
+    $page = str_replace('{{PAGE_CONTENT}}', $content, $layout);
+    echo $page;
 ?>

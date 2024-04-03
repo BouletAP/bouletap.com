@@ -14,11 +14,7 @@ var projectdata = {
   "sync_dev" : [
     './',
     './app/',
-    './contact.php',
-    './accueil.php',
-    './en-construction.php',
     './medias/',
-    './template-parts/',
     './vendor/bouletap/forms/src/'
   ],
   "scss" : ["./scss/"]

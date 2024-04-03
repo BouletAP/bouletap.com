@@ -3,7 +3,7 @@
 </head>
 <body class="products-and-services">
     <div class="header-container">        
-        <?php include('template-parts/layouts/header.php'); ?>
+        <?php include('templates/header.php'); ?>
     </div>
     <div class="page-content">  
 
