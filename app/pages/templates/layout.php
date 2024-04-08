@@ -7,8 +7,8 @@
 
     <link rel="icon" href="favicon.png" sizes="192x192" />
 
-    <link rel="stylesheet" href="medias/css/style.css" />
-    <link rel="stylesheet" href="medias/vendors/lineicons/lineicons.css" />
+    <link rel="stylesheet" href="/medias/css/style.css" />
+    <link rel="stylesheet" href="/medias/vendors/lineicons/lineicons.css" />
     
     <script type='text/javascript' src='/medias/js/bouletap-forms.js'></script>
 

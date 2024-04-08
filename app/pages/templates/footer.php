@@ -65,6 +65,7 @@
         <div class="col col-navigation">
             <span class="h3 title">Navigation</span>
             <ul class="navigation">
+                <li><a href="/">Accueil</a></li>
                 <li><a href="/a-propos">À Propos</a></li>
                 <li><a href="#">Services offerts</a></li>
                 <li><a href="#">Portfolio</a></li>

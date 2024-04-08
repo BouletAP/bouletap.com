@@ -12,7 +12,7 @@ const sass = require('gulp-sass')(require('sass'));
 
 var projectdata = {
   "sync_dev" : [
-    './',
+    './index.php',
     './app/',
     './medias/',
     './vendor/bouletap/forms/src/'

@@ -15,7 +15,7 @@ Router::add('/nouvelles/*', 'nouvelles-details.php');
 Router::add('/a-propos', 'a-propos.php');
 Router::add('/contact', 'contact.php');
 
-///// NOUVELLES PAGES
+
 Router::add('/nouveau-site-web', 'creation-de-sites-web.php');
 Router::add('/services', 'services.php');
 
@@ -30,6 +30,15 @@ Router::add('/carre-de-sable-interactif', 'en-construction.php');
 
 // error with subdirectory format
 Router::add('/services/creation-site-internet', 'en-construction.php');
+
+
+Router::add('/admin', '', 'AdminController', 'dashboard');
+Router::add('/dashboard', '', 'AdminController', 'dashboard');
+Router::add('/login', '', 'AdminController', 'login');
+Router::add('/logout', '', 'AdminController', 'logout');
+
+
+
 
 
 Router::add('*', '404.php');

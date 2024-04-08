@@ -39,7 +39,7 @@
             <ul class="interactive-menu is-open">
                 <li>
                     <a href="/a-propos/">
-                        <object class="svgicons" data="medias/images/svg/021-mind.svg" type="image/svg+xml"></object> 
+                        <object class="svgicons" data="/medias/images/svg/021-mind.svg" type="image/svg+xml"></object> 
                         <span>Qui est AP ?</span>
                     </a>
                 </li>

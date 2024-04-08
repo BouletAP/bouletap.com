@@ -3,7 +3,7 @@
     $contact_form = new Models\Forms\ContactForm();
 ?>
 
-<link rel="stylesheet" href="medias/css/pages/contact.css" />       
+<link rel="stylesheet" href="/medias/css/pages/contact.css" />       
     <title>Contact - André-Philippe Boulet</title> 
 </head>
 <body class="page-nouvelles page-content">

@@ -8,8 +8,16 @@ class Router {
 
     static public $current_route;
 
-    static public function add($name, $path) {
+    static public function add($name, $path, $controllerPath = false, $page = false) {
+        
         self::$routes[$name] = $path;
+
+        if( $controllerPath ) {
+            self::$routes[$name] = [
+                $controllerPath,
+                $page
+            ];
+        }        
     }
 
     static public function run() {
@@ -25,12 +33,15 @@ class Router {
             if( strpos($request_uri, '?') !== FALSE ) {
                 $request_uri = substr($request_uri, 0, strpos($request_uri, '?'));
             }
-            
-            $routes = static::$routes;
+
+            // remove trailing slash
+            $request_uri = '/' . trim($request_uri, '/');
+
             
             if( !empty(static::$routes[$request_uri]) ) {
                 $route = static::$routes[$request_uri];
             }
+
         }
            
     

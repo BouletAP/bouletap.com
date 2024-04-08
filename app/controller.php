@@ -14,7 +14,21 @@
             $page = '404.php';
         }
     }
+
+    // use controller/method dispatch
+    if( is_array($page) ) {
+        $controller = $page[0];
+        $method = $page[1]; 
+        
+        //require_once APP_PATH . '/' . $controller . ".php";
+
+        $system = new $controller();
+        $system->$method();
+        exit();
+    }
     
+
+    // print page content...
 
     // merge layout + page content and print the html
     ob_start();
@@ -27,4 +41,7 @@
 
     $page = str_replace('{{PAGE_CONTENT}}', $content, $layout);
     echo $page;
+    
+
+    
 ?>
