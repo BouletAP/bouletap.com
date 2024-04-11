@@ -9,7 +9,7 @@
 
 <body class="home">
     <div class="header-container">        
-        <?php include(APP_PATH.'/pages/templates/header.php'); ?>
+        <?php include(APP_PATH.'/Pages/views/_header.php'); ?>
     </div>
     <div class="page-content">     
        
@@ -24,10 +24,10 @@
         </section>
 
         <div class="login-form">
-            <form action="/login" class="form-underlined" method="post" enctype="multipart/form-data">
+            <form action="/connexion" class="form-underlined" method="post" enctype="multipart/form-data">
                 <div class="form-col2">
-                    <?php echo $login_form->getField('courriel')->display(); ?>
-                    <?php echo $login_form->getField('password')->display(); ?>
+                    <?php echo $data['login_form']->getField('courriel')->display(); ?>
+                    <?php echo $data['login_form']->getField('password')->display(); ?>
                     <button type="submit"><i class="lni lni-arrow-right"></i></span></button>
                 </div>                    
                 

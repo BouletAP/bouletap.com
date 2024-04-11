@@ -40,18 +40,36 @@ gulp.task('ftp-deploy-watch', function() {
 });
 
 
-// gulp.task('sass', function () {
-//   return gulp.src('./sass/**/*.scss')
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(gulp.dest('./public_html/medias/css'));
-// });
 
 gulp.task('sass-watch', function () {
-  gulp.watch('./sass/**/*.scss', function () {
-    return gulp.src('./sass/**/*.scss')
+
+  // watch everything but FIND A WAY to stop PUT all the files everytime a change is updated.
+  // return the ONE FILE that changed and update the ROOT?
+
+  gulp.watch([
+    './app/Blog/*.scss',
+    './app/Blog/sass/*.scss',
+  ], function () {
+    return gulp.src([
+      './app/Blog/*.scss',
+    ])
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./medias/css'));
   });
+
+
+
+  // gulp.watch([
+  //   './sass/**/*.scss',
+  //   './app/**/*.scss',
+  // ], function () {
+  //   return gulp.src([
+  //     './sass/**/*.scss',
+  //     './app/**/*.scss',
+  //   ])
+  //     .pipe(sass().on('error', sass.logError))
+  //     .pipe(gulp.dest('./medias/css'));
+  // });
 });
 
 

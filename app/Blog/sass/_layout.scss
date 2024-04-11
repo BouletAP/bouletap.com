@@ -1,0 +1,60 @@
+@import "./sass/base/variables";
+@import "./sass/utils/mixins";
+
+
+.page-nouvelles {
+    section {
+        padding-left:10px;
+        padding-right:10px;
+
+        @include mq('tablet') {
+            padding-left:30px;
+            padding-right:30px;
+        }
+    }
+
+    .section-description {
+        text-align:center;
+        margin-bottom:50px;
+
+        h2 {
+            font-size: 1.8em;
+            text-transform: uppercase;
+            line-height: 1.1em;
+            margin-bottom: 30px;
+            margin-top:5px;
+        }
+
+        .subtitle {
+            font-size: 1em;
+            text-transform: uppercase;
+            color:#003399
+        }
+    
+        p {
+            font-size: 1.3em;
+            line-height: 1.2em;
+            margin-bottom:15px;
+        }
+
+        b {
+            font-weight: bold;
+        }
+    }
+}
+
+
+.content-with-sidebar {
+    display:flex;
+    flex-direction: column;
+
+    @include mq('desktop') {
+        flex-direction: row;
+        .content {
+            flex:0 0 70%;
+        }
+        .sidebar {
+            flex:0 0 30%;
+        }
+    }
+}

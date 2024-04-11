@@ -14,7 +14,7 @@
             $page = '404.php';
         }
     }
-
+    
     // use controller/method dispatch
     if( is_array($page) ) {
         $controller = $page[0];
@@ -32,11 +32,11 @@
 
     // merge layout + page content and print the html
     ob_start();
-    include(APP_PATH . "/pages/{$page}");
+    include(APP_PATH . "/Pages/{$page}");
     $content = ob_get_clean();
 
     ob_start();
-    include(APP_PATH . "/pages/templates/layout.php");
+    include(APP_PATH . "/Pages/views/_layout.php");
     $layout = ob_get_clean();
 
     $page = str_replace('{{PAGE_CONTENT}}', $content, $layout);

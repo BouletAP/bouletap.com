@@ -26,13 +26,13 @@ class Auth {
     }
 
 
-    static public function setRememberToken($userEmail, $remember_token = '') {
+    static public function setRememberToken($userEmail, $remember_token = '', $remember_timer = 172800) {
         if ( empty($remember_token) ) {
             $remember_token = self::hash_password(time(), $userEmail);
         }
         $data = array('remember_token' => $remember_token);
         Database::query()->where ('email', $userEmail)->update('users', $data);
-        Cookies::add('account_id', $remember_token, 3600*6);
+        Cookies::add('account_id', $remember_token, $remember_timer);
         return true;
     }
 }

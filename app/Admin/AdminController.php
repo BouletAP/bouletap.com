@@ -14,14 +14,36 @@ class AdminController {
     public function dashboard() {
 
         if( !Auth::user_can('admin_duty') ) {
-            header("Location: /login");
+            header("Location: /connexion");
         } 
 
-        echo "my basic dashboard";
-        echo "<h1>IM LOGGED IN</h1>";
+
+        $entries = array();
+        $form_entries = Models\Entities\Entry::get_last(5);
+        if( !empty($form_entries) ) {
+            foreach($form_entries as $entry) {
+                $entries[] = [
+                    "id" => $entry['id'],
+                    "form" => $entry['page'],
+                    "page" => $entry['form'],
+                    "data" => $entry['form_data']
+                ];
+            }
+        }
+
+        $data = [
+            'entries' => $entries
+        ];
+
+        echo Models\Core\View::display("Admin/views/dashboard.php", $data);
     }
 
+    
     public function login() {
+
+        if( Auth::user_can('admin_duty') ) {
+            header("Location: /dashboard");
+        } 
 
         $login_form = new Models\Forms\LoginForm();
         $formState = 'default';
@@ -46,6 +68,8 @@ class AdminController {
 
                 if( $pwd == $hashed_pwd ) {
                     
+                    // $remember_timer = 3600*24*180;
+                    // Auth::setRememberToken($usr, $remember_token, $remember_timer);   
                     Auth::setRememberToken($usr, $remember_token);    
                     header('Location: /dashboard');
                 }                
@@ -58,22 +82,15 @@ class AdminController {
             $formState = 'pass';
         }
 
-
-        // LayoutVisitor::add_data('formState', $formState);
-        // LayoutVisitor::add_data('login_form', $login_form);
-        // LayoutVisitor::display('public/login');
-
-        ob_start();
-        include(APP_PATH . "/Admin/views/login.php");
-        $content = ob_get_clean();
-
-        ob_start();
-        include(APP_PATH . "/pages/templates/layout.php");
-        $layout = ob_get_clean();
-
-        $page = str_replace('{{PAGE_CONTENT}}', $content, $layout);
-        echo $page;
+        $data = [
+            'formState' => $formState,
+            'login_form' => $login_form
+        ];
+        
+        echo Models\Core\View::display("Admin/views/login.php", $data);
     }
+
+
 
     public function logout() {
 
@@ -104,7 +121,8 @@ class AdminController {
             $salt = $data['salt'];
             $remember_token = $data['remember_token'];
             
-            Auth::setRememberToken($user, $remember_token);  
+            $remember_timer = 3600*24*180;
+            Auth::setRememberToken($user, $remember_token, $remember_timer);  
             
             header("Location: /admin");
         }

@@ -8,11 +8,12 @@ class Router {
 
     static public $current_route;
 
-    static public function add($name, $path, $controllerPath = false, $page = false) {
+    static public function add($name, $controllerPath = false, $page = false) {
         
-        self::$routes[$name] = $path;
+        //self::$routes[$name] = $path;
+        self::$routes[$name] = $controllerPath;
 
-        if( $controllerPath ) {
+        if( $page ) {
             self::$routes[$name] = [
                 $controllerPath,
                 $page

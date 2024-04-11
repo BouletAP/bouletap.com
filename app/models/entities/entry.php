@@ -16,6 +16,13 @@ use Models\Core\Database;
 class Entry {
 
 
+    static function get_last($count = 10) {
+        $db = Database::query();
+        $db->orderBy("id","Desc");
+        $results = $db->get('form_entries', $count);
+        return $results;
+    }
+
     static function save($form_data) {
         $data = [
             'visit_id' => "99999",

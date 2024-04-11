@@ -15,7 +15,7 @@
 {{PAGE_CONTENT}}
 
 <div class="footer-container">
-        <?php include('footer.php'); ?>
+        <?php include('_footer.php'); ?>
     </div>
     
     <script type='text/javascript' src='/medias/js/stickymenu.js'></script>
