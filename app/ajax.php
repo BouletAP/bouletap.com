@@ -4,6 +4,17 @@ require_once __DIR__ . '/../app/bootstrap.php';
 use Models\Services\Analytics;
 
 
+
+if( $_POST['request_type'] == "testnotification" ) {
+
+    $webNotificationPayload['title'] = 'Push Notification from PHP';
+    $webNotificationPayload['body'] = 'PHP to browser web push notification.';
+    $webNotificationPayload['icon'] = 'https://bouletap.com/favicon.png';
+    $webNotificationPayload['url'] = 'https://bouletap.com/admin';
+    echo json_encode($webNotificationPayload);
+    exit();
+}
+
 if( $_POST['request_type'] == "appdata" ) {
 
     $visitor_id = (int)$_POST['t'];

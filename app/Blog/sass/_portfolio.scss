@@ -6,3 +6,141 @@
 body {
     //background-color: #003399;
 }
+
+
+.hero {
+    margin-top:20px;
+    h1 {
+        font-weight: bold;
+        font-size:2em;
+    }
+}
+
+
+
+.section-preview {
+    background-color: #F2F2F2;
+    display: flex;
+    padding: 30px;
+
+    align-content: center;
+
+    .concept {
+        padding:20px;
+        span {
+            font-size: 27px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: inline-block;
+        }
+    }
+
+    img {
+        width:60%;    
+    }
+}
+
+
+.section-details {
+    
+    padding: 30px;
+
+    .overview {
+        display: flex;
+        padding-top:70px;
+        padding-bottom:100px;
+        span {
+            font-size: 27px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: inline-block;
+            width:80%;
+        }
+    }
+
+    .slider {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom:80px;
+
+        .slide {    
+            margin:0px 10px;     
+            text-align: center;   
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #F2F2F2;
+                padding:10px;
+                margin-bottom:5px;
+            }
+            img {
+                width:auto;
+                height:300px;
+                margin: 0px auto;
+            }
+            p {
+                margin:8px;
+                font-size:0.9em;
+            }
+        }
+        
+    }
+
+    .project-details {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top:40px;
+        padding-bottom:40px;
+
+        .details {
+            width:80%;
+            
+            .subtitle {
+                text-transform: uppercase;
+                font-size: 0.8em;
+                color:#003399;
+            }
+            h3 {
+                font-size:1.2em;
+                font-weight: bold;
+            }
+            p {
+                margin-top:25px;
+                margin-bottom:25px;
+                width:80%;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            li {   
+                margin-bottom:25px;
+                span {
+                    display:block;
+                    font-weight: bold;
+                    margin-bottom:5px;
+                }
+            }
+        }
+
+        &:before {
+            background-image: url(/medias/images/bg-ambience-apb.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.05;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+          }
+    }
+}
+

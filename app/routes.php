@@ -29,9 +29,16 @@ Router::add('/connexion', 'AdminController', 'login');
 Router::add('/logout', 'AdminController', 'logout');
 
 
+Router::add('/opensocket', 'AdminController', 'opensocket');
+
+
 Router::add('/portfolio', 'BlogController', 'projets');
 //Router::add('/portfolio', 'BlogController', 'index');
 Router::add('/nouvelles', 'BlogController', 'nouvelles');
+
+Router::add('/nouvelle/nouvelle-place-d-affaires', 'BlogController', 'nouvelle');
+Router::add('/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients', 'BlogController', 'nouvelle');
+Router::add('/nouvelle/covid-bureau-ferme', 'BlogController', 'nouvelle');
 
 
 // Router::add('/services', 'services.php');

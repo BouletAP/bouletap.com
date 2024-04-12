@@ -3,6 +3,23 @@
 use Models\Entities\Article;
 
 class BlogController {
+
+
+    public function nouvelle() {
+        $nouvelle = new Article();
+        $nouvelle->id = 1;
+        $nouvelle->slug = "nouvelle-place-d-affaires";
+        $nouvelle->categorie = "Nouvelles";
+        $nouvelle->title = "Nouvelle place d'affaires de Logiciels BouletAP";
+        $nouvelle->preview_image = "/medias/images/nouvelles/image-bureau-cowansville-bouletap.jpg";
+        $nouvelle->preview_desc = "Fini le temps où André-Philippe Boulet travaillait de son salon ou d'une petite chambre d'appartement. Quoique nous prônons le minimalisme et le respect de l'environnement,";
+        $nouvelle->date = "Octobre 2019";
+        
+        $data['nouvelle'] = $nouvelle;
+
+        echo Models\Core\View::display("Blog/nouvelle.php", $data);
+    }
+
     
     public function nouvelles() {
 

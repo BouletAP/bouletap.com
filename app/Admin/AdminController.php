@@ -11,11 +11,13 @@ use Models\Core\Database;
 
 class AdminController {
     
-    public function dashboard() {
 
+    public function dashboard() {
+        
         if( !Auth::user_can('admin_duty') ) {
             header("Location: /connexion");
         } 
+
 
 
         $entries = array();
