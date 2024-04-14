@@ -1,6 +1,6 @@
 
 
-<link rel="stylesheet" href="medias/css/pages/about.css" />       
+<link rel="stylesheet" href="/medias/css/pages.css" />       
     <title>À propos - André-Philippe Boulet</title> 
 </head>
 <body class="page-a-propos page-content">

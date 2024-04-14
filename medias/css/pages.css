@@ -1,0 +1,283 @@
+.page-a-propos .tech-and-testimonials {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 30px;
+  gap: 20px;
+}
+.page-a-propos .tech-and-testimonials h3 {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+.page-a-propos .tech-and-testimonials .technologies {
+  width: 50%;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-around;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button.active {
+  background-color: #ddd;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button:hover {
+  background-color: #ddd;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button:active {
+  background-color: #ddd;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab.active {
+  display: block;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 {
+  display: flex;
+  align-items: center;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 .svg-icon {
+  padding: 15px;
+  position: relative;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 .svg-icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description p {
+  display: none;
+}
+.page-a-propos .tech-and-testimonials .testimonials {
+  width: 50%;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial {
+  padding: 0px 35px 35px 0px;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .content {
+  padding: 35px;
+  background-color: #DDD;
+  border-radius: 25px;
+  border-bottom-left-radius: 0px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .content::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: -50px;
+  left: 0px;
+  height: 50px;
+  width: 25px;
+  border-top-left-radius: 25px;
+  box-shadow: 0 -25px 0 0 #DDD;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .who {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.page-a-propos .tech-and-testimonials .testimonials .testimonial .business {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.page-content h2 {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.section-form {
+  display: flex;
+  padding-top: 30px;
+  flex-direction: column;
+}
+.section-form p {
+  font-size: 1.3em;
+}
+@media only screen and (min-width: 768px) {
+  .section-form {
+    flex-direction: row;
+  }
+  .section-form p {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 1248px) {
+  .section-form {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.section-form .contact-description ul {
+  list-style-type: circle;
+  padding-left: 30px;
+  margin-top: 30px;
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+.section-form .contact-description ul:hover {
+  cursor: pointer;
+}
+.section-form .contact-description ul:active {
+  cursor: pointer;
+}
+.section-form .form-contact {
+  align-self: center;
+  padding: 40px 40px 20px;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(105, 120, 128, 0.0588235294);
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: 0 60px 120px -30px rgba(130, 147, 161, 0.5);
+}
+.section-form .form-contact input, .section-form .form-contact textarea {
+  margin-bottom: 20px;
+}
+.section-form .form-contact textarea {
+  width: 100%;
+  height: 150px;
+}
+.section-form .form-contact.fresh-focus,
+.section-form .form-contact .fresh-focus {
+  transition: border-color 500ms linear;
+  border-color: #007F0E;
+}
+
+.contact-methodes {
+  display: flex;
+  padding: 10px;
+  padding-top: 30px;
+}
+.contact-methodes:before {
+  background-image: url(../../images/bg-ambience-apb.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.05;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+@media only screen and (min-width: 1248px) {
+  .contact-methodes {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.contact-methodes .subtitle {
+  color: #003399;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.contact-methodes .rendez-vous {
+  flex: 1 1 50%;
+}
+.contact-methodes .rendez-vous h2 {
+  margin-bottom: 20px;
+}
+.contact-methodes .rendez-vous .booking {
+  display: flex;
+}
+.contact-methodes .rendez-vous .booking img {
+  width: 100%;
+  height: auto;
+}
+.contact-methodes .methodes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.contact-methodes .methode {
+  flex: 1 1 40%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.contact-methodes .methode i.lni {
+  font-size: 2em;
+}
+.contact-methodes .methode h3 {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 3em;
+}
+.contact-methodes .methode .socials ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.contact-methodes .methode .socials ul li {
+  margin: 0px 10px;
+  font-size: 1em;
+}
+.contact-methodes .methode .socials ul li a {
+  color: #000;
+}
+.contact-methodes .methode .socials ul li:first-child {
+  margin-left: 0px;
+}
+.contact-methodes .booking-calendar .disponibilite-time {
+  display: flex;
+}
+.contact-methodes .booking-calendar .disponibilite-time .col3 {
+  flex: 1 1 33%;
+}
+.contact-methodes .booking-calendar .calendar {
+  position: relative;
+}
+.contact-methodes .booking-calendar .calendar:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  content: "";
+}
+.contact-methodes .booking-calendar .calendar .coming-soon {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: rotate(-45deg);
+  transform-origin: center center;
+  color: #FFF;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.page404 .hero {
+  padding: 50px;
+  text-align: center;
+}
+.page404 .hero h1 {
+  font-size: 5em;
+  font-weight: bold;
+}
+.page404 .hero p {
+  margin-top: 25px;
+  font-size: 1.5em;
+}

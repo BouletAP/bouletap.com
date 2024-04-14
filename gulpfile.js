@@ -43,33 +43,30 @@ gulp.task('ftp-deploy-watch', function() {
 
 gulp.task('sass-watch', function () {
 
-  // watch everything but FIND A WAY to stop PUT all the files everytime a change is updated.
-  // return the ONE FILE that changed and update the ROOT?
-
-  gulp.watch([
-    './app/Blog/*.scss',
-    './app/Blog/sass/*.scss',
-  ], function () {
-    return gulp.src([
-      './app/Blog/*.scss',
-    ])
+  // watch component file changed
+  const sassWatcher = gulp.watch([
+    './app/**/*.scss', // component main scss file
+    './app/**/sass/*.scss',
+  ]);
+  sassWatcher.on('change', function(path, stats) {
+    let componentName = path.substring(4);
+    componentName = componentName.substring(0, componentName.indexOf('\\'));
+    return gulp.src(['./app/'+componentName+'/*.scss'])
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./medias/css'));
   });
 
-
-
-  // gulp.watch([
-  //   './sass/**/*.scss',
-  //   './app/**/*.scss',
-  // ], function () {
-  //   return gulp.src([
-  //     './sass/**/*.scss',
-  //     './app/**/*.scss',
-  //   ])
-  //     .pipe(sass().on('error', sass.logError))
-  //     .pipe(gulp.dest('./medias/css'));
-  // });
+// watch global scss file changed
+// @todo: refactor sass folder into app somehow
+  gulp.watch([
+    './sass/**/*.scss'
+  ], function () {
+    return gulp.src([
+      './sass/**/*.scss'
+    ])
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest('./medias/css'));
+  });
 });
 
 
