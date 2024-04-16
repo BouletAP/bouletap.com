@@ -6,9 +6,7 @@
     h2 {
         font-weight: bold;
         font-size:2em;
-    }
-
-    
+    }    
 }
 
 
@@ -33,6 +31,12 @@
         padding-right:30px;
     }
 
+
+    .contact-description {
+        @include mq('tablet') {
+            padding-right:3vw;
+        }
+    }
     
 
     .contact-description ul {

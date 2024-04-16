@@ -1,17 +1,82 @@
+.page-a-propos .presentation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 1024px) {
+  .page-a-propos .presentation {
+    padding: 30px;
+  }
+  .page-a-propos .presentation .description,
+  .page-a-propos .presentation .profile-image {
+    width: 45%;
+  }
+  .page-a-propos .presentation .profile-image-mobile {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .page-a-propos .presentation .profile-image {
+    display: none;
+  }
+  .page-a-propos .presentation .profile-image-mobile {
+    display: flex;
+    justify-content: center;
+  }
+  .page-a-propos .presentation .profile-image-mobile img {
+    width: auto;
+    height: 30vh;
+  }
+}
+.page-a-propos .presentation .description h1 {
+  font-size: 1.2em;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+}
+.page-a-propos .presentation .description .logo-with-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.page-a-propos .presentation .description .logo-with-name img {
+  height: 10vh;
+  margin-right: 15px;
+}
+.page-a-propos .presentation .description strong {
+  margin-bottom: 0px;
+  font-size: 2em;
+  font-weight: 300;
+}
+.page-a-propos .presentation .description p {
+  margin-top: 20px;
+}
+.page-a-propos .presentation .profile-image img,
+.page-a-propos .presentation .profile-image-mobile img {
+  padding: 20px;
+  border-bottom-right-radius: 50%;
+}
 .page-a-propos .tech-and-testimonials {
   display: flex;
   justify-content: space-between;
-  padding: 50px 30px;
+  flex-direction: column;
   gap: 20px;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 768px) {
+  .page-a-propos .tech-and-testimonials {
+    padding: 30px;
+    flex-direction: row;
+  }
+  .page-a-propos .tech-and-testimonials .technologies,
+  .page-a-propos .tech-and-testimonials .testimonials {
+    width: 50%;
+  }
 }
 .page-a-propos .tech-and-testimonials h3 {
   text-align: center;
   font-size: 1.3em;
   line-height: 1.5em;
   margin-bottom: 10px;
-}
-.page-a-propos .tech-and-testimonials .technologies {
-  width: 50%;
 }
 .page-a-propos .tech-and-testimonials .technologies .tech-tab-nav {
   overflow: hidden;
@@ -64,9 +129,6 @@
 .page-a-propos .tech-and-testimonials .technologies .tech-description p {
   display: none;
 }
-.page-a-propos .tech-and-testimonials .testimonials {
-  width: 50%;
-}
 .page-a-propos .tech-and-testimonials .testimonials .testimonial {
   padding: 0px 35px 35px 0px;
 }
@@ -97,6 +159,31 @@
   font-size: 0.8em;
   font-weight: bold;
 }
+.page-a-propos .download-cv div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #003399;
+  padding: 20px;
+}
+.page-a-propos .download-cv div .title {
+  font-size: 1.5em;
+  color: #FFF;
+  font-weight: bold;
+}
+.page-a-propos .download-cv div .btn-cta {
+  border: 2px solid #FFF;
+}
+.page-a-propos .download-cv div .btn-cta:hover {
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+}
+.page-a-propos .download-cv div .btn-cta:active {
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+}
 
 .page-content h2 {
   font-weight: bold;
@@ -123,6 +210,11 @@
   .section-form {
     padding-left: 30px;
     padding-right: 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .section-form .contact-description {
+    padding-right: 3vw;
   }
 }
 .section-form .contact-description ul {

@@ -78,10 +78,11 @@
                         <h3>Sur le web</h3>
                         <div class="socials">
                             <ul>
+                                <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
                                 <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
                                 <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github-original"></i></a></li>
-                                <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
+                                
                             </ul>
                         </div>
                     </div>      
@@ -99,7 +100,7 @@
             </div>
             
 
-            <div class="booking-calendar">
+            <div class="booking-calendar hide">
                 <div class="methode">
                     <i class="lni lni-timer"></i>
                     <h3>Heures de disponibilité</h3>
@@ -115,10 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="calendar">
-                    <img src="/medias/images/temp-calendrier2.JPG" alt="Calendrier de rendez-vous">
-                    <span class="coming-soon">Bientôt disponible</span>
-                </div>
+                <div class="calendar"></div>
             </div>
         </section>
 

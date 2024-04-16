@@ -17,10 +17,9 @@ Router::add('/contact', 'PagesController', 'contact');
 
 
 Router::add('/nouveau-site-web', 'PagesController', 'coming_soon');
-Router::add('/services', 'PagesController', 'coming_soon');
 Router::add('/portfolio', 'PagesController', 'coming_soon');
 Router::add('/carre-de-sable-interactif', 'PagesController', 'coming_soon');
-Router::add('/services/creation-site-internet', 'PagesController', 'coming_soon');
+
 
 
 Router::add('/admin', 'AdminController', 'dashboard');
@@ -43,6 +42,9 @@ Router::add('/nouvelle/covid-bureau-ferme', 'BlogController', 'nouvelle');
 
 // Router::add('/services', 'services.php');
 //Router::add('/nouveau-site-web', 'PagesController', 'nouveau_site');
+
+Router::add('/services', 'PagesController', 'coming_soon');
+Router::add('/services/creation-site-internet', 'ServicesController', 'creation_sites_internet');
 
 
 

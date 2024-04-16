@@ -10,13 +10,11 @@
     <div class="page-content">     
        
         <section class="hero">
-
-            <div class="section-description">
-                <span class="subtitle">Publications</span>
-                <h2>À la une</h2>     
-                <p>Consultez les nouvelles ou les articles écrient par André-Philippe dernièrement</p>           
+            <div class="page-header">
+                <span class="subtitle">À propos</span>
+                <h2>André-Philippe Boulet</h2>     
+                <p>Programmeur spécialisé dans le développement web et les technologies de l'information </p>           
             </div>
-
         </section>
 
 
@@ -27,9 +25,15 @@
 
                 <span class="logo-with-name">
                     <img src="/medias/images/logo.png" alt="Logo de Logiciels BouletAP">
-                    <strong>André-Philippe Boulet</strong><br />
-                    Développeur web - Disponible pour mandats à distance
+                    <div>
+                        <strong>André-Philippe Boulet</strong><br />
+                        Développeur web - Disponible pour mandats à distance
+                    </div>
                 </span>
+
+                <div class="profile-image-mobile">                    
+                    <img src="/medias/images/andre-philippe-boulet-programmeur-logiciels-bouletap.jpg" alt="Photo de André-Philippe Boulet">
+                </div>
 
                 <p class="bigger">Bienvenue sur le site web de André-Philippe Boulet, un programmeur-analyste qui développe des logiciels web et mobiles depuis plus de 15 ans</p>             
 
@@ -61,7 +65,6 @@
                 </div>
 
                 <div id="tech-tab-basic" class="tech-tab active">
-                    <h4>Languages</h4>
 
                     <div class="tech-description">
                         <span class="h5">HTML</span>
@@ -101,7 +104,6 @@
                 </div>
 
                 <div id="tech-tab-cms" class="tech-tab">
-                    <h4>CMS & Framework</h4>
                     
                     <div class="tech-description">
                         <span class="h5">WordPress</span>
@@ -153,7 +155,6 @@
                 </div>
 
                 <div id="tech-tab-ops" class="tech-tab">
-                    <h4>Server & Ops</h4>
                     
                     <div class="tech-description">
                         <span class="h5">GitHub</span>
@@ -203,7 +204,6 @@
                 </div>
 
                 <div id="tech-tab-tools" class="tech-tab">
-                    <h4>Outils</h4>
                     
                     <div class="tech-description">
                         <span class="h5">Elementor</span>
@@ -236,7 +236,6 @@
                 </div>
 
                 <div id="tech-tab-less" class="tech-tab">
-                    <h4>Expérimental</h4>
                     
 
                     <div class="tech-description">
@@ -296,7 +295,38 @@
         </script>
 
 
-        <section class="parcours">
+        <section class="download-cv">
+            <div>
+                <span class="title">Téléchargez la version PDF de mon CV</span>
+                <a class="btn-cta" href="/medias/pdf/CV-Andre-Philippe-Boulet.pdf" target="_blank">Cliquez pour téléchager</a>
+            </div>
+        </section>
+
+
+        <section class="parcours hide">
+            
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p>
+                            Développeur logiciels<br>
+                            Logiciels BouletAP<br>
+                            Jan 2018 - Jan 2023<br>
+                            Région de Montréal, Canada
+                        </p>
+                        <ul>
+                            <li>Design et programmation de sites Internet pour petites et moyennes entreprises</li>
+                            <li>Développement de commerces électroniques</li>
+                            <li>Programmation sur mesure</li>
+                            <li>Développement d'applications mobiles multi-plateformes</li>
+                            <li>Reprise de projets et maintenance</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            
+
 
             <div>
                 <p><img src="/medias/images/cv/experience-logiciels-bouletap.JPG" alt=""></p>             
