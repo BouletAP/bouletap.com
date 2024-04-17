@@ -360,6 +360,12 @@ section {
   margin-top: 10px;
 }
 
+@media only screen and (max-width: 767px) {
+  .page-header {
+    padding-top: 30px;
+  }
+}
+
 #main-header {
   padding-top: 0px;
   position: absolute;

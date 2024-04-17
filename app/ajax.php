@@ -4,6 +4,20 @@ require_once __DIR__ . '/../app/bootstrap.php';
 use Models\Services\Analytics;
 
 
+if( $_POST['request_type'] == "get_phone_number" ) {
+
+
+    $output = [
+        "data" => CURRENT_PHONE_NUMBER
+    ];
+
+    
+    //Analytics::i()->visitor->update($data);  
+
+    echo json_encode($output);
+    exit();
+}
+
 
 if( $_POST['request_type'] == "testnotification" ) {
 

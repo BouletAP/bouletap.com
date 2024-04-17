@@ -17,11 +17,39 @@ class BlogController {
         
         $data['nouvelle'] = $nouvelle;
 
+        
+        $categories = [
+            'publications' => 'Toutes les publications', 
+            'nouvelles' => 'Nouvelles', 
+            'trucs-et-astuces' => 'Trucs et Astuces', 
+            'cheatsheets' => 'Cheatsheet'
+        ];
+
+        $data['categories'] = $categories;
+        $data['selected_category'] = $nouvelle->categorie;
+
         echo Models\Core\View::display("Blog/nouvelle.php", $data);
     }
 
     
     public function nouvelles() {
+
+        // filter by category
+        $requested_type = str_replace('/', '', $_SERVER['REQUEST_URI']);
+        
+        $categories = [
+            'publications' => 'Toutes les publications', 
+            'nouvelles' => 'Nouvelles', 
+            'trucs-et-astuces' => 'Trucs et Astuces', 
+            'cheatsheets' => 'Cheatsheet'
+        ];
+
+        $selected_category = array_key_exists($requested_type, $categories) ? $categories[$requested_type] : 'Tous les articles';
+
+        $data['categories'] = $categories;
+        $data['selected_category'] = $selected_category;
+
+
 
         $nouvelle_1 = new Article();
         $nouvelle_1->id = 1;
@@ -52,9 +80,24 @@ class BlogController {
         $nouvelle_3->preview_desc = "Créer une page individuelle pour chacun de vos services sur votre site Web peut aider à mettre en valeur votre expertise et faciliter la compréhension";
         $nouvelle_3->date = "Octobre 2019";
 
-        $data['nouvelles'] = [
+        $nouvelles = [
             $nouvelle_3, $nouvelle_2, $nouvelle_1
         ];
+
+        if( $selected_category != 'Toutes les publications' ){
+            $data['nouvelles'] = array();
+            foreach($nouvelles as $nouvelle) {
+                if( $nouvelle->categorie == $selected_category ) {
+                    $data['nouvelles'][] = $nouvelle;
+                }
+            }
+        }
+        else {
+            $data['nouvelles'] = $nouvelles;
+        }
+        
+
+        
 
         echo Models\Core\View::display("Blog/nouvelles.php", $data);
     }

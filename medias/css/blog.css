@@ -111,6 +111,15 @@
   font-size: 1.2em;
   font-weight: bold;
 }
+.preview-nouvelles .card h3 a {
+  color: #000;
+}
+.preview-nouvelles .card h3 a:hover {
+  opacity: 0.8;
+}
+.preview-nouvelles .card h3 a:active {
+  opacity: 0.8;
+}
 .preview-nouvelles .card p {
   font-size: 1em;
   line-height: 1.5em;

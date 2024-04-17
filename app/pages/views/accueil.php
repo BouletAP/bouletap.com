@@ -243,48 +243,48 @@
 
                 <div class="card card-nouvelle">
                     <div class="img">
-                        <a href=""><img src="/medias/images/nouvelles/austin-distel-goFBjlQiZFU-unsplash-v2.jpg" alt=""></a>
-                        <a href="" class="categories">Trucs et astuces</a>
+                        <a href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients"><img src="/medias/images/nouvelles/austin-distel-goFBjlQiZFU-unsplash-v2.jpg" alt=""></a>
+                        <a href="/trucs-et-astuces" class="categories">Trucs et astuces</a>
                     </div>
-                    <h3>Créer une page service pour mieux convertir vos visiteurs en clients</h3>
+                    <h3><a href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients">Créer une page service pour mieux convertir vos visiteurs en clients</a></h3>
                     <p>Créer une page individuelle pour chacun de vos services sur votre site Web peut aider à mettre en valeur votre expertise et faciliter la compréhension</p>
-                    <a href="/" class="read-more">Lire la suite »</a>
+                    <a href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients" class="read-more">Lire la suite »</a>
 
                     <div class="card-footer">
-                        <a class="date" href="/nouvelles">17 février, 2023</a>
-                        <a class="comments" href="/nouvelles">&nbsp; • &nbsp;No Comments</a>
+                        <a class="date" href="/publications?archive=2023">17 février, 2023</a>
+                        <a class="comments" href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients#commentaires">&nbsp; • &nbsp;No Comments</a>
                     </div>
                 </div>
 
                 <div class="card card-nouvelle">
                     <div class="img">
-                        <a href=""><img src="/medias/images/nouvelles/cdc-w9KEokhajKw-unsplash-lowres.jpg" alt=""></a>
-                        <a href="" class="categories">Nouvelles</a>
+                        <a href="/nouvelle/covid-bureau-ferme"><img src="/medias/images/nouvelles/cdc-w9KEokhajKw-unsplash-lowres.jpg" alt=""></a>
+                        <a href="/nouvelles" class="categories">Nouvelles</a>
                     </div>
-                    <h3>Covid - Bureau principal fermé</h3>
+                    <h3><a href="/nouvelle/covid-bureau-ferme">Covid - Bureau principal fermé</a></h3>
                     <p>Nos services de développement de sites Internet, de programmation web, de maintenance WordPress et d’aide ou support sont toujours disponibles en tout temps. N’hésitez pas</p>
-                    <a href="/" class="read-more">Lire la suite »</a>
+                    <a href="/nouvelle/covid-bureau-ferme" class="read-more">Lire la suite »</a>
                     <div class="card-footer">
-                        <a class="date" href="/nouvelles">16 décembre, 2020</a>
-                        <a class="comments" href="/nouvelles">&nbsp; • &nbsp;No Comments</a>
+                        <a class="date" href="/publications?archive=2020">16 décembre, 2020</a>
+                        <a class="comments" href="/nouvelle/covid-bureau-ferme#commentaires">&nbsp; • &nbsp;No Comments</a>
                     </div>
                 </div>
 
                 <div class="card card-nouvelle">
                     <div class="img">
-                        <a href=""><img src="/medias/images/nouvelles/image-bureau-cowansville-bouletap.jpg" alt=""></a>
-                        <a href="" class="categories">Nouvelles</a>
+                        <a href="/nouvelle/nouvelle-place-d-affaires"><img src="/medias/images/nouvelles/image-bureau-cowansville-bouletap.jpg" alt=""></a>
+                        <a href="/nouvelles" class="categories">Nouvelles</a>
                     </div>
-                    <h3>Nouvelle place d'affaires de Logiciels BouletAP</h3>
+                    <h3><a href="/nouvelle/nouvelle-place-d-affaires">Nouvelle place d'affaires de Logiciels BouletAP</a></h3>
                     <p>Fini le temps où André-Philippe Boulet travaillait de son salon ou d’une petite chambre d’appartement. Quoique nous prônons le minimalisme et le respect de l’environnement,</p>
-                    <a href="/" class="read-more">Lire la suite »</a>
+                    <a href="/nouvelle/nouvelle-place-d-affaires" class="read-more">Lire la suite »</a>
                     <div class="card-footer">
-                        <a class="date" href="/nouvelles">3 octobre, 2019</a>
-                        <a class="comments" href="/nouvelles">&nbsp; • &nbsp;No Comments</a>
+                        <a class="date" href="/publications?archive=2019">3 octobre, 2019</a>
+                        <a class="comments" href="/nouvelle/nouvelle-place-d-affaires#commentaires">&nbsp; • &nbsp;No Comments</a>
                     </div>
                 </div>
 
-            </div>
+            </div> 
         </section>
 
 

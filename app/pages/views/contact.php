@@ -89,7 +89,10 @@
                     <div class="methode">
                         <i class="lni lni-phone-set"></i>
                         <h3>Par téléphone</h3>
-                        <p>Le numéro pour nous rejoindre est disponible sur demande</p>
+                        <p>
+                            Par protection contre les appels importuns ou frauduleux, un numéro de téléphone dynamique est maintenant utilisé.<br />
+                            <a id="btn-phone-request" href="javascript:return false;">Cliquez ici pour obtenir le numéro de téléphone du jour</a>
+                        </p>
                     </div>    
                     <div class="methode">
                         <i class="lni lni-map-marker"></i>
@@ -129,6 +132,32 @@
         var contact_form = new BouletAPForms('form-contact', 'Merci, votre message est envoyé');
         contact_form.submit(form);
     });
+
+
+    var phone_request = document.querySelector("#btn-phone-request");
+    phone_request.addEventListener("click", () => {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/ajax');
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);
+                phone_request.setAttribute('href', 'tel:'+response['data']);
+                phone_request.innerHTML = formatPhoneNumber(response['data']);
+            }
+        }
+        xhr.send("request_type=get_phone_number");
+    });
+
+    function formatPhoneNumber(phoneNumberString) {
+        var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+        var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (match) {
+            return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+        }
+        return null;
+    }
 
 
 

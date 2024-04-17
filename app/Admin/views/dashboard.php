@@ -13,7 +13,6 @@
                 <span class="subtitle">Administration</span>
                 <h1>Taleau de bord administrateur</h1>       
                 
-                <p><a href="javascript:delayedPush();" class="btn-cta">ENVOYER UNE NOTIFICATION <i class="lni lni-play"></i></a></p>
             </div>
 
         </section>

@@ -13,9 +13,6 @@ Router::add('/a-propos', 'PagesController', 'a_propos');
 Router::add('/contact', 'PagesController', 'contact');
 
 
-
-
-
 Router::add('/nouveau-site-web', 'PagesController', 'coming_soon');
 Router::add('/portfolio', 'PagesController', 'coming_soon');
 Router::add('/carre-de-sable-interactif', 'PagesController', 'coming_soon');
@@ -32,8 +29,13 @@ Router::add('/opensocket', 'AdminController', 'opensocket');
 
 
 Router::add('/portfolio', 'BlogController', 'projets');
-//Router::add('/portfolio', 'BlogController', 'index');
+
+
+Router::add('/publications', 'BlogController', 'nouvelles');
 Router::add('/nouvelles', 'BlogController', 'nouvelles');
+Router::add('/cheatsheets', 'BlogController', 'nouvelles');
+Router::add('/trucs-et-astuces', 'BlogController', 'nouvelles');
+
 
 Router::add('/nouvelle/nouvelle-place-d-affaires', 'BlogController', 'nouvelle');
 Router::add('/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients', 'BlogController', 'nouvelle');
