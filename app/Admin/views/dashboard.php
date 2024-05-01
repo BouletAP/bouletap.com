@@ -19,32 +19,36 @@
 
 
         <section class="dashboard-content">
-
-            <div class="col">
-                <h2>Formulaires</h2>
-
-                <?php if( !empty($data['entries']) ): ?>
-                    <ul>
-                    <?php foreach($data['entries'] as $entry): ?>
-                        <li><a href="#?id=<?php $entry['id']; ?>">
-                        <?php
-                            echo $entry['data'];
-                        ?>
-                        </a></li>
-                    <?php endforeach; ?>
-                    </ul>
-                <?php else: ?>
-                    Aucune entrée récente
-                <?php endif; ?>
+            <div class="sidebar">
+                <?php include(APP_PATH.'/Admin/views/_menu.php'); ?>
             </div>
+            <div class="page-admin">
+                <div class="col">
+                    <h2>Formulaires</h2>
 
-            <div class="col">
-                <h2>Récents utilisateur</h2>
-                <p>Web socket response: <span id="socket_response">-</span</p>
-            </div>
+                    <?php if( !empty($data['entries']) ): ?>
+                        <ul>
+                        <?php foreach($data['entries'] as $entry): ?>
+                            <li><a href="#?id=<?php $entry['id']; ?>">
+                            <?php
+                                echo $entry['data'];
+                            ?>
+                            </a></li>
+                        <?php endforeach; ?>
+                        </ul>
+                    <?php else: ?>
+                        Aucune entrée récente
+                    <?php endif; ?>
+                </div>
 
-            <div class="col">
-                <h2>Pages visitées</h2>
+                <div class="col">
+                    <h2>Récents utilisateur</h2>
+                    <p>Web socket response: <span id="socket_response">-</span</p>
+                </div>
+
+                <div class="col">
+                    <h2>Pages visitées</h2>
+                </div>
             </div>
 
 

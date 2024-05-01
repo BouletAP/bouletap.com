@@ -21,11 +21,13 @@ Router::add('/carre-de-sable-interactif', 'PagesController', 'coming_soon');
 
 Router::add('/admin', 'AdminController', 'dashboard');
 Router::add('/dashboard', 'AdminController', 'dashboard');
-Router::add('/connexion', 'AdminController', 'login');
-Router::add('/logout', 'AdminController', 'logout');
+
+Router::add('/connexion', 'AuthController', 'login');
+Router::add('/logout', 'AuthController', 'logout');
 
 
-Router::add('/opensocket', 'AdminController', 'opensocket');
+Router::add('/admin/publication-add', 'CMSController', 'add_publications');
+
 
 
 Router::add('/portfolio', 'BlogController', 'projets');

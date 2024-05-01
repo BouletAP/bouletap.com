@@ -1,0 +1,30 @@
+@import "./sass/base/variables";
+@import "./sass/utils/mixins";
+
+.dashboard-content {
+    display: flex;
+
+    .sidebar {
+        width:20%;
+    }
+
+    .page-admin {
+        width:80%;
+
+        form {
+            width:100%;
+            
+            input,
+            textarea {
+                padding:5px;
+                width:100%;
+                margin-bottom:10px;
+                font-size: 1.2em;
+                line-height: 1.3em;
+            }
+            textarea {
+                height:500px;
+            }
+        }
+    }
+}

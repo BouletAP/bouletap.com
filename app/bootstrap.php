@@ -28,10 +28,12 @@ require_once __DIR__ . '/routes.php';
 
 
 require_once __DIR__ . '/Pages/PagesController.php';
-require_once __DIR__ . '/Admin/AdminController.php';
 require_once __DIR__ . '/Blog/BlogController.php';
 require_once __DIR__ . '/Services/ServicesController.php';
 
+require_once __DIR__ . '/Admin/AdminController.php';
+require_once __DIR__ . '/Admin/AuthController.php';
+require_once __DIR__ . '/Admin/CMSController.php';
 
 // autoload soon?
 //

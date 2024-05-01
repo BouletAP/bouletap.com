@@ -1,0 +1,23 @@
+.dashboard-content {
+  display: flex;
+}
+.dashboard-content .sidebar {
+  width: 20%;
+}
+.dashboard-content .page-admin {
+  width: 80%;
+}
+.dashboard-content .page-admin form {
+  width: 100%;
+}
+.dashboard-content .page-admin form input,
+.dashboard-content .page-admin form textarea {
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+.dashboard-content .page-admin form textarea {
+  height: 500px;
+}
