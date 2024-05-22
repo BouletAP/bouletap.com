@@ -1,0 +1,148 @@
+.products-and-services .hero {
+  display: flex;
+  padding: 0px 40px;
+  align-items: center;
+}
+.products-and-services .hero img {
+  width: 40vw;
+}
+.products-and-services .hero .page-header {
+  margin-bottom: 0px;
+}
+.products-and-services .presentation {
+  padding: 40px;
+}
+.products-and-services .presentation .pitch {
+  margin: 20px 0px;
+}
+.products-and-services .presentation .pitch .title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #003399;
+}
+.products-and-services .presentation .pitch h2 {
+  font-size: 1.75em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.products-and-services .presentation .pitch p {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.products-and-services .presentation .details {
+  display: flex;
+  margin-top: 60px;
+}
+.products-and-services .presentation .details .sidebar {
+  width: 50%;
+  padding: 10px 10px 10px 0px;
+}
+.products-and-services .presentation .details .sidebar h3 {
+  font-size: 1em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.products-and-services .presentation .details .sidebar ul {
+  padding-left: 20px;
+  margin-top: 20px;
+}
+.products-and-services .presentation .details .sidebar ul li {
+  margin-top: 10px;
+  list-style-type: disc;
+}
+.products-and-services .presentation .details .sidebar ul li a {
+  color: #000;
+}
+.products-and-services .presentation .details .sidebar ul li a:hover {
+  font-weight: bold;
+  color: #003399;
+}
+.products-and-services .presentation .details .sidebar ul li a:active {
+  font-weight: bold;
+  color: #003399;
+}
+.products-and-services .presentation .details .sidebar ul li.active a {
+  font-weight: bold;
+  color: #003399;
+}
+.products-and-services .presentation .details .description-detaillee p {
+  margin-bottom: 20px;
+  color: rgb(51, 51, 51);
+}
+.products-and-services .presentation .details .description-detaillee .contact {
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
+}
+.products-and-services .separator-waves {
+  overflow: hidden;
+  position: relative;
+}
+.products-and-services .separator-waves svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.products-and-services .separator-waves .wave-top {
+  transform: rotate(180deg);
+}
+.products-and-services .separator-waves .wave-top svg {
+  width: calc(150% + 1.3px);
+  height: 70px;
+}
+.products-and-services .separator-waves .wave-top .shape {
+  transform-origin: center;
+  transform: rotateY(0deg);
+}
+.products-and-services .separator-waves .wave-bottom {
+  transform: rotate(180deg);
+}
+.products-and-services .separator-waves .wave-bottom svg {
+  height: 100px;
+}
+.products-and-services .separator-waves .wave-bottom .shape {
+  transform-origin: center;
+  transform: rotateY(0deg);
+}
+.products-and-services .separator-waves .shape {
+  fill: #003399;
+}
+.products-and-services .produits {
+  display: flex;
+  padding: 40px;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+}
+.products-and-services .produits .card {
+  text-align: center;
+}
+.products-and-services .produits .card img {
+  width: 50%;
+  height: auto;
+}
+.products-and-services .produits .card h3 {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.products-and-services .produits .card ul {
+  margin: 30px;
+  margin-left: 35%;
+  text-align: left;
+}
+.products-and-services .produits .card ul li {
+  list-style-type: disc;
+  margin-top: 5px;
+}
+.products-and-services .produits .card .btn-cta {
+  display: inline-block;
+  margin-top: 20px;
+}
+.products-and-services .produits .card.card-ecommerce ul {
+  margin-left: 20%;
+}

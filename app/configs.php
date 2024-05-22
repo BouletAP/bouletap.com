@@ -13,3 +13,7 @@ if( !defined('UPLOAD_PATH') ) define('UPLOAD_PATH', PUBLIC_HTML."/uploads/");
 
 
 if( !defined('CURRENT_PHONE_NUMBER') ) define('CURRENT_PHONE_NUMBER', $env['PHONE_NUMBER']);
+
+
+
+if( !defined('IS_DEV') ) define('IS_DEV', $_SERVER['REMOTE_ADDR'] == '24.157.209.109');

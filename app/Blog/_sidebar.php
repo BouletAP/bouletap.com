@@ -1,4 +1,4 @@
-<h3>Trouver une nouvelle</h3>
+<h3>Autres publications</h3>
 <hr>
 <div class="sidebar-content">
     <div class="bloc search-form hide">
@@ -15,6 +15,14 @@
         <h4>Par catégories</h4>
         <ul>
         <?php foreach($data['categories'] as $slug => $name): ?>
+            <li><a href="/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+    <div class="bloc">
+        <h4>Par mot-clé</h4>
+        <ul>
+        <?php foreach($data['keywords'] as $slug => $name): ?>
             <li><a href="/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
         <?php endforeach; ?>
         </ul>

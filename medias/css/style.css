@@ -387,6 +387,9 @@ section {
 #main-header .main-menu .menu-presentation .lang-container .socialnetworks .lni {
   color: #FFF;
 }
+#main-header .main-menu .menu-presentation .lang-container .socialnetworks .lni {
+  margin-bottom: -3px;
+}
 #main-header .main-menu .menu-presentation .menu-toggle {
   color: #000;
   font-size: 1.8em;
@@ -521,6 +524,11 @@ section {
   visibility: visible;
   max-width: 100%;
 }
+@media only screen and (max-width: 767px) {
+  #main-header .main-menu.is-open .interactive-menu {
+    height: 90vh;
+  }
+}
 #main-header .main-menu.is-open .interactive-menu a {
   display: block;
   color: #000;
@@ -535,8 +543,14 @@ section {
 #main-header .main-menu.is-open .interactive-menu a:hover {
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
 }
+#main-header .main-menu.is-open .interactive-menu a:hover span {
+  color: #003399;
+}
 #main-header .main-menu.is-open .interactive-menu a:active {
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
+}
+#main-header .main-menu.is-open .interactive-menu a:active span {
+  color: #003399;
 }
 @media only screen and (min-width: 768px) {
   #main-header .main-menu.is-open .interactive-menu {
@@ -669,6 +683,10 @@ section {
     width: 35px;
     height: 35px;
     margin-right: 20px;
+    margin-bottom: -10px;
+  }
+  #main-header li {
+    margin-bottom: 20px;
   }
   #main-header li:hover {
     background-color: #EEE;
@@ -744,6 +762,15 @@ section {
     font-weight: bold;
   }
 }
+.menu-about .svgicons:hover .barre-oblique {
+  transform-origin: center center;
+  animation: aboutanim 1s linear infinite;
+}
+.menu-about .svgicons:active .barre-oblique {
+  transform-origin: center center;
+  animation: aboutanim 1s linear infinite;
+}
+
 .menu-nouvelles .svgicons:hover .news-globe {
   transform-origin: center center;
   animation: spin 4s linear infinite;
@@ -851,6 +878,14 @@ section {
   animation-delay: 2.5s;
 }
 
+@keyframes aboutanim {
+  50% {
+    transform: translateX(4px) rotate(-35deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+}
 @keyframes keytouch {
   to {
     fill: #DDD;

@@ -1,6 +1,6 @@
 
 
-<link rel="stylesheet" href="medias/css/pages/404.css" />       
+    <link rel="stylesheet" href="/medias/css/pages.css" />        
     <title>Page introuvable - André-Philippe Boulet</title> 
 </head>
 <body class="page404">

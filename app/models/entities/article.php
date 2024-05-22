@@ -46,4 +46,26 @@ class Article {
         $db->where('id', $id);
         $db->update ('visits', $this->data);
     }
+
+
+    static public function get_categories() {
+        $output = [
+            'publications' => 'Toutes les publications', 
+            'cheatsheets' => 'Aide-mémoire',
+            'nouvelles' => 'Nouvelles', 
+            'projets' => 'Projets', 
+            'trucs-et-astuces' => 'Trucs et Astuces', 
+        ];
+        return $output;
+    }
+
+    static public function get_keywords() {
+        $output = [
+            'html_css' => 'HTML/CSS', 
+            'javascript' => 'Javascript', 
+            'php' => 'PHP',
+            'wordpress' => 'WordPress'
+        ];
+        return $output;
+    }
 }

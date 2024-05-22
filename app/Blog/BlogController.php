@@ -18,14 +18,23 @@ class BlogController {
         $data['nouvelle'] = $nouvelle;
 
         
-        $categories = [
-            'publications' => 'Toutes les publications', 
-            'nouvelles' => 'Nouvelles', 
-            'trucs-et-astuces' => 'Trucs et Astuces', 
-            'cheatsheets' => 'Cheatsheet'
-        ];
+        // $categories = [
+        //     'publications' => 'Toutes les publications', 
+        //     'cheatsheets' => 'Cheatsheet',
+        //     'nouvelles' => 'Nouvelles', 
+        //     'projets' => 'Projets', 
+        //     'trucs-et-astuces' => 'Trucs et Astuces', 
+        // ];
+        
+        // $mots_cles = [
+        //     'html_css' => 'HTML/CSS', 
+        //     'javascript' => 'Javascript', 
+        //     'php' => 'PHP',
+        //     'wordpress' => 'WordPress'
+        // ];
 
-        $data['categories'] = $categories;
+        $data['categories'] = Article::get_categories();
+        $data['keywords'] = Article::get_keywords();
         $data['selected_category'] = $nouvelle->categorie;
 
         echo Models\Core\View::display("Blog/nouvelle.php", $data);
@@ -37,16 +46,28 @@ class BlogController {
         // filter by category
         $requested_type = str_replace('/', '', $_SERVER['REQUEST_URI']);
         
-        $categories = [
-            'publications' => 'Toutes les publications', 
-            'nouvelles' => 'Nouvelles', 
-            'trucs-et-astuces' => 'Trucs et Astuces', 
-            'cheatsheets' => 'Cheatsheet'
-        ];
+        
+        // $categories = [
+        //     'publications' => 'Toutes les publications', 
+        //     'cheatsheets' => 'Cheatsheet',
+        //     'nouvelles' => 'Nouvelles', 
+        //     'projets' => 'Projets', 
+        //     'trucs-et-astuces' => 'Trucs et Astuces', 
+        // ];
 
-        $selected_category = array_key_exists($requested_type, $categories) ? $categories[$requested_type] : 'Tous les articles';
+        // $mots_cles = [
+        //     'html_css' => 'HTML/CSS', 
+        //     'javascript' => 'Javascript', 
+        //     'php' => 'PHP',
+        //     'wordpress' => 'WordPress'
+        // ];
 
-        $data['categories'] = $categories;
+
+        $data['categories'] = Article::get_categories();
+        $data['keywords'] = Article::get_keywords();
+        
+        $selected_category = array_key_exists($requested_type, $data['categories']) ? $data['categories'][$requested_type] : 'Tous les articles';
+
         $data['selected_category'] = $selected_category;
 
 

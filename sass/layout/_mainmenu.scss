@@ -24,6 +24,7 @@
                     color: #FFF;
                 }
                 align-items: center;
+                .lni {margin-bottom:-3px;}
             }
 
             .menu-toggle {
@@ -163,6 +164,10 @@
                 height: 95vh;
                 max-height:95vh;
 
+                @include mq('tablet', 'max') {                    
+                    height: 90vh;
+                }
+
                 visibility:visible;
                 max-width: 100%;
                 
@@ -182,6 +187,8 @@
 
                     @include touch() {
                         background: linear-gradient(to right, rgba(255,255,255,0) 0, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+
+                        span {color:#003399;}
                     }
                 }
                 
@@ -341,9 +348,11 @@
             width: 35px;
             height: 35px;
             margin-right:20px;
+            margin-bottom: -10px;
         }
 
         li {
+            margin-bottom:20px;
             @include touch() {                
                 background-color: #EEE;                
             }
@@ -418,6 +427,19 @@
 }
 
 
+.menu-about {            
+    .svgicons {
+        @include touch() {    
+            .barre-oblique {            
+                transform-origin: center center;
+                //transform: translateX(4px) rotate(-35deg);
+                
+                animation:aboutanim 1s linear infinite;
+            }
+        }                    
+    }
+}
+
 .menu-nouvelles {            
     .svgicons {
         @include touch() {    
@@ -484,6 +506,12 @@
             .key41 { animation-delay: 2.5s; }       
         }
     }
+}
+
+
+@keyframes aboutanim { 
+    50% {  transform: translateX(4px) rotate(-35deg); }
+    100% {  transform: translateX(0px) rotate(0deg); }
 }
 
 @keyframes keytouch { 

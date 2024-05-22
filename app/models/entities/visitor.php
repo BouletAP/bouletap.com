@@ -35,6 +35,13 @@ class Visitor {
     }
 
 
+   static  public function recent() {
+        $db = Database::query();
+        $db->orderBy("id", "Desc");
+        $results = $db->get ('visitors');
+        return $results;
+    }
+
 
     static public function init() {
 

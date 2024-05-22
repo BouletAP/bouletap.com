@@ -112,6 +112,35 @@
 .page-a-propos .tech-and-testimonials .technologies .tech-tab.active {
   display: block;
 }
+.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs {
+  padding: 20px;
+  position: relative;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs::after {
+  content: "{";
+  position: absolute;
+  right: -20px;
+  top: 10px;
+  font-weight: bold;
+  font-size: 3em;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs.tech-1::after {
+  top: -5px;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .derivatives {
+  padding: 20px;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .derivatives .tech-description {
+  margin-bottom: 15px;
+}
+.page-a-propos .tech-and-testimonials .technologies .tech-description {
+  margin-bottom: 10px;
+}
 .page-a-propos .tech-and-testimonials .technologies .tech-description .h5 {
   display: flex;
   align-items: center;
@@ -129,12 +158,16 @@
 .page-a-propos .tech-and-testimonials .technologies .tech-description p {
   display: none;
 }
+.page-a-propos .tech-and-testimonials .technologies .tech-description .lni {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
 .page-a-propos .tech-and-testimonials .testimonials .testimonial {
   padding: 0px 35px 35px 0px;
 }
 .page-a-propos .tech-and-testimonials .testimonials .testimonial .content {
   padding: 35px;
-  background-color: #DDD;
+  background-color: #CCD6EB;
   border-radius: 25px;
   border-bottom-left-radius: 0px;
   position: relative;
@@ -149,7 +182,7 @@
   height: 50px;
   width: 25px;
   border-top-left-radius: 25px;
-  box-shadow: 0 -25px 0 0 #DDD;
+  box-shadow: 0 -25px 0 0 #CCD6EB;
 }
 .page-a-propos .tech-and-testimonials .testimonials .testimonial .who {
   font-size: 0.9em;

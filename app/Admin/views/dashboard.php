@@ -1,4 +1,5 @@
-<title>Administration André-Philippe Boulet</title>  
+<title>Administration André-Philippe Boulet</title>
+<link rel="stylesheet" href="/medias/css/admin.css" />         
 </head>
 
 <body class="home">
@@ -43,7 +44,17 @@
 
                 <div class="col">
                     <h2>Récents utilisateur</h2>
-                    <p>Web socket response: <span id="socket_response">-</span</p>
+                    <?php if( !empty($data['visitors']) ): ?>
+                        <ul>
+                        <?php foreach($data['visitors'] as $visitor): ?>
+                            <li><a href="#?id=<?php $visitor['id']; ?>">
+                                <?php echo $visitor['ip_address']; ?> &ndash; <?php echo $visitor['user_agent']; ?>
+                            </a></li>
+                        <?php endforeach; ?>
+                        </ul>
+                    <?php else: ?>
+                        Aucune visite récente
+                    <?php endif; ?>
                 </div>
 
                 <div class="col">

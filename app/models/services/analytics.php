@@ -28,6 +28,8 @@ class Analytics {
             // init visitor
             self::$instance->visitor = Visitor::init();
             self::$instance->current_visit = new Visit();
+
+            self::$instance->is_fresh_visitor = self::$instance->visitor->is_fresh;
         }               
         return self::$instance;
     }
@@ -70,7 +72,9 @@ class Analytics {
 
     public function add_footer_script() {
 
+        //echo '<pre>'; print_r($this->is_fresh_visitor); echo '</pre>'; die();
         // this part is to grab info of a fresh visitor
+        //$this->is_fresh_visitor = true;
         if( $this->is_fresh_visitor ) {
         ?>
             <script id="analytics-new-visitor">
@@ -89,6 +93,8 @@ class Analytics {
         // actions (clicks, form sent) 
         // time spent on the page (timer, scroll behaviours, ...)
         // ...
+
+        
         ?>
             <script id="analytics-page-visit">
                 // setInterval( () => {

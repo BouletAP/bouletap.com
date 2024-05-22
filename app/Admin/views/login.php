@@ -1,4 +1,5 @@
 <title>Connexion - André-Philippe Boulet</title>  
+<link rel="stylesheet" href="/medias/css/pages.css" />       
 <style>
     .login-form {
         width: 500px;

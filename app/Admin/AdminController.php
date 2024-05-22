@@ -4,6 +4,8 @@ use BouletAP\Tools\Cookies;
 use Models\Core\Auth;
 use Models\Core\Database;
 
+use Models\Entities\Visitor;
+
 //use BouletAP\Framework\Views;
 //use BouletAP\Framework\Ajax;
 
@@ -33,8 +35,11 @@ class AdminController {
             }
         }
 
+        $visitors = Visitor::recent();
+
         $data = [
-            'entries' => $entries
+            'entries' => $entries,
+            'visitors' => $visitors
         ];
 
         echo Models\Core\View::display("Admin/views/dashboard.php", $data);
