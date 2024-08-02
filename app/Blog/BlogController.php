@@ -17,21 +17,6 @@ class BlogController {
         
         $data['nouvelle'] = $nouvelle;
 
-        
-        // $categories = [
-        //     'publications' => 'Toutes les publications', 
-        //     'cheatsheets' => 'Cheatsheet',
-        //     'nouvelles' => 'Nouvelles', 
-        //     'projets' => 'Projets', 
-        //     'trucs-et-astuces' => 'Trucs et Astuces', 
-        // ];
-        
-        // $mots_cles = [
-        //     'html_css' => 'HTML/CSS', 
-        //     'javascript' => 'Javascript', 
-        //     'php' => 'PHP',
-        //     'wordpress' => 'WordPress'
-        // ];
 
         $data['categories'] = Article::get_categories();
         $data['keywords'] = Article::get_keywords();
@@ -47,21 +32,6 @@ class BlogController {
         $requested_type = str_replace('/', '', $_SERVER['REQUEST_URI']);
         
         
-        // $categories = [
-        //     'publications' => 'Toutes les publications', 
-        //     'cheatsheets' => 'Cheatsheet',
-        //     'nouvelles' => 'Nouvelles', 
-        //     'projets' => 'Projets', 
-        //     'trucs-et-astuces' => 'Trucs et Astuces', 
-        // ];
-
-        // $mots_cles = [
-        //     'html_css' => 'HTML/CSS', 
-        //     'javascript' => 'Javascript', 
-        //     'php' => 'PHP',
-        //     'wordpress' => 'WordPress'
-        // ];
-
 
         $data['categories'] = Article::get_categories();
         $data['keywords'] = Article::get_keywords();
@@ -129,60 +99,4 @@ class BlogController {
     }
 
 
-    public function projets() {
-
-        $projet_1 = new Article();
-        $projet_1->id = 1;
-        $projet_1->slug = "donald-royer-design";
-        $projet_1->categorie = "Portfolio";
-        $projet_1->title = "Donald Royer Design";
-        $projet_1->preview_image = "/medias/images/portfolio/clients/donaldroyerdesign2022.jpg";
-        $projet_1->preview_desc = "Designer expérimenté pour vos logos ou projets artistiques";
-        $projet_1->date = "Décembre 2021";
-
-        $projet_2 = new Article();
-        $projet_2->id = 2;
-        $projet_2->slug = "eugene-laplante";
-        $projet_2->categorie = "Portfolio";
-        $projet_2->title = "Eugène Laplante Service-conseils";
-        $projet_2->preview_image = "/medias/images/portfolio/clients/eugene-laplante-thumb-450x300.jpg";
-        $projet_2->preview_desc = "Service-conseils pour vos projets de construction";
-        $projet_2->date = "Avril 2019";
-
-        $projet_3 = new Article();
-        $projet_3->id = 3;
-        $projet_3->slug = "le-gaboteur";
-        $projet_3->categorie = "Portfolio";
-        $projet_3->title = "Le Gaboteur";
-        $projet_3->preview_image = "/medias/images/portfolio/clients/gaboteur2022.jpg";
-        $projet_3->preview_desc = "Journal francophone à Terre-Neuve et Labrador";
-        $projet_3->date = "Septembre 2022";
-
-        $data['projets'] = [
-            $projet_1, $projet_2, $projet_3
-        ];
-
-        echo Models\Core\View::display("Blog/projets.php", $data);
-    }
-
-    public function details_projet() {
-    }
-
-
-
-    public function donald() {
-
-        $projet = new Article();
-        $projet->id = 1;
-        $projet->slug = "donald-royer-design";
-        $projet->categorie = "Portfolio";
-        $projet->title = "Donald Royer Design";
-        $projet->preview_image = "/medias/images/portfolio/clients/donaldroyerdesign2022.jpg";
-        $projet->preview_desc = "Designer expérimenté pour vos logos ou projets artistiques";
-        $projet->date = "Décembre 2021";
-
-        $data['projet'] = $projet;
-
-        echo Models\Core\View::display("Blog/projet.php", $data);
-    }
 }

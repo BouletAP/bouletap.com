@@ -37,6 +37,28 @@ class Article {
         return $article;
     }
 
+
+    static function get_all() {
+        $output = [];
+        $items = Database::query()->get ('publications');
+
+        if( !empty($items) ) {
+            foreach($items as $item) {
+                $article = new Article();
+
+                foreach( $item as $key => $value ) {
+                    $article->$key = $value;
+                }
+
+                //$article->data = $item;                
+                $output[] = $article;
+            }
+        }
+
+        return $output;
+    }
+
+
     public function update() {
 
         $id = $this->getData('id');        

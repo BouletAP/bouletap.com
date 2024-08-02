@@ -212,7 +212,7 @@
                                 <p>...</p>
                             </div>
                             <div class="tech-description">
-                                <span class="h5"><i class="lni lni-vs-code"></i> Custom Theme & Plugin development</span>
+                                <span class="h5"><i class="lni lni-vs-code"></i> Custom Themes & Plugins</span>
                                 <p>...</p>
                             </div>
                         </div>               

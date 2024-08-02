@@ -74,16 +74,17 @@ if( $_POST['request_type'] == "form-audit-seo-2" ) {
         $message = "Une demande d'audit SEO est entrée";
         $message .= "<br/><br/> Website: ".$form_data['website'];
 
-        if( mail($to, "Demande d'audit SEO", $message, $headers) ) {        
+        // pas de fonction MAIL sur ce serveur...
+        //if( mail($to, "Demande d'audit SEO", $message, $headers) ) {        
             $output['state'] = "200";
             $output['data'] = ['success'];
-        }
-        else {
-            $errorMessage = error_get_last();
-            $output['state'] = "400";
-            //echo '<pre>'; print_r($errorMessage); echo '</pre>'; die();
-            $output['return'] = $errorMessage;
-        }
+        // }
+        // else {
+        //     $errorMessage = error_get_last();
+        //     $output['state'] = "400";
+        //     //echo '<pre>'; print_r($errorMessage); echo '</pre>'; die();
+        //     $output['return'] = $errorMessage;
+        // }
     }
     else {
         $output['state'] = "400";

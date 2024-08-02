@@ -18,12 +18,19 @@
     // use controller/method dispatch
     if( is_array($page) ) {
         $controller = $page[0];
-        $method = $page[1]; 
+        $method = $page[1];         
         
         //require_once APP_PATH . '/' . $controller . ".php";
 
         $system = new $controller();
-        $system->$method();
+
+        if( !empty($page[2]) )  {
+            $system->$method($page[2]);
+        }
+        else {
+            $system->$method();
+        }
+
         exit();
     }
     

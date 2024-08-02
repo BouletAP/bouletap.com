@@ -4,6 +4,17 @@
 .dashboard-content .sidebar {
   width: 20%;
 }
+.dashboard-content .sidebar .admin-menu h3 {
+  font-weight: bold;
+}
+.dashboard-content .sidebar .admin-menu ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 5px;
+}
+.dashboard-content .sidebar .admin-menu ul li {
+  margin-top: 5px;
+}
 .dashboard-content .page-admin {
   width: 80%;
 }
@@ -20,4 +31,20 @@
 }
 .dashboard-content .page-admin form textarea {
   height: 500px;
+}
+.dashboard-content .dashboard-col {
+  display: flex;
+}
+
+.page-admin table {
+  width: 100%;
+  margin-top: 15px;
+}
+.page-admin table tr th {
+  font-weight: bold;
+  padding: 5px;
+  text-transform: uppercase;
+}
+.page-admin table tr td {
+  padding: 5px;
 }

@@ -37,7 +37,7 @@
                 </li>
                 <li class="list-with-icons">
                     <i class="lni lni-envelope"></i>
-                    <span><a href="/contact">info@bouletap.com</a></span>
+                    <span><a href="/contact">apb@bouletap.com</a></span>
                 </li>
             </ul>
             <div class="socials">
@@ -70,6 +70,7 @@
                 <li><a href="#">Services offerts</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="/nouvelles">Articles et Nouvelles</a></li>
+                <li><a href="/confidentialite">Politique de confidentialité</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
@@ -111,8 +112,8 @@
         <div class="left">
         <a href="#"> © <?php echo date('Y'); ?> - André-Philippe Boulet - Tous droits réservés</a>
         </div>
-        <div class="right">
-            <div class="socials">
+        <div class="right">                    
+            <div class="socials">  
                 <ul>
                     <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
                     <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>

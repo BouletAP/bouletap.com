@@ -1,16 +1,33 @@
 .products-and-services .hero {
   display: flex;
-  padding: 0px 40px;
+  padding: 0px 10px;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
-.products-and-services .hero img {
-  width: 40vw;
 }
 .products-and-services .hero .page-header {
   margin-bottom: 0px;
+  padding-top: 0px;
+}
+.products-and-services .hero img {
+  width: 70vw;
+}
+@media only screen and (min-width: 1248px) {
+  .products-and-services .hero {
+    padding: 0px 40px;
+    flex-direction: row;
+  }
+  .products-and-services .hero img {
+    width: 40vw;
+  }
 }
 .products-and-services .presentation {
-  padding: 40px;
+  padding: 10px;
+}
+@media only screen and (min-width: 1248px) {
+  .products-and-services .presentation {
+    padding: 40px;
+  }
 }
 .products-and-services .presentation .pitch {
   margin: 20px 0px;
@@ -27,16 +44,26 @@
   margin-bottom: 20px;
 }
 .products-and-services .presentation .pitch p {
-  font-size: 0.9em;
   font-weight: bold;
 }
 .products-and-services .presentation .details {
   display: flex;
   margin-top: 60px;
+  flex-direction: column-reverse;
+}
+@media only screen and (min-width: 1248px) {
+  .products-and-services .presentation .details {
+    flex-direction: row;
+  }
 }
 .products-and-services .presentation .details .sidebar {
   width: 50%;
-  padding: 10px 10px 10px 0px;
+  padding: 50px 10px 10px 0px;
+}
+@media only screen and (min-width: 1248px) {
+  .products-and-services .presentation .details .sidebar {
+    padding: 10px 10px 10px 0px;
+  }
 }
 .products-and-services .presentation .details .sidebar h3 {
   font-size: 1em;
@@ -113,10 +140,17 @@
 }
 .products-and-services .produits {
   display: flex;
-  padding: 40px;
   justify-content: space-between;
   gap: 40px;
   align-items: center;
+  padding: 10px;
+  flex-direction: column;
+}
+@media only screen and (min-width: 1248px) {
+  .products-and-services .produits {
+    padding: 40px;
+    flex-direction: row;
+  }
 }
 .products-and-services .produits .card {
   text-align: center;

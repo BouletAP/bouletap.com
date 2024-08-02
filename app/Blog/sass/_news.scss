@@ -3,49 +3,7 @@
 
 
 
-.sidebar {
 
-    padding-right:40px;
-
-    h3 {
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-top:10px;
-        font-size:1.1em;
-    }
-    hr {
-        width:30%;
-        margin-top:5px;
-    }
-
-    h4 {
-        font-weight: bold;
-        color:#003399;
-        text-transform: uppercase;
-    }
-
-    .bloc {
-        margin: 30px 0px;
-    }
-
-    .search-form form {
-        width:55%;
-    }
-
-    ul {
-        margin-top:8px;
-        margin-bottom:25px;
-
-        li a {
-            line-height:1.3em;
-            color: #000;
-
-            @include touch() {
-                color:#003399;
-            }
-        }
-    }
-}
 
 .details-nouvelle {
     .section-description {

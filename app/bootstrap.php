@@ -17,6 +17,9 @@ require_once __DIR__ . '/models/entities/visit.php';
 require_once __DIR__ . '/models/entities/page.php';
 require_once __DIR__ . '/models/entities/entry.php';
 // require_once __DIR__ . '/models/entities/service_offert.php';
+
+
+require_once __DIR__ . '/models/entities/publication.php';
 require_once __DIR__ . '/models/entities/article.php';
 
 
@@ -28,8 +31,13 @@ require_once __DIR__ . '/models/forms/login.php';
 require_once __DIR__ . '/routes.php';
 
 
+// require_once __DIR__ . '/Portfolio/models/forms/projet.php';
+// require_once __DIR__ . '/Portfolio/models/entities/projet.php';
+
+
 require_once __DIR__ . '/Pages/PagesController.php';
 require_once __DIR__ . '/Blog/BlogController.php';
+require_once __DIR__ . '/Portfolio/PortfolioController.php';
 require_once __DIR__ . '/Services/ServicesController.php';
 
 require_once __DIR__ . '/Admin/AdminController.php';

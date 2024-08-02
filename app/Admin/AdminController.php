@@ -21,7 +21,6 @@ class AdminController {
         } 
 
 
-
         $entries = array();
         $form_entries = Models\Entities\Entry::get_last(5);
         if( !empty($form_entries) ) {
@@ -30,10 +29,13 @@ class AdminController {
                     "id" => $entry['id'],
                     "form" => $entry['page'],
                     "page" => $entry['form'],
+                    //"data" => unserialize($entry['form_data']),
                     "data" => $entry['form_data']
                 ];
             }
         }
+
+        //echo '<pre>'; print_r($entries); echo '</pre>'; die();
 
         $visitors = Visitor::recent();
 

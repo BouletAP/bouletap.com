@@ -17,6 +17,11 @@ class PagesController {
     public function contact() {
         echo Models\Core\View::display("Pages/views/contact.php");
     }
+    
+    public function privacy_policy() {
+        echo Models\Core\View::display("Pages/views/privacy-policy.php");
+    }
+
     public function coming_soon() {
         echo Models\Core\View::display("Pages/views/en-construction.php");
     }

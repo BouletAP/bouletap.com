@@ -9,6 +9,19 @@ class Router {
     static public $current_route;
 
     static public function add($name, $controllerPath = false, $page = false) {
+
+        $param = false;
+
+        // remove parameter ({INT}, {SLUG})
+        if( strpos($name, '{INT}') !== FALSE) {
+            $param = '{INT}';
+            $name = str_replace('/{INT}', '', $name);
+        }
+        if( strpos($name, '{SLUG}') !== FALSE) {
+            $param = '{SLUG}';
+            $name = str_replace('/{SLUG}', '', $name);
+        }
+
         
         //self::$routes[$name] = $path;
         self::$routes[$name] = $controllerPath;
@@ -16,10 +29,12 @@ class Router {
         if( $page ) {
             self::$routes[$name] = [
                 $controllerPath,
-                $page
+                $page,
+                $param
             ];
         }        
     }
+
 
     static public function run() {
 
@@ -27,7 +42,8 @@ class Router {
         $route = false;
     
         $request_uri = $_SERVER['REQUEST_URI'];
-    
+
+            
         if( $request_uri != $_SERVER['SCRIPT_NAME'] ) {
             $request_uri = str_replace($base_path, '', $request_uri);
     
@@ -42,7 +58,19 @@ class Router {
             if( !empty(static::$routes[$request_uri]) ) {
                 $route = static::$routes[$request_uri];
             }
+        }
 
+
+        // Check with parameter options, remove last part of the URL
+        if(!$route) {
+            $param = substr($request_uri, strrpos($request_uri, '/') + 1);
+            $request_uri = str_replace("/".$param, '', $request_uri);
+
+
+            if( !empty(static::$routes[$request_uri]) ) {
+                $route = static::$routes[$request_uri];
+                $route[2] = $param;
+            }
         }
            
     

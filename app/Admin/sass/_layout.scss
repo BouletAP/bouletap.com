@@ -6,6 +6,18 @@
 
     .sidebar {
         width:20%;
+
+        .admin-menu {
+            h3 {font-weight:bold;}
+            ul {
+                list-style-type: disc;
+                list-style-position: inside;
+                margin-left: 5px;
+                li {
+                    margin-top:5px;
+                }
+            }
+        }
     }
 
     .page-admin {
@@ -26,5 +38,9 @@
                 height:500px;
             }
         }
+    }
+
+    .dashboard-col {
+        display: flex;
     }
 }

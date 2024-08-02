@@ -23,7 +23,7 @@
             <div class="sidebar">
                 <?php include(APP_PATH.'/Admin/views/_menu.php'); ?>
             </div>
-            <div class="page-admin">
+            <div class="page-admin dashboard-col">
                 <div class="col">
                     <h2>Formulaires</h2>
 
@@ -31,9 +31,7 @@
                         <ul>
                         <?php foreach($data['entries'] as $entry): ?>
                             <li><a href="#?id=<?php $entry['id']; ?>">
-                            <?php
-                                echo $entry['data'];
-                            ?>
+                            <?php echo $entry['data']; ?>
                             </a></li>
                         <?php endforeach; ?>
                         </ul>
@@ -43,7 +41,7 @@
                 </div>
 
                 <div class="col">
-                    <h2>Récents utilisateur</h2>
+                    <h2>Dernières visites</h2>
                     <?php if( !empty($data['visitors']) ): ?>
                         <ul>
                         <?php foreach($data['visitors'] as $visitor): ?>
@@ -57,9 +55,6 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="col">
-                    <h2>Pages visitées</h2>
-                </div>
             </div>
 
 

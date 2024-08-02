@@ -94,20 +94,20 @@
                 <div class="option">
                     <object class="icon-service-svg" data="medias/images/services/carte-affaires.svg" type="image/svg+xml"></object>  
                     <h3>Page spécialisée pour <br>offre limitée</h3>
-                    <p>Une page d'offre spéciale à durée limitée génère une urgence et incite le client à agir rapidement. Il capitalise sur la rareté, stimule les achats impulsifs et exploite le FOMO. Cette approche améliore l'efficacité du marketing en créant un appel à l'action ciblé et urgent, en attirant l'attention, en engageant les utilisateurs et en générant des conversions dans un délai spécifique.</p>
-                    <a href="/nouveau-site-web" class="btn-rect">En savoir plus</a>
+                    <p>Une page d'offre spéciale à durée limitée génère une urgence et incite le client à agir rapidement. Cette approche améliore l'efficacité du marketing en créant un appel à l'action ciblé et urgent, en engageant les utilisateurs et en générant des conversions dans un délai spécifique.</p>
+                    <a href="/services/creation-site-internet" class="btn-rect">En savoir plus</a>
                 </div>
                 <div class="option">
                     <h3>Site vitrine pour <br>petite entreprise</h3>
-                    <p>Un site Web est essentiel pour que votre entreprise établisse une présence en ligne, transmette son professionnalisme et renforce sa crédibilité. Il sert de plate-forme centralisée pour présenter les produits/services, communiquer efficacement la proposition de valeur unique, engager les clients et fonctionner comme un outil de vente 24h/24 et 7j/7, améliorant ainsi la compétitivité dans le paysage numérique.</p>
+                    <p>Un site Web est essentiel pour qu'une entreprise établisse une présence en ligne crédible et professionnelle. Un site sert à présenter les produits/services, communiquer efficacement votre proposition de valeur, engager les clients en tout temps dans le paysage numérique.</p>
                     <object class="icon-service-svg" data="medias/images/services/project-completion.svg" type="image/svg+xml"></object>
-                    <a href="/nouveau-site-web" class="btn-rect">En savoir plus</a>
+                    <a href="/services/creation-site-internet" class="btn-rect">En savoir plus</a>
                 </div>
                 <div class="option">                  
                     <object class="icon-service-svg" data="medias/images/services/e-commerce.svg" type="image/svg+xml"></object>
                     <h3>Commerce en Ligne <br>de toute envergure</h3>
-                    <p>La création d'un site de commerce électronique est cruciale pour que votre entreprises puisse tirer parti de la tendance croissante des achats en ligne, étendre leur portée mondiale et proposer des transactions pratiques et sécurisées. Il facilite un marketing ciblé, des interactions personnalisées, une gestion efficace des commandes et améliore la visibilité de la marque, garantissant ainsi l'adaptabilité à l'évolution des comportements des consommateurs sur le marché numérique.</p>
-                    <a href="/nouveau-site-web" class="btn-rect">En savoir plus</a>
+                    <p>La création d'un site de commerce électronique est cruciale pour tirer parti de la tendance croissante des achats en ligne et proposer des transactions pratiques et sécurisées. Il facilite un marketing ciblé, des interactions personnalisées et améliore la visibilité de la marque sur le marché numérique.</p>
+                    <a href="/services/creation-site-internet" class="btn-rect">En savoir plus</a>
                 </div>                
             </div>
         </section>
@@ -127,7 +127,7 @@
                         <div class="row">
                             <div class="icon">1</div>
                             <div class="description">
-                                <h4>Donald Royer Design</h4>
+                                <h4><a href="/portfolio/donald-royer-design">Donald Royer Design</a></h4>
                                 <p>Designer expérimenté pour vos logos ou projets artistiques</p>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
                     <div class="slide-text">
                         <h3>Un site <b>rapide</b> et <b>performant</b> pour conservez <b>l'attention</b> de vos visiteurs</h3>
                         <p>Un site lent peut entraîner la frustration de vos clients ce qui a un impact négatif sur leur expérience. De plus, les moteurs de recherche considèrent la vitesse des pages comme un facteur de classement. Améliorer votre positionnement et vos ventes avec un site rapide et performant.</p>
-                        <a href="#" class="btn-cta">Vérifier la rapidité de votre site</a>
+                        <a href="/services/performances" class="btn-cta">Vérifier la rapidité de votre site</a>
                     </div>
                     <img src="/medias/images/services/undraw_success_factors_re_ce93.svg" alt="">
                 </div>
@@ -207,7 +207,7 @@
                     <div class="slide-text">
                         <h3><b>Téléphones mobiles</b> et la <b>présentation</b> de votre site sur <b>différents appareils</b></h3>
                         <p>Il ne faut jamais négliger l'expérience mobile des utilisateurs qui visiteront votre site à partir de leur téléphone. Ces visiteurs seront particulièrement enclins à accepter ce que vous leur proposer s'ils trouvent rapidement l'information désirée.</p>
-                        <a href="#" class="btn-cta">Vérifier l'accessibilité de votre site</a>
+                        <a href="/services/accessibilite" class="btn-cta">Vérifier l'accessibilité de votre site</a>
                     </div>
                     <img src="/medias/images/services/undraw_in_sync_re_jlqd3.svg" alt="">
                 </div>
@@ -215,7 +215,7 @@
                     <div class="slide-text">
                         <h3><b>SEO</b> et <b>Optimisation</b> de <br>vos <b>réseaux sociaux</b></h3>
                         <p>Vos clients n'arrivent pas par magie sur votre site. L'<b>optimisation de votre présence</b> sur les moteurs de recherche, les entrées directes et les médias sociaux est cruciale pour <b>votre croissance</b> et mérite une attention particulière.</p>
-                        <a href="#" class="btn-cta">Vérifier le SEO de votre site</a>
+                        <a href="/services/seo" class="btn-cta">Vérifier le SEO de votre site</a>
                     </div>
                     <img src="/medias/images/services/Socialmedia-Marketing-1.svg" alt="">
                 </div>
@@ -223,7 +223,7 @@
                     <div class="slide-text">
                         <h3>Prévenez les <b>accès malveillants</b> et <b>protéger</b> vos données utilisateurs.</h3>
                         <p>Votre site est il à l'abris des pirates et les robots qui cibles les failles et les données de vos clients ? Empèchez les accès non autorisés aux données et fichiers sauvegardés est crucial pour maintenir la confiance de vos clients et vous conformer aux réglementations en matière de confidentialité.</p>
-                        <a href="#" class="btn-cta">Vérifier la sécurité de votre site</a>              
+                        <a href="/services/securite" class="btn-cta">Vérifier la sécurité de votre site</a>              
                     </div>
                     <img src="/medias/images/services/Ethical-hacking-1.svg" alt="">          
                 </div>

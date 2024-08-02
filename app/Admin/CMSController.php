@@ -3,19 +3,173 @@
 require_once APP_PATH . '/models/forms/publication.php';
 require_once APP_PATH . '/models/entities/article.php';
 
+require_once APP_PATH . '/Portfolio/models/forms/projet.php';
+require_once APP_PATH . '/Portfolio/models/entities/projet.php';
+
 
 use BouletAP\Tools\Cookies;
 use BouletAP\Tools\Stringz;
 use Models\Core\Auth;
 use Models\Core\Database;
 
+
+
+use Models\Entities\Publication;
+
+
 use Models\Entities\Article;
+use Models\Entities\Projet;
 
 
 
 class CMSController {
     
+    public function portfolio_list() {
+        if( !Auth::user_can('admin_duty') ) {
+            header("Location: /connexion");
+        } 
 
+
+
+
+
+        $projets = Projet::get_all();
+
+        //echo 'projets<pre>'; print_r($projets); echo '</pre>'; die();
+
+
+        $data = [
+            'page' => 'portfolio',
+            'items' => $projets
+        ];
+
+        echo Models\Core\View::display("Admin/views/listing.php", $data);
+    }
+
+
+    public function portfolio_add() {
+        if( !Auth::user_can('admin_duty') ) {
+            header("Location: /connexion");
+        } 
+        
+        $form = new Models\Forms\ProjetForm();
+
+        if( !empty($_POST) && $form->validate() ) {
+
+            $form_values = $form->getValues();
+
+            $form_values['slug'] = Stringz::createSlug($form_values['title']);
+            $form_values['type'] = 'Projets';
+            $form_values['published'] = time();
+            $form_values['private'] = 0;            
+
+            $projet = new Projet($form_values);
+            if( $projet->save() ) {
+                header('Location: /admin/portfolio');
+                die();
+            }
+        }
+
+        $error = $form->getErrors('flat');
+
+
+        $data = [
+            'portfolio_form' => $form
+        ];
+
+        echo Models\Core\View::display("Admin/views/portfolio-add.php", $data);
+    }
+
+    public function portfolio_edit($id = false) {
+        if( !Auth::user_can('admin_duty') ) {
+            header("Location: /connexion");
+            die();
+        } 
+
+        $id = (int)$id;
+        if( $id <= 0 ) {
+            header("Location: /admin/portfolio/add");
+            die();
+        }
+
+        $projet = Projet::get_by('id', $id);
+        if( empty($projet) ) {
+            header("Location: /admin/portfolio/add");
+            die();
+        }
+        else {
+            $projet = $projet[0];
+        }
+
+        // echo 'project<pre>'; print_r($projet); echo '</pre>';
+        // echo 'EDITING id:<pre>'; print_r($id); echo '</pre>'; die();
+        
+        $form = new Models\Forms\ProjetForm();
+        $form->fill( (array)$projet );
+
+        // if( !empty($_POST) && $form->validate() ) {
+        // }
+
+        $data = [
+            'portfolio_form' => $form
+        ];
+
+        echo Models\Core\View::display("Admin/views/portfolio-add.php", $data);
+    }
+
+
+    public function portfolio_delete($id = false) {
+        if( !Auth::user_can('admin_duty') ) {
+            header("Location: /connexion");
+            die();
+        } 
+
+        $id = (int)$id;
+        if( $id <= 0 ) {
+            header("Location: /admin/portfolio");
+            die();
+        }
+
+        $projet = Projet::get_by('id', $id);
+        if( empty($projet) ) {
+            header("Location: /admin/portfolio");
+            die();
+        }
+        else {
+            $projet = $projet[0];
+        }
+
+        $projet->delete();
+        
+        header("Location: /admin/portfolio");
+        die();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // REAL IS ARTICLES MANAGEMENT HERE....
     public function add_publications() {
         
         if( !Auth::user_can('admin_duty') ) {

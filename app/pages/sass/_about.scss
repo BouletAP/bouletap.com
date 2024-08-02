@@ -155,15 +155,23 @@
                         &::after {
                             content:"{";
                             position: absolute;
-                            right:-20px;
-                            top: 10px;
+                            right:-15px;
+                            top: 14px;
                             font-weight: bold;
-                            font-size: 3em;                            
+                            font-size: 3em;   
+                            
+                            @include mq('tablet') {
+                                top: 10px;
+                                right:-20px;
+                            }
                         }
 
                         &.tech-1 {
                             &::after {
-                                top: -5px;
+                                top: 0px;
+                                @include mq('tablet') {
+                                    top: -5px;
+                                }
                             }
                         }
 
@@ -173,7 +181,7 @@
                         padding: 20px;
 
                         .tech-description {
-                            margin-bottom: 15px;                            
+                            margin-bottom: 1.5vh;                            
                         }
 
                     }
@@ -227,14 +235,21 @@
             // }
             
             .testimonial {
-                padding:0px 35px 35px 0px;
+                
+                @include mq('desktop') {
+                    padding:0px 35px 35px 0px;
+                }
+
+
                 .content {
-                    padding:35px;
+                    padding:2em;
                     background-color:#CCD6EB;
                     border-radius:25px;
                     border-bottom-left-radius: 0px;
                     position:relative;
                     margin-bottom:25px;
+                    font-size: 1.4em;
+                    line-height: 1.3em;
 
                     &::before {
                         content: "";

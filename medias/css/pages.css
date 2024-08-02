@@ -124,19 +124,30 @@
 .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs::after {
   content: "{";
   position: absolute;
-  right: -20px;
-  top: 10px;
+  right: -15px;
+  top: 14px;
   font-weight: bold;
   font-size: 3em;
 }
+@media only screen and (min-width: 768px) {
+  .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs::after {
+    top: 10px;
+    right: -20px;
+  }
+}
 .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs.tech-1::after {
-  top: -5px;
+  top: 0px;
+}
+@media only screen and (min-width: 768px) {
+  .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs.tech-1::after {
+    top: -5px;
+  }
 }
 .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .derivatives {
   padding: 20px;
 }
 .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .derivatives .tech-description {
-  margin-bottom: 15px;
+  margin-bottom: 1.5vh;
 }
 .page-a-propos .tech-and-testimonials .technologies .tech-description {
   margin-bottom: 10px;
@@ -162,16 +173,20 @@
   margin-right: 10px;
   font-size: 1.2em;
 }
-.page-a-propos .tech-and-testimonials .testimonials .testimonial {
-  padding: 0px 35px 35px 0px;
+@media only screen and (min-width: 1248px) {
+  .page-a-propos .tech-and-testimonials .testimonials .testimonial {
+    padding: 0px 35px 35px 0px;
+  }
 }
 .page-a-propos .tech-and-testimonials .testimonials .testimonial .content {
-  padding: 35px;
+  padding: 2em;
   background-color: #CCD6EB;
   border-radius: 25px;
   border-bottom-left-radius: 0px;
   position: relative;
   margin-bottom: 25px;
+  font-size: 1.4em;
+  line-height: 1.3em;
 }
 .page-a-propos .tech-and-testimonials .testimonials .testimonial .content::before {
   content: "";
@@ -405,4 +420,30 @@
 .page404 .hero p {
   margin-top: 25px;
   font-size: 1.5em;
+}
+
+.politique-confidentialite .hero .page-header h1 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+.politique-confidentialite h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+@media only screen and (min-width: 768px) {
+  .politique-confidentialite .details {
+    padding: 40px;
+  }
+}
+.politique-confidentialite .details h2 {
+  margin-top: 30px;
+}
+.politique-confidentialite .details h2.item1 {
+  margin-top: 50px;
+}
+.politique-confidentialite .details p {
+  margin-top: 20px;
 }

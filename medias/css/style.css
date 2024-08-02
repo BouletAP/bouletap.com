@@ -200,7 +200,7 @@ a:hover {
 
 body {
   font-family: Helvetica, sans-serif;
-  font-size: calc(10px + 0.8vw);
+  font-size: calc(12px + 0.8vw);
   color: #000;
 }
 @media only screen and (min-width: 768px) {
@@ -1065,6 +1065,11 @@ footer .footer-main .col {
   position: relative;
   z-index: 40;
   margin-bottom: 40px;
+}
+@media only screen and (min-width: 1248px) {
+  footer .footer-main .col {
+    margin-bottom: 0px;
+  }
 }
 footer .footer-main .col a {
   color: #FFF;

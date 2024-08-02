@@ -7,9 +7,26 @@ body {
     //background-color: #003399;
 }
 
+.page-content {
+    padding-bottom:30px;
+}
+
+.btn-retour {
+    display: inline-block;
+    padding-left: 10px;
+    color: #003399;
+
+    @include touch() {
+        color:#000;
+    }
+
+    @include mq('desktop') {
+        padding-left:40px;
+    }
+}
 
 .hero {
-    margin-top:20px;
+    margin-top:30px;
     h1 {
         font-weight: bold;
         font-size:2em;
@@ -19,14 +36,16 @@ body {
 
 
 .section-preview {
-    background-color: #F2F2F2;
     display: flex;
+    flex-direction: column;
     padding: 30px;
+    background-color: #F2F2F2;
 
     align-content: center;
+    align-items: center;
 
     .concept {
-        padding:20px;
+        padding:20px 20px 20px 0px;
         span {
             font-size: 27px;
             margin-bottom: 10px;
@@ -36,8 +55,23 @@ body {
     }
 
     img {
-        width:60%;    
+        max-width:100%;
+        height: 100%;
     }
+
+    @include mq('desktop') {
+        
+        flex-direction: row;
+
+        .concept {
+            padding-left:20px;
+        }
+
+        img {
+            width:60%;  
+        }
+    }
+    
 }
 
 
@@ -47,8 +81,8 @@ body {
 
     .overview {
         display: flex;
+        flex-direction: column;
         padding-top:70px;
-        padding-bottom:100px;
         span {
             font-size: 27px;
             margin-bottom: 10px;
@@ -56,16 +90,23 @@ body {
             display: inline-block;
             width:80%;
         }
+
+        @include mq('desktop') {
+            flex-direction: row;
+            padding-bottom:100px;
+        }
     }
 
     .slider {
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
         margin-bottom:80px;
 
+        
         .slide {    
-            margin:0px 10px;     
             text-align: center;   
+            margin-top:45px;
             div {
                 display: flex;
                 flex-direction: column;
@@ -78,10 +119,19 @@ body {
                 width:auto;
                 height:300px;
                 margin: 0px auto;
+                object-fit: contain;
             }
             p {
                 margin:8px;
                 font-size:0.9em;
+            }
+        }
+
+        @include mq('tablet') {
+            flex-direction: row;
+            margin-top:45px;
+            .slide {    
+                margin:0px 10px;     
             }
         }
         
@@ -89,13 +139,13 @@ body {
 
     .project-details {
         display: flex;
+        flex-direction: column;
         align-items: center;
         position: relative;
         padding-top:40px;
-        padding-bottom:40px;
+        padding-bottom:40px;        
 
         .details {
-            width:80%;
             
             .subtitle {
                 text-transform: uppercase;
@@ -109,17 +159,15 @@ body {
             p {
                 margin-top:25px;
                 margin-bottom:25px;
-                width:80%;
             }
         }
 
         ul {
             display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+            gap:25px;
+            margin-top:25px;
 
             li {   
-                margin-bottom:25px;
                 span {
                     display:block;
                     font-weight: bold;
@@ -127,6 +175,29 @@ body {
                 }
             }
         }
+
+        @include mq('desktop') {
+
+            flex-direction: row;
+            .details {
+                width:80%;
+                p {
+                    width:80%;
+                }
+            }
+
+            ul {
+                flex-direction: column;
+                justify-content: space-around;
+                margin-top:0px;
+                li {   
+                    margin-bottom:25px;
+                }
+            }
+        }
+
+
+        
 
         &:before {
             background-image: url(/medias/images/bg-ambience-apb.png);

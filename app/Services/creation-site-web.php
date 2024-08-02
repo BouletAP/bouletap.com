@@ -32,11 +32,11 @@
                 <div class="sidebar">
                     <h3>Autres services</h3>
                     <ul>
-                        <li class="active"><a href="">Création d'un site Internet</a></li>
-                        <li><a href="">Performances</a></li>
-                        <li><a href="">Accessibilité</a></li>
-                        <li><a href="">SEO</a></li>
-                        <li><a href="">Sécurité</a></li>
+                        <li class="active"><a href="/services/creation-site-internet">Création d'un site Internet</a></li>
+                        <li><a href="/services/performances">Performances</a></li>
+                        <li><a href="/services/accessibilite">Accessibilité</a></li>
+                        <li><a href="/services/seo">SEO</a></li>
+                        <li><a href="/services/securite">Sécurité</a></li>
                     </ul>
                 </div>
                 <div class="description-detaillee">
