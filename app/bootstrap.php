@@ -43,6 +43,7 @@ require_once __DIR__ . '/Services/ServicesController.php';
 require_once __DIR__ . '/Admin/AdminController.php';
 require_once __DIR__ . '/Admin/AuthController.php';
 require_once __DIR__ . '/Admin/CMSController.php';
+require_once __DIR__ . '/Admin/ProjectController.php';
 
 // autoload soon?
 //

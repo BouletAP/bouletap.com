@@ -28,8 +28,6 @@ Router::add('/logout', 'AuthController', 'logout');
 
 Router::add('/admin/publication-add', 'CMSController', 'add_publications');
 
-Router::add('/admin/portfolio', 'CMSController', 'portfolio_list');
-Router::add('/admin/portfolio/add', 'CMSController', 'portfolio_add');
 
 
 Router::add('/publications', 'BlogController', 'nouvelles');
@@ -65,8 +63,10 @@ Router::add('/portfolio/le-gaboteur', 'PortfolioController', 'donald_royer_desig
 //Router::add('/autologin', 'AdminController', 'autologin');
 
 
-Router::add('/admin/portfolio/edit/{INT}', 'CMSController', 'portfolio_edit');
-Router::add('/admin/portfolio/delete/{INT}', 'CMSController', 'portfolio_delete');
+Router::add('/admin/portfolio', 'ProjectController', 'list');
+Router::add('/admin/portfolio/add', 'ProjectController', 'add');
+Router::add('/admin/portfolio/edit/{INT}', 'ProjectController', 'edit');
+Router::add('/admin/portfolio/delete/{INT}', 'ProjectController', 'delete');
 
 
 

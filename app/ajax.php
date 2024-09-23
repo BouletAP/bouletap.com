@@ -54,25 +54,25 @@ if( $_POST['request_type'] == "form-audit-seo-2" ) {
 
     if( $form->validate() ) {
 
-        $form_data = [
-            'courriel' => $form->getField('courriel')->getValue(),
-            'website' => $form->getField('website')->getValue()
-        ];
 
-        Models\Entities\Entry::save($form_data);
+        $form->save_db();
+        
+
+        $submitted_email = $form->getField('courriel')->getValue();
+        $submitted_website = $form->getField('website')->getValue();
 
         $output['state'] = "300";
 
-        $headers = 'From: info@bouletap.com' . "\r\n" .
-        'Reply-To: '.$form_data['courriel'] . "\r\n" .
+        $headers = 'From: apb@bouletap.com' . "\r\n" .
+        'Reply-To: '.$submitted_email . "\r\n" .
         'Content-Type: text/html; charset=ISO-8859-1' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
-        $to = 'info@bouletap.com';
+        //$to = 'info@bouletap.com'; deleted email for now
         $to = 'bouletap@gmail.com';
 
         $message = "Une demande d'audit SEO est entrée";
-        $message .= "<br/><br/> Website: ".$form_data['website'];
+        $message .= "<br/><br/> Website: ".$submitted_website;
 
         // pas de fonction MAIL sur ce serveur...
         //if( mail($to, "Demande d'audit SEO", $message, $headers) ) {        
@@ -126,32 +126,32 @@ if( $_POST['request_type'] == "form-contact" ) {
 
     if( $form->validate() ) {
 
-        $form_data = [
-            'email' => $form->getField('courriel')->getValue(),
-            'subject' => $form->getField('subject')->getValue(),
-            'message' => $form->getField('message')->getValue(),
-            'full_name' => $form->getField('full_name')->getValue(),
-            'phone' => $form->getField('phone')->getValue()
-        ];
+        
+        $form->save_db();
 
-        Models\Entities\Entry::save($form_data);
+
+        $courriel = $form->getField('courriel')->getValue();
+        $full_name = $form->getField('full_name')->getValue();
+        $phone = $form->getField('phone')->getValue();
+        $subject = $form->getField('subject')->getValue();
+        $message = $form->getField('message')->getValue();
 
         $output['state'] = "300";
         $output['data'] = ['success'];
 
         $headers = 'From: info@bouletap.com' . "\r\n" .
-        'Reply-To: '.$form_data['email'] . "\r\n" .
+        'Reply-To: '.$courriel . "\r\n" .
         'Content-Type: text/html; charset=ISO-8859-1' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
         $to = 'info@bouletap.com';
         $to = 'bouletap@gmail.com';
 
-        $message = $form_data['message'];
-        $message .= "<br/><br/> De: ".$form_data['full_name'];
-        $message .= !empty($form_data['phone']) ? "<br/>Tél.: ". $form_data['phone'] : "";
+        $message = $message;
+        $message .= "<br/><br/> De: ".$full_name;
+        $message .= !empty($phone) ? "<br/>Tél.: ". $phone : "";
 
-        if( mail($to, $form_data['subject'], $message, $headers) ) {        
+        if( mail($to, $subject, $message, $headers) ) {        
             $output['state'] = "200";
         }
     }

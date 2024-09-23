@@ -25,21 +25,55 @@
             </div>
             <div class="page-admin dashboard-col">
                 <div class="col">
-                    <h2>Formulaires</h2>
+                    
+                    <div class="message-bloc">
+                        <h2>Messages</h2>
 
-                    <?php if( !empty($data['entries']) ): ?>
-                        <ul>
-                        <?php foreach($data['entries'] as $entry): ?>
-                            <li><a href="#?id=<?php $entry['id']; ?>">
-                            <?php echo $entry['data']; ?>
-                            </a></li>
-                        <?php endforeach; ?>
-                        </ul>
-                    <?php else: ?>
-                        Aucune entrée récente
-                    <?php endif; ?>
+                        <h3>Demandes d'audit</h3>
+                        <table>
+                            <tr>
+                                <th>couriel</th>
+                                <th>site web</th>
+                            </tr>
+                            <?php foreach($data['messages_audit'] as $message): ?>
+                                <tr>
+                                    <td><?php echo $message['courriel'] ?></td>
+                                    <td><?php echo $message['website'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
+                    
+                    
+                    <div class="message-bloc">
+                        <h3>Message de contact</h3>
+                        <table>
+                            <tr>
+                                <th>Courriel</th>
+                                <th>Message</th>
+                            </tr>
+                            <?php foreach($data['messages_contact'] as $message): ?>
+                                <tr>
+                                    <td><?= $message['email'] ?></td>
+                                    <td>
+                                        <strong><?php echo $message['subject'] ?></strong><br>
+                                        <?php echo $message['message'] ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                        
+                    </div>
+                    
                 </div>
 
+            </div>          
+
+
+        </section>
+       
+        <section>
+            <div class="dashboard-col">
                 <div class="col">
                     <h2>Dernières visites</h2>
                     <?php if( !empty($data['visitors']) ): ?>
@@ -54,114 +88,9 @@
                         Aucune visite récente
                     <?php endif; ?>
                 </div>
-
             </div>
-
-
         </section>
-       
 
-
-        <script>
-
-
-            function delayedPush() {
-                setTimeout(() => {
-                pushNotify();
-            }, 4000);
-            }
-
-            function pushNotify() {
-                if (!("Notification" in window)) {
-                    // checking if the user's browser supports web push Notification
-                    alert("Web browser does not support desktop notification");
-                }
-                if (Notification.permission !== "granted")
-                    Notification.requestPermission();
-                else {
-                    
-                    var data = {
-                        "request_type": 'testnotification'
-                    };
-                    var post_data = new URLSearchParams(data).toString(); 
-
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST', '/ajax');
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-                    xhr.onreadystatechange = function() {
-                        
-                        if (this.readyState == 4 && this.status == 200) {
-                            var response = JSON.parse(this.responseText);
-                            
-                            console.log(response);
-                            notification = createNotification(response.title, response.icon, response.body, response.url);
-
-                            // closes the web browser notification automatically after 5 secs
-                            setTimeout(function() {
-                                notification.close();
-                            }, 10000);
-                        }
-                    }; 
-
-                    xhr.send(post_data);
-                    
-                    
-                    // $.ajax({
-                    //     url: "push-notify.php",
-                    //     type: "POST",
-                    //     success: function(data, textStatus, jqXHR) {
-                    //         // if PHP call returns data process it and show notification
-                    //         // if nothing returns then it means no notification available for now
-                    //         if ($.trim(data)) {
-                    //             var data = jQuery.parseJSON(data);
-                    //             console.log(data);
-                    //             notification = createNotification(data.title, data.icon, data.body, data.url);
-
-                    //             // closes the web browser notification automatically after 5 secs
-                    //             setTimeout(function() {
-                    //                 notification.close();
-                    //             }, 5000);
-                    //         }
-                    //     },
-                    //     error: function(jqXHR, textStatus, errorThrown) { }
-                    // });
-
-
-                }
-            };
-
-            function createNotification(title, icon, body, url) {
-                
-                // navigator.serviceWorker.register('sw.js');
-                // Notification.requestPermission(function(result) {
-                // if (result === 'granted') {
-                //     navigator.serviceWorker.ready.then(function(registration) {
-                //     registration.showNotification(title);
-                //     });
-                // }
-                // });
-                
-                var notification = new Notification(title, {
-                    icon: icon,
-                    body: body,
-                });
-                // url that needs to be opened on clicking the notification
-                // finally everything boils down to click and visits right
-                notification.onclick = function() {
-                    window.open(url);
-                };
-
-                // navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                //     registrations[0].showNotification(title);
-                // });
-
-                var elemtn = document.querySelector('.dashboard-content');
-                elemtn.style.backgroundColor = "#003399";
-                return notification;
-            }
-
-        </script>
 
     </div>      
 

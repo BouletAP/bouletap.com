@@ -19,12 +19,22 @@ class Projet extends Publication {
     public $nom_client;
 
     public $image;
-    public $images = [];
+    public $images_1;
+    public $images_2;
+    public $images_3;
+
+    public $images_1_desc;
+    public $images_2_desc;
+    public $images_3_desc;
 
     
 
     protected function publication_metas_fields() {
-        return ["url", "concept", "defi", "solution", "overview", "short_pitch", "sales_pitch", "date_publication", "type_projet", "nom_client", "image", "images"];
+        return [
+            "url", "concept", "defi", "solution", 
+            "overview", 
+            "short_pitch", "sales_pitch", "date_publication", "type_projet", "nom_client", "image", 
+            "images_1", "images_2", "images_3", "images_1_desc", "images_2_desc", "images_3_desc"];
     }
 
 

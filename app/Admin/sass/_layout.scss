@@ -43,4 +43,21 @@
     .dashboard-col {
         display: flex;
     }
+
+
+
+    .message-bloc {
+        margin-bottom:40px;
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    }
 }

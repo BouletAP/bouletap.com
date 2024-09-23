@@ -9,6 +9,8 @@ use \BouletAP\Forms\Fields\Email;
 use \BouletAP\Forms\Fields\TextArea;
 use \BouletAP\Forms\Validations\Required;
 
+use Models\Core\Database;
+
 class ContactForm extends Forms {
 	
 	public $name = 'contact-form';
@@ -39,6 +41,19 @@ class ContactForm extends Forms {
         $message->addValidation( new Required );
         
         $this->addFields($courriel, $full_name, $phone, $subject, $message);           
+    }
+
+    public function save_db() {
+
+        $form_data = [
+            'email' => $this->getField('courriel')->getValue(),
+            'subject' => $this->getField('subject')->getValue(),
+            'message' => $this->getField('message')->getValue(),
+            'full_name' => $this->getField('full_name')->getValue(),
+            'phone' => $this->getField('phone')->getValue()
+        ];
+
+        \Models\Entities\Entry::save('contact', $form_data);
     }
 
 }

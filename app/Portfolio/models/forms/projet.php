@@ -45,6 +45,20 @@ class ProjetForm extends Forms {
         $overview->addAttribute( 'placeholder', 'Overview du projet' );
         $overview->addValidation( new Required );
 
+        $image_1 = new ImageUpload('images_1', UPLOAD_PATH, "portfolio/");
+        $image_1_desc = new Text('images_1_desc');
+        $image_1_desc->addAttribute( 'placeholder', 'Titre image 1' );
+
+        $image_2 = new ImageUpload('images_2', UPLOAD_PATH, "portfolio/");
+        $image_2_desc = new Text('images_2_desc');
+        $image_2_desc->addAttribute( 'placeholder', 'Titre image 2' );
+
+        $image_3 = new ImageUpload('images_3', UPLOAD_PATH, "portfolio/");
+        $image_3_desc = new Text('images_3_desc');
+        $image_3_desc->addAttribute( 'placeholder', 'Titre image 3' );
+
+        
+
 
         $short_pitch = new Text('short_pitch');
         $short_pitch->addAttribute( 'placeholder', 'Short pitch' );
@@ -84,7 +98,7 @@ class ProjetForm extends Forms {
             $image_main,
             $title, $url, 
             $concept, $defi, $solution, 
-            $overview, 
+            $overview, $image_1, $image_1_desc, $image_2, $image_2_desc, $image_3, $image_3_desc,
             $short_pitch, $sales_pitch, 
             $date_publication, $type_projet, $nom_client
         );           

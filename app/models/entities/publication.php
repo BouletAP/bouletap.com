@@ -18,9 +18,13 @@ class Publication {
 
 
     public function __construct($data = []) {
+        $this->fill($data);
+    }
+
+    public function fill($data = []) {
         $fields = array_merge($this->publication_fields(), $this->publication_metas_fields()) ;
         foreach($fields as $name) {
-            $this->$name = !empty($data[$name]) ? $data[$name] : false;
+            $this->$name = isset($data[$name]) ? $data[$name] : $this->$name;
         }
     }
 
@@ -53,7 +57,7 @@ class Publication {
                 $data = [
                     "publication_id" => $this->id,
                     "name" => $field,
-                    "value" => $this->$field
+                    "value" => serialize($this->$field)
                 ];
                 Database::query()->insert ('publications_metas', $data);
             }
@@ -63,22 +67,38 @@ class Publication {
     }
 
     public function update() {
-        echo 'Projet update<pre>'; print_r("??"); echo '</pre>'; die();
+        
+        $publication_fields = $this->publication_fields();
+        $data = [];
+        foreach($publication_fields as $field) {
+            $data[$field] = $this->$field;
+        }
+
+        $db = Database::query();
+        $db->where('id', $this->id);
+        $db->update ('publications', $data);         
+
+
+        // HOW TO UPDATE METAS (NEW / EXISTING)
+        // DELETE ALL OLD METAS AND RECREATE THEM WITH NEW ONES
+        Database::query()
+            ->where('publication_id', $this->id)
+            ->delete('publications_metas');
+
+        $publication_metas_fields = $this->publication_metas_fields();
+        foreach($publication_metas_fields as $field) {
+            $data = [
+                "publication_id" => $this->id,
+                "name" => $field,
+                "value" => serialize($this->$field)
+            ];
+            echo '<pre>'; print_r($data); echo '</pre>'; 
+            Database::query()->insert ('publications_metas', $data);
+        }
+
+        return !empty($this->id);
+
     }
-
-
-    // public function getData($key) {
-    //     return !empty($this->data[$key]) ? $this->data[$key] : false;
-    // }
-
-
-    // static function create($form_data) {
-    //     $form_data['id'] = Database::query()->insert ('publications', $form_data);
-
-    //     $article = new Article();
-    //     $article->data = $form_data;
-    //     return $article;
-    // }
 
 
     static public function get_all() {
@@ -99,11 +119,10 @@ class Publication {
                     ->get ('publications_metas');
 
                 if( !empty($metas) ) {
-
                     foreach( $metas as $meta ) {
 
                         $name = $meta['name'];
-                        $value = $meta['value'];
+                        $value = unserialize($meta['value']);
 
                         if( !empty($publication->$name) && !is_array($publication->$name) ) {
                             $publication->$name = [$publication->$name, $value];

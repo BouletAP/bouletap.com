@@ -21,26 +21,31 @@ class AdminController {
         } 
 
 
-        $entries = array();
+        $contact_messages = [
+            "audit-seo" => [],
+            "contact" => [],
+        ];
+
         $form_entries = Models\Entities\Entry::get_last(5);
         if( !empty($form_entries) ) {
+
+            
+
             foreach($form_entries as $entry) {
-                $entries[] = [
-                    "id" => $entry['id'],
-                    "form" => $entry['page'],
-                    "page" => $entry['form'],
-                    //"data" => unserialize($entry['form_data']),
-                    "data" => $entry['form_data']
-                ];
+
+                if( array_key_exists($entry['form'], $contact_messages) ) {
+                    $contact_messages[$entry['form']][] = unserialize($entry['form_data']);
+                }
             }
         }
 
-        //echo '<pre>'; print_r($entries); echo '</pre>'; die();
+        //echo '<pre>'; print_r($contact_messages); echo '</pre>'; die();
 
         $visitors = Visitor::recent();
 
         $data = [
-            'entries' => $entries,
+            'messages_audit' => $contact_messages['audit-seo'],
+            'messages_contact' => $contact_messages['contact'],
             'visitors' => $visitors
         ];
 

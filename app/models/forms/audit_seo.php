@@ -8,6 +8,8 @@ use \BouletAP\Forms\Fields\Text;
 use \BouletAP\Forms\Fields\Email;
 use \BouletAP\Forms\Validations\Required;
 
+use Models\Core\Database;
+
 class AuditSEO extends Forms {
 	
 	public $name = 'seo-audit-form';
@@ -27,5 +29,15 @@ class AuditSEO extends Forms {
         $website->addValidation( new Required );
         
         $this->addFields($courriel, $website);           
+    }
+
+    public function save_db() {
+
+        $form_data = [
+            'courriel' => $this->getField('courriel')->getValue(),
+            'website' => $this->getField('website')->getValue()
+        ];
+
+        \Models\Entities\Entry::save('audit-seo', $form_data);
     }
 }

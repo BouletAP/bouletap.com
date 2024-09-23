@@ -4,6 +4,36 @@
 <title>Ajouter un projet André-Philippe Boulet</title>  
 <link rel="stylesheet" href="/medias/css/admin.css" />    
 
+
+<script>
+    // PUSH INTO FORM OBSERVER / DECORATOR?
+    // ajax pour delete
+    // ajax pour upload d'une image (fresh id how?)
+    function bouletap_killImage(input_name) {
+        if( confirm('Êtes-vous sur de vouloir remplacer l\'image ?') ) {
+            var parent = document.querySelector('input[name="'+input_name+'"]').closest('.image-preview');            
+
+            var current_image = document.querySelector('input[name="'+input_name+'"]').value;
+
+            var new_file_input = document.createElement('input');
+            new_file_input.setAttribute('type', 'file');
+            new_file_input.setAttribute('name', input_name);
+
+            // creer un hidden_field old_image pour la suppression
+            var input_to_delete = document.createElement('input');
+            input_to_delete.setAttribute('type', 'hidden');
+            input_to_delete.setAttribute('name', input_name + "_delete_pending");     
+            input_to_delete.setAttribute('value', current_image);     
+
+            parent.after(new_file_input);
+            parent.after(input_to_delete);            
+            parent.remove();
+        }
+    }
+</script>
+
+
+
 </head>
 
 <body class="home">
@@ -53,6 +83,20 @@
                         <div><?php echo $form->getField('solution')->display(); ?></div>
                         
                         <div><?php echo $form->getField('overview')->display(); ?></div>
+                        <div class="flex-images">
+                            <div class="col-3">
+                                <?php echo $form->getField('images_1')->display(); ?>
+                                <?php echo $form->getField('images_1_desc')->display(); ?>
+                            </div>
+                            <div class="col-3">
+                                <?php echo $form->getField('images_2')->display(); ?>
+                                <?php echo $form->getField('images_2_desc')->display(); ?>
+                            </div>
+                            <div class="col-3">
+                                <?php echo $form->getField('images_3')->display(); ?>
+                                <?php echo $form->getField('images_3_desc')->display(); ?>
+                            </div>
+                        </div>
                         
                         <div><?php echo $form->getField('short_pitch')->display(); ?></div>
                         <div><?php echo $form->getField('sales_pitch')->display(); ?></div>

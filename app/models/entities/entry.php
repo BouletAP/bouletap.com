@@ -23,9 +23,10 @@ class Entry {
         return $results;
     }
 
-    static function save($form_data) {
+    static function save($form_id, $form_data) {
         $data = [
             'visit_id' => "99999",
+            'form' => $form_id,
             'form_data' => serialize($form_data)
         ];
         $id = Database::query()->insert ('form_entries', $data);
