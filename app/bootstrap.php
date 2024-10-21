@@ -24,6 +24,7 @@ require_once __DIR__ . '/models/entities/article.php';
 
 
 require_once __DIR__ . '/models/services/analytics.php';
+require_once __DIR__ . '/models/services/notifications.php';
 
 require_once __DIR__ . '/models/forms/audit_seo.php';
 require_once __DIR__ . '/models/forms/login.php';
@@ -39,6 +40,7 @@ require_once __DIR__ . '/Pages/PagesController.php';
 require_once __DIR__ . '/Blog/BlogController.php';
 require_once __DIR__ . '/Portfolio/PortfolioController.php';
 require_once __DIR__ . '/Services/ServicesController.php';
+require_once __DIR__ . '/Sandbox/SandboxController.php';
 
 require_once __DIR__ . '/Admin/AdminController.php';
 require_once __DIR__ . '/Admin/AuthController.php';

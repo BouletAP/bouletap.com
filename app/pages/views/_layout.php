@@ -14,7 +14,7 @@
 
 {{PAGE_CONTENT}}
 
-<div class="footer-container">
+    <div class="footer-container">
         <?php include('_footer.php'); ?>
     </div>
     

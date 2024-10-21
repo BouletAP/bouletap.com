@@ -34,11 +34,13 @@
                             <tr>
                                 <th>couriel</th>
                                 <th>site web</th>
+                                <th>Actions</th>
                             </tr>
-                            <?php foreach($data['messages_audit'] as $message): ?>
+                            <?php foreach($data['messages_audit'] as $id => $message): ?>
                                 <tr>
                                     <td><?php echo $message['courriel'] ?></td>
                                     <td><?php echo $message['website'] ?></td>
+                                    <td><a href="/admin/flag_read/<?php echo $id ?>">Lu</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </table>
@@ -51,14 +53,16 @@
                             <tr>
                                 <th>Courriel</th>
                                 <th>Message</th>
+                                <th>Actions</th>
                             </tr>
-                            <?php foreach($data['messages_contact'] as $message): ?>
+                            <?php foreach($data['messages_contact'] as $id => $message): ?>
                                 <tr>
                                     <td><?= $message['email'] ?></td>
                                     <td>
                                         <strong><?php echo $message['subject'] ?></strong><br>
                                         <?php echo $message['message'] ?>
                                     </td>
+                                    <td><a href="/admin/flag_read/<?php echo $id ?>">Lu</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </table>

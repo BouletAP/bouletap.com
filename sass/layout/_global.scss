@@ -175,3 +175,19 @@ section {padding:10px;}
     padding-top:30px;
   }
 }
+
+#notifications-container {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+
+  i, a  {
+    color: red;
+  }
+}

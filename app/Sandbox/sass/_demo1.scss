@@ -1,0 +1,89 @@
+.page-sandbox {
+
+    section.demo {
+
+        position: relative;
+        padding: 10px;
+        margin-top: 60px;
+    
+        &::before {
+            background-image: url(../images/bg-ambience-apb.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.05;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: 2em;
+            text-transform: uppercase;
+            line-height: 1.1em;
+            margin-bottom: 30px;
+
+            b {font-weight: bold;}
+        }
+    }
+}
+
+
+
+.demo-1 {
+
+
+    .list {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        gap:5px;
+    }
+
+
+    .list {
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+
+        .item {
+            transition: .5s;
+            filter: brightness(0);
+
+            &:hover {
+                filter: brightness(1);
+                transform: translateZ(200px);
+            }
+
+            &:hover + * {
+                filter: brightness(0.6);
+                transform: translateZ(150px) rotateY(40deg);
+            }
+
+            &:hover + * + * {
+                filter: brightness(0.4);
+                transform: translateZ(70px) rotateY(20deg);
+            }
+
+            &:hover + * + * + * {
+                filter: brightness(0.2);
+                transform: translateZ(30px) rotateY(10deg);
+            }
+
+            &:has(+ *:hover) {
+                filter: brightness(0.6);
+                transform: translateZ(150px) rotateY(-40deg);
+            }
+
+            &:has(+ * + *:hover) {
+                filter: brightness(0.4);
+                transform: translateZ(70px) rotateY(-20deg);
+            }
+
+            &:has(+ * + * + *:hover) {
+                filter: brightness(0.2);
+                transform: translateZ(30px) rotateY(-10deg);
+            }
+        }
+    }
+}

@@ -34,12 +34,10 @@ class AdminController {
             foreach($form_entries as $entry) {
 
                 if( array_key_exists($entry['form'], $contact_messages) ) {
-                    $contact_messages[$entry['form']][] = unserialize($entry['form_data']);
+                    $contact_messages[$entry['form']][$entry['id']] = unserialize($entry['form_data']);
                 }
             }
         }
-
-        //echo '<pre>'; print_r($contact_messages); echo '</pre>'; die();
 
         $visitors = Visitor::recent();
 
@@ -52,6 +50,25 @@ class AdminController {
         echo Models\Core\View::display("Admin/views/dashboard.php", $data);
     }
 
+
+    public function flag_read($id = false) {
+        if( !Auth::user_can('admin_duty') ) {
+            header("Location: /connexion");
+            die();
+        } 
+
+        $id = (int)$id;
+        $entry = Models\Entities\Entry::get_by('id', $id);
+        if( $id <= 0 || empty($entry) ) {
+            header("Location: /admin");
+            die();
+        }
+
+        $entry->read();
+
+        header("Location: /admin");
+        die();
+    }
     
     public function login() {
 
@@ -103,6 +120,7 @@ class AdminController {
         
         echo Models\Core\View::display("Admin/views/login.php", $data);
     }
+
 
 
 

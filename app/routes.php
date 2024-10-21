@@ -15,7 +15,7 @@ Router::add('/confidentialite', 'PagesController', 'privacy_policy');
 
 
 Router::add('/nouveau-site-web', 'PagesController', 'coming_soon');
-Router::add('/carre-de-sable-interactif', 'PagesController', 'coming_soon');
+Router::add('/carre-de-sable-interactif', 'SandboxController', 'index');
 
 
 
@@ -68,6 +68,7 @@ Router::add('/admin/portfolio/add', 'ProjectController', 'add');
 Router::add('/admin/portfolio/edit/{INT}', 'ProjectController', 'edit');
 Router::add('/admin/portfolio/delete/{INT}', 'ProjectController', 'delete');
 
+Router::add('/admin/flag_read/{INT}', 'AdminController', 'flag_read');
 
 
 Router::add('*', 'PagesController', 'not_found');

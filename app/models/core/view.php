@@ -5,11 +5,16 @@ namespace Models\Core;
 class View {
 
 
-    static public function display($view, $data = array()) {
+    static public function display($view, $data = array()) {       
 
         ob_start();
         include(APP_PATH . "/" . $view);
         $content = ob_get_clean();
+
+        if( \Models\Core\Auth::user_can('admin_duty') ) {
+            $notifs = new \Models\Services\Notifications();
+            $content .= $notifs->display();
+        } 
 
         ob_start();
         include(APP_PATH . "/Pages/views/_layout.php");

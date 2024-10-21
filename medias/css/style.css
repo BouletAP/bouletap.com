@@ -366,6 +366,20 @@ section {
   }
 }
 
+#notifications-container {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+}
+#notifications-container i, #notifications-container a {
+  color: red;
+}
+
 #main-header {
   padding-top: 0px;
   position: absolute;
