@@ -78,17 +78,19 @@ class ProjectController {
 
         $projet = $projet[0];
 
-        
+        //echo 'projet<pre>'; print_r($projet); echo '</pre>'; 
+    
         $form = new Models\Forms\ProjetForm();
         $form->fill( (array)$projet );
         
-
         if( !empty($_POST) && $form->validate() ) {
 
             $form_values = $form->getValues();
+            //echo 'form_values<pre>'; print_r($form_values); echo '</pre>'; die();
             $form_values['slug'] = Stringz::createSlug($form_values['title']);
 
-            $projet->fill($form_values);    
+            $projet->fill($form_values);   
+            //echo 'edit<pre>'; print_r($projet); echo '</pre>'; die(); 
 
             if( $projet->save() ) {
                 header('Location: /admin/portfolio');

@@ -47,13 +47,16 @@ class Projet extends Publication {
     public function delete() {
 
         if( !empty($this->image) ) {
-            unlink(UPLOAD_PATH . $this->image);
+            if( file_exists(UPLOAD_PATH . $this->image) ) {
+                unlink(UPLOAD_PATH . $this->image);
+            }            
         }
 
-        if( !empty($this->images) && is_array($this->images) ) {
-            foreach($this->images as $image) {
-                unlink(UPLOAD_PATH . $image);
-            }
+        $images = ["images_1", "images_2", "images_3"];
+        foreach($images as $image) {
+            if( file_exists(UPLOAD_PATH . $this->$image) ) {
+                unlink(UPLOAD_PATH . $this->$image);
+            } 
         }
 
         parent::delete();

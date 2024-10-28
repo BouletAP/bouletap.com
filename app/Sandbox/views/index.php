@@ -20,7 +20,7 @@
 
 
         <section class="demo demo-1">
-            <h2>CSS - Utilisation de <b>:has</b> et <b>+</b><br /> pour cibler les éléments entourant un <b>:hover</b> dans une liste</h2>
+            <h2>Demo #1: CSS - Utilisation de <b>:has</b> et <b>+</b><br /> pour cibler les éléments entourant un <b>:hover</b> dans une liste</h2>
 
             <div class="list">
                 <div class="item"><a href="#"><img src="https://picsum.photos/id/100/125/200" alt="Image random 1"></a></div>
@@ -34,6 +34,20 @@
                 <div class="item"><a href="#"><img src="https://picsum.photos/id/122/125/200" alt="Image random 9"></a></div>
                 <div class="item"><a href="#"><img src="https://picsum.photos/id/123/125/200" alt="Image random 10"></a></div>
             </div>
+        </section>
+
+        <section class="demo demo-2">
+            <h2>Demo #2: Glowing Cube</h2>
+            <div class="cube">
+                <div class="top"></div>
+                <div>
+                    <span style="--i:0;"></span>
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                </div>
+            </div>
+            
         </section>
         
     </div>      

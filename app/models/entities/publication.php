@@ -86,13 +86,14 @@ class Publication {
             ->delete('publications_metas');
 
         $publication_metas_fields = $this->publication_metas_fields();
+
         foreach($publication_metas_fields as $field) {
             $data = [
                 "publication_id" => $this->id,
                 "name" => $field,
                 "value" => serialize($this->$field)
             ];
-            echo '<pre>'; print_r($data); echo '</pre>'; 
+            
             Database::query()->insert ('publications_metas', $data);
         }
 

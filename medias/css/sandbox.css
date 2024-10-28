@@ -66,3 +66,71 @@
   filter: brightness(0.2);
   transform: translateZ(30px) rotateY(-10deg);
 }
+
+.demo-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 60vh;
+  background: #050505;
+}
+.demo-2 h2 {
+  color: #FFF;
+}
+.demo-2 .top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: #151515;
+  border: 1px solid #101010;
+  transform: rotateX(90deg) translateZ(150px);
+}
+.demo-2 .top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: #003399;
+  transform: translateZ(-380px);
+  filter: blur(20px);
+  box-shadow: 0 0 120px rgba(0, 0, 255, 0.2) 0 0 200px rgba(0, 0, 255, 0.4) 0 0 300px rgba(0, 0, 255, 0.6) 0 0 400px rgba(0, 0, 255, 0.8) 0 0 500px rgb(0, 0, 255);
+}
+.demo-2 .cube {
+  position: relative;
+  margin-top: -10vh;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg);
+  animation: animate3DCube 4s linear infinite;
+}
+.demo-2 .cube div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.demo-2 .cube div span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#151515, #003399);
+  transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+
+@keyframes animate3DCube {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}

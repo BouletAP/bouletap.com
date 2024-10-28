@@ -1,36 +1,3 @@
-.page-sandbox {
-
-    section.demo {
-
-        position: relative;
-        padding: 10px;
-        margin-top: 60px;
-    
-        &::before {
-            background-image: url(../images/bg-ambience-apb.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            opacity: 0.05;
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index: -1;
-        }
-
-        h2 {
-            font-size: 2em;
-            text-transform: uppercase;
-            line-height: 1.1em;
-            margin-bottom: 30px;
-
-            b {font-weight: bold;}
-        }
-    }
-}
-
-
-
 .demo-1 {
 
 
