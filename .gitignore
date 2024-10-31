@@ -5,3 +5,4 @@ package-lock.json
 app/.env
 vendor/
 medias/vendors/
+app/TimeReporting/@todo-2024-august.csv
