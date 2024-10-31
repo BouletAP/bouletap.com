@@ -15,7 +15,8 @@ var projectdata = {
     './index.php',
     './app/',
     './medias/',
-    './vendor/bouletap/forms/src/'
+    './vendor/bouletap/forms/src/',
+    './vendor/bouletap/tools/src/'
   ],
   "scss" : ["./scss/"]
 };

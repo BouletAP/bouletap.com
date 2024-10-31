@@ -100,3 +100,11 @@ div.flex-images .col-3 {
 div.flex-images .col-3:last-child {
   margin-right: 0;
 }
+
+.module-timesheet #pageFilters form div {
+  display: flex;
+  flex-direction: row;
+}
+.module-timesheet #pageFilters form div label {
+  display: inline-block;
+}

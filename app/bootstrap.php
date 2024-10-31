@@ -10,6 +10,7 @@ require_once __DIR__ . '/models/core/database.php';
 require_once __DIR__ . '/models/core/router.php';
 require_once __DIR__ . '/models/core/auth.php';
 require_once __DIR__ . '/models/core/view.php';
+require_once __DIR__ . '/models/core/entity.php';
 
 
 require_once __DIR__ . '/models/entities/visitor.php';
@@ -46,6 +47,9 @@ require_once __DIR__ . '/Admin/AdminController.php';
 require_once __DIR__ . '/Admin/AuthController.php';
 require_once __DIR__ . '/Admin/CMSController.php';
 require_once __DIR__ . '/Admin/ProjectController.php';
+
+require_once __DIR__ . '/TimeReporting/TimeSheetController.php';
+require_once __DIR__ . '/TimeReporting/models/entities/timesheet.php';
 
 // autoload soon?
 //

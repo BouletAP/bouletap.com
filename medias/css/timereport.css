@@ -1,0 +1,7 @@
+.module-timesheet #pageFilters form div {
+  display: flex;
+  flex-direction: row;
+}
+.module-timesheet #pageFilters form div label {
+  display: inline-block;
+}

@@ -70,6 +70,10 @@ Router::add('/admin/portfolio/delete/{INT}', 'ProjectController', 'delete');
 
 Router::add('/admin/flag_read/{INT}', 'AdminController', 'flag_read');
 
+Router::add('/admin/timesheet', 'TimeSheetController', 'index');
+Router::add('/admin/timesheet/details', 'TimeSheetController', 'details');
+
+
 
 Router::add('*', 'PagesController', 'not_found');
 

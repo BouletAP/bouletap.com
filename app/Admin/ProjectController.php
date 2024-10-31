@@ -14,11 +14,27 @@ use Models\Entities\Publication;
 use Models\Entities\Projet;
 
 class ProjectController {
-    
-    public function list() {
+
+    public function __construct() {
         if( !Auth::user_can('admin_duty') ) {
             header("Location: /connexion");
         } 
+    }
+
+    private function _get_valid_project($id) {
+        $id = (int)$id;
+        $projet = Projet::get_by('id', $id);
+        if( $id <= 0 || empty($projet) ) {
+            header("Location: /admin/portfolio/add");
+            die();
+        }
+        $projet = $projet[0];
+        return $projet;
+    }
+    
+
+    
+    public function list() {
 
         $data = [
             'page' => 'portfolio',
@@ -29,9 +45,6 @@ class ProjectController {
 
 
     public function add() {
-        if( !Auth::user_can('admin_duty') ) {
-            header("Location: /connexion");
-        } 
         
         $form = new Models\Forms\ProjetForm();
 
@@ -64,21 +77,8 @@ class ProjectController {
     }
 
     public function edit($id = false) {
-        if( !Auth::user_can('admin_duty') ) {
-            header("Location: /connexion");
-            die();
-        } 
 
-        $id = (int)$id;
-        $projet = Projet::get_by('id', $id);
-        if( $id <= 0 || empty($projet) ) {
-            header("Location: /admin/portfolio/add");
-            die();
-        }
-
-        $projet = $projet[0];
-
-        //echo 'projet<pre>'; print_r($projet); echo '</pre>'; 
+        $projet = $this->_get_valid_project($id);
     
         $form = new Models\Forms\ProjetForm();
         $form->fill( (array)$projet );
@@ -107,20 +107,10 @@ class ProjectController {
 
 
     public function delete($id = false) {
-        if( !Auth::user_can('admin_duty') ) {
-            header("Location: /connexion");
-            die();
-        } 
 
-        $id = (int)$id;
-        $projet = Projet::get_by('id', $id);
+        $projet = $this->_get_valid_project($id);
 
-        if( $id <= 0 || empty($projet)) {
-            header("Location: /admin/portfolio");
-            die();
-        }
-
-        $projet[0]->delete();
+        $projet->delete();
         
         header("Location: /admin/portfolio");
         die();
