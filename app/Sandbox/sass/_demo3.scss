@@ -1,0 +1,27 @@
+.demo-3 {
+
+    .checkboxes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    input[type="checkbox"] {
+        height: 20px;
+        width: 20px;
+        clip-path: circle(50%);
+        accent-color: #003399;
+        appearance: none;
+        background: #cacaca;
+
+        &:checked {
+            appearance: auto;
+        }
+    }
+
+    #checkbox2 {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%); // sharper but cutting checkmark
+        clip-path: polygon(50% -10%, -15% 110%, 115% 110%); //adjusted for checkmark
+
+    }
+}

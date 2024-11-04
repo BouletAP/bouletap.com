@@ -49,6 +49,27 @@
             </div>
             
         </section>
+
+        <section class="demo demo-3">
+            <h2>Demo #3: Custom checkbox shape using clip-path</h2>
+            <div class="checkboxes">
+                <div class="checkbox chk-1">
+                    <label for="checkbox1">
+                        Case à cocher #1
+                        <input id="checkbox1" type="checkbox">
+                    </label>                    
+                </div>
+                <div class="checkbox chk-2">
+                    <label for="checkbox2">
+                        Case à cocher #2 
+                        <input id="checkbox2" type="checkbox">
+                    </label>                    
+                </div>
+            </div>
+            
+        </section>
+
+        
         
     </div>      
 

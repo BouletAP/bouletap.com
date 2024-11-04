@@ -26,7 +26,6 @@ Router::add('/connexion', 'AuthController', 'login');
 Router::add('/logout', 'AuthController', 'logout');
 
 
-Router::add('/admin/publication-add', 'CMSController', 'add_publications');
 
 
 
@@ -55,9 +54,8 @@ Router::add('/services/securite', 'ServicesController', 'securite');
 
 
 Router::add('/portfolio', 'PortfolioController', 'projets');
-Router::add('/portfolio/donald-royer-design', 'PortfolioController', 'donald_royer_design');
-Router::add('/portfolio/eugene-laplante', 'PortfolioController', 'donald_royer_design');
-Router::add('/portfolio/le-gaboteur', 'PortfolioController', 'donald_royer_design');
+Router::add('/projet/{SLUG}', 'PortfolioController', 'details_projet');
+
 
 
 //Router::add('/autologin', 'AdminController', 'autologin');
@@ -68,10 +66,19 @@ Router::add('/admin/portfolio/add', 'ProjectController', 'add');
 Router::add('/admin/portfolio/edit/{INT}', 'ProjectController', 'edit');
 Router::add('/admin/portfolio/delete/{INT}', 'ProjectController', 'delete');
 
+Router::add('/admin/articles', 'CMSController', 'list');
+Router::add('/admin/articles/add', 'CMSController', 'add');
+Router::add('/admin/articles/edit/{INT}', 'CMSController', 'edit');
+Router::add('/admin/articles/delete/{INT}', 'CMSController', 'delete');
+//Router::add('/admin/publication-add', 'CMSController', 'add_publications');
+
+
 Router::add('/admin/flag_read/{INT}', 'AdminController', 'flag_read');
 
 Router::add('/admin/timesheet', 'TimeSheetController', 'index');
 Router::add('/admin/timesheet/details', 'TimeSheetController', 'details');
+
+Router::add('/admin/discord-hook', 'CMSController', 'testWebHook');
 
 
 

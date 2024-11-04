@@ -267,6 +267,15 @@
   align-items: center;
   justify-content: center;
 }
+.section-preview-portfolio .projets-container h4 a {
+  color: #FFF;
+}
+.section-preview-portfolio .projets-container h4 a:hover {
+  color: #003399;
+}
+.section-preview-portfolio .projets-container h4 a:active {
+  color: #003399;
+}
 .section-preview-portfolio .container {
   height: 400px;
   display: flex;

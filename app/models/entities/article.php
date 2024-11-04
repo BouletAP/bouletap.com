@@ -5,68 +5,31 @@ namespace Models\Entities;
 
 use Models\Core\Database;
 
-class Article {
+class Article extends Publication {
 
     // table:publications
-    public $id;
-    public $slug;
-    public $category;
-    public $title;
-    public $preview_image;
-    public $preview_desc;
     public $image;
-    public $content;
-    public $published;
-    public $private;
+    public $short_pitch;
+
+    protected function publication_metas_fields() {
+        return ["image", "short_pitch"];
+    }
     
-    public $categorie;
-    public $date;
-
-    public $data;
-
-    public function getData($key) {
-        return !empty($this->data[$key]) ? $this->data[$key] : false;
+    static public function get_all() {
+        Database::query()->where('type', 'Articles');
+        return parent::get_all();
     }
 
 
-    static function create($form_data) {
-        $form_data['id'] = Database::query()->insert ('publications', $form_data);
 
-        $article = new Article();
-        $article->data = $form_data;
-        return $article;
-    }
+    public function delete() {
 
-
-    static function get_all() {
-        $output = [];
-        $items = Database::query()->get ('publications');
-
-        if( !empty($items) ) {
-            foreach($items as $item) {
-                $article = new Article();
-
-                foreach( $item as $key => $value ) {
-                    $article->$key = $value;
-                }
-
-                //$article->data = $item;                
-                $output[] = $article;
-            }
+        if( !empty($this->image) ) {
+            if( file_exists(UPLOAD_PATH . $this->image) ) {
+                unlink(UPLOAD_PATH . $this->image);
+            }            
         }
-
-        return $output;
-    }
-
-
-    public function update() {
-
-        $id = $this->getData('id');        
-        if(!$id) return false; 
-        
-        $db = Database::query();
-        $db->where('id', $id);
-        $db->update ('visits', $this->data);
+        parent::delete();
     }
 
 

@@ -127,7 +127,7 @@
                         <div class="row">
                             <div class="icon">1</div>
                             <div class="description">
-                                <h4><a href="/portfolio/donald-royer-design">Donald Royer Design</a></h4>
+                                <h4><a href="/projet/donald-royer-design">Donald Royer Design</a></h4>
                                 <p>Designer expérimenté pour vos logos ou projets artistiques</p>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                         <div class="row">
                             <div class="icon">2</div>
                             <div class="description">
-                                <h4>Eugène Laplante</h4>
+                                <h4><a href="/projet/eugene-laplante">Eugène Laplante</a></h4>
                                 <p>Service-conseils pour vos projets de construction</p>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                         <div class="row">
                             <div class="icon">3</div>
                             <div class="description">
-                                <h4>Le Gaboteur</h4>
+                                <h4><a href="/projet/le-gaboteur">Le Gaboteur</a></h4>
                                 <p>Journal francophone à Terre-Neuve et Labrador</p>
                             </div>
                         </div>

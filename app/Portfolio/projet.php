@@ -21,7 +21,7 @@
         </section>
         
         <section class="section-preview">
-            <img src="<?php echo $projet->image_hero; ?>" alt="<?php echo $projet->title; ?>">   
+            <img src="/uploads/<?php echo $projet->image; ?>" alt="<?php echo $projet->title; ?>">   
             <div>
                 <div class="concept">
                     <span>&#9655; Concept</span>
@@ -42,30 +42,35 @@
 
             <div class="overview">
                 <span>project overview</span>
-                <p><?php echo $projet->overview; ?></p>
+                <p><?php echo nl2br($projet->overview); ?></p>
             </div>
 
-
+            <?php if(!empty($projet->images_1)): ?>
             <div class="slider">
-            <div class="slide">
-                    <div>
-                        <img src="<?php echo $projet->overview_1['image']; ?>" alt="<?php echo $projet->overview_1['desc']; ?>" />                    
+                    <div class="slide">
+                        <div>
+                            <img src="/uploads/<?php echo $projet->images_1; ?>" alt="<?php echo $projet->images_1_desc; ?>" />                    
+                        </div>
+                        <p class="desc"><?php echo $projet->images_1_desc; ?></p>
                     </div>
-                    <p class="desc"><?php echo $projet->overview_1['desc']; ?></p>
-                </div>
-                <div class="slide">
-                    <div>
-                        <img src="<?php echo $projet->overview_2['image']; ?>" alt="<?php echo $projet->overview_2['desc']; ?>" />                    
+                <?php if(!empty($projet->images_2)): ?>
+                    <div class="slide">
+                        <div>
+                            <img src="/uploads/<?php echo $projet->images_2; ?>" alt="<?php echo $projet->images_2_desc; ?>" />                    
+                        </div>
+                        <p class="desc"><?php echo $projet->images_2_desc; ?></p>
                     </div>
-                    <p class="desc"><?php echo $projet->overview_2['desc']; ?></p>
-                </div>
-                <div class="slide">
-                    <div>
-                        <img src="<?php echo $projet->overview_3['image']; ?>" alt="<?php echo $projet->overview_3['desc']; ?>" />                    
+                <?php endif; ?>
+                <?php if(!empty($projet->images_3)): ?>
+                    <div class="slide">
+                        <div>
+                            <img src="/uploads/<?php echo $projet->images_3; ?>" alt="<?php echo $projet->images_3_desc; ?>" />                    
+                        </div>
+                        <p class="desc"><?php echo $projet->images_3_desc; ?></p>
                     </div>
-                    <p class="desc"><?php echo $projet->overview_3['desc']; ?></p>
-                </div>
+                <?php endif; ?>
             </div>
+            <?php endif; ?>
 
 
             <div class="project-details">
@@ -73,7 +78,7 @@
                 <div class="details">
                     <span class="subtitle"><?php echo $projet->title; ?></span>
                     <h3><?php echo $projet->short_pitch; ?></h3>
-                    <p><?php echo $projet->sales_pitch; ?></p>
+                    <p><?php echo nl2br($projet->sales_pitch); ?></p>
                 </div>
 
                 <ul>
@@ -93,7 +98,7 @@
             </div>
         </section>
 
-        <a href="/portfolio" class="btn-retour"><i class="lni lni-arrow-left"></i> Retour à la liste de projets</a>
+        <a href="/projet/" class="btn-retour"><i class="lni lni-arrow-left"></i> Retour à la liste de projets</a>
 
     </div>      
 

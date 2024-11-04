@@ -26,6 +26,7 @@ require_once __DIR__ . '/models/entities/article.php';
 
 require_once __DIR__ . '/models/services/analytics.php';
 require_once __DIR__ . '/models/services/notifications.php';
+require_once __DIR__ . '/models/services/discord.php';
 
 require_once __DIR__ . '/models/forms/audit_seo.php';
 require_once __DIR__ . '/models/forms/login.php';

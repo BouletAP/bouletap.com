@@ -79,6 +79,7 @@ class ProjectController {
     public function edit($id = false) {
 
         $projet = $this->_get_valid_project($id);
+        //echo 'edit<pre>'; print_r($projet); echo '</pre>'; die(); 
     
         $form = new Models\Forms\ProjetForm();
         $form->fill( (array)$projet );

@@ -134,3 +134,23 @@
     transform: rotateX(-30deg) rotateY(360deg);
   }
 }
+.demo-3 .checkboxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.demo-3 input[type=checkbox] {
+  height: 20px;
+  width: 20px;
+  clip-path: circle(50%);
+  accent-color: #003399;
+  appearance: none;
+  background: #cacaca;
+}
+.demo-3 input[type=checkbox]:checked {
+  appearance: auto;
+}
+.demo-3 #checkbox2 {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% -10%, -15% 110%, 115% 110%);
+}

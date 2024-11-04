@@ -13,3 +13,5 @@ if( !defined('IS_DEV') ) define('IS_DEV', $_SERVER['REMOTE_ADDR'] == $env['DEV_I
 if( !defined('APP_PATH') ) define('APP_PATH', __DIR__);
 if( !defined('PUBLIC_HTML') ) define('PUBLIC_HTML', __DIR__ . "/..");
 if( !defined('UPLOAD_PATH') ) define('UPLOAD_PATH', PUBLIC_HTML."/uploads/");
+
+if( !defined('DISCORD_WEBHOOK_URL') ) define('DISCORD_WEBHOOK_URL', $env['DISCORD_WEBHOOK']);

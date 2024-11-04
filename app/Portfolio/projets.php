@@ -19,7 +19,7 @@
         <div class="content-with-sidebar">
 
             <div class="content">
-                <section class="section-nouvelles">
+                <section class="liste-projets section-nouvelles">
                     
                     
                     <div class="preview-nouvelles">
@@ -27,15 +27,15 @@
                         <?php foreach($data['projets'] as $projet): ?>
                             <div class="card card-nouvelle">
                                 <div class="img">
-                                    <a href="/portfolio/<?php echo $projet->slug; ?>"><img src="<?php echo $projet->preview_image; ?>" alt="<?php echo $projet->title; ?>"></a>
-                                    <a href="#" class="categories"><?php echo $projet->categorie; ?></a>
+                                    <a href="/projet/<?php echo $projet->slug; ?>"><img src="/uploads/<?php echo $projet->image; ?>" alt="<?php echo $projet->title; ?>"></a>
+                                    <a href="/portfolio/" class="categories"><?php echo "Portfolio"; // $projet->categorie; ?></a>
                                 </div>
-                                <h3><a href="/portfolio/<?php echo $projet->slug; ?>"><?php echo $projet->title; ?></a></h3>
-                                <p><?php echo $projet->preview_desc; ?></p>
-                                <a href="/portfolio/<?php echo $projet->slug; ?>" class="read-more">Lire la suite »</a>
+                                <h3><a href="/projet/<?php echo $projet->slug; ?>"><?php echo $projet->title; ?></a></h3>
+                                <p><?php echo $projet->short_pitch; ?></p>
+                                <a href="/projet/<?php echo $projet->slug; ?>" class="read-more">Lire la suite »</a>
 
                                 <div class="card-footer">
-                                    <a class="date" href="#"><?php echo $projet->date; ?></a>
+                                    <a class="date" href="#"><?php echo $projet->date_publication; ?></a>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -62,7 +62,7 @@
                         <h4>Par catégories</h4>
                         <ul>
                         <?php foreach($data['categories'] as $slug => $name): ?>
-                            <li><a href="/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
+                            <li><a href="/portfolio/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
                         <?php endforeach; ?>
                         </ul>
                     </div>
