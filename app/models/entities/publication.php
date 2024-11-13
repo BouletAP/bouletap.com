@@ -108,34 +108,35 @@ class Publication {
 
         if( !empty($items) ) {
             foreach($items as $item) {
-                $publication = new static();
+                $publication = static::build_from_row($item);
+                // $publication = new static();
 
-                foreach( $item as $key => $value ) {
-                    $publication->$key = $value;
-                }
+                // foreach( $item as $key => $value ) {
+                //     $publication->$key = $value;
+                // }
 
 
-                $metas = Database::query()
-                    ->where('publication_id', $publication->id)
-                    ->get ('publications_metas');
+                // $metas = Database::query()
+                //     ->where('publication_id', $publication->id)
+                //     ->get ('publications_metas');
 
-                if( !empty($metas) ) {
-                    foreach( $metas as $meta ) {
+                // if( !empty($metas) ) {
+                //     foreach( $metas as $meta ) {
 
-                        $name = $meta['name'];
-                        $value = unserialize($meta['value']);
+                //         $name = $meta['name'];
+                //         $value = unserialize($meta['value']);
 
-                        if( !empty($publication->$name) && !is_array($publication->$name) ) {
-                            $publication->$name = [$publication->$name, $value];
-                        }
-                        elseif(is_array($publication->$name)) {
-                            $publication->$name []= $value;
-                        }
-                        else {
-                            $publication->$name = $value;
-                        }                        
-                    }
-                }
+                //         if( !empty($publication->$name) && !is_array($publication->$name) ) {
+                //             $publication->$name = [$publication->$name, $value];
+                //         }
+                //         elseif(is_array($publication->$name)) {
+                //             $publication->$name []= $value;
+                //         }
+                //         else {
+                //             $publication->$name = $value;
+                //         }                        
+                //     }
+                // }
           
                 $output[] = $publication;
             }
@@ -146,7 +147,15 @@ class Publication {
 
     static public function get_by($field, $val) {
         Database::query()->where($field, $val);
-        $output = static::get_all();
+        //$output = static::get_all();
+        $items = Database::query()->get ('publications');
+
+        $output = false;
+        if( !empty($items) ) {
+            foreach($items as $item) {
+                $output = static::build_from_row($item);
+            }
+        }
         return $output;
     }
 
@@ -163,6 +172,40 @@ class Publication {
             ->where('id', $this->id)
             ->delete('publications');       
         return true;
+    }
+
+
+    static public function build_from_row($item) {
+        $publication = new static();
+
+        foreach( $item as $key => $value ) {
+            $publication->$key = $value;
+        }
+
+
+        $metas = Database::query()
+            ->where('publication_id', $publication->id)
+            ->get ('publications_metas');
+
+        if( !empty($metas) ) {
+            foreach( $metas as $meta ) {
+
+                $name = $meta['name'];
+                $value = unserialize($meta['value']);
+
+                if( !empty($publication->$name) && !is_array($publication->$name) ) {
+                    $publication->$name = [$publication->$name, $value];
+                }
+                elseif(is_array($publication->$name)) {
+                    $publication->$name []= $value;
+                }
+                else {
+                    $publication->$name = $value;
+                }                        
+            }
+        }
+    
+        return $publication;
     }
 
 

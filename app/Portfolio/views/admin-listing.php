@@ -3,7 +3,7 @@
 ?>
 <title>Listing <?php echo $data['page']; ?></title>  
 <link rel="stylesheet" href="/medias/css/admin.css" />    
-
+<link rel="stylesheet" href="/medias/css/project-admin.css" />    
 </head>
 
 <body class="home">
@@ -45,8 +45,13 @@
                                     <td><?= $item->id ?></td>
                                     <td><?= $item->title ?></td>
                                     <td>
-                                        <a href="/admin/<?php echo $data['page']; ?>/edit/<?= $item->id ?>">edit</a>
-                                        <a href="/admin/<?php echo $data['page']; ?>/delete/<?= $item->id ?>">delete</a>
+                                        <?php if(!$data['show_trash']): ?>
+                                            <a href="/admin/<?php echo $data['page']; ?>/edit/<?= $item->id ?>">edit</a>
+                                            <a href="/admin/<?php echo $data['page']; ?>/delete/<?= $item->id ?>">trash</a>
+                                            <?php else: ?> 
+                                                <a href="/admin/<?php echo $data['page']; ?>/restore/<?= $item->id ?>">restore</a>
+                                                <a href="/admin/<?php echo $data['page']; ?>/delete/<?= $item->id ?>">delete</a>
+                                            <?php endif; ?> 
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -58,7 +63,11 @@
 
                     </table>
 
-
+                    <?php if(!$data['show_trash']): ?>
+                        <p style="font-size:0.8em;margin-top:20px;"><a href="/admin/<?php echo $data['page']; ?>/trash"><i class="lni lni-trash-can"></i> trashed</a></p>
+                    <?php else: ?>
+                        <p style="font-size:0.8em;margin-top:20px;"><a href="/admin/portfolio">back to portfolo</a></p>
+                    <?php endif; ?> 
                 </div>
             </div>
 

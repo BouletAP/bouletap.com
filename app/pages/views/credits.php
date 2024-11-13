@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/medias/css/pages.css" />       
     <title>Contact - André-Philippe Boulet</title> 
 </head>
-<body class="page-nouvelles page-content">
+<body class="page-credits page-content">
     <div class="header-container">        
         <?php include('_header.php'); ?>
     </div>
@@ -15,11 +15,23 @@
         <section class="hero">
 
             <div class="page-header">
-                <span class="subtitle">Nous Joindre</span>
-                <h2>Contact</h2>     
-                <p>Plusieurs moyens de contact sont disponibles pour joindre André-Philippe Boulet</p>           
+                <span class="subtitle">Ressources</span>
+                <h1>Crédits & attributions</h1>     
+                <p>Plusieurs ressources de tierces parties sont utilisés dans l'élaboration de ce site Internet. </p>           
             </div>
 
+        </section>
+
+        <section class="credits-images">
+            <div class="description">
+                <span class="subtitle">ATTRIBUTIONS - ICÔNES</span>
+                <h2>Icônes SEO & SEM - Lineal</h2>
+                <p>Merci à Flaticon de nous fournir des icônes de haute qualité</p>
+                <a href="https://www.flaticon.com/free-icons/duplicate" title="duplicate icons">Duplicate icons created by Freepik - Flaticon</a>
+            </div>
+            <div class="preview">
+                <img src="/medias/images/sprites/SEO-and-SEM-Lineal.png" alt="Icon Pack - SEO and SEM - Lineal">                
+            </div>
         </section>
 
         <section class="section-form" id="section-contact-form">
@@ -60,68 +72,6 @@
             </div>
         </section>
 
-
-        <section class="contact-methodes">
-            <div class="rendez-vous">
-                <span class="subtitle">VOS PROJETS NOUS INTÉRESSENT!</span>
-                <h2>Discutons ensemble de vos projets</h2>
-                <p>Nous avons à cœur le respect de vos valeurs et de votre identité. Notre équipe est 100% en télétravail, ce qui nous permet de répondre rapidement à vos besoins peu importe où votre entreprise est située. Parlez-nous des exigences de vos projets et nous ferons en sorte de convertir les technologies de l'information en résultats !</p>
-                
-                <div class="methodes">
-                    <div class="methode">
-                        <i class="lni lni-inbox"></i>
-                        <h3>Par courriel</h3>
-                        <p><a href="#contact-form">apb@bouletap.com</a></p>
-                    </div>
-                    <div class="methode">
-                        <i class="lni lni-link"></i>
-                        <h3>Sur le web</h3>
-                        <div class="socials">
-                            <ul>
-                                <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
-                                <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
-                                <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github-original"></i></a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>      
-                    <div class="methode">
-                        <i class="lni lni-phone-set"></i>
-                        <h3>Par téléphone</h3>
-                        <p>
-                            Par protection contre les appels importuns ou frauduleux, un numéro de téléphone dynamique est maintenant utilisé.<br />
-                            <a id="btn-phone-request" href="javascript:return false;">Cliquez ici pour obtenir le numéro de téléphone du jour</a>
-                        </p>
-                    </div>    
-                    <div class="methode">
-                        <i class="lni lni-map-marker"></i>
-                        <h3>Par la poste</h3>
-                        <p>196 rue du Richelieu,<br /> Dunham, J0E 1M0</p>
-                    </div>         
-                </div>
-            </div>
-            
-
-            <div class="booking-calendar hide">
-                <div class="methode">
-                    <i class="lni lni-timer"></i>
-                    <h3>Heures de disponibilité</h3>
-                    <div class="disponibilite-time">
-                        <div class="col3">
-                            <p>Lundi et Vendredi<br />9.00AM - 11.30AM</p>
-                        </div>
-                        <div class="col3">
-                            <p>Mardi au Jeudi<br />9.00AM - 15.00PM</p>
-                        </div>
-                        <div class="col3">
-                            <p>Samedi et Dimanche<br />Fermé</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="calendar"></div>
-            </div>
-        </section>
 
     </div>      
     

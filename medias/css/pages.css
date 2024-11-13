@@ -447,3 +447,95 @@
 .politique-confidentialite .details p {
   margin-top: 20px;
 }
+
+.services-offerts .slide {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 60px;
+}
+.services-offerts .slide:before {
+  background-image: url(/medias/images/bg-ambience-apb.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.05;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.services-offerts .slide:nth-child(even):before {
+  transform: scaleX(-1);
+}
+@media only screen and (min-width: 768px) {
+  .services-offerts .slide {
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .services-offerts .slide.slide-reverse {
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+  }
+}
+.services-offerts .slide .slide-text {
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .services-offerts .slide .slide-text {
+    text-align: left;
+  }
+}
+.services-offerts .slide .slide-text h3 {
+  font-size: 2em;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  margin-bottom: 30px;
+}
+.services-offerts .slide .slide-text p {
+  display: none;
+  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 36px;
+}
+@media only screen and (min-width: 768px) {
+  .services-offerts .slide .slide-text p {
+    display: block;
+  }
+}
+.services-offerts .slide .slide-text a {
+  font-size: 1em;
+}
+.services-offerts .slide img {
+  padding: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .services-offerts .slide img {
+    max-width: 50%;
+    padding: 0px 25px;
+  }
+}
+
+.credits-images {
+  display: flex;
+  justify-content: space-around;
+}
+.credits-images .description .subtitle {
+  font-size: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+.credits-images .description h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+.credits-images .preview img {
+  width: 300px;
+  margin: 10px auto;
+}

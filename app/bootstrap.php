@@ -1,7 +1,4 @@
 <?php
-
-
-
 require_once __DIR__ . '/configs.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -21,7 +18,7 @@ require_once __DIR__ . '/models/entities/entry.php';
 
 
 require_once __DIR__ . '/models/entities/publication.php';
-require_once __DIR__ . '/models/entities/article.php';
+//require_once __DIR__ . '/models/entities/article.php';
 
 
 require_once __DIR__ . '/models/services/analytics.php';
@@ -39,15 +36,18 @@ require_once __DIR__ . '/routes.php';
 
 
 require_once __DIR__ . '/Pages/PagesController.php';
-require_once __DIR__ . '/Blog/BlogController.php';
 require_once __DIR__ . '/Portfolio/PortfolioController.php';
 require_once __DIR__ . '/Services/ServicesController.php';
 require_once __DIR__ . '/Sandbox/SandboxController.php';
 
 require_once __DIR__ . '/Admin/AdminController.php';
 require_once __DIR__ . '/Admin/AuthController.php';
-require_once __DIR__ . '/Admin/CMSController.php';
-require_once __DIR__ . '/Admin/ProjectController.php';
+// require_once __DIR__ . '/Admin/CMSController.php';
+//require_once __DIR__ . '/Admin/ProjectController.php';
+require_once __DIR__ . '/Portfolio/ProjectAdminController.php';
+
+require_once __DIR__ . '/Blog/BlogAdminController.php';
+require_once __DIR__ . '/Blog/BlogController.php';
 
 require_once __DIR__ . '/TimeReporting/TimeSheetController.php';
 require_once __DIR__ . '/TimeReporting/models/entities/timesheet.php';

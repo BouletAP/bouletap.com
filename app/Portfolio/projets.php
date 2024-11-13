@@ -28,7 +28,7 @@
                             <div class="card card-nouvelle">
                                 <div class="img">
                                     <a href="/projet/<?php echo $projet->slug; ?>"><img src="/uploads/<?php echo $projet->image; ?>" alt="<?php echo $projet->title; ?>"></a>
-                                    <a href="/portfolio/" class="categories"><?php echo "Portfolio"; // $projet->categorie; ?></a>
+                                    <a href="/portfolio/" class="categories"><?php echo $projet->pastille; ?></a>
                                 </div>
                                 <h3><a href="/projet/<?php echo $projet->slug; ?>"><?php echo $projet->title; ?></a></h3>
                                 <p><?php echo $projet->short_pitch; ?></p>

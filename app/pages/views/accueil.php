@@ -23,7 +23,7 @@
                 </p>
             </div>
             <div class="picture">       
-                <img class="image-ap" src="medias/images/andre-philippe-boulet-programmeur-logiciels-bouletap.jpg" alt="andre philippe boulet programmeur">
+                <img class="image-ap" src="medias/images/andre-philippe-boulet-profil.jpg" alt="andre philippe boulet programmeur">
                 <div class="mini-pitch">
                     <h3>Développeur web <span>professionnel</span></h3>
                     <p>Disponible pour : </p>
@@ -157,7 +157,7 @@
                         <div class="row">
                             <div class="icon">4</div>
                             <div class="description">
-                                <h4>Dégustation Vegas</h4>
+                                <h4><a href="/projet/degustation-vegas">Dégustation Vegas</a></h4>
                                 <p>Jeu mobile compétitif pour dégustation de vins</p>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                         <div class="row">
                             <div class="icon">+</div>
                             <div class="description">
-                                <h4>Autres sites ou projets</h4>
+                                <h4><a href="/portfolio">Autres sites ou projets</a></h4>
                                 <p>Consultez la section portfolio pour voir plus de projets !</p>
                             </div>
                         </div>

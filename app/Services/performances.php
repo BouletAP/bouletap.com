@@ -2,6 +2,9 @@
 
 <title>Portfolio André-Philippe Boulet</title>
 <link rel="stylesheet" href="/medias/css/services.css" />    
+
+
+
 </head>
 <body class="products-and-services">
     <div class="header-container">        
@@ -41,8 +44,7 @@
                 </div>
                 <div class="description-detaillee">
                     <p>Chez Logiciels BouletAP, nous sommes impliqués depuis près de 15 ans dans la création de sites Internet et autres projets web. Nous sommes disponibles et à votre écoute pour mettre notre expertise dans le développement de sites Internet et de commerces en ligne à votre disposition.</p>
-                    <p>Quand vous démarrer un nouveau site web, il est important d’avoir une vue d’ensemble de l’environnement entourant vos technologies en plus de développer un projet de qualité. Fiez-vous sur notre expérience pour prendre les bonnes décisions lors du dévelopement de votre projet que ce soit pour l’analyse de vos besoins, le développement de votre nouveau site ou la mise en place de votre commerce électronique.</p>
-                    <p>Les solutions pour créer un nouveau site Internet sont multiples et le choix de la mauvaise technologie peut se révéler très coûteuse en temps et en argent. Les professionnels chez Logiciels BouletAP travaillent au quotidien avec ces dossiers. Profitez de leur expérience pour découvrir  les nouvelles technologies et développer votre nouveau site en toute confiance.</p>
+                    <p>La vitesse de chargement d'un site web est essentielle non seulement pour l'expérience utilisateur, mais aussi pour le référencement (SEO), car Google prend en compte la vitesse de chargement dans ses critères de classement.</p>  
                     <p class="contact">Contactez-nous et discutons de la façon dont vous souhaitez utiliser les technologies de l'information pour obtenir des résultats</p>
                 </div>
             </div>
@@ -68,9 +70,65 @@
         </div>
 
 
-        <section class="produits">
-
-
+        <section class="conseils">
+            <div class="presentation">
+                <h2>Voici quelques conseils pratiques pour améliorer la vitesse de votre site</h2>
+                <p>En appliquant ces conseils, vous pourrez non seulement améliorer la vitesse de chargement de votre site, mais aussi offrir une meilleure expérience utilisateur, ce qui peut contribuer à augmenter votre taux de conversion et améliorer votre positionnement dans les résultats de recherche. Pour évaluer les effets de vos améliorations, n’oubliez pas de tester la vitesse de votre site avec des outils comme Google PageSpeed Insights, GTMetrix ou Pingdom régulièrement.</p>
+            </div>
+            <div class="elements">
+                <div class="element"> 
+                    <h3><i class="apicon apicon-4-2"></i> Optimisez la taille des images</h3>
+                    <p class="lato-regular">Les images peuvent constituer une part importante du temps de chargement d'un site. Il est donc important de les compresser dans le bon format avant de les publier (JPEG pour les photos, PNG pour les graphiques avec transparence, et WebP pour des images plus légères avec une bonne qualité).</p>
+                </div> 
+                <div class="element">
+                    <h3><i class="apicon apicon-2-3"></i> Activez la compression GZIP</h3>
+                    <p class="lato-regular">La compression GZIP permet de réduire la taille des fichiers CSS, HTML et JavaScript en les compressant avant leur envoi au navigateur. La plupart des serveurs web modernes supportent GZIP. Assurez-vous qu'il est activé dans le fichier .htaccess ou via votre serveur web.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-3-5"></i> Utilisez un réseau de diffusion de contenu (CDN)</h3>
+                    <p class="lato-regular">Un CDN (Content Delivery Network) permet de distribuer les ressources de votre site (images, scripts, fichiers CSS) sur des serveurs situés dans différents endroits géographiques. Cela réduit le temps nécessaire pour charger ces ressources en fonction de la localisation de l'utilisateur.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-5-4"></i> Réduisez le nombre de requêtes HTTP</h3>
+                    <p class="lato-regular">Plus votre page web fait de requêtes HTTP (pour charger des images, des fichiers JavaScript, CSS, etc.), plus elle met de temps à se charger. Minimisez les fichiers CSS et JavaScript, et combinez-les si possible. Utilisez des sprites CSS pour regrouper plusieurs petites images en une seule.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-2-5"></i> Mettez en cache les ressources statiques</h3>
+                    <p class="lato-regular">Utilisez le cache du navigateur pour stocker des ressources statiques (comme les images, les fichiers CSS, et les JavaScript) sur les appareils des utilisateurs pendant une période déterminée. Cela évite de recharger ces fichiers à chaque visite et accélère le temps de chargement lors des visites suivantes.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-4-3"></i> Optimisez les fichiers JavaScript et CSS</h3>
+                    <p class="lato-regular">Minifiez vos fichiers JavaScript et CSS pour réduire leur taille. Des outils comme UglifyJS pour JavaScript et CSSNano pour CSS peuvent vous aider à supprimer les espaces, les commentaires et d'autres éléments inutiles. Envisagez aussi de différer le chargement des fichiers JavaScript qui ne sont pas essentiels au rendu initial de la page (par exemple, en utilisant l'attribut defer ou async).</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-1-3"></i> Utilisez des techniques de lazy loading pour les images et vidéos</h3>
+                    <p class="lato-regular">Le lazy loading (chargement paresseux) consiste à ne charger les images et vidéos que lorsqu'elles sont visibles à l'écran, plutôt qu’au moment du chargement de la page. Cela permet de réduire le temps de chargement initial, surtout pour les pages contenant beaucoup de contenu multimédia.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-4-1"></i> Choisissez un hébergement performant</h3>
+                    <p class="lato-regular">L'hébergement a un impact majeur sur la vitesse de votre site. Un hébergement partagé peut être suffisant pour les petits sites, mais si votre trafic augmente, envisagez un serveur dédié ou un hébergement VPS. Vérifiez également la qualité de l’hôte (temps de réponse du serveur, SLA, etc.).</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-5-2"></i> Mettez à jour vos technologies et plugins</h3>
+                    <p class="lato-regular">Les versions anciennes de CMS (comme WordPress), de plugins, ou de frameworks peuvent ralentir votre site. Assurez-vous que toutes les technologies de votre site sont à jour. Par exemple, utilisez la dernière version de PHP, car les versions plus anciennes peuvent être plus lentes.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-1-2"></i> Minimisez le redimensionnement d'images et l'usage de plugins lourds</h3>
+                    <p class="lato-regular">Évitez de redimensionner des images directement dans le code HTML ou via JavaScript. Téléchargez plutôt les images aux dimensions exactes dont vous avez besoin. Évitez également d'installer trop de plugins sur votre site, surtout si certains sont mal optimisés ou inutiles, car ils peuvent augmenter le nombre de requêtes et ralentir le temps de réponse.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-3-2"></i> Utilisez un système de cache côté serveur</h3>
+                    <p class="lato-regular">En plus du cache du navigateur, le cache côté serveur (comme Varnish ou Memcached) peut aider à stocker des versions pré-générées des pages dynamiques. Cela réduit le temps de génération de la page à chaque requête et améliore la réactivité du site.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-4-4"></i> Réduisez le nombre de redirections</h3>
+                    <p class="lato-regular">Les redirections créent des requêtes HTTP supplémentaires et augmentent le temps de chargement. Limitez-les au maximum et assurez-vous que les redirections sont nécessaires.</p>
+                </div>
+                <div class="element">
+                    <h3><i class="apicon apicon-3-3"></i> Activez le HTTP/2</h3>
+                    <p class="lato-regular">Le HTTP/2 permet de charger plusieurs ressources simultanément sur une seule connexion, ce qui améliore la vitesse de chargement. Assurez-vous que votre serveur prend en charge HTTP/2 (la plupart des hébergeurs modernes le font).</p>
+                </div>
+            </div>
         </section>
 
 

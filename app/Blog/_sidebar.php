@@ -15,7 +15,7 @@
         <h4>Par catégories</h4>
         <ul>
         <?php foreach($data['categories'] as $slug => $name): ?>
-            <li><a href="/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
+            <li><a href="/nouvelles/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
         <?php endforeach; ?>
         </ul>
     </div>
@@ -23,7 +23,7 @@
         <h4>Par mot-clé</h4>
         <ul>
         <?php foreach($data['keywords'] as $slug => $name): ?>
-            <li><a href="/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
+            <li><a href="/nouvelles/<?php echo $slug; ?>"><?php echo $name; ?></a></li>
         <?php endforeach; ?>
         </ul>
     </div>

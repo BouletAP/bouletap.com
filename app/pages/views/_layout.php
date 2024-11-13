@@ -9,8 +9,13 @@
 
     <link rel="stylesheet" href="/medias/css/style.css" />
     <link rel="stylesheet" href="/medias/vendors/lineicons/lineicons.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <script type='text/javascript' src='/medias/js/bouletap-forms.js'></script>
+    
 
 {{PAGE_CONTENT}}
 

@@ -3,6 +3,7 @@
 ?>
 <title>Listing <?php echo $data['page']; ?></title>  
 <link rel="stylesheet" href="/medias/css/admin.css" />    
+<link rel="stylesheet" href="/medias/css/blog-admin.css" />    
 
 </head>
 
@@ -32,7 +33,6 @@
             <div class="page-admin">                
                 <div>
                     <a href="/admin/<?php echo $data['page']; ?>/add" class="btn-add">Ajouter un <?php echo $data['page']; ?></a>
-                    <p><a href="/admin/<?php echo $data['page']; ?>/mergerino">MERGE OLD PROJECTS</a></p>
                     <table>
                         <tr>
                             <th>id</th>

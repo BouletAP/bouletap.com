@@ -32,7 +32,7 @@
                 </span>
 
                 <div class="profile-image-mobile">                    
-                    <img src="/medias/images/andre-philippe-boulet-programmeur-logiciels-bouletap.jpg" alt="Photo de André-Philippe Boulet">
+                    <img src="/medias/images/andre-philippe-boulet-profil.jpg" alt="Photo de André-Philippe Boulet">
                 </div>
 
                 <p class="bigger">Bienvenue sur le site web de André-Philippe Boulet, un programmeur-analyste qui développe des logiciels web et mobiles depuis plus de 15 ans</p>             
@@ -45,7 +45,7 @@
             </div>
 
             <div class="profile-image">
-                <img src="/medias/images/andre-philippe-boulet-programmeur-logiciels-bouletap.jpg" alt="Photo de André-Philippe Boulet">
+                <img src="/medias/images/andre-philippe-boulet-profil.jpg" alt="Photo de André-Philippe Boulet">
             </div>
 
         </section>

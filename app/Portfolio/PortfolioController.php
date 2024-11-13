@@ -3,67 +3,82 @@
 use Models\Entities\Article;
 use Models\Entities\Projet;
 
+use BouletAP\Tools\Stringz;
+
 class PortfolioController {
 
 
+    private function _get_project_categories($projets) {     
+        $types = [];   
+        
+        foreach( $projets as $projet ) {
+            $cats = explode(', ', $projet->type_projet);
+            $types = array_unique (array_merge($types, $cats) );
+        }
+        
+        //$categories = ['' => 'Tous les projets'];
+        foreach( $types as $type ) {
+            $key = Stringz::createSlug($type);
+            $categories[$key] = $type;
+        }
 
-    public function projets() {
-
-        // $projet_1 = new Article();
-        // $projet_1->id = 1;
-        // $projet_1->slug = "donald-royer-design";
-        // $projet_1->categorie = "Portfolio";
-        // $projet_1->title = "Donald Royer Design";
-        // $projet_1->preview_image = "/medias/images/portfolio/clients/donaldroyerdesign2022.jpg";
-        // $projet_1->preview_desc = "Designer expérimenté pour vos logos ou projets artistiques";
-        // $projet_1->date = "Décembre 2021";
-
-        // $projet_2 = new Article();
-        // $projet_2->id = 2;
-        // $projet_2->slug = "eugene-laplante";
-        // $projet_2->categorie = "Portfolio";
-        // $projet_2->title = "Eugène Laplante Service-conseils";
-        // $projet_2->preview_image = "/medias/images/portfolio/clients/eugene-laplante-thumb-450x300.jpg";
-        // $projet_2->preview_desc = "Service-conseils pour vos projets de construction";
-        // $projet_2->date = "Avril 2019";
-
-        // $projet_3 = new Article();
-        // $projet_3->id = 3;
-        // $projet_3->slug = "le-gaboteur";
-        // $projet_3->categorie = "Portfolio";
-        // $projet_3->title = "Le Gaboteur";
-        // $projet_3->preview_image = "/medias/images/portfolio/clients/gaboteur2022.jpg";
-        // $projet_3->preview_desc = "Journal francophone à Terre-Neuve et Labrador";
-        // $projet_3->date = "Septembre 2022";
-
-        // $data['projets'] = [
-        //     $projet_1, $projet_2, $projet_3
-        // ];
-
-        // $data['categories'] = [
-        //     'publications' => 'Tous les projets', 
-        //     'wordpress' => 'WordPress',
-        //     'php' => 'PHP', 
-        //     'autres' => 'Autres'
-        // ];
+        // sort array + tweak to insert empty key as first position
+        asort($categories);
+        $categories = array_reverse($categories, true);
+        $categories[''] = 'Tous les projets';
+        $categories = array_reverse($categories, true);
 
 
-        //if( IS_DEV ) {
-            $projets = Projet::get_all();
+        //$categories['autres'] = 'Autres';            
+        return $categories;
+    }
 
-            $categories = ['publications' => 'Tous les projets'];
-            foreach( $projets as $projet ) {
-                $cats = explode(', ', $projet->type_projet);
-                $categories = array_unique (array_merge($categories, $cats) );
+
+    public function projets($slug = false) {
+
+        $projets = Projet::get_all();
+ 
+        $data['categories'] = $this->_get_project_categories($projets);
+
+        if( isset($data['categories'][$slug]) ) {
+            $selected_category = $data['categories'][$slug];
+            $projets = Projet::filter_by_type($projets, $selected_category);
+        }
+        
+        // garder juste les projets déclarés FR
+        foreach( $projets as $key => $p ) {
+            if( $p->langue != "fr" ) {
+                unset($projets[$key]);
+            }                     
+        }
+
+        if( ! Models\Core\Auth::user_can('admin_duty') ) {
+            foreach( $projets as $key => $p ) {
+                if( (int)$p->private === 1 ) {
+                    unset($projets[$key]);
+                }                     
             }
-            $categories['autres'] = 'Autres';            
-            $data['categories'] = $categories;
-        //}
+        }
+        
+        if( IS_DEV ) {
+            $featured = [];
+            foreach( $projets as $key => $p ) {
+                if( !empty($p->featured) ) {
 
-        //if( IS_DEV ) {
-            $data['projets'] = $projets;
+                    if( isset($featured[$p->featured])) {
+                        // @todo: alert for duplicated featured
+                    }              
+                    $featured[$p->featured] = $p;
+                    unset($projets[$key]);
+                }
+            }
+            ksort($featured);
+            $projets = array_merge($featured, $projets);
             //echo '<pre>'; print_r($projets); echo '</pre>'; die();
-        //}
+        }
+
+
+        $data['projets'] = $projets;
 
         echo Models\Core\View::display("Portfolio/projets.php", $data);
     }
@@ -75,10 +90,16 @@ class PortfolioController {
             header("Location: /portfolio/");
             die();
         }
-        $projet = $projet[0];
+
+        $Parsedown = new Parsedown();
+        $projet->defi = $Parsedown->text($projet->defi);
+        //$projet->overview = $Parsedown->text($projet->overview);
+        //$projet->sales_pitch = $Parsedown->text($projet->sales_pitch);
+
+        
         
         $data['projet'] = $projet;
-        //echo '<pre>'; print_r($projet); echo '</pre>'; die();
+        
         echo Models\Core\View::display("Portfolio/projet.php", $data);
     }
 

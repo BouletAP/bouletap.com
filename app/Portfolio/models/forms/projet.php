@@ -30,7 +30,7 @@ class ProjetForm extends Forms {
         
         $concept = new TextArea('concept');
         $concept->addAttribute( 'placeholder', 'Décrire le concept' );
-        $concept->addValidation( new Required );
+        //$concept->addValidation( new Required );
 
         $defi = new TextArea('defi');
         $defi->addAttribute( 'placeholder', 'Décrire le défi' );
@@ -38,7 +38,7 @@ class ProjetForm extends Forms {
 
         $solution = new TextArea('solution');
         $solution->addAttribute( 'placeholder', 'Décrire la solution' );
-        $solution->addValidation( new Required );
+        //$solution->addValidation( new Required );
 
 
         $overview = new TextArea('overview');
@@ -56,6 +56,10 @@ class ProjetForm extends Forms {
         $image_3 = new ImageUpload('images_3', UPLOAD_PATH, "portfolio/");
         $image_3_desc = new Text('images_3_desc');
         $image_3_desc->addAttribute( 'placeholder', 'Titre image 3' );
+        
+        $image_4 = new ImageUpload('images_4', UPLOAD_PATH, "portfolio/");
+        $image_4_desc = new Text('images_4_desc');
+        $image_4_desc->addAttribute( 'placeholder', 'Titre image 4' );
 
         
 
@@ -81,6 +85,24 @@ class ProjetForm extends Forms {
         $nom_client->addAttribute( 'placeholder', 'Nom du client' );
         $nom_client->addValidation( new Required );
 
+        $pastille = new Text('pastille');
+        $pastille->addAttribute( 'placeholder', 'BouletAP, Cobi-CDGI, Megavolt, Concept, Collaboration' );
+        $pastille->addValidation( new Required );
+
+        $langue = new Text('langue');
+        $langue->addAttribute( 'placeholder', 'Langue d\'affichage' );
+        $langue->addValidation( new Required );
+        $langue->setValue( "fr" );
+
+        $featured = new Text('featured');
+        $featured->addAttribute( 'placeholder', 'Inscrire l\'ordre "featured"' );
+        
+        $site_mort = new Text('site_mort');
+        $site_mort->addAttribute( 'placeholder', 'Inscrire "1" si le site est mort' );
+        
+        $is_private = new Text('private');
+        $is_private->addAttribute( 'placeholder', 'Inscrire "1" si la nouvelle est privée' );
+
         
         $title->setValue( "Projet de test #" . time() );
         $url->setValue( "https://example.com" );
@@ -94,13 +116,16 @@ class ProjetForm extends Forms {
         $type_projet->setValue( "Type A, B, C, X, Z" );
         $nom_client->setValue( "Entreprise Test inc." );
         
+        $pastille->setValue( "BouletAP" );
+        
         $this->addFields(
             $image_main,
             $title, $url, 
             $concept, $defi, $solution, 
-            $overview, $image_1, $image_1_desc, $image_2, $image_2_desc, $image_3, $image_3_desc,
+            $overview, $image_1, $image_1_desc, $image_2, $image_2_desc, $image_3, $image_3_desc, $image_4, $image_4_desc,
             $short_pitch, $sales_pitch, 
-            $date_publication, $type_projet, $nom_client
+            $date_publication, $type_projet, $nom_client,
+            $pastille, $langue, $is_private, $site_mort, $featured
         );           
     }
 

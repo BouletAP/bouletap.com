@@ -11,6 +11,7 @@ Router::add('/accueil', 'PagesController', 'accueil');
 
 Router::add('/a-propos', 'PagesController', 'a_propos');
 Router::add('/contact', 'PagesController', 'contact');
+Router::add('/credits', 'PagesController', 'credits');
 Router::add('/confidentialite', 'PagesController', 'privacy_policy');
 
 
@@ -20,30 +21,29 @@ Router::add('/carre-de-sable-interactif', 'SandboxController', 'index');
 
 
 Router::add('/admin', 'AdminController', 'dashboard');
-Router::add('/dashboard', 'AdminController', 'dashboard');
+Router::add('/admin/dashboard', 'AdminController', 'dashboard');
+Router::add('/admin/backup', 'AdminController', 'full_backup');
 
 Router::add('/connexion', 'AuthController', 'login');
 Router::add('/logout', 'AuthController', 'logout');
 
 
 
+// --------------------------- //
+Router::add('/admin/articles', 'BlogAdminController', 'list');
+Router::add('/admin/articles/add', 'BlogAdminController', 'add');
+Router::add('/admin/articles/edit/{INT}', 'BlogAdminController', 'edit');
+Router::add('/admin/articles/delete/{INT}', 'BlogAdminController', 'delete');
 
-
-Router::add('/publications', 'BlogController', 'nouvelles');
 Router::add('/nouvelles', 'BlogController', 'nouvelles');
-Router::add('/cheatsheets', 'BlogController', 'nouvelles');
-Router::add('/trucs-et-astuces', 'BlogController', 'nouvelles');
+
+Router::add('/nouvelle/{SLUG}', 'BlogController', 'nouvelle');
+// --------------------------- //
 
 
-Router::add('/nouvelle/nouvelle-place-d-affaires', 'BlogController', 'nouvelle');
-Router::add('/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients', 'BlogController', 'nouvelle');
-Router::add('/nouvelle/covid-bureau-ferme', 'BlogController', 'nouvelle');
 
 
-// Router::add('/services', 'services.php');
-//Router::add('/nouveau-site-web', 'PagesController', 'nouveau_site');
-
-Router::add('/services', 'PagesController', 'coming_soon');
+Router::add('/services', 'PagesController', 'services');
 Router::add('/services/creation-site-internet', 'ServicesController', 'creation_sites_internet');
 
 Router::add('/services/performances', 'ServicesController', 'performances');
@@ -57,29 +57,20 @@ Router::add('/portfolio', 'PortfolioController', 'projets');
 Router::add('/projet/{SLUG}', 'PortfolioController', 'details_projet');
 
 
+Router::add('/admin/portfolio', 'ProjectAdminController', 'list');
+Router::add('/admin/portfolio/add', 'ProjectAdminController', 'add');
+Router::add('/admin/portfolio/edit/{INT}', 'ProjectAdminController', 'edit');
+Router::add('/admin/portfolio/delete/{INT}', 'ProjectAdminController', 'delete');
+Router::add('/admin/portfolio/restore/{INT}', 'ProjectAdminController', 'restore');
 
-//Router::add('/autologin', 'AdminController', 'autologin');
-
-
-Router::add('/admin/portfolio', 'ProjectController', 'list');
-Router::add('/admin/portfolio/add', 'ProjectController', 'add');
-Router::add('/admin/portfolio/edit/{INT}', 'ProjectController', 'edit');
-Router::add('/admin/portfolio/delete/{INT}', 'ProjectController', 'delete');
-
-Router::add('/admin/articles', 'CMSController', 'list');
-Router::add('/admin/articles/add', 'CMSController', 'add');
-Router::add('/admin/articles/edit/{INT}', 'CMSController', 'edit');
-Router::add('/admin/articles/delete/{INT}', 'CMSController', 'delete');
-//Router::add('/admin/publication-add', 'CMSController', 'add_publications');
+//Router::add('/admin/portfolio/mergerino', 'ProjectAdminController', 'merge_old_project');
+//Router::add('/admin/portfolio/mergerino', 'ProjectAdminController', 'fix_old_info');
 
 
 Router::add('/admin/flag_read/{INT}', 'AdminController', 'flag_read');
 
 Router::add('/admin/timesheet', 'TimeSheetController', 'index');
 Router::add('/admin/timesheet/details', 'TimeSheetController', 'details');
-
-Router::add('/admin/discord-hook', 'CMSController', 'testWebHook');
-
 
 
 Router::add('*', 'PagesController', 'not_found');

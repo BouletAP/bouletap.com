@@ -14,10 +14,18 @@ class PagesController {
         echo Models\Core\View::display("Pages/views/a-propos.php");
     }
 
+    public function services() {
+        echo Models\Core\View::display("Pages/views/services.php");
+    }
+
     public function contact() {
         echo Models\Core\View::display("Pages/views/contact.php");
     }
     
+    public function credits() {
+        echo Models\Core\View::display("Pages/views/credits.php");
+    }
+
     public function privacy_policy() {
         echo Models\Core\View::display("Pages/views/privacy-policy.php");
     }

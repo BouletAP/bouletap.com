@@ -1,8 +1,9 @@
 <?php
-    $form = $data['portfolio_form'];
+    $form = $data['publication_form'];
 ?>
-<title>Ajouter un projet André-Philippe Boulet</title>  
+<title>Ajouter un article - APB</title>  
 <link rel="stylesheet" href="/medias/css/admin.css" />    
+<link rel="stylesheet" href="/medias/css/blog-admin.css" />    
 
 
 <script>
@@ -62,48 +63,22 @@
             <div class="page-admin">
                 
                 <div>
-                    <h1>Entrer de nouveau projet</h1>
+                    <h1>Entrer un nouvel article</h1>
 
                     <form method="post" enctype="multipart/form-data">
+                        <div class="form-error-message hide"><span class="error-title">Le formulaire est invalide :</span></div>
                         
-                        <?php if($form->hasErrors()): ?>
-                            <div class="form-error-message"><span class="error-title">Le formulaire est invalide.</span></div>
-                        <?php endif; ?>
-
+                        <div><?php echo $form->getField('title')->display(); ?></div>
+                        <div><?php echo $form->getField('short_pitch')->display(); ?></div>
                         <div>
                             <span>Image principale + featured</span>
                             <?php echo $form->getField('image')->display(); ?>
                         </div>
+                        <div><?php echo $form->getField('content')->display(); ?></div>
+                        <div><?php echo $form->getField('categories')->display(); ?></div>
 
-                        <div><?php echo $form->getField('title')->display(); ?></div>
-                        <div><?php echo $form->getField('url')->display(); ?></div>
-                        
-                        <div><?php echo $form->getField('concept')->display(); ?></div>
-                        <div><?php echo $form->getField('defi')->display(); ?></div>
-                        <div><?php echo $form->getField('solution')->display(); ?></div>
-                        
-                        <div><?php echo $form->getField('overview')->display(); ?></div>
-                        <div class="flex-images">
-                            <div class="col-3">
-                                <?php echo $form->getField('images_1')->display(); ?>
-                                <?php echo $form->getField('images_1_desc')->display(); ?>
-                            </div>
-                            <div class="col-3">
-                                <?php echo $form->getField('images_2')->display(); ?>
-                                <?php echo $form->getField('images_2_desc')->display(); ?>
-                            </div>
-                            <div class="col-3">
-                                <?php echo $form->getField('images_3')->display(); ?>
-                                <?php echo $form->getField('images_3_desc')->display(); ?>
-                            </div>
-                        </div>
-                        
-                        <div><?php echo $form->getField('short_pitch')->display(); ?></div>
-                        <div><?php echo $form->getField('sales_pitch')->display(); ?></div>
-                        
-                        <div><?php echo $form->getField('date_publication')->display(); ?></div>
-                        <div><?php echo $form->getField('type_projet')->display(); ?></div>
-                        <div><?php echo $form->getField('nom_client')->display(); ?></div>
+                        <div>(YYYY-MM-DD)<?php echo $form->getField('published')->display(); ?></div>
+                        <div>Private? <?php echo $form->getField('private')->display(); ?></div>
 
                         <button type="submit" class="btn-cta" id="btn-contact-submit">Envoyer mon message <i class="lni lni-arrow-right"></i></span></button>
                     </form>      

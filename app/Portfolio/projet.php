@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/medias/css/portfolio.css" />       
     <title>Portfolio de projets - André-Philippe Boulet</title> 
 </head>
-<body class="page-nouvelles page-content">
+<body class="page-nouvelles page-projet page-content">
     <div class="header-container">        
         <?php include(APP_PATH.'/Pages/views/_header.php'); ?>
     </div>
@@ -14,8 +14,13 @@
 
             <div class="section-description">
                 <span class="subtitle">Projet réalisé par André-Philippe Boulet</span>
-                <h1><?php echo $projet->title; ?></h1>    
-                <p><a href="<?php echo $projet->url; ?>" target="_blank"><?php echo $projet->url; ?></a></p>      
+                <h1><?php echo $projet->title; ?></h1>  
+                
+                <?php if($projet->site_mort): ?>
+                    <p class="site-mort"><a href="javascript:;" target="_blank"><del><?php echo $projet->url; ?></del></a> (supprimé)</p>     
+                <?php else: ?>
+                    <p><a href="<?php echo $projet->url; ?>" target="_blank"><?php echo $projet->url; ?></a></p>     
+                <?php endif; ?> 
             </div>
 
         </section>
@@ -23,6 +28,7 @@
         <section class="section-preview">
             <img src="/uploads/<?php echo $projet->image; ?>" alt="<?php echo $projet->title; ?>">   
             <div>
+                <?php if( !empty($projet->concept) ): ?>
                 <div class="concept">
                     <span>&#9655; Concept</span>
                     <p><?php echo $projet->concept; ?></p>
@@ -35,15 +41,27 @@
                     <span>&#9655; Solution</span>
                     <p><?php echo $projet->solution; ?></p>
                 </div>
+                <?php else: ?>
+                    <div class="concept">
+                        <span>&#9655; Project overview</span>
+                        <p><?php echo $projet->overview; ?></p>
+                    </div>
+                    <div class="concept">
+                        <span>&#9655; Défi</span>
+                        <p class="markdown"><?php echo $projet->defi; ?></p>
+                    </div>
+                <?php endif; ?>
             </div>
         </section>
 
         <section class="section-details">
 
-            <div class="overview">
-                <span>project overview</span>
-                <p><?php echo nl2br($projet->overview); ?></p>
-            </div>
+            <?php if( !empty($projet->concept) ): ?>
+                <div class="overview">
+                    <span>project overview</span>
+                    <p><?php echo nl2br($projet->overview); ?></p>
+                </div>
+            <?php endif; ?>
 
             <?php if(!empty($projet->images_1)): ?>
             <div class="slider">

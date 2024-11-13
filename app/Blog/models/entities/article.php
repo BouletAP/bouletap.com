@@ -10,13 +10,16 @@ class Article extends Publication {
     // table:publications
     public $image;
     public $short_pitch;
+    public $categories;
 
     protected function publication_metas_fields() {
-        return ["image", "short_pitch"];
+        return ["image", "short_pitch", "categories"];
     }
     
     static public function get_all() {
-        Database::query()->where('type', 'Articles');
+        Database::query()
+            ->orderBy("published","Desc")
+            ->where('type', 'Articles');
         return parent::get_all();
     }
 
@@ -51,6 +54,16 @@ class Article extends Publication {
             'php' => 'PHP',
             'wordpress' => 'WordPress'
         ];
+        return $output;
+    }
+
+    static public function filter_by_category($articles, $category) {
+        $output = [];
+        foreach( $articles as $item ) {
+            if( strpos($item->categories, $category) !== FALSE ) {
+                $output []= $item;
+            }
+        }
         return $output;
     }
 }

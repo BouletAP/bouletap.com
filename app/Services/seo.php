@@ -68,9 +68,77 @@
         </div>
 
 
-        <section class="produits">
-
-
+        <section class="conseils">
+            <div class="presentation">
+                <h2>Voici quelques conseils pour améliorer le référencement naturel (SEO) de votre site</h2>
+                <p>Ces recommandations couvrent une large gamme de pratiques, de la technique à l'optimisation du contenu, qui peuvent avoir un impact positif sur vos classements dans les moteurs de recherche. Ces conseils sont un bon point de départ pour améliorer le SEO de votre site, mais gardez à l'esprit que le SEO est un processus à long terme. Il nécessite de la constance, de l'analyse et de l’adaptation aux nouvelles tendances et algorithmes des moteurs de recherche.</p>
+            </div>
+            <div class="elements">
+                <div class="element">  
+                    <h3><i class="apicon apicon-3-1"></i> Optimisez la vitesse de votre site</h3>
+                    <p class="lato-regular">La vitesse de chargement d’une page est un facteur de classement important pour Google. Utilisez des outils comme Google PageSpeed Insights ou GTMetrix pour mesurer la vitesse de votre site et identifiez les points à améliorer (compression des images, réduction des scripts, mise en cache, etc.).</p>
+                </div> 
+                <div class="element">
+                    <h3><i class="apicon apicon-1-5"></i> Optimisez pour les mobiles (Responsive Design)</h3>
+                    <p class="lato-regular">Assurez-vous que votre site est mobile-friendly. Google privilégie désormais les sites qui s’adaptent bien aux appareils mobiles (smartphones, tablettes). Utilisez le Test Mobile-Friendly de Google pour vérifier votre site.</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-4-5"></i> Mettez en place des liens internes efficaces</h3>
+                    <p class="lato-regular">Créez des liens internes entre vos pages pour améliorer la navigation et l'indexation. Cela aide Google à découvrir d’autres pages sur votre site et renforce la structure de votre contenu.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-3-2"></i> Créer du contenu de qualité</h3>
+                    <p class="lato-regular">Publiez des articles et des pages de qualité et pertinents qui répondent aux questions de votre audience. Utilisez des mots-clés adaptés, mais évitez le keyword stuffing (bourrage de mots-clés). Priorisez des contenus utiles et bien structurés (titres, sous-titres, paragraphes clairs).</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-2-1"></i> Utilisez les balises de titre et de description (meta tags) correctement</h3>
+                    <p class="lato-regular">Chaque page de votre site doit avoir une balise title et une balise meta description uniques et optimisées. Le title doit être descriptif et contenir des mots-clés importants. La meta description doit inciter au clic et être concise.</p>
+                </div> 
+                <div class="element">                        
+                    <h3><i class="apicon apicon-4-2"></i> Optimisez vos images</h3>
+                    <p class="lato-regular">Les images doivent être correctement dimensionnées et compressées pour éviter des temps de chargement longs. Utilisez des attributs alt descriptifs pour les images afin que Google puisse mieux comprendre leur contenu et aider au SEO visuel.</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-2-2"></i> Créez un contenu long et détaillé</h3>
+                    <p class="lato-regular">Les pages avec un contenu plus long ont tendance à se classer mieux, surtout si elles couvrent un sujet en profondeur. Essayez de viser des articles de 1500 mots ou plus si le sujet s’y prête.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-4-4"></i> Utilisez des liens externes de qualité</h3>
+                    <p class="lato-regular">Les backlinks provenant de sites fiables et pertinents sont essentiels pour améliorer l'autorité de votre site. Cherchez à obtenir des liens de qualité plutôt que des liens en grande quantité.</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-2-4"></i> Améliorez l’architecture de votre site</h3>
+                    <p class="lato-regular">Une structure de site claire, avec des URLs lisibles et logiques, aide non seulement les utilisateurs mais aussi les moteurs de recherche. Par exemple, une URL comme https://monsite.com/produits/chaussures-homme est beaucoup plus lisible et efficace qu’une URL complexe avec des paramètres.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-3-3"></i> Utilisez le HTTPS</h3>
+                    <p class="lato-regular">Si votre site n’est pas encore sécurisé avec HTTPS, il est impératif de passer à ce protocole. Google favorise les sites sécurisés, et l’HTTPS est un facteur de classement.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-3"></i> Intégrez des données structurées (schema markup)</h3>
+                    <p class="lato-regular">Le schema markup permet d’ajouter des métadonnées supplémentaires à vos pages, ce qui peut aider les moteurs de recherche à mieux comprendre le contenu. Cela peut aussi améliorer votre visibilité dans les résultats enrichis (ex. : les étoiles de notation, les recettes, etc.).</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-5-1"></i> Optimisez pour la recherche vocale</h3>
+                    <p class="lato-regular">Avec l'essor des assistants vocaux, optimisez votre contenu pour des requêtes en langage naturel. Cela implique d’utiliser des phrases longues et plus conversationnelles dans vos titres et contenus.</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-1-1"></i> Améliorez votre présence sur les réseaux sociaux</h3>
+                    <p class="lato-regular">Bien que les signaux sociaux n’aient pas d’impact direct sur le SEO, une bonne présence sur les réseaux sociaux peut indirectement favoriser votre SEO. Plus vos contenus sont partagés, plus vous attirez de trafic et plus vous obtenez des backlinks naturels.</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-5-5"></i> Créez un blog actif</h3>
+                    <p class="lato-regular">Un blog permet de publier régulièrement du contenu frais, ce qui est crucial pour le SEO. Il vous permet également de cibler une variété de mots-clés de longue traîne et de répondre à des questions spécifiques que vos utilisateurs se posent.</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-1-4"></i> Analysez régulièrement les performances</h3>
+                    <p class="lato-regular">Utilisez Google Analytics et Google Search Console pour suivre les performances de votre site, analyser le comportement des utilisateurs et corriger les erreurs techniques (pages 404, problèmes d'indexation, etc.).</p>
+                </div> 
+                <div class="element">  
+                    <h3><i class="apicon apicon-3-4"></i> Gérez la recherche locale (SEO local)</h3>
+                    <p class="lato-regular">Si vous avez une entreprise physique, optimisez votre présence en ligne pour la recherche locale. Créez et maintenez votre profil sur Google My Business, ajoutez des informations locales précises et obtenez des avis clients.</p>
+                </div> 
+            </div>
         </section>
 
 

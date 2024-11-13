@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/services/creation-site-internet" class="menu-services">
+                    <a href="/services" class="menu-services">
                         <span id="menu-services-svg"></span>                       
                         <span>Services offerts</span>                   
                     </a>

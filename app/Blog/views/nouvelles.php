@@ -30,15 +30,15 @@
                         <?php foreach($data['nouvelles'] as $nouvelle): ?>
                             <div class="card card-nouvelle">
                                 <div class="img">
-                                    <a href="/nouvelle/<?php echo $nouvelle->slug; ?>"><img src="<?php echo $nouvelle->preview_image; ?>" alt="<?php echo $nouvelle->title; ?>"></a>
-                                    <a href="" class="categories"><?php echo $nouvelle->categorie; ?></a>
+                                    <a href="/nouvelle/<?php echo $nouvelle->slug; ?>"><img src="/uploads/<?php echo $nouvelle->image; ?>" alt="<?php echo $nouvelle->title; ?>"></a>
+                                    <a href="" class="categories"><?php echo $nouvelle->type; ?></a>
                                 </div>
                                 <h3><a href="/nouvelle/<?php echo $nouvelle->slug; ?>"><?php echo $nouvelle->title; ?></a></h3>
-                                <p><?php echo $nouvelle->preview_desc; ?></p>
+                                <p><?php echo $nouvelle->short_pitch; ?></p>
                                 <a href="/nouvelle/<?php echo $nouvelle->slug; ?>" class="read-more">Lire la suite »</a>
 
                                 <div class="card-footer">
-                                    <a class="date" href="/nouvelles"><?php echo $nouvelle->date; ?></a>
+                                    <a class="date" href="/nouvelles"><?php echo $nouvelle->published; ?></a>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -58,10 +58,3 @@
         </div>
 
     </div>      
-
-
-
-
-
-
-    

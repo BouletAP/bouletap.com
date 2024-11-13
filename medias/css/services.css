@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .products-and-services .hero {
   display: flex;
   padding: 0px 10px;
@@ -179,4 +180,132 @@
 }
 .products-and-services .produits .card.card-ecommerce ul {
   margin-left: 20%;
+}
+
+.apicon {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-image: url("/medias/images/sprites/icones-performance-seo.png");
+  background-size: 400px 400px; /* Taille totale de l'image sprite */
+  background-size: 500% 500%; /* Taille totale de l'image sprite */
+}
+
+/* Exemple d'icônes spécifiques */
+.apicon-1-1 {
+  background-position: 0 0;
+} /* 1ère icône (colonne 1, rangée 1) */
+.apicon-1-2 {
+  background-position: -100% 0;
+} /* 2ème icône (colonne 2, rangée 1) */
+.apicon-1-3 {
+  background-position: -75% 0;
+} /* 3ème icône (colonne 3, rangée 1) */
+.apicon-1-4 {
+  background-position: -50% 0;
+} /* 4ème icône (colonne 4, rangée 1) */
+.apicon-1-5 {
+  background-position: -25% 0;
+} /* 5ème icône (colonne 5, rangée 1) */
+/* Rangée suivante (rangée 2) */
+.apicon-2-1 {
+  background-position: 0 -100%;
+} /* 1ère icône (colonne 1, rangée 2) */
+.apicon-2-2 {
+  background-position: -100% -100%;
+} /* 2ème icône (colonne 2, rangée 2) */
+.apicon-2-3 {
+  background-position: -75% -100%;
+} /* 3ème icône (colonne 3, rangée 2) */
+.apicon-2-4 {
+  background-position: -50% -100%;
+} /* 4ème icône (colonne 4, rangée 2) */
+.apicon-2-5 {
+  background-position: -25% -100%;
+} /* 5ème icône (colonne 5, rangée 2) */
+/* Rangée suivante (rangée 3) */
+.apicon-3-1 {
+  background-position: 0 -75%;
+} /* 1ère icône (colonne 1, rangée 3) */
+.apicon-3-2 {
+  background-position: -100% -75%;
+} /* 2ème icône (colonne 2, rangée 3) */
+.apicon-3-3 {
+  background-position: -75% -75%;
+} /* 3ème icône (colonne 3, rangée 3) */
+.apicon-3-4 {
+  background-position: -50% -75%;
+} /* 4ème icône (colonne 4, rangée 3) */
+.apicon-3-5 {
+  background-position: -25% -75%;
+} /* 5ème icône (colonne 5, rangée 3) */
+/* Rangée suivante (rangée 4) */
+.apicon-4-1 {
+  background-position: 0 -50%;
+} /* 1ère icône (colonne 1, rangée 4) */
+.apicon-4-2 {
+  background-position: -100% -50%;
+} /* 2ème icône (colonne 2, rangée 4) */
+.apicon-4-3 {
+  background-position: -75% -50%;
+} /* 3ème icône (colonne 3, rangée 4) */
+.apicon-4-4 {
+  background-position: -50% -50%;
+} /* 4ème icône (colonne 4, rangée 4) */
+.apicon-4-5 {
+  background-position: -25% -50%;
+} /* 5ème icône (colonne 5, rangée 4) */
+/* Rangée suivante (rangée 4) */
+.apicon-5-1 {
+  background-position: 0 -25%;
+} /* 1ère icône (colonne 1, rangée 5) */
+.apicon-5-2 {
+  background-position: -100% -25%;
+} /* 2ème icône (colonne 2, rangée 5) */
+.apicon-5-3 {
+  background-position: -75% -25%;
+} /* 3ème icône (colonne 3, rangée 5) */
+.apicon-5-4 {
+  background-position: -50% -25%;
+} /* 4ème icône (colonne 4, rangée 5) */
+.apicon-5-5 {
+  background-position: -25% -25%;
+} /* 5ème icône (colonne 5, rangée 5) */
+section.conseils .presentation h2 {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: #003399;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+section.conseils .presentation p {
+  text-align: center;
+  width: 75%;
+  margin: 20px auto;
+}
+section.conseils .elements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+}
+section.conseils .elements .element {
+  padding: 20px;
+  border: 1px solid rgba(0, 51, 153, 0.3333333333);
+  width: 48%;
+}
+section.conseils .elements .element h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+section.conseils .elements .element h3 i {
+  margin-right: 15px;
+}
+section.conseils .elements .element p {
+  text-align: justify;
 }

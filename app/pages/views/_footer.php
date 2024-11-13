@@ -67,9 +67,10 @@
             <ul class="navigation">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/a-propos">À Propos</a></li>
-                <li><a href="#">Services offerts</a></li>
-                <li><a href="#">Portfolio</a></li>
+                <li><a href="/services">Services offerts</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
                 <li><a href="/nouvelles">Articles et Nouvelles</a></li>
+                <li><a href="/credits">Crédits et attributions</a></li>
                 <li><a href="/confidentialite">Politique de confidentialité</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
@@ -110,7 +111,7 @@
     </div>
     <div class="copyrights">
         <div class="left">
-        <a href="#"> © <?php echo date('Y'); ?> - André-Philippe Boulet - Tous droits réservés</a>
+        <a href="#"> © <?php echo date('Y'); ?> - <a href="/credits">André-Philippe Boulet - Tous droits réservés</a></a>
         </div>
         <div class="right">                    
             <div class="socials">  
