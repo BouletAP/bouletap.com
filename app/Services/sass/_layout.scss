@@ -210,4 +210,69 @@
             }
         }
     }
+
+    section.conseils {
+
+
+        .presentation {
+            padding:0px;
+            h2 {
+                font-size: 1.4em;
+                text-transform: uppercase;
+                color: #003399;
+                text-align: center;
+                margin-top:40px;
+                margin-bottom:10px;
+
+                @include mq('tablet') {
+                    
+                }
+            }
+            p {
+                text-align: center;
+                margin: 20px auto;
+
+                @include mq('tablet') {
+                    width:75%;
+                }
+            }
+        }
+    
+        .elements {
+    
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-around;
+            margin-top:40px;
+    
+            .element {
+    
+                padding: 10px;
+                border: 1px solid #00339955;
+
+                @include mq('tablet') {
+                    padding: 20px;
+                    width: 48%;                    
+                }
+    
+                h3 {                
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    line-height: 1.2em;
+                    display: inline-flex;
+                    align-items: center;
+                    margin-bottom:10px;
+    
+                    i {margin-right:15px;}
+                }
+                p {
+                    text-align: justify;
+                }
+            }
+        }
+    
+    }
 }
+
+

@@ -69,11 +69,23 @@ class BlogController {
 
     
     
-    public function nouvelles($slug = false) {
+    public function nouvelles($args = false) {
         
-        //$projets = Projet::get_all();
+        $page = 1;
+        $post_per_page = 6;
+
+        if( is_array($args) ) {
+            $slug = $args[0];
+            $page = (int)$args[1][0];
+        }
+        else {
+            $slug = $args;
+        }
+
+
         $nouvelles = Article::get_all();
 
+        // remove private posts
         if( !Auth::user_can('admin_duty') ) {
             foreach($nouvelles as $key => $nouvelle) {
                 if( !empty($nouvelle->private) ) {
@@ -81,18 +93,11 @@ class BlogController {
                 }
             }            
         }
-
-        // filter by category
-        //$requested_type = str_replace('/', '', $_SERVER['REQUEST_URI']);
         
-        
+        // get active categories
         $data['categories'] = $this->_get_categories($nouvelles);
-
-        //$data['categories'] = Article::get_categories();
         $data['keywords'] = Article::get_keywords();
         
-        //$selected_category = array_key_exists($requested_type, $data['categories']) ? $data['categories'][$requested_type] : 'Tous les articles';
-
 
         $selected_category = $slug ? $slug : 'publications';
         if( isset($data['categories'][$slug]) ) {
@@ -100,13 +105,27 @@ class BlogController {
             $nouvelles = Article::filter_by_category($nouvelles, $selected_category);
         }
 
-        foreach($nouvelles as $key => $nouvelle) {
-            
+        // paginate
+        $data['show_pagination'] = false;
+        $data['post_per_page'] = $post_per_page;
+        $data['page'] = $page;
+        if( count($nouvelles) > $post_per_page ) {
+            $data['total_posts'] = count($nouvelles);
+            $data['total_pages'] = ceil(count($nouvelles) / $post_per_page);
+            $data['show_pagination'] = true;
+            $nouvelles = array_slice($nouvelles, ($page - 1) * $post_per_page, $post_per_page);
+        }
+        
+
+
+        // Fix nouvelle data
+        foreach($nouvelles as $key => $nouvelle) {            
             $months = BouletAP\Tools\Dates::months();
             $date_publiee = ucfirst($months[ date('m', $nouvelle->published) - 1]) . " " . date('Y', $nouvelle->published);
             $nouvelle->published = $date_publiee;
         }
 
+        //echo '<pre>'; print_r($selected_category); echo '</pre>'; die();
         $data['nouvelles'] = $nouvelles;
         $data['selected_category'] = $selected_category;
 

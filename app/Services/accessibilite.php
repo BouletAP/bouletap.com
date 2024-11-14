@@ -68,9 +68,53 @@
         </div>
 
 
-        <section class="produits">
-
-
+        <section class="conseils">
+            <div class="presentation">
+                <h2>Voici quelques conseils pratiques pour améliorer l'accessibilité de vos pages Web</h2>
+                <p>En appliquant ces principes vous maximiserez l’impact de votre site tout en offrant une expérience utilisateur inclusive et de qualité. Si vous avez des questions spécifiques sur la mise en œuvre de l'accessibilité ou de la conception responsive, je suis là pour vous guider !</p>
+            </div>
+            <div class="elements">
+                <div class="element"> 
+                    <h3><i class="apicon apicon-3-1"></i> Amélioration de l'expérience utilisateur (UX)</h3>
+                    <p class="lato-regular">Un site web adapté à différents appareils (responsive) assure une expérience fluide et agréable, quel que soit le dispositif (smartphone, tablette, ordinateur). Cela permet à vos utilisateurs de naviguer sans frustration, augmentant ainsi leur satisfaction.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-3"></i> Optimisation du référencement (SEO)</h3>
+                    <p class="lato-regular">Google et d'autres moteurs de recherche privilégient les sites responsive. Cela signifie que les utilisateurs qui accèdent à votre site via mobile ou tablette bénéficieront d'une meilleure visibilité sur les résultats de recherche. Un site optimisé pour tous les formats aide donc à améliorer votre positionnement SEO.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-3-2"></i> Accessibilité : une question d'égalité</h3>
+                    <p class="lato-regular">L'accessibilité web permet aux utilisateurs, y compris ceux avec des handicaps (comme les déficiences visuelles), d'accéder à vos contenus. En offrant un site accessible, vous permettez à tout le monde, indépendamment de leurs capacités, de naviguer sur votre site sans obstacles.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-2-2"></i> Conformité légale</h3>
+                    <p class="lato-regular">De nombreux pays, y compris l'Union Européenne et les États-Unis, exigent que les sites web respectent des normes d'accessibilité (comme le WCAG - Web Content Accessibility Guidelines). Ne pas respecter ces normes peut vous exposer à des risques juridiques et à des poursuites.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-4"></i> Augmenter l'audience et les conversions</h3>
+                    <p class="lato-regular">Un site accessible et responsive augmente le nombre d'utilisateurs potentiels. Les personnes avec des déficiences visuelles représentent un public plus large qu’on ne le pense, et l'adaptabilité de votre site permet à un plus grand nombre d'individus de devenir vos clients, ce qui peut booster vos conversions.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-2-5"></i> Amélioration de la vitesse de chargement</h3>
+                    <p class="lato-regular">Un site responsive, bien codé et optimisé, est souvent plus rapide à charger sur différents appareils. Cela est crucial, car une vitesse de chargement lente peut entraîner des abandons, particulièrement sur mobile où les connexions peuvent être moins stables.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-1"></i> Responsabilité sociétale et image de marque</h3>
+                    <p class="lato-regular">Un site accessible montre que vous vous souciez de l’inclusion et de l’égalité des chances, ce qui renforce votre image de marque. Les utilisateurs apprécient les entreprises qui prennent des mesures concrètes pour rendre leur contenu accessible à tous.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-4-3"></i> Adaptation aux évolutions technologiques</h3>
+                    <p class="lato-regular">En ayant un site responsive, vous vous assurez qu’il soit à l’épreuve du temps. L’adaptabilité est essentielle car les appareils et les technologies changent rapidement, et un site responsive vous permet d’être toujours prêt à accueillir les dernières innovations.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-1-2"></i> Réduction du taux de rebond</h3>
+                    <p class="lato-regular">Un site bien conçu qui s’adapte aux formats d’écran réduira le taux de rebond (lorsqu'un visiteur quitte votre site rapidement). Si votre site ne s’affiche pas correctement sur mobile ou ne permet pas une navigation facile pour les non-voyants, les visiteurs auront tendance à partir dès les premières secondes.</p>
+                </div> 
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-1"></i> Accessibilité des contenus pour les technologies d'assistance</h3>
+                    <p class="lato-regular">En rendant votre site accessible aux non-voyants, vous permettez une meilleure interaction avec les technologies d'assistance, comme les lecteurs d’écran, qui transforment le texte en audio ou en braille. Cela rend vos contenus compréhensibles et navigables par les utilisateurs aveugles ou malvoyants.</p>
+                </div>           
+            </div>
         </section>
 
 

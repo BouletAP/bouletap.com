@@ -40,6 +40,19 @@
                             </div>
                         <?php endforeach; ?>
 
+                        <?php if($data['show_pagination']): ?>
+                            <div class="pagination">
+                                <span class="subtitle"><?php echo $data['total_posts']; ?> projets disponibles</span>
+                                <ul>
+                                    <?php for($i = 1; $i <= $data['total_pages']; $i++): ?>
+                                        <li class="<?php echo $i == $data['page'] ? 'active' : ''; ?>">
+                                            <a href="/portfolio/<?php echo $data['active_category']; ?>/<?php echo $i; ?>"><?php echo $i; ?></a>
+                                        </li>
+                                    <?php endfor; ?>                                    
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
                     </div>
                 </section>
             </div>

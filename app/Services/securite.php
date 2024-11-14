@@ -68,9 +68,58 @@
         </div>
 
 
-        <section class="produits">
-
-
+        <section class="conseils">
+            <div class="presentation">
+                <h2>Voici quelques conseils pratiques pour améliorer la sécurité de votre site et des données de vos utilisateurs</h2>
+                <p>La sécurité d’un site web et la protection des données de vos clients sont des éléments essentiels, tant pour la confiance des utilisateurs que pour le respect des réglementations en vigueur. Voici quelques conseils généraux pour garantir la sécurité de votre site et des données de vos clients.</p>
+                <p>La sécurité de votre site et des données de vos clients est une responsabilité continue. Appliquer de bonnes pratiques vous aidera à réduire les risques de sécurité et à protéger vos utilisateurs, leurs informations et votre réputation en ligne. La vigilance régulière et la mise à jour de vos systèmes sont essentielles pour anticiper les nouvelles menaces et garantir un environnement sécurisé pour vos visiteurs.</p>
+            </div>
+            <div class="elements">
+                <div class="element"> 
+                    <h3><i class="apicon apicon-3-3"></i> Utilisez HTTPS avec un certificat SSL/TLS</h3>
+                    <p class="lato-regular">HTTPS (HyperText Transfer Protocol Secure) est une version sécurisée du HTTP. Il chiffre les données échangées entre le navigateur de l'utilisateur et votre serveur, rendant ainsi plus difficile l'interception des informations sensibles. Assurez-vous que votre site dispose d'un certificat SSL/TLS valide pour activer HTTPS. Google privilégie les sites sécurisés, et un site non sécurisé peut entraîner des avertissements de sécurité dans les navigateurs.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-2-5"></i> Mettez à jour régulièrement votre CMS et vos plugins</h3>
+                    <p class="lato-regular">Un système de gestion de contenu (CMS) comme WordPress, Joomla, ou Drupal, ainsi que leurs plugins, sont des cibles fréquentes pour les pirates. Assurez-vous que votre CMS, vos plugins et vos thèmes sont toujours à jour pour éviter les failles de sécurité connues. Activez les mises à jour automatiques si possible.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-4-4"></i> Utilisez des mots de passe forts et une authentification à deux facteurs (2FA)</h3>
+                    <p class="lato-regular">Utilisez des mots de passe longs et complexes pour toutes les connexions sur votre site (administrateurs, utilisateurs, base de données, FTP). Idéalement, activez l'authentification à deux facteurs (2FA) pour ajouter une couche de sécurité supplémentaire. Cela permet de réduire considérablement le risque d'accès non autorisé à votre site.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-4-1"></i> Sécurisez vos bases de données</h3>
+                    <p class="lato-regular">Sécurisez l’accès à votre base de données en utilisant des mots de passe forts pour les comptes utilisateurs de la base de données. Assurez-vous que le nom d'utilisateur de la base de données et son mot de passe ne sont pas des valeurs par défaut. Utilisez également des privilèges limités pour les comptes ayant accès à la base de données, afin de limiter les dommages en cas de violation.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-2"></i> Utilisez des plugins et outils de sécurité</h3>
+                    <p class="lato-regular">Installez des plugins de sécurité (par exemple, Wordfence, Sucuri, iThemes Security) qui aident à protéger votre site contre les attaques courantes comme les injections SQL, les attaques par force brute, ou les tentatives de hacking. Ces outils peuvent également vous aider à surveiller et à détecter toute activité suspecte sur votre site.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-3-5"></i> Implémentez des sauvegardes régulières</h3>
+                    <p class="lato-regular">Effectuez des sauvegardes régulières de votre site (fichiers et base de données) et stockez-les dans un endroit sécurisé. En cas d’attaque ou de problème technique, vous pourrez restaurer rapidement votre site. Assurez-vous également que vos sauvegardes sont automatisées et sont stockées en dehors du serveur principal (par exemple, dans le cloud ou sur un serveur distant).</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-3-3"></i> Chiffrez les données sensibles des utilisateurs</h3>
+                    <p class="lato-regular">Si vous stockez des informations sensibles, comme des mots de passe ou des données de carte de crédit, vous devez les chiffrer. Par exemple, ne stockez jamais de mots de passe en clair dans votre base de données. Utilisez des techniques comme le hachage sécurisé (par exemple, bcrypt ou Argon2) pour les mots de passe et le chiffrement pour les informations sensibles.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-4"></i> Mettez en place des restrictions d'accès aux ressources sensibles</h3>
+                    <p class="lato-regular">Restreignez l’accès à certaines parties sensibles de votre site ou de votre serveur (par exemple, les fichiers de configuration ou les dossiers d’administration) en utilisant des contrôles d'accès basés sur des rôles. Limitez l'accès à ces ressources aux personnes ou systèmes absolument nécessaires. Cela minimise le risque d'accès non autorisé.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-4-2"></i> Protégez-vous contre les attaques par injection (SQL, XSS, CSRF)</h3>
+                    <p class="lato-regular">Utilisez des mesures de sécurité pour prévenir les injections SQL, les attaques par cross-site scripting (XSS), et les attaques par cross-site request forgery (CSRF).</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-2-2"></i> Assurez-vous de la conformité avec la législation sur la protection des données</h3>
+                    <p class="lato-regular">Si vous collectez des données personnelles, assurez-vous que votre site respecte les lois de protection des données en vigueur, comme le Règlement Général sur la Protection des Données (RGPD) en Europe ou le California Consumer Privacy Act (CCPA) aux États-Unis.</p>
+                </div>           
+                <div class="element"> 
+                    <h3><i class="apicon apicon-5-5"></i> Surveillez régulièrement l'activité du site et effectuez des audits de sécurité</h3>
+                    <p class="lato-regular">Effectuez des audits de sécurité réguliers pour identifier les vulnérabilités potentielles et assurez-vous que votre site est constamment protégé. Utilisez des outils de surveillance pour détecter toute activité suspecte, comme les tentatives de connexion échouées, les changements de fichiers suspects ou les attaques par déni de service (DDoS).</p>
+                </div>             
+            </div>
         </section>
 
 

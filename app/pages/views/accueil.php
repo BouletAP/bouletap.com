@@ -243,44 +243,44 @@
 
                 <div class="card card-nouvelle">
                     <div class="img">
-                        <a href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients"><img src="/medias/images/nouvelles/austin-distel-goFBjlQiZFU-unsplash-v2.jpg" alt=""></a>
-                        <a href="/trucs-et-astuces" class="categories">Trucs et astuces</a>
+                        <a href="/nouvelle/devrais-je-utiliser-elementor-pour-construire-mon-site-wordpress"><img src="/uploads/articles/elementor-snapshot.jpg" alt="Prévisualisation de la modification d'un site avec Elementor"></a>
+                        <a href="/nouvelles/wordpress" class="categories">WordPress, Elementor</a>
                     </div>
-                    <h3><a href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients">Créer une page service pour mieux convertir vos visiteurs en clients</a></h3>
-                    <p>Créer une page individuelle pour chacun de vos services sur votre site Web peut aider à mettre en valeur votre expertise et faciliter la compréhension</p>
-                    <a href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients" class="read-more">Lire la suite »</a>
-
+                    <h3><a href="/nouvelle/devrais-je-utiliser-elementor-pour-construire-mon-site-wordpress">Devrais-je utiliser Elementor pour construire mon site WordPress ?</a></h3>
+                    <p>Elementor est l'un des meilleurs page builders pour WordPress grâce à sa facilité d'utilisation et à sa flexibilité</p>
+                    <a href="/nouvelle/devrais-je-utiliser-elementor-pour-construire-mon-site-wordpress" class="read-more">Lire la suite »</a>
                     <div class="card-footer">
-                        <a class="date" href="/publications?archive=2023">17 février, 2023</a>
-                        <a class="comments" href="/nouvelle/creer-une-page-service-pour-mieux-convertir-vos-visiteurs-en-clients#commentaires">&nbsp; • &nbsp;No Comments</a>
+                        <a class="date" href="/nouvelles">Novembre, 2024</a>
+                        <a class="comments" href="/nouvelle/devrais-je-utiliser-elementor-pour-construire-mon-site-wordpress#commentaires">&nbsp; • &nbsp;No Comments</a>
                     </div>
                 </div>
 
                 <div class="card card-nouvelle">
                     <div class="img">
-                        <a href="/nouvelle/covid-bureau-ferme"><img src="/medias/images/nouvelles/cdc-w9KEokhajKw-unsplash-lowres.jpg" alt=""></a>
-                        <a href="/nouvelles" class="categories">Nouvelles</a>
+                        <a href="/nouvelle/creer-une-page-service-pour-convertir-vos-visiteurs-en-clients"><img src="/uploads/articles/austin-distel-gofbjlqizfu-unsplash-v2-1.jpg" alt=""></a>
+                        <a href="/nouvelles/ventes" class="categories">Ventes</a>
+                    </div>
+                    <h3><a href="/nouvelle/creer-une-page-service-pour-convertir-vos-visiteurs-en-clients">Créer une page service pour mieux convertir vos visiteurs en clients</a></h3>
+                    <p>Créer une page individuelle pour chacun de vos services sur votre site Web peut aider à mettre en valeur votre expertise et faciliter la compréhension</p>
+                    <a href="/nouvelle/creer-une-page-service-pour-convertir-vos-visiteurs-en-clients" class="read-more">Lire la suite »</a>
+
+                    <div class="card-footer">
+                        <a class="date" href="/nouvelles">Juillet, 2022</a>
+                        <a class="comments" href="/nouvelle/creer-une-page-service-pour-convertir-vos-visiteurs-en-clients#commentaires">&nbsp; • &nbsp;No Comments</a>
+                    </div>
+                </div>
+
+                <div class="card card-nouvelle">
+                    <div class="img">
+                        <a href="/nouvelle/covid-bureau-principal-ferme"><img src="/uploads/articles/cdc-w9keokhajkw-unsplash-lowres-470x264.jpg" alt=""></a>
+                        <a href="/nouvelles/logiciels-bouletap" class="categories">BouletAP</a>
                     </div>
                     <h3><a href="/nouvelle/covid-bureau-ferme">Covid - Bureau principal fermé</a></h3>
-                    <p>Nos services de développement de sites Internet, de programmation web, de maintenance WordPress et d’aide ou support sont toujours disponibles en tout temps. N’hésitez pas</p>
-                    <a href="/nouvelle/covid-bureau-ferme" class="read-more">Lire la suite »</a>
+                    <p>Nos services de développement de sites Internet, de programmation web, de maintenance WordPress et d’aide ou support sont toujours disponibles en tout temps.</p>
+                    <a href="/nouvelle/covid-bureau-principal-ferme" class="read-more">Lire la suite »</a>
                     <div class="card-footer">
-                        <a class="date" href="/publications?archive=2020">16 décembre, 2020</a>
-                        <a class="comments" href="/nouvelle/covid-bureau-ferme#commentaires">&nbsp; • &nbsp;No Comments</a>
-                    </div>
-                </div>
-
-                <div class="card card-nouvelle">
-                    <div class="img">
-                        <a href="/nouvelle/nouvelle-place-d-affaires"><img src="/medias/images/nouvelles/image-bureau-cowansville-bouletap.jpg" alt=""></a>
-                        <a href="/nouvelles" class="categories">Nouvelles</a>
-                    </div>
-                    <h3><a href="/nouvelle/nouvelle-place-d-affaires">Nouvelle place d'affaires de Logiciels BouletAP</a></h3>
-                    <p>Fini le temps où André-Philippe Boulet travaillait de son salon ou d’une petite chambre d’appartement. Quoique nous prônons le minimalisme et le respect de l’environnement,</p>
-                    <a href="/nouvelle/nouvelle-place-d-affaires" class="read-more">Lire la suite »</a>
-                    <div class="card-footer">
-                        <a class="date" href="/publications?archive=2019">3 octobre, 2019</a>
-                        <a class="comments" href="/nouvelle/nouvelle-place-d-affaires#commentaires">&nbsp; • &nbsp;No Comments</a>
+                        <a class="date" href="/nouvelles">Décembre, 2020</a>
+                        <a class="comments" href="/nouvelle/covid-bureau-principal-ferme#commentaires">&nbsp; • &nbsp;No Comments</a>
                     </div>
                 </div>
 

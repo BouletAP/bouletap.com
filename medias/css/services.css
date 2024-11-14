@@ -181,6 +181,57 @@
 .products-and-services .produits .card.card-ecommerce ul {
   margin-left: 20%;
 }
+.products-and-services section.conseils .presentation {
+  padding: 0px;
+}
+.products-and-services section.conseils .presentation h2 {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: #003399;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+.products-and-services section.conseils .presentation p {
+  text-align: center;
+  margin: 20px auto;
+}
+@media only screen and (min-width: 768px) {
+  .products-and-services section.conseils .presentation p {
+    width: 75%;
+  }
+}
+.products-and-services section.conseils .elements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.products-and-services section.conseils .elements .element {
+  padding: 10px;
+  border: 1px solid rgba(0, 51, 153, 0.3333333333);
+}
+@media only screen and (min-width: 768px) {
+  .products-and-services section.conseils .elements .element {
+    padding: 20px;
+    width: 48%;
+  }
+}
+.products-and-services section.conseils .elements .element h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.products-and-services section.conseils .elements .element h3 i {
+  margin-right: 15px;
+}
+.products-and-services section.conseils .elements .element p {
+  text-align: justify;
+}
 
 .apicon {
   display: inline-block;
@@ -271,41 +322,3 @@
 .apicon-5-5 {
   background-position: -25% -25%;
 } /* 5ème icône (colonne 5, rangée 5) */
-section.conseils .presentation h2 {
-  font-size: 1.4em;
-  text-transform: uppercase;
-  color: #003399;
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-section.conseils .presentation p {
-  text-align: center;
-  width: 75%;
-  margin: 20px auto;
-}
-section.conseils .elements {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: space-around;
-}
-section.conseils .elements .element {
-  padding: 20px;
-  border: 1px solid rgba(0, 51, 153, 0.3333333333);
-  width: 48%;
-}
-section.conseils .elements .element h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-  line-height: 1.2em;
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-section.conseils .elements .element h3 i {
-  margin-right: 15px;
-}
-section.conseils .elements .element p {
-  text-align: justify;
-}

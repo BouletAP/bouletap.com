@@ -406,15 +406,9 @@ section {
 #main-header .main-menu .menu-presentation {
   display: flex;
 }
-#main-header .main-menu .menu-presentation .lang-container .socialnetworks {
-  align-items: center;
-}
 #main-header .main-menu .menu-presentation .lang-container .socialnetworks a,
 #main-header .main-menu .menu-presentation .lang-container .socialnetworks .lni {
   color: #FFF;
-}
-#main-header .main-menu .menu-presentation .lang-container .socialnetworks .lni {
-  margin-bottom: -3px;
 }
 #main-header .main-menu .menu-presentation .menu-toggle {
   color: #000;
@@ -494,6 +488,14 @@ section {
   color: #000;
   line-height: 2.5em;
   font-size: 1.5em;
+}
+#main-header .main-menu .menu-presentation .lang-container .li-phone a {
+  display: inline-flex;
+  align-items: center;
+}
+#main-header .main-menu .menu-presentation .lang-container .li-phone a i {
+  margin-top: -1px;
+  margin-right: 8px;
 }
 #main-header .main-menu .menu-presentation .home-icon,
 #main-header .main-menu .menu-presentation .home-span {

@@ -36,6 +36,7 @@ Router::add('/admin/articles/edit/{INT}', 'BlogAdminController', 'edit');
 Router::add('/admin/articles/delete/{INT}', 'BlogAdminController', 'delete');
 
 Router::add('/nouvelles', 'BlogController', 'nouvelles');
+Router::add('/nouvelles/{CAT}/{PAGE}', 'BlogController', 'nouvelles');
 
 Router::add('/nouvelle/{SLUG}', 'BlogController', 'nouvelle');
 // --------------------------- //
@@ -54,6 +55,9 @@ Router::add('/services/securite', 'ServicesController', 'securite');
 
 
 Router::add('/portfolio', 'PortfolioController', 'projets');
+Router::add('/portfolio/{CAT}', 'PortfolioController', 'projets');
+Router::add('/portfolio/{CAT}/{PAGE}', 'PortfolioController', 'projets');
+
 Router::add('/projet/{SLUG}', 'PortfolioController', 'details_projet');
 
 

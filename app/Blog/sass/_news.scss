@@ -119,3 +119,38 @@
     .card { flex-basis: 30%; }
 }
 
+
+
+.pagination {
+    text-align: center;
+    width: 100%;
+    margin-bottom:30px;
+
+    .subtitle {
+        font-weight: bold;;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top:15px;
+    }
+
+    li a {
+        color: #003399;
+        border: 1px solid #000;
+        padding:8px 13px;
+
+        @include touch() {
+            color: #FFF;
+            background-color: #003399;
+            border: 1px solid #003399;
+        }
+    }
+    li.active a {
+        color: #FFF;
+        background-color: #003399;
+        border: 1px solid #003399;
+    }
+}

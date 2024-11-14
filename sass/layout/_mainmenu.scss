@@ -23,8 +23,6 @@
                 .lni {
                     color: #FFF;
                 }
-                align-items: center;
-                .lni {margin-bottom:-3px;}
             }
 
             .menu-toggle {
@@ -92,6 +90,16 @@
                     color:#000;
                     line-height: 2.5em;
                     font-size:1.5em;
+                }
+
+                .li-phone a {
+                    display: inline-flex;
+                    align-items: center;
+
+                    i {
+                        margin-top: -1px;
+                        margin-right: 8px;
+                    }
                 }
             }
 

@@ -25,7 +25,16 @@
         $system = new $controller();
 
         if( !empty($page[2]) )  {
-            $system->$method($page[2]);
+            $args = $page[2];
+            if( !empty($page[3]) ) {
+                $args = [$page[2], $page[3]];
+            }
+
+            if( IS_DEV ) {
+                echo '<pre>'; print_r($args); echo '</pre>'; die();
+            }
+
+            $system->$method($args);
         }
         else {
             $system->$method();

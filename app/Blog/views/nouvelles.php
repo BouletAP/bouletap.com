@@ -14,7 +14,7 @@
             <div class="section-description">
                 <span class="subtitle">Publications</span>
                 <h2>À la une</h2>     
-                <p>Consultez les nouvelles ou les articles écrient par André-Philippe dernièrement</p>           
+                <p>Consultez les nouvelles ou les articles écrit par André-Philippe dernièrement</p>           
             </div>
 
         </section>
@@ -31,7 +31,7 @@
                             <div class="card card-nouvelle">
                                 <div class="img">
                                     <a href="/nouvelle/<?php echo $nouvelle->slug; ?>"><img src="/uploads/<?php echo $nouvelle->image; ?>" alt="<?php echo $nouvelle->title; ?>"></a>
-                                    <a href="" class="categories"><?php echo $nouvelle->type; ?></a>
+                                    <a href="javascript:;" class="categories"><?php echo $nouvelle->categories; ?></a>
                                 </div>
                                 <h3><a href="/nouvelle/<?php echo $nouvelle->slug; ?>"><?php echo $nouvelle->title; ?></a></h3>
                                 <p><?php echo $nouvelle->short_pitch; ?></p>
@@ -42,6 +42,19 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
+
+                        <?php if($data['show_pagination']): ?>
+                            <div class="pagination">
+                                <span class="subtitle"><?php echo $data['total_posts']; ?> nouvelles disponibles</span>
+                                <ul>
+                                    <?php for($i = 1; $i <= $data['total_pages']; $i++): ?>
+                                        <li class="<?php echo $i == $data['page'] ? 'active' : ''; ?>">
+                                            <a href="/nouvelles/<?php echo $data['selected_category']; ?>/<?php echo $i; ?>"><?php echo $i; ?></a>
+                                        </li>
+                                    <?php endfor; ?>                                    
+                                </ul>
+                            </div>
+                        <?php endif; ?>
                         
                         <?php if( empty($data['nouvelles']) ): ?>
                             <p>Nous n'avons publié aucun article dans cette catégorie</p>

@@ -34,7 +34,19 @@ class PortfolioController {
     }
 
 
-    public function projets($slug = false) {
+    public function projets($args = false) {
+
+        $page = 1;
+        $post_per_page = 6;
+
+        if( is_array($args) ) {
+            $slug = $args[0];
+            $page = (int)$args[1][0];
+        }
+        else {
+            $slug = $args;
+        }
+
 
         $projets = Projet::get_all();
  
@@ -78,6 +90,19 @@ class PortfolioController {
         }
 
 
+        // paginate
+        $data['show_pagination'] = false;
+        $data['post_per_page'] = $post_per_page;
+        $data['page'] = $page;
+        if( count($projets) > $post_per_page ) {
+            $data['total_posts'] = count($projets);
+            $data['total_pages'] = ceil(count($projets) / $post_per_page);
+            $data['show_pagination'] = true;
+            $projets = array_slice($projets, ($page - 1) * $post_per_page, $post_per_page);
+        }
+
+
+        $data['active_category'] = !empty($slug) ? $slug : 'page';
         $data['projets'] = $projets;
 
         echo Models\Core\View::display("Portfolio/projets.php", $data);
