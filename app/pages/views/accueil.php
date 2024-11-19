@@ -167,7 +167,7 @@
                         <div class="row">
                             <div class="icon">5</div>
                             <div class="description">
-                                <h4>Time on Target</h4>
+                                <h4><a href="/projet/time-on-target">Time on Target</a></h4>
                                 <p>Conseils et installation de produits de systèmes de sécurité</p>
                             </div>
                         </div>

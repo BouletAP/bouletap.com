@@ -10,17 +10,19 @@ class Router {
 
     static public function add($name, $controllerPath = false, $page = false) {
 
-        $param = false;
+        $params = 0;
 
-        // remove parameter ({INT}, {SLUG})
-        if( strpos($name, '{INT}') !== FALSE) {
-            $param = '{INT}';
-            $name = str_replace('/{INT}', '', $name);
+        // remove parameter ({ARGS}, {SLUG})
+        if( strpos($name, '{ARGS}') !== FALSE) {
+            
+
+            $params = explode("/{ARGS}", $name);'';
+            $name = str_replace('/{ARGS}', '', $name);
+
+            $params = count($params) -1;            
         }
-        if( strpos($name, '{SLUG}') !== FALSE) {
-            $param = '{SLUG}';
-            $name = str_replace('/{SLUG}', '', $name);
-        }
+
+        
 
         
         //self::$routes[$name] = $path;
@@ -30,7 +32,7 @@ class Router {
             self::$routes[$name] = [
                 $controllerPath,
                 $page,
-                $param
+                $params
             ];
         }        
     }
@@ -43,7 +45,9 @@ class Router {
     
         $request_uri = $_SERVER['REQUEST_URI'];
 
-            
+        
+        // @todo: What are we looking for here?
+        // needed to build the right $request_uri
         if( $request_uri != $_SERVER['SCRIPT_NAME'] ) {
             $request_uri = str_replace($base_path, '', $request_uri);
     
@@ -60,44 +64,7 @@ class Router {
             }
         }
 
-
-        // Check with parameter options, remove last part of the URL
-        if(!$route) {
-            
-            //if( IS_DEV ) {
-
-                $uri = explode('/', $request_uri);
-                
-                // first part is always controller/method
-                $params = false;
-                $extra_params = false;
-                $request_uri = $uri[0] . "/" . $uri[1];
-                if( !empty($uri[2]) ) {
-                    $param = $uri[2];
-
-                    if( count($uri) > 3 ) {
-                        $extra_params = array_slice($uri, 3);
-                    }
-                }                
-            // }
-            // else {
-
-            //     // tmp old way
-            //     $param = substr($request_uri, strrpos($request_uri, '/') + 1);
-            //     $request_uri = str_replace("/".$param, '', $request_uri);
-            // }
-            
-
-            if( !empty(static::$routes[$request_uri]) ) {
-                $route = static::$routes[$request_uri];
-                $route[2] = $param;
-                if( $extra_params ) {
-                    $route[3] = $extra_params; // send as array
-                }
-            }
-        }
-           
-
+        $route = static::find_route($request_uri);
     
         if(!$route) {
             $route = static::$routes['*'];
@@ -107,7 +74,50 @@ class Router {
 
         return $route;
     }
-    
+
+
+    static public function find_route($uri) {
+        $route = false;
+
+        $parts = explode('/', $uri);
+        
+        // first index is always empty, @todo refactor to remove first slash?
+        array_shift($parts);    
+
+
+        $test = 0;
+        foreach( static::$routes as $name => $infos ) {
+
+            $test++;
+
+
+            $url_length = count($parts) - (int)$infos[2];
+            if( $url_length <= 0 ) {
+                $url_length=1;
+            }
+            
+            // build url to look for
+            $url = "";
+            for( $i = 0; $i < $url_length; $i++ ) {
+                $url .= "/".$parts[$i];
+            }
+
+            if( $url == $name ) {
+                $route = static::$routes[$name];
+
+                if( (int)$infos[2] > 0 ) {
+                    $args = [];
+                    for( $i = $url_length; $i < count($parts); $i++ ) {
+                        $args []= $parts[$i];
+                    }
+                    $route[2] = $args;
+                }
+                
+            }
+        }
+
+        return $route;
+    }
 }
 
 

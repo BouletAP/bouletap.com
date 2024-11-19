@@ -61,3 +61,24 @@ div.flex-images {
         }
     }
 }
+
+.page-admin table {
+
+    tr:nth-child(odd) td {
+        background-color: #f1f1f1;
+    }
+
+    tr.private td {
+        background-color: #43ccc1;
+    }
+    tr.private:nth-child(odd) td {
+        background-color: #50e0d4;
+    }
+
+    /*tr.nolang td {
+        background-color: #e6bb60;
+    }
+    tr.nolang:nth-child(odd) td {
+        background-color: #f3c86c;
+    }*/
+}

@@ -41,7 +41,7 @@
                         </tr>
                         <?php if( !empty($data['items']) ): ?>
                             <?php foreach($data['items'] as $item): ?>
-                                <tr>
+                                <tr class="<?php echo $item->private === 1 ? 'private' : '' ?> <?php echo empty($item->langue) ? 'nolang' : '' ?>">
                                     <td><?= $item->id ?></td>
                                     <td><?= $item->title ?></td>
                                     <td>

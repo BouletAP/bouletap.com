@@ -37,14 +37,47 @@ class Article extends Publication {
 
 
     static public function get_categories() {
-        $output = [
-            'publications' => 'Toutes les publications', 
-            'cheatsheets' => 'Aide-mémoire',
-            'nouvelles' => 'Nouvelles', 
-            'projets' => 'Projets', 
-            'trucs-et-astuces' => 'Trucs et Astuces', 
-        ];
-        return $output;
+
+        $nouvelles = Article::get_all();
+
+        // remove private posts
+        if( !\Models\Core\Auth::user_can('admin_duty') ) {
+            foreach($nouvelles as $key => $nouvelle) {
+                if( !empty($nouvelle->private) ) {
+                    unset($nouvelles[$key]);
+                }
+            }            
+        }
+
+        $types = [];          
+        foreach( $nouvelles as $item ) {
+            $cats = explode(', ', $item->categories);
+            $types = array_unique (array_merge($types, $cats) );
+        }
+        
+        $categories = [];
+        foreach( $types as $type ) {
+            $key = \BouletAP\Tools\Stringz::createSlug($type);
+            $categories[$key] = $type;
+        }
+
+        // sort array + tweak to insert empty key as first position
+        asort($categories);
+        $categories = array_reverse($categories, true);
+        $categories[''] = 'Toutes les publications';
+        $categories = array_reverse($categories, true);        
+        return $categories;
+
+
+
+        // $output = [
+        //     'publications' => 'Toutes les publications', 
+        //     'cheatsheets' => 'Aide-mémoire',
+        //     'nouvelles' => 'Nouvelles', 
+        //     'projets' => 'Projets', 
+        //     'trucs-et-astuces' => 'Trucs et Astuces', 
+        // ];
+        // return $output;
     }
 
     static public function get_keywords() {

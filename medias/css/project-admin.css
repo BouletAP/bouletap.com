@@ -54,3 +54,15 @@ div.flex-images .col-3:last-child {
 .page-admin table tr:nth-child(odd) td {
   background-color: #f1f1f1;
 }
+.page-admin table tr.private td {
+  background-color: #43ccc1;
+}
+.page-admin table tr.private:nth-child(odd) td {
+  background-color: #50e0d4;
+}
+.page-admin table tr.nolang td {
+  background-color: #e6bb60;
+}
+.page-admin table tr.nolang:nth-child(odd) td {
+  background-color: #f3c86c;
+}

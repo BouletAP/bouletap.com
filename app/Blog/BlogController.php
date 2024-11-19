@@ -9,31 +9,6 @@ require_once APP_PATH . '/models/services/Parsedown.php';
 
 class BlogController {
 
-    private function _get_categories($nouvelles) {     
-        $types = [];   
-        
-        foreach( $nouvelles as $item ) {
-            $cats = explode(', ', $item->categories);
-            $types = array_unique (array_merge($types, $cats) );
-        }
-        
-        //$categories = ['' => 'Toutes les publications'];
-        $categories = [];
-        foreach( $types as $type ) {
-            $key = Stringz::createSlug($type);
-            $categories[$key] = $type;
-        }
-
-        // sort array + tweak to insert empty key as first position
-        asort($categories);
-        $categories = array_reverse($categories, true);
-        $categories[''] = 'Toutes les publications';
-        $categories = array_reverse($categories, true);
-
-        //$categories['autres'] = 'Autres';            
-        return $categories;
-    }
-
     public function nouvelle($slug) {
 
         //$slug = "le-plan-du-site-guide-simplifie";
@@ -95,7 +70,7 @@ class BlogController {
         }
         
         // get active categories
-        $data['categories'] = $this->_get_categories($nouvelles);
+        $data['categories'] = Article::get_categories();
         $data['keywords'] = Article::get_keywords();
         
 

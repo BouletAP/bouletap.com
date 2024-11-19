@@ -37,7 +37,7 @@ class PortfolioController {
     public function projets($args = false) {
 
         $page = 1;
-        $post_per_page = 6;
+        $post_per_page = 9;
 
         if( is_array($args) ) {
             $slug = $args[0];
@@ -46,7 +46,6 @@ class PortfolioController {
         else {
             $slug = $args;
         }
-
 
         $projets = Projet::get_all();
  
@@ -72,7 +71,7 @@ class PortfolioController {
             }
         }
         
-        if( IS_DEV ) {
+        //if( IS_DEV ) {
             $featured = [];
             foreach( $projets as $key => $p ) {
                 if( !empty($p->featured) ) {
@@ -87,7 +86,7 @@ class PortfolioController {
             ksort($featured);
             $projets = array_merge($featured, $projets);
             //echo '<pre>'; print_r($projets); echo '</pre>'; die();
-        }
+        //}
 
 
         // paginate
@@ -108,17 +107,20 @@ class PortfolioController {
         echo Models\Core\View::display("Portfolio/projets.php", $data);
     }
 
-    public function details_projet($slug) {
+    public function details_projet($slug = false) {
+
 
         $projet = Projet::get_by('slug', $slug);
-        if( empty($projet) ) {
+        if( empty($slug) || empty($projet) ) {
             header("Location: /portfolio/");
             die();
         }
 
+
         $Parsedown = new Parsedown();
         $projet->defi = $Parsedown->text($projet->defi);
         //$projet->overview = $Parsedown->text($projet->overview);
+        $projet->sales_pitch = $Parsedown->text($projet->sales_pitch);
         //$projet->sales_pitch = $Parsedown->text($projet->sales_pitch);
 
         

@@ -19,7 +19,7 @@
         <?php endforeach; ?>
         </ul>
     </div>
-    <div class="bloc">
+    <div class="bloc hide">
         <h4>Par mot-clé</h4>
         <ul>
         <?php foreach($data['keywords'] as $slug => $name): ?>

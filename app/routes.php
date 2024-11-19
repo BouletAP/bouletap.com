@@ -2,6 +2,15 @@
 
 use Models\Core\Router;
 
+// New model:
+// Case 1: Router::add("path/to/url", 'Namespace/Controller/Method');
+// Case 2: Router::add("path/to/url/{Arg1}/{Arg2}", 'Folder/Controller/method');
+
+// EX: Router::add("/", '/ajax', 'ajax.php');
+// EX: Router::add("/admin/", 'Blog/add', 'ajax.php');
+// EX: Router::add("/", '/ajax', 'ajax.php');
+
+
 Router::add('/ajax', 'ajax.php');
 
 Router::add('/', 'PagesController', 'accueil');
@@ -32,13 +41,13 @@ Router::add('/logout', 'AuthController', 'logout');
 // --------------------------- //
 Router::add('/admin/articles', 'BlogAdminController', 'list');
 Router::add('/admin/articles/add', 'BlogAdminController', 'add');
-Router::add('/admin/articles/edit/{INT}', 'BlogAdminController', 'edit');
-Router::add('/admin/articles/delete/{INT}', 'BlogAdminController', 'delete');
+Router::add('/admin/articles/edit/{ARGS}', 'BlogAdminController', 'edit');
+Router::add('/admin/articles/delete/{ARGS}', 'BlogAdminController', 'delete');
 
 Router::add('/nouvelles', 'BlogController', 'nouvelles');
-Router::add('/nouvelles/{CAT}/{PAGE}', 'BlogController', 'nouvelles');
+Router::add('/nouvelles/{ARGS}/{ARGS}', 'BlogController', 'nouvelles');
 
-Router::add('/nouvelle/{SLUG}', 'BlogController', 'nouvelle');
+Router::add('/nouvelle/{ARGS}', 'BlogController', 'nouvelle');
 // --------------------------- //
 
 
@@ -55,23 +64,23 @@ Router::add('/services/securite', 'ServicesController', 'securite');
 
 
 Router::add('/portfolio', 'PortfolioController', 'projets');
-Router::add('/portfolio/{CAT}', 'PortfolioController', 'projets');
-Router::add('/portfolio/{CAT}/{PAGE}', 'PortfolioController', 'projets');
+Router::add('/portfolio/{ARGS}', 'PortfolioController', 'projets');
+Router::add('/portfolio/{ARGS}/{ARGS}', 'PortfolioController', 'projets');
 
-Router::add('/projet/{SLUG}', 'PortfolioController', 'details_projet');
+Router::add('/projet/{ARGS}', 'PortfolioController', 'details_projet');
 
 
 Router::add('/admin/portfolio', 'ProjectAdminController', 'list');
 Router::add('/admin/portfolio/add', 'ProjectAdminController', 'add');
-Router::add('/admin/portfolio/edit/{INT}', 'ProjectAdminController', 'edit');
-Router::add('/admin/portfolio/delete/{INT}', 'ProjectAdminController', 'delete');
-Router::add('/admin/portfolio/restore/{INT}', 'ProjectAdminController', 'restore');
+Router::add('/admin/portfolio/edit/{ARGS}', 'ProjectAdminController', 'edit');
+Router::add('/admin/portfolio/delete/{ARGS}', 'ProjectAdminController', 'delete');
+Router::add('/admin/portfolio/restore/{ARGS}', 'ProjectAdminController', 'restore');
 
 //Router::add('/admin/portfolio/mergerino', 'ProjectAdminController', 'merge_old_project');
 //Router::add('/admin/portfolio/mergerino', 'ProjectAdminController', 'fix_old_info');
 
 
-Router::add('/admin/flag_read/{INT}', 'AdminController', 'flag_read');
+Router::add('/admin/flag_read/{ARGS}', 'AdminController', 'flag_read');
 
 Router::add('/admin/timesheet', 'TimeSheetController', 'index');
 Router::add('/admin/timesheet/details', 'TimeSheetController', 'details');

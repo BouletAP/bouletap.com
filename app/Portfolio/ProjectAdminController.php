@@ -36,7 +36,7 @@ class ProjectAdminController {
     
     public function list($show_trash = false) {
 
-        $original_projects = [35, 36, 43, 46, 48, 49];
+        //$original_projects = [35, 36, 43, 46, 48, 49];
         // fix date
 
         $data = [
@@ -44,6 +44,8 @@ class ProjectAdminController {
             'show_trash' => $show_trash,
             'items' => !$show_trash ? Projet::get_all() : Projet::get_all_trash()
         ];
+
+        
 
         //echo '<pre>'; print_r($data); echo '</pre>'; die();
         echo Models\Core\View::display("Portfolio/views/admin-listing.php", $data);

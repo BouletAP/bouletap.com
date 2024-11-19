@@ -67,14 +67,14 @@
             <div class="slider">
                     <div class="slide">
                         <div>
-                            <img src="/uploads/<?php echo $projet->images_1; ?>" alt="<?php echo $projet->images_1_desc; ?>" />                    
+                            <a href="javascript:;"><img src="/uploads/<?php echo $projet->images_1; ?>" alt="<?php echo $projet->images_1_desc; ?>" /></a>                    
                         </div>
                         <p class="desc"><?php echo $projet->images_1_desc; ?></p>
                     </div>
                 <?php if(!empty($projet->images_2)): ?>
                     <div class="slide">
                         <div>
-                            <img src="/uploads/<?php echo $projet->images_2; ?>" alt="<?php echo $projet->images_2_desc; ?>" />                    
+                        <a href="javascript:;"><img src="/uploads/<?php echo $projet->images_2; ?>" alt="<?php echo $projet->images_2_desc; ?>" /></a>                    
                         </div>
                         <p class="desc"><?php echo $projet->images_2_desc; ?></p>
                     </div>
@@ -82,7 +82,7 @@
                 <?php if(!empty($projet->images_3)): ?>
                     <div class="slide">
                         <div>
-                            <img src="/uploads/<?php echo $projet->images_3; ?>" alt="<?php echo $projet->images_3_desc; ?>" />                    
+                        <a href="javascript:;"><img src="/uploads/<?php echo $projet->images_3; ?>" alt="<?php echo $projet->images_3_desc; ?>" /></a>                    
                         </div>
                         <p class="desc"><?php echo $projet->images_3_desc; ?></p>
                     </div>
@@ -96,7 +96,7 @@
                 <div class="details">
                     <span class="subtitle"><?php echo $projet->title; ?></span>
                     <h3><?php echo $projet->short_pitch; ?></h3>
-                    <p><?php echo nl2br($projet->sales_pitch); ?></p>
+                    <p><?php echo $projet->sales_pitch; ?></p>
                 </div>
 
                 <ul>
@@ -116,12 +116,49 @@
             </div>
         </section>
 
-        <a href="/projet/" class="btn-retour"><i class="lni lni-arrow-left"></i> Retour à la liste de projets</a>
+        <a href="/portfolio/" class="btn-retour"><i class="lni lni-arrow-left"></i> Retour à la liste de projets</a>
 
     </div>      
 
 
+<script>
+    var images = document.querySelectorAll('.slider .slide');
 
+    images.forEach((image, index) => {
+        image.addEventListener('click', () => {
+            var src = image.querySelector('img').src;
+            showModal(src);
+        })
+    });
+
+    function showModal(src) {
+        var modalProjectBg = document.createElement("div");
+        modalProjectBg.classList.add('modal-ap-bg');
+        document.querySelector('body').prepend(modalProjectBg);
+
+        
+
+        var modalProject = document.createElement("div");     
+        var modalImage = document.createElement("img");   
+        modalProject.classList.add('modal-ap');           
+        modalImage.setAttribute('src', src);
+        modalProject.append(modalImage);
+        document.querySelector('body').prepend(modalProject);
+        modalProject.classList.add('active');     
+
+        modalProjectBg.addEventListener('click', function(e) {
+            killModal();
+        });
+        modalProject.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });     
+    }
+
+    function killModal() {
+        document.querySelector('.modal-ap-bg').remove(); 
+        document.querySelector('.modal-ap').remove(); 
+    }
+</script>
 
 
 
