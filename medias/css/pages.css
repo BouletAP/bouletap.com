@@ -7,9 +7,11 @@
   .page-a-propos .presentation {
     padding: 30px;
   }
-  .page-a-propos .presentation .description,
+  .page-a-propos .presentation .description {
+    width: 65%;
+  }
   .page-a-propos .presentation .profile-image {
-    width: 45%;
+    width: 35%;
   }
   .page-a-propos .presentation .profile-image-mobile {
     display: none;
@@ -55,7 +57,7 @@
   padding: 20px;
   border-bottom-right-radius: 50%;
 }
-.page-a-propos .tech-and-testimonials {
+.page-a-propos .section-tech {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -63,65 +65,74 @@
   margin-top: 30px;
 }
 @media only screen and (min-width: 768px) {
-  .page-a-propos .tech-and-testimonials {
+  .page-a-propos .section-tech {
     padding: 30px;
     flex-direction: row;
   }
-  .page-a-propos .tech-and-testimonials .technologies,
-  .page-a-propos .tech-and-testimonials .testimonials {
-    width: 50%;
+  .page-a-propos .section-tech .technologies {
+    width: 100%;
   }
 }
-.page-a-propos .tech-and-testimonials h3 {
+.page-a-propos .section-tech h3 {
   text-align: center;
   font-size: 1.3em;
   line-height: 1.5em;
   margin-bottom: 10px;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav {
+.page-a-propos .section-tech .technologies .tech-tab-nav {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 1px solid #003399;
+  background-color: rgba(0, 51, 153, 0.3333333333);
   display: flex;
   justify-content: space-around;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button {
-  background-color: inherit;
+.page-a-propos .section-tech .technologies .tech-tab-nav button {
+  background-color: rgba(0, 51, 153, 0.3333333333);
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  width: 100%;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button.active {
-  background-color: #ddd;
+.page-a-propos .section-tech .technologies .tech-tab-nav button.active {
+  background-color: #003399;
+  color: #FFF;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button:hover {
-  background-color: #ddd;
+.page-a-propos .section-tech .technologies .tech-tab-nav button:hover {
+  background-color: #003399;
+  color: #FFF;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab-nav button:active {
-  background-color: #ddd;
+.page-a-propos .section-tech .technologies .tech-tab-nav button:active {
+  background-color: #003399;
+  color: #FFF;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab {
+.page-a-propos .section-tech .technologies .tech-tab {
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  min-height: 30vh;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab.active {
-  display: block;
+.page-a-propos .section-tech .technologies .tech-tab.active {
+  display: flex;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc {
+.page-a-propos .section-tech .technologies .tech-tab .tech-bloc {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs {
+.page-a-propos .section-tech .technologies .tech-tab .tech-bloc .main-techs {
   padding: 20px;
   position: relative;
+  font-size: 1.2em;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs::after {
+.page-a-propos .section-tech .technologies .tech-tab .tech-bloc .main-techs::after {
   content: "{";
   position: absolute;
   right: -15px;
@@ -130,82 +141,161 @@
   font-size: 3em;
 }
 @media only screen and (min-width: 768px) {
-  .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs::after {
+  .page-a-propos .section-tech .technologies .tech-tab .tech-bloc .main-techs::after {
     top: 10px;
     right: -20px;
   }
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs.tech-1::after {
+.page-a-propos .section-tech .technologies .tech-tab .tech-bloc .main-techs.tech-1::after {
   top: 0px;
 }
 @media only screen and (min-width: 768px) {
-  .page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .main-techs.tech-1::after {
-    top: -5px;
+  .page-a-propos .section-tech .technologies .tech-tab .tech-bloc .main-techs.tech-1::after {
+    top: -7px;
   }
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .derivatives {
-  padding: 20px;
+.page-a-propos .section-tech .technologies .tech-tab .tech-bloc .derivatives {
+  padding: 20px 40px;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-tab .tech-bloc .derivatives .tech-description {
+.page-a-propos .section-tech .technologies .tech-tab .tech-bloc .derivatives .tech-description {
   margin-bottom: 1.5vh;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-description {
+.page-a-propos .section-tech .technologies .main-techs .h5 {
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+}
+.page-a-propos .section-tech .technologies .tech-description {
   margin-bottom: 10px;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 {
+.page-a-propos .section-tech .technologies .tech-description .h5 {
   display: flex;
   align-items: center;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 .svg-icon {
+.page-a-propos .section-tech .technologies .tech-description .h5 .svg-icon {
   padding: 15px;
   position: relative;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-description .h5 .svg-icon img {
+.page-a-propos .section-tech .technologies .tech-description .h5 .svg-icon img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-description p {
+.page-a-propos .section-tech .technologies .tech-description p {
   display: none;
 }
-.page-a-propos .tech-and-testimonials .technologies .tech-description .lni {
+.page-a-propos .section-tech .technologies .tech-description .lni {
   margin-right: 10px;
   font-size: 1.2em;
 }
-@media only screen and (min-width: 1248px) {
-  .page-a-propos .tech-and-testimonials .testimonials .testimonial {
-    padding: 0px 35px 35px 0px;
+.page-a-propos .testimonials {
+  position: relative;
+  padding: 30px 0px;
+}
+.page-a-propos .testimonials h3 {
+  font-size: 1.2em;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.page-a-propos .testimonials:before {
+  background-image: url(/medias/images/bg-ambience-apb.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.05;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+@media only screen and (min-width: 768px) {
+  .page-a-propos .testimonials .testimonials-list {
+    padding: 30px 15vw;
   }
 }
-.page-a-propos .tech-and-testimonials .testimonials .testimonial .content {
-  padding: 2em;
-  background-color: #CCD6EB;
-  border-radius: 25px;
-  border-bottom-left-radius: 0px;
-  position: relative;
-  margin-bottom: 25px;
-  font-size: 1.4em;
-  line-height: 1.3em;
+.page-a-propos .testimonials .testimonial {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-direction: column-reverse;
+  /*@include mq('desktop') {
+      padding:0px 35px 35px 0px;
+  }
+
+
+  .content {
+      padding:2em;
+      background-color:#CCD6EB;
+      border-radius:25px;
+      border-bottom-left-radius: 0px;
+      position:relative;
+      margin-bottom:25px;
+      font-size: 1.4em;
+      line-height: 1.3em;
+
+      &::before {
+          content: "";
+          position: absolute;
+
+          background-color: transparent;
+          bottom: -50px;
+          left: 0px;
+          height: 50px;
+          width: 25px;
+          border-top-left-radius: 25px;    
+          box-shadow: 0 -25px 0 0 #CCD6EB;                        
+      }
+  }
+
+  .who {font-size:0.9em; font-weight: bold; }
+  .business {font-size:0.8em; font-weight: bold;}*/
 }
-.page-a-propos .tech-and-testimonials .testimonials .testimonial .content::before {
-  content: "";
-  position: absolute;
-  background-color: transparent;
-  bottom: -50px;
-  left: 0px;
-  height: 50px;
-  width: 25px;
-  border-top-left-radius: 25px;
-  box-shadow: 0 -25px 0 0 #CCD6EB;
+@media only screen and (min-width: 768px) {
+  .page-a-propos .testimonials .testimonial {
+    flex-direction: row;
+  }
 }
-.page-a-propos .tech-and-testimonials .testimonials .testimonial .who {
+.page-a-propos .testimonials .testimonial .client-infos {
+  text-align: center;
+}
+.page-a-propos .testimonials .testimonial .client-infos span {
+  white-space: nowrap;
+  font-weight: bold;
+}
+.page-a-propos .testimonials .testimonial .client-infos .company {
   font-size: 0.9em;
-  font-weight: bold;
 }
-.page-a-propos .tech-and-testimonials .testimonials .testimonial .business {
-  font-size: 0.8em;
-  font-weight: bold;
+.page-a-propos .testimonials .testimonial .client-infos img {
+  max-width: 100px;
+  border-radius: 50%;
+  background-color: #DDD;
+}
+.page-a-propos .testimonials .testimonial .details {
+  position: relative;
+  padding: 10px;
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+@media only screen and (min-width: 768px) {
+  .page-a-propos .testimonials .testimonial .details {
+    max-width: 40vw;
+  }
+}
+.page-a-propos .testimonials .testimonial .details .quote-mark {
+  position: absolute;
+  top: -18px;
+  left: 5px;
+  height: 60px;
+  width: 60px;
+  z-index: -1;
+  opacity: 0.3;
+  fill: #003399;
+}
+@media only screen and (min-width: 768px) {
+  .page-a-propos .testimonials .testimonial .details .quote-mark {
+    top: -15px;
+  }
 }
 .page-a-propos .download-cv div {
   display: flex;

@@ -47,7 +47,7 @@ class BlogController {
     public function nouvelles($args = false) {
         
         $page = 1;
-        $post_per_page = 6;
+        $post_per_page = 9;
 
         if( is_array($args) ) {
             $slug = $args[0];

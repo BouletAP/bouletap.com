@@ -169,6 +169,17 @@ footer {
                 font-size:1.3em;
             }
             li:first-child {margin-left:0px;}
+
+            .ap-icon-bluesky {
+                background-color: #fff;
+                -webkit-mask-image: url("/medias/images/svg-customs/bluesky.svg");
+                mask-image: url("/medias/images/svg-customs/bluesky.svg");
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                width: 1em;
+                height: 1em;
+                background-image: none;
+            }
         }
 
     }
@@ -231,7 +242,18 @@ footer {
                 margin-top:0px;
                 gap:20px; 
                 li { font-size:1.3em; } 
-            }           
+            }     
+            
+            .ap-icon-bluesky {
+                background-color: #fff;
+                -webkit-mask-image: url("/medias/images/svg-customs/bluesky.svg");
+                mask-image: url("/medias/images/svg-customs/bluesky.svg");
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                width: 1em;
+                height: 1em;
+                background-image: none;
+            }
         }       
         
         @include mq('tablet-small') {

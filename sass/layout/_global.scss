@@ -207,3 +207,16 @@ section {padding:10px;}
     color: red;
   }
 }
+
+.ap-icon-bluesky {
+  display: inline-block;
+  color: inherit;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  background-image: url("/medias/images/svg-customs/bluesky.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 2em;
+  height: 2em;
+}

@@ -13,10 +13,8 @@
 
         @include mq('tablet-wide') {
             padding:30px;
-            .description,
-            .profile-image {
-                width:45%;
-            }
+            .description { width:65%; }
+            .profile-image { width:35%; }
             .profile-image-mobile {display:none;}
 
         }
@@ -77,7 +75,7 @@
     }
 
         
-    .tech-and-testimonials {
+    .section-tech {
 
         display:flex;
         justify-content: space-between;
@@ -90,9 +88,8 @@
             padding: 30px;
             flex-direction: row;
 
-            .technologies,
-            .testimonials {     
-                width:50%;
+            .technologies {
+                width:100%;
             }
         }
 
@@ -106,25 +103,32 @@
         .technologies {
             .tech-tab-nav {
                 overflow: hidden;
-                border: 1px solid #ccc;
-                background-color: #f1f1f1;
+                border: 1px solid #003399;
+                background-color: #00339955;
 
                 display:flex;
                 justify-content: space-around;
 
 
                 button {
-                    background-color: inherit;
+                    background-color: #00339955;
                     float: left;
                     border: none;
                     outline: none;
                     cursor: pointer;
                     padding: 14px 16px;
                     transition: 0.3s;
+                    width:100%;
+                    font-weight: bold;
+                    font-family: "Lato", sans-serif;
 
-                    &.active {background-color: #ddd;}
+                    &.active {
+                        background-color: #003399; 
+                        color:#FFF;
+                    }
                     @include touch() {
-                        background-color: #ddd;
+                        background-color: #003399; 
+                        color:#FFF;
                     }
                 }
             }
@@ -134,9 +138,13 @@
                 padding: 6px 12px;
                 border: 1px solid #ccc;
                 border-top: none;
+                min-height: 30vh;
+
+                flex-wrap: wrap;
+                justify-content: space-evenly;
 
                 &.active {
-                    display: block;
+                    display: flex;
                 }
 
 
@@ -151,6 +159,7 @@
                     .main-techs {
                         padding: 20px;
                         position:relative;
+                        font-size:1.2em;
 
                         &::after {
                             content:"{";
@@ -170,7 +179,7 @@
                             &::after {
                                 top: 0px;
                                 @include mq('tablet') {
-                                    top: -5px;
+                                    top: -7px;
                                 }
                             }
                         }
@@ -178,7 +187,7 @@
                     }
 
                     .derivatives {
-                        padding: 20px;
+                        padding: 20px 40px;
 
                         .tech-description {
                             margin-bottom: 1.5vh;                            
@@ -189,6 +198,11 @@
                     
                 }
 
+            }
+
+            .main-techs .h5 {
+                font-weight: bold;
+                font-family: "Lato", sans-serif;
             }
 
             .tech-description {
@@ -213,6 +227,7 @@
                     }
                     
                 }
+
                 p {display:none;}
 
                 .lni {
@@ -221,56 +236,130 @@
                 }
             }
             
-            
         }
 
-        .testimonials {     
+    }
 
-            // .testimonials-list {
-            //     display: flex;
-            //     flex-direction: column;
-            //     align-items: center;
-            //     justify-content: space-around;
-            //     height:100%;
-            // }
+    .testimonials {    
+
+        position: relative;
+        padding:30px 0px;
+        
+        h3 {
+            font-size: 1.2em;
+            line-height: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        &:before {
+            background-image: url(/medias/images/bg-ambience-apb.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.05;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .testimonials-list {
             
-            .testimonial {
-                
-                @include mq('desktop') {
-                    padding:0px 35px 35px 0px;
+            @include mq('tablet') {
+                padding: 30px 15vw;
+            }
+        }
+        
+        .testimonial {
+            
+            display:flex;
+            gap:30px;
+            justify-content: center;
+            flex-direction: column-reverse;
+            
+            @include mq('tablet') {
+                flex-direction: row;
+            }
+
+            .client-infos {
+                text-align: center;
+                span {
+                    white-space: nowrap;
+                    font-weight: bold;                    
                 }
+                .company {font-size: 0.9em;}
+                img {
+                    max-width: 100px;
+                    border-radius: 50%;
+                    background-color: #DDD;
+                }
+            }
 
+            .details {
+                position: relative;
+                padding: 10px;
+                
+                @include mq('tablet') {
+                    max-width: 40vw;
+                }
+                
 
-                .content {
-                    padding:2em;
-                    background-color:#CCD6EB;
-                    border-radius:25px;
-                    border-bottom-left-radius: 0px;
-                    position:relative;
-                    margin-bottom:25px;
-                    font-size: 1.4em;
-                    line-height: 1.3em;
+                font-size: 1.1em;
+                line-height: 1.6em;
 
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        
-                        background-color: transparent;
-                        bottom: -50px;
-                        left: 0px;
-                        height: 50px;
-                        width: 25px;
-                        border-top-left-radius: 25px;    
-                        box-shadow: 0 -25px 0 0 #CCD6EB;                        
+                .quote-mark {
+                    position: absolute;
+                    top: -18px;
+                    left: 5px;
+                    height: 60px;
+                    width: 60px;
+                    z-index: -1;
+                    opacity: 0.3;
+                    fill: #003399;
+                    
+                    @include mq('tablet') {
+                        top: -15px;
                     }
                 }
-
-                .who {font-size:0.9em; font-weight: bold; }
-                .business {font-size:0.8em; font-weight: bold;}
             }
-        }       
-        
-    }
+
+            /*@include mq('desktop') {
+                padding:0px 35px 35px 0px;
+            }
+
+
+            .content {
+                padding:2em;
+                background-color:#CCD6EB;
+                border-radius:25px;
+                border-bottom-left-radius: 0px;
+                position:relative;
+                margin-bottom:25px;
+                font-size: 1.4em;
+                line-height: 1.3em;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    
+                    background-color: transparent;
+                    bottom: -50px;
+                    left: 0px;
+                    height: 50px;
+                    width: 25px;
+                    border-top-left-radius: 25px;    
+                    box-shadow: 0 -25px 0 0 #CCD6EB;                        
+                }
+            }
+
+            .who {font-size:0.9em; font-weight: bold; }
+            .business {font-size:0.8em; font-weight: bold;}*/
+
+            
+    
+        }
+    }    
 
 
     .download-cv {

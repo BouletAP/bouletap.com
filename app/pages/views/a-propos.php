@@ -52,7 +52,7 @@
 
 
 
-        <section class="tech-and-testimonials">
+        <section class="section-tech">
             <div class="technologies">
                 <h3><i class="lni lni-ruler-pencil"></i> Nous développons principalement avec ces technologies</h3>
 
@@ -139,7 +139,7 @@
                             </div>
                         </div>
                         <div class="derivatives">          
-                                                 
+                                                
                             <div class="tech-description">
                                 <span class="h5"><i class="lni lni-laravel"></i> Laravel</span>
                                 <p>Laravel est un framework Web PHP qui simplifie et rationalise le développement Web. Connu pour sa syntaxe élégante et ses fonctionnalités expressives, Laravel propose des outils de routage, de mise en cache, de migration de bases de données, etc. Il promeut le modèle architectural MVC, le rendant efficace pour créer des applications Web modernes, évolutives et maintenables.</p>
@@ -200,12 +200,12 @@
                                 <p>...</p>
                             </div>
                             <div class="tech-description">
-                                <span class="h5">Elementor</span>
-                                <p>Elementor est un plugin de création de pages par glisser-déposer populaire pour WordPress. Il permet aux utilisateurs de créer et de personnaliser visuellement des pages Web sans avoir besoin de codage. Avec une interface conviviale et une variété de widgets et de modèles, Elementor permet aux utilisateurs de concevoir et de créer facilement des sites Web, ce qui en fait un outil largement utilisé dans l'écosystème WordPress.</p>
-                            </div>
-                            <div class="tech-description">
                                 <span class="h5">WooCommerce</span>
                                 <p>...</p>
+                            </div>
+                            <div class="tech-description">
+                                <span class="h5">Elementor</span>
+                                <p>Elementor est un plugin de création de pages par glisser-déposer populaire pour WordPress. Il permet aux utilisateurs de créer et de personnaliser visuellement des pages Web sans avoir besoin de codage. Avec une interface conviviale et une variété de widgets et de modèles, Elementor permet aux utilisateurs de concevoir et de créer facilement des sites Web, ce qui en fait un outil largement utilisé dans l'écosystème WordPress.</p>
                             </div>
                             <div class="tech-description">
                                 <span class="h5">WPML</span>
@@ -369,10 +369,6 @@
                                 <span class="h5"> Authorize.NET</span>
                                 <p>...</p>
                             </div>
-                            <div class="tech-description">
-                                <span class="h5"> Netbanx/PaySafe</span>
-                                <p>...</p>
-                            </div>
                         </div>
                     </div>
 
@@ -401,13 +397,26 @@
 
 
             </div>
-            <div class="testimonials">
-                <h3>Voici quelques témoignages sur notre travail <i class="lni lni-friendly"></i></h3>
+            
+        </section>
+        <section class="section-testimonials">
+            <div class="testimonials">                
+                <h3>Voici quelques témoignages sur notre travail</h3>
                 <div class="testimonials-list">
                     <div class="testimonial">
-                        <p class="content">&ldquo; I had the pleasure of managing André-Philippe during his stage at Pratt & Whitney Canada. Hands down one of the strongest developers I have ever seen. He has a strong desire to learn new technologies which translates to much shorter learning curves for him. I was most impressed with his ability to come up with creative solutions to tackle the most complex problems presented. Always eager for a challenge, I am happy to recommend André-Philippe in any development role.&rdquo;</p>
-                        <p class="who">Kyle, IT Solution Architect</p>
-                        <p class="business">Pratt & Whitney</p>
+
+                        <figure class="client-infos">
+                            <img src="/medias/images/testimonials-placeholder.png" alt="Placeholder image, black portait shape on transparent background" />
+                            <figcaption>
+                                Kyle<br>
+                                <span>IT Solution Architect</span><br>
+                                <span class="company">Pratt & Whitney</span>
+                            </figcaption>
+                        </figure>
+                        <div class="details">
+                            <div id="quotation-mark-svg" class="quote-mark"></div>
+                            <p class="content">&ldquo; <strong>I had the pleasure</strong> of managing André-Philippe during his stage at Pratt & Whitney Canada. Hands down one of the <strong>strongest developers</strong> I have ever seen. He has a strong desire to learn new technologies which translates to much <strong>shorter learning curves</strong> for him. I was most impressed with his <strong>ability to come up with creative solutions</strong> to tackle the most complex problems presented. Always eager for a challenge, I am happy to recommend André-Philippe in any development role.&rdquo;</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -476,3 +485,8 @@
         </section>
 
     </div>      
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadCustomSVG('quotation-mark');
+        });    
+    </script>

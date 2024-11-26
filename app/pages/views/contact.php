@@ -79,8 +79,9 @@
                         <div class="socials">
                             <ul>
                                 <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
-                                <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
+                                <li><a href="https://bsky.app/profile/bouletap.bsky.social" title="Bluesky link" target="_blank" rel="nofollow"><i class="ap-icon-bluesky"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
                                 <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github-original"></i></a></li>
                                 
                             </ul>
@@ -91,7 +92,7 @@
                         <h3>Par téléphone</h3>
                         <p>
                             Par protection contre les appels importuns ou frauduleux, un numéro de téléphone dynamique est maintenant utilisé.<br />
-                            <a id="btn-phone-request" href="javascript:return false;">Cliquez ici pour obtenir le numéro de téléphone du jour</a>
+                            <a id="btn-phone-request" href="javascript:return false;">Cliquez ici pour obtenir le numéro de téléphone actuel</a>
                         </p>
                     </div>    
                     <div class="methode">

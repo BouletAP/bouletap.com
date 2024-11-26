@@ -392,6 +392,19 @@ section {
   color: red;
 }
 
+.ap-icon-bluesky {
+  display: inline-block;
+  color: inherit;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  background-image: url("/medias/images/svg-customs/bluesky.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 2em;
+  height: 2em;
+}
+
 #main-header {
   padding-top: 0px;
   position: absolute;
@@ -1149,6 +1162,16 @@ footer .footer-main .socials ul li {
 footer .footer-main .socials ul li:first-child {
   margin-left: 0px;
 }
+footer .footer-main .socials ul .ap-icon-bluesky {
+  background-color: #fff;
+  -webkit-mask-image: url("/medias/images/svg-customs/bluesky.svg");
+  mask-image: url("/medias/images/svg-customs/bluesky.svg");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  width: 1em;
+  height: 1em;
+  background-image: none;
+}
 footer .audit-form {
   margin-top: 20px;
   font-size: 0.8em;
@@ -1208,6 +1231,16 @@ footer .copyrights .socials ul li {
   footer .copyrights .socials ul li {
     font-size: 1.3em;
   }
+}
+footer .copyrights .socials ul .ap-icon-bluesky {
+  background-color: #fff;
+  -webkit-mask-image: url("/medias/images/svg-customs/bluesky.svg");
+  mask-image: url("/medias/images/svg-customs/bluesky.svg");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  width: 1em;
+  height: 1em;
+  background-image: none;
 }
 @media only screen and (min-width: 640px) {
   footer .copyrights {

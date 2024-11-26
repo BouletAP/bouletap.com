@@ -12,6 +12,7 @@
   text-align: center;
   margin-bottom: 50px;
 }
+.page-nouvelles .section-description h1,
 .page-nouvelles .section-description h2 {
   font-size: 1.8em;
   text-transform: uppercase;
@@ -226,7 +227,7 @@
   top: 0;
   left: 0;
   background-color: #FFFFFF;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .details-nouvelle .article-content h1, .details-nouvelle .article-content h2, .details-nouvelle .article-content h3 {
   font-weight: bold;

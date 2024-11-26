@@ -11,6 +11,11 @@ class SandboxController {
 
     public function index() {
 
+        if( !IS_DEV ) {
+            $this->coming_soon();
+            return;
+        }
+
         $data['categories'] = [
             'publications' => 'Tous les projets', 
         ];
