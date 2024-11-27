@@ -22,7 +22,8 @@
   width: 100%;
 }
 .dashboard-content .page-admin form input,
-.dashboard-content .page-admin form textarea {
+.dashboard-content .page-admin form textarea,
+.dashboard-content .page-admin form select {
   padding: 5px;
   width: 100%;
   margin-bottom: 10px;

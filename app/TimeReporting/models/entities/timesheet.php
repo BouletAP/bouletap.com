@@ -2,6 +2,8 @@
 
 namespace Models\Entities;
 
+use Models\Core\Database;
+
 class Timesheet extends \Models\Core\Entity{
 
     // table:publications
@@ -22,5 +24,20 @@ class Timesheet extends \Models\Core\Entity{
         return ["id", "year", "month", "content"];
     }
 
+
+    static public function get_by_time($year, $month) {
+        $items = Database::query()
+            ->where("year", $year)
+            ->where("month", $month)
+            ->get ('timesheet_csv');
+
+        $output = new self();
+        if( !empty($items) ) {
+            foreach($items as $item) {
+                $output = static::build_from_row($item);
+            }
+        }
+        return $output;
+    }
 
 }

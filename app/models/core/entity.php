@@ -161,4 +161,40 @@ abstract class Entity {
     }
     
 
+    static public function build_from_row($item) {
+        $output = new static();
+
+        foreach( $item as $key => $value ) {
+            $output->$key = $value;
+        }
+
+
+        $_metas_fields = static::_metas_fields();
+        if( !empty($_metas_fields ) ) {
+            $metas = Database::query()
+                ->where(static::$db_table.'_id', $output->id)
+                ->get (static::$db_table.'_metas');
+
+            if( !empty($metas) ) {
+                foreach( $metas as $meta ) {
+
+                    $name = $meta['name'];
+                    $value = unserialize($meta['value']);
+
+                    if( !empty($output->$name) && !is_array($output->$name) ) {
+                        $output->$name = [$output->$name, $value];
+                    }
+                    elseif(is_array($output->$name)) {
+                        $output->$name []= $value;
+                    }
+                    else {
+                        $output->$name = $value;
+                    }                        
+                }
+            }
+        }
+        
+    
+        return $output;
+    }
 }

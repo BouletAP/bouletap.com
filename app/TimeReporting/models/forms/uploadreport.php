@@ -15,23 +15,23 @@ class UploadReport extends Forms {
 	public function fields() {           
 
         
-        $sheet = new FileUpload('image', UPLOAD_PATH, "portfolio/");
+        $sheet = new FileUpload('report', UPLOAD_PATH, "portfolio/");
         $sheet->addValidation( new Upload_mimetype(['csv']) );
         $sheet->addValidation( new Required );
        
-        $year = new Text('year');
-        $year->addAttribute( 'placeholder', 'Entrez le nom du projet' );
-        $year->addValidation( new Required );
-        $year->setValue(time('Y'));
+        // $year = new Text('year');
+        // $year->addAttribute( 'placeholder', 'Entrez le nom du projet' );
+        // $year->addValidation( new Required );
+        // $year->setValue(date('Y'));
 
-        $month = new Text('month');
-        $month->addAttribute( 'placeholder', "Entrez l'URL du site web" );
-        $month->addValidation( new Required );
+        // $month = new Text('month');
+        // $month->addAttribute( 'placeholder', "Entrez l'URL du site web" );
+        // $month->addValidation( new Required );
         
         
         $this->addFields(
             $sheet,
-            $year, $month
+            //$year, $month
         );           
     }
 

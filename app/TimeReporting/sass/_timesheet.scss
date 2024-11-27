@@ -1,18 +1,137 @@
 .module-timesheet {
 
 
+    .report-commands {
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: space-around;
+        gap:40px;
+    }
+
+
+
+    #pageFilters {
+        display:flex;
+    }
     #pageFilters form div {
         display: flex;
         flex-direction: row;
+        align-items: center;
 
         label {
             display: inline-block;
             //width:30%;
+            white-space: nowrap;
+            margin-right:20px;            
         }
+        input, select {margin-bottom:0px;}
     }
 
 }
 
-.module-timesheet.timesheet-details {
+.module-timesheet .report {
+
+    background-color: #FFF;
+    border:20px solid #DDD;
+    margin-top:30px;
+    padding:20px;
+    font-family: "Lato", sans-serif;
+    //border-top:0px;
+
+    .header {
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:30px;
+
+        .title h1 {
+            font-size:2em; 
+            color:#003399;
+        }
+
+        .copyright {
+            display:flex;
+            align-items: center;
+            img {
+                width:50px;
+                margin-left:10px;
+            }
+        }
+    }
+
+
+    .overview {
+
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap:5%;
+
+        .pastille {
+            width:45%;
+            //background-color: #123524;
+            border:1px solid #123524;
+            margin-top: 15px;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            color:#123524;            
+
+            h2 {
+                font-size:1.5em;
+                font-weight: bold;
+                line-height: 1.5em;
+            }
+            p {
+                font-family: "Lato", sans-serif;
+            }
+
+        }
+    }
+
+    
+    .tasks table {
+
+        margin-top:30px;
+        width: 100%;
+
+        thead tr th {
+            background-color: #003399;
+            color:#FFF;
+            font-weight: bold;
+            padding:4px; 
+            white-space:nowrap;           
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                width:12%;
+                text-align: center;
+            }
+        }
+
+        tbody {
+
+            tr.daily-header {
+                td {
+                    font-weight:bold;
+                }
+            }
+
+            tr td {
+                padding:4px;
+                border-top:1px solid #EEE;
+                font-size: 0.9em;
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    text-align: center;
+                }
+            }
+            tr:last-child td {
+                font-weight:bold;
+            } 
+        }
+    }
 
 }

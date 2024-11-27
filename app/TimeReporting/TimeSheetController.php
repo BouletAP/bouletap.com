@@ -1,6 +1,9 @@
 <?php
 
 require_once __DIR__ . '/models/entities/timesheet.php';
+require_once __DIR__ . '/models/forms/uploadreport.php';
+require_once __DIR__ . '/models/services/ProjectLine.php';
+require_once __DIR__ . '/models/services/ProjectTimesheet.php';
 
 use Models\Core\Auth;
 use Models\Core\Database;
@@ -18,42 +21,67 @@ class TimeSheetController {
     }
 
 
+    public function upload() {
+        //echo '<pre>'; print_r($_FILES); echo '</pre>'; 
+
+        // get content of the file
+        $upload_form = new Models\Forms\UploadReport();
+        $report_content = file_get_contents($_FILES['report']['tmp_name']);
+        //echo '<pre>'; print_r($report_content); echo '</pre>'; die();
+
+        // select the MM/YYYY uploaded
+        $filename = pathinfo($_FILES['report']['name'], PATHINFO_FILENAME);
+        $name_info = explode("-", $filename);
+        $months = \BouletAP\Tools\Dates::months();
+        $months_en = \BouletAP\Tools\Dates::months('en');
+        $year = false;
+        $month = false;
+        for($i=0; $i<count($name_info); $i++) {
+            $info = trim($name_info[$i]);
+            if( is_numeric($info) ) {
+                $year = $info;
+            }
+            elseif( in_array($info, $months) ) {
+                $month = array_search($info, $months)  +1;
+            }
+            elseif( in_array($info, $months_en) ) {
+                $month = array_search($info, $months_en) +1;
+            }
+        }        
+        // check database for existing entry
+        $current_timesheet = new Timesheet();
+        if( !empty($year) && !empty($month) ) {
+            $current_timesheet = Timesheet::get_by_time($year, $month);
+        }
+        
+        // update or create entry
+        $current_timesheet->year = !empty($year) ? $year : date('Y');
+        $current_timesheet->month = !empty($month) ? $month : date('m');
+        $current_timesheet->content = $report_content;
+        $current_timesheet->save();
+
+        // redirect to report dashboard
+        header("Location: /admin/timesheet");
+        return;
+    }
+
+
     public function index() {
 
-        // mock
-        $projet1 = ["id" => 1, "name" => "Projet 1"];
-        $projet2 = ["id" => 2, "name" => "Projet 2"];
-        $projet3 = ["id" => 3, "name" => "Projet 3"];
-        $projets = [
-            (object)$projet1,
-            (object)$projet2,
-            (object)$projet3
-        ];
-        //////////////////
 
-
-        // $timesheet = new Timesheet();
-        // $timesheet->year = "2024";
-        // $timesheet->month = "02";
-        // $timesheet->content = '...';
-        // $timesheet->save();
-
-        // $curl = new \BouletAP\Tools\Curl();
-        // $curl->post('https://bouletap.com/admin/timesheet/test_curl', ['noauth'=>"2342"]);
-
+        $upload_form = new Models\Forms\UploadReport();
 
         $sheets = Timesheet::get_all();
-        // foreach($sheets as $sheet) {
-        //     $sheet->delete();
-        // }
-        echo '<pre>'; print_r($sheets); echo '</pre>'; die();
+        $projects = new Models\Services\ProjectTimesheet($sheets);
 
         
-         $data = [
-            'list-projects' => $projets
-        //     'messages_audit' => $contact_messages['audit-seo'],
-        //     'messages_contact' => $contact_messages['contact'],
-        //     'visitors' => $visitors
+        $data = [
+            'ds'    => date("Y-m-d", time()-(3600*24*14)),
+            'de'    => date("Y-m-d", time()),
+            'p'    => "*",
+            'report' => false,
+            'list-projects' => $projects->get_projects(),
+            'upload_form' => $upload_form
         ];
 
         echo Models\Core\View::display("TimeReporting/views/timesheet-index.php", $data);
@@ -63,55 +91,55 @@ class TimeSheetController {
     
     public function details() {
 
+        $ds = !empty($_GET['ds']) ? $_GET['ds'] : date("Y-m-d", time()-(3600*24*14));
+        $de = !empty($_GET['de']) ? $_GET['de'] : date("Y-m-d", time());
+        $p = !empty($_GET['p']) ? $_GET['p'] : "*";
 
-        $task1 = [
-            "description" => "task name #" . rand(1, 15) . " golden",
-            "totalTime" => "2",
-            "getBillableClass" => "billable",
-            "getBillableLabel" => "Billable"
-        ];
+        $start_filter = new \DateTime($ds);
+        $end_filter = new \DateTime($de);
 
-        $taskByDate = [
-            "28" => [
-                (object)$task1
-            ]
-        ];
+        $upload_form = new Models\Forms\UploadReport();
+        
+        $sheets = Timesheet::get_all();
+        $projects = new Models\Services\ProjectTimesheet($sheets);
+        $listProjects = $projects->get_projects();
+        
+        $projects->set_filter_project($p);
+        $projects->set_filter_date($start_filter, $end_filter);
 
+        $listTasks = $projects->getReport();
 
-        // mock
-        $projet1 = [
-            "id" => 1, 
-            "name" => "Projet 1",
-            "taskList" => [],
-            "billable_time" => "2.5",
-            "getStartDate" => "28 oct 2024",
-            "getDeliveryDate" => "31 oct 2024",
-            "total_time" => 15,
-            "free_time" => 5,
-            "billable_time" => 10,
-            "taskByDate" => $taskByDate
-        ];
+        
+        $dateStart = "";
+        $dateDelivered = "";
+        $totalTasks = 0;
+        $i=0;
+        foreach( $listTasks as $day => $tasks ) {
+            $i++;
+            if( $i == 1 ) $dateStart = $day;
+            if( $i == count($listTasks) ) $dateDelivered = $day;
+            $totalTasks += count($tasks);
+        }
 
-
-        $projet2 = ["id" => 2, "name" => "Projet 2"];
-        $projet3 = ["id" => 3, "name" => "Projet 3"];
-        $projets = [
-            (object)$projet1,
-            (object)$projet2,
-            (object)$projet3
-        ];
-
+        
         $data = [
-            'list-projects' => $projets,
-            'report_name' => "Rapport de test",
-            'project_data' => (object)$projet1,
-            'display_tasks' => true,
-            "tasks-buffering" => false
+            'ds'    => $ds,
+            'de'    => $de,
+            'p'    => $p,
+            'list-projects' => $listProjects,
+            'upload_form' => $upload_form,
+            'report' => true,
+            'list-tasks' => $listTasks,
+            'date-start' =>$dateStart,
+            'date-delivered' =>$dateDelivered,
+            'total-tasks' =>$totalTasks,
+            'time-total' =>$projects->sumTotalTime($listTasks),
+            'time-included' =>$projects->sumIncludedTime($listTasks),
+            'time-billable' =>$projects->sumBillableTime($listTasks)
         ];
 
-        //echo '<pre>'; print_r($data); echo '</pre>'; die();
 
-        echo Models\Core\View::display("TimeReporting/views/timesheet-details.php", $data);
+        echo Models\Core\View::display("TimeReporting/views/timesheet-index.php", $data);
     }
 
 

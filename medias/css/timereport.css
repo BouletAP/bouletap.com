@@ -1,7 +1,101 @@
+.module-timesheet .report-commands {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  gap: 40px;
+}
+.module-timesheet #pageFilters {
+  display: flex;
+}
 .module-timesheet #pageFilters form div {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .module-timesheet #pageFilters form div label {
   display: inline-block;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+.module-timesheet #pageFilters form div input, .module-timesheet #pageFilters form div select {
+  margin-bottom: 0px;
+}
+
+.module-timesheet .report {
+  background-color: #FFF;
+  border: 20px solid #DDD;
+  margin-top: 30px;
+  padding: 20px;
+  font-family: "Lato", sans-serif;
+}
+.module-timesheet .report .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.module-timesheet .report .header .title h1 {
+  font-size: 2em;
+  color: #003399;
+}
+.module-timesheet .report .header .copyright {
+  display: flex;
+  align-items: center;
+}
+.module-timesheet .report .header .copyright img {
+  width: 50px;
+  margin-left: 10px;
+}
+.module-timesheet .report .overview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5%;
+}
+.module-timesheet .report .overview .pastille {
+  width: 45%;
+  border: 1px solid #123524;
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: #123524;
+}
+.module-timesheet .report .overview .pastille h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+.module-timesheet .report .overview .pastille p {
+  font-family: "Lato", sans-serif;
+}
+.module-timesheet .report .tasks table {
+  margin-top: 30px;
+  width: 100%;
+}
+.module-timesheet .report .tasks table thead tr th {
+  background-color: #003399;
+  color: #FFF;
+  font-weight: bold;
+  padding: 4px;
+  white-space: nowrap;
+}
+.module-timesheet .report .tasks table thead tr th:nth-child(2), .module-timesheet .report .tasks table thead tr th:nth-child(3) {
+  width: 12%;
+  text-align: center;
+}
+.module-timesheet .report .tasks table tbody tr.daily-header td {
+  font-weight: bold;
+}
+.module-timesheet .report .tasks table tbody tr td {
+  padding: 4px;
+  border-top: 1px solid #EEE;
+  font-size: 0.9em;
+}
+.module-timesheet .report .tasks table tbody tr td:nth-child(2), .module-timesheet .report .tasks table tbody tr td:nth-child(3) {
+  text-align: center;
+}
+.module-timesheet .report .tasks table tbody tr:last-child td {
+  font-weight: bold;
 }

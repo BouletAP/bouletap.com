@@ -84,6 +84,7 @@ Router::add('/admin/flag_read/{ARGS}', 'AdminController', 'flag_read');
 
 Router::add('/admin/timesheet', 'TimeSheetController', 'index');
 Router::add('/admin/timesheet/details', 'TimeSheetController', 'details');
+Router::add('/admin/timesheet/upload', 'TimeSheetController', 'upload');
 
 
 Router::add('*', 'PagesController', 'not_found');
