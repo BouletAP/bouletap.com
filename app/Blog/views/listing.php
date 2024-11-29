@@ -32,7 +32,7 @@
             </div>
             <div class="page-admin">                
                 <div>
-                    <a href="/admin/<?php echo $data['page']; ?>/add" class="btn-add">Ajouter un <?php echo $data['page']; ?></a>
+                    <a href="/admin/<?php echo $data['page']; ?>/add" class="btn-add">Ajouter un <?php echo substr($data['page'], 0, strlen($data['page'])-1); ?></a>
                     <table>
                         <tr>
                             <th>id</th>

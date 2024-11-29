@@ -52,6 +52,9 @@ require_once __DIR__ . '/Blog/BlogController.php';
 require_once __DIR__ . '/TimeReporting/TimeSheetController.php';
 require_once __DIR__ . '/TimeReporting/models/entities/timesheet.php';
 
+require_once __DIR__ . '/Analytics/AnalyticsController.php';
+
+
 // autoload soon?
 //
 //

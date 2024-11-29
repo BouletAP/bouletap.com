@@ -154,7 +154,8 @@ class ProjectTimesheet {
         return $report_lines;
     }
 
-    function sumTotalTime($listTasks) {
+    // type can be "total, included or billable"
+    function sumTime($listTasks, $type = "total") {
         $totalMinutes = 0;
         foreach( $listTasks as $tasks ) {
             foreach($tasks as $task) {
@@ -164,56 +165,38 @@ class ProjectTimesheet {
                 $m = $time[1];
                 $taskMinutes = $m + ($h * 60);
                 
-                $totalMinutes += $taskMinutes;
+                if( $type == "included" && $task->billable_ratio !== 1) {
+                    $totalMinutes += $taskMinutes;
+                }
+                elseif( $type == "billable" && $task->billable_ratio === 1 ) {
+                    $totalMinutes += $taskMinutes;
+                }
+                elseif( $type == "total") { 
+                    $totalMinutes += $taskMinutes;
+                }                
             }
         }
-        $output = floor($totalMinutes/60) . ":" . $totalMinutes%60;
 
+        $output = false;
+        if( $totalMinutes > 0 ) {
+            $h = str_pad(floor($totalMinutes/60), 2, "0", STR_PAD_LEFT);
+            $m = str_pad($totalMinutes%60, 2, "0", STR_PAD_RIGHT);
+            $output = "{$h}:{$m}";
+        } 
         return $output;
+    }
+
+
+
+    function sumTotalTime($listTasks) {
+        return $this->sumTime($listTasks, "total");
     }
 
     function sumBillableTime($listTasks) {
-        $totalMinutes = 0;
-        foreach( $listTasks as $tasks ) {
-            foreach($tasks as $task) {
-                $time = $task->getTime();
-                $time = explode(':', $time);
-                $h = $time[0];
-                $m = $time[1];
-                $taskMinutes = $m + ($h * 60);
-                
-                //$totalMinutes += (int) ($taskMinutes * $task->billable_ratio);
-                if( $task->billable_ratio === 1 ) {
-                    $totalMinutes += $taskMinutes;
-                }
-            }
-        }
-        $output = floor($totalMinutes/60) . ":" . $totalMinutes%60;
-
-        return $output;
+        return $this->sumTime($listTasks, "billable");
     }
 
     function sumIncludedTime($listTasks) {
-        $totalMinutes = 0;
-        foreach( $listTasks as $tasks ) {
-            foreach($tasks as $task) {
-                $time = $task->getTime();
-                $time = explode(':', $time);
-                $h = $time[0];
-                $m = $time[1];
-                $taskMinutes = $m + ($h * 60);
-                
-                //$totalMinutes += (int) ($taskMinutes * $task->billable_ratio);
-                if( $task->billable_ratio !== 1 ) {
-                    $totalMinutes += $taskMinutes;
-                }
-            }
-        }
-        $output = false;
-        if( $totalMinutes > 0 ) {
-            $output = floor($totalMinutes/60) . ":" . $totalMinutes%60;
-        }      
-
-        return $output;
+        return $this->sumTime($listTasks, "included");
     }
 }

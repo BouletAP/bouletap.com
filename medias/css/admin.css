@@ -48,3 +48,23 @@
   font-size: 1.5em;
   font-weight: bold;
 }
+
+.page-admin table.admin-listing {
+  width: 100%;
+  margin-top: 15px;
+}
+.page-admin table.admin-listing tr th {
+  font-weight: bold;
+  padding: 5px;
+  text-transform: uppercase;
+  background-color: rgba(0, 51, 153, 0.3333333333);
+}
+.page-admin table.admin-listing tr th:nth-child(1) {
+  width: 10%;
+}
+.page-admin table.admin-listing tr th:nth-child(3) {
+  width: 15%;
+}
+.page-admin table.admin-listing tr td {
+  padding: 5px;
+}

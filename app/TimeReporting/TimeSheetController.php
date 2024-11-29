@@ -37,7 +37,7 @@ class TimeSheetController {
         $year = false;
         $month = false;
         for($i=0; $i<count($name_info); $i++) {
-            $info = trim($name_info[$i]);
+            $info = strtolower(trim($name_info[$i]));
             if( is_numeric($info) ) {
                 $year = $info;
             }
@@ -74,8 +74,8 @@ class TimeSheetController {
         $sheets = Timesheet::get_all();
         $projects = new Models\Services\ProjectTimesheet($sheets);
 
-        
         $data = [
+            'items' => $sheets,
             'ds'    => date("Y-m-d", time()-(3600*24*14)),
             'de'    => date("Y-m-d", time()),
             'p'    => "*",
@@ -142,7 +142,17 @@ class TimeSheetController {
         echo Models\Core\View::display("TimeReporting/views/timesheet-index.php", $data);
     }
 
+    public function delete($id = false) {
 
+        $sheet = Timesheet::get_by('id', $id);
+
+        if( !empty($sheet) ) {
+            $sheet[0]->delete();
+        }
+
+        header("Location: /admin/timesheet");
+        die();
+    }    
 
     
 

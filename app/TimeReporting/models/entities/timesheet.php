@@ -25,6 +25,12 @@ class Timesheet extends \Models\Core\Entity{
     }
 
 
+    public function getTitle() {
+        $months = \BouletAP\Tools\Dates::months();
+        $month = isset($months[$this->month - 1]) ? $months[$this->month - 1] : $this->month;
+        return $month . " " . $this->year;
+    }
+
     static public function get_by_time($year, $month) {
         $items = Database::query()
             ->where("year", $year)

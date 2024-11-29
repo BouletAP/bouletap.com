@@ -32,6 +32,10 @@
                     <div class="report">
                         <?php include(__DIR__.'/_report.php'); ?>
                     </div>
+                <?php else: ?>
+                    <div class="list-timesheets">
+                        <?php include(__DIR__.'/_listing.php'); ?> 
+                    </div>                       
                 <?php endif; ?>
             </div>
 

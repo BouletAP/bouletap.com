@@ -71,6 +71,7 @@ Router::add('/projet/{ARGS}', 'PortfolioController', 'details_projet');
 
 
 Router::add('/admin/portfolio', 'ProjectAdminController', 'list');
+Router::add('/admin/portfolio/trash', 'ProjectAdminController', 'show_trash');
 Router::add('/admin/portfolio/add', 'ProjectAdminController', 'add');
 Router::add('/admin/portfolio/edit/{ARGS}', 'ProjectAdminController', 'edit');
 Router::add('/admin/portfolio/delete/{ARGS}', 'ProjectAdminController', 'delete');
@@ -85,7 +86,9 @@ Router::add('/admin/flag_read/{ARGS}', 'AdminController', 'flag_read');
 Router::add('/admin/timesheet', 'TimeSheetController', 'index');
 Router::add('/admin/timesheet/details', 'TimeSheetController', 'details');
 Router::add('/admin/timesheet/upload', 'TimeSheetController', 'upload');
+Router::add('/admin/timesheet/delete/{ARGS}', 'TimeSheetController', 'delete');
 
+Router::add('/admin/analytics', 'AnalyticsController', 'dashboard');
 
 Router::add('*', 'PagesController', 'not_found');
 
