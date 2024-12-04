@@ -1,0 +1,56 @@
+.admin-analytics .controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.admin-analytics .controls ul {
+  display: flex;
+  gap: 5px;
+}
+.admin-analytics .controls ul li {
+  text-align: center;
+  padding: 8px 20px;
+  border: 1px solid #000;
+}
+.admin-analytics .controls ul li a {
+  color: #000;
+}
+.admin-analytics .controls ul li.active {
+  background-color: #003399;
+}
+.admin-analytics .controls ul li.active a {
+  color: #FFF;
+}
+.admin-analytics .charts {
+  display: flex;
+}
+.admin-analytics .charts .chart {
+  background-color: rgba(0, 51, 153, 0.6666666667);
+  padding: 20px;
+}
+.admin-analytics .charts .chart:nth-child(even) {
+  background-color: rgba(18, 53, 36, 0.6666666667);
+}
+.admin-analytics .charts .chart canvas {
+  width: 100%;
+}
+.admin-analytics .lists {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.admin-analytics .lists .list {
+  width: 47%;
+}
+.admin-analytics .list table {
+  width: 100%;
+}
+.admin-analytics .list table tr th {
+  background-color: rgba(0, 51, 153, 0.3333333333);
+  padding: 2px;
+}
+.admin-analytics .list table tr:nth-child(odd) td {
+  background-color: #EEE;
+  padding: 2px;
+}

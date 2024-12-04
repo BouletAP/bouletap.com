@@ -207,17 +207,21 @@ footer {
 
     .copyrights {
         display:flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: space-between;
 
         background-color: #07183A;
         padding:20px 10px;
         text-align: center;
-        font-size:1.3em;
+        font-size:1.1em;
 
         @include mq('tablet-small') {
             font-size:1em;
             flex-direction: row;
+            flex-wrap: wrap;
+            padding:20px 10px;
+        }
+        @include mq('tablet-wide') {
             padding:20px 30px;
         }
 
@@ -235,11 +239,13 @@ footer {
             flex-direction: row;
             justify-content: space-evenly;
             margin-top:30px;
+            margin-bottom:30px;
 
             li { font-size:2em; } 
 
             @include mq('tablet-small') {
                 margin-top:0px;
+                margin-bottom:0px;
                 gap:20px; 
                 li { font-size:1.3em; } 
             }     
@@ -255,6 +261,24 @@ footer {
                 background-image: none;
             }
         }       
+
+        .right {
+            .menu {
+                display:flex;
+                gap:30px;
+                font-size: 0.8em;    
+                text-align: center;            
+            }
+            @include mq('tablet', 'max') {
+                width:100%;
+                .menu {
+                    justify-content: space-evenly;
+                    margin-top:20px;
+                    margin-bottom:20px;
+                }
+            }
+        }
+        
         
         @include mq('tablet-small') {
             flex-direction: row;

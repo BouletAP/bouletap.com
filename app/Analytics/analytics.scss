@@ -1,0 +1,75 @@
+.admin-analytics {
+
+
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom:10px;
+        
+
+        ul {
+            display: flex;
+            gap: 5px;
+
+            li {
+                text-align: center;
+                padding:8px 20px;
+                border: 1px solid #000;
+    
+                a {
+                    color: #000;
+                }
+            }
+            li.active {
+                background-color: #003399;
+                a {
+                    color:#FFF;
+                }
+            }
+        }
+        
+    }
+
+    .charts {
+        display: flex;
+
+
+        .chart {
+            background-color: #003399AA;
+            padding:20px;
+
+            &:nth-child(even) {
+                background-color: #123524AA;
+            }
+
+            canvas {
+                width: 100%;
+            }
+        }
+    }
+
+
+    .lists {
+        margin-top:20px;
+        display:flex;
+        gap:10px;
+        justify-content: space-between;
+
+        .list {
+            width:47%;
+        }
+    }
+    .list table {       
+        width:100%;
+        
+        tr th {
+            background-color: #00339955;
+            padding:2px;
+        }
+        tr:nth-child(odd) td {
+            background-color: #EEE;
+            padding:2px;
+        }
+    }
+}
+

@@ -69,26 +69,25 @@
                 
                 <div class="methodes">
                     <div class="methode">
-                        <i class="lni lni-inbox"></i>
+                        <i class="lni lni-envelope-1"></i>
                         <h3>Par courriel</h3>
                         <p><a href="#contact-form">apb@bouletap.com</a></p>
                     </div>
                     <div class="methode">
-                        <i class="lni lni-link"></i>
+                        <i class="lni lni-www-cursor"></i>
                         <h3>Sur le web</h3>
                         <div class="socials">
                             <ul>
                                 <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
                                 <li><a href="https://bsky.app/profile/bouletap.bsky.social" title="Bluesky link" target="_blank" rel="nofollow"><i class="ap-icon-bluesky"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
-                                <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
-                                <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github-original"></i></a></li>
-                                
+                                <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin"></i></a></li>
+                                <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook"></i></a></li>
                             </ul>
                         </div>
                     </div>      
                     <div class="methode">
-                        <i class="lni lni-phone-set"></i>
+                        <i class="lni lni-phone"></i>
                         <h3>Par téléphone</h3>
                         <p>
                             Par protection contre les appels importuns ou frauduleux, un numéro de téléphone dynamique est maintenant utilisé.<br />
@@ -96,7 +95,7 @@
                         </p>
                     </div>    
                     <div class="methode">
-                        <i class="lni lni-map-marker"></i>
+                        <i class="lni lni-map-marker-1"></i>
                         <h3>Par la poste</h3>
                         <p>196 rue du Richelieu,<br /> Dunham, J0E 1M0</p>
                     </div>         
@@ -138,7 +137,7 @@
     var phone_request = document.querySelector("#btn-phone-request");
     phone_request.addEventListener("click", () => {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/ajax');
+        xhr.open('POST', '/ajax/get-phone-number');
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function() {
             
@@ -148,7 +147,7 @@
                 phone_request.innerHTML = formatPhoneNumber(response['data']);
             }
         }
-        xhr.send("request_type=get_phone_number");
+        xhr.send(); // "request_type=get_phone_number"
     });
 
     function formatPhoneNumber(phoneNumberString) {

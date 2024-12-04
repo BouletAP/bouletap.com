@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-update": "^0.0.2",
+    "lineicons": "^1.3.2",
     "vinyl-ftp": "^0.6.1"
   },
   "devDependencies": {

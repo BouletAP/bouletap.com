@@ -10,8 +10,6 @@ require_once __DIR__ . '/models/core/view.php';
 require_once __DIR__ . '/models/core/entity.php';
 
 
-require_once __DIR__ . '/models/entities/visitor.php';
-require_once __DIR__ . '/models/entities/visit.php';
 require_once __DIR__ . '/models/entities/page.php';
 require_once __DIR__ . '/models/entities/entry.php';
 // require_once __DIR__ . '/models/entities/service_offert.php';
@@ -21,7 +19,6 @@ require_once __DIR__ . '/models/entities/publication.php';
 //require_once __DIR__ . '/models/entities/article.php';
 
 
-require_once __DIR__ . '/models/services/analytics.php';
 require_once __DIR__ . '/models/services/notifications.php';
 require_once __DIR__ . '/models/services/discord.php';
 
@@ -52,6 +49,10 @@ require_once __DIR__ . '/Blog/BlogController.php';
 require_once __DIR__ . '/TimeReporting/TimeSheetController.php';
 require_once __DIR__ . '/TimeReporting/models/entities/timesheet.php';
 
+require_once __DIR__ . '/Analytics/models/entities/visitor.php';
+require_once __DIR__ . '/Analytics/models/entities/visitor2.php';
+require_once __DIR__ . '/Analytics/models/entities/visit.php';
+require_once __DIR__ . '/Analytics/models/services/analytics.php';
 require_once __DIR__ . '/Analytics/AnalyticsController.php';
 
 

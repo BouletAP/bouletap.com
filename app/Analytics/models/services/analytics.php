@@ -71,19 +71,16 @@ class Analytics {
 
 
     public function add_footer_script() {
-
-        //echo '<pre>'; print_r($this->is_fresh_visitor); echo '</pre>'; die();
-        // this part is to grab info of a fresh visitor
-        //$this->is_fresh_visitor = true;
+       
         if( $this->is_fresh_visitor ) {
         ?>
             <script id="analytics-new-visitor">
                 var app_t = '<?php echo $this->getId(); ?>';
                 var app_info = screen.width + ";" + screen.height + ";" + screen.colorDepth + ";" + screen.pixelDepth;
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', '/ajax');
+                xhr.open('POST', '/ajax/save-appdata');
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.send("request_type=appdata&t="+app_t+"+&i="+encodeURIComponent(app_info));
+                xhr.send("t="+app_t+"+&i="+encodeURIComponent(app_info));
                 document.querySelector('#analytics-new-visitor').remove();
             </script>
         <?php
@@ -92,9 +89,7 @@ class Analytics {
         // this part is to get info on 
         // actions (clicks, form sent) 
         // time spent on the page (timer, scroll behaviours, ...)
-        // ...
-
-        
+        // ...        
         ?>
             <script id="analytics-page-visit">
                 // setInterval( () => {

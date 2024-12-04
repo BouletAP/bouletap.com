@@ -18,8 +18,8 @@
                 <h1>Développement<br> de sites web</h1>
                 <p class="pitch">Bienvenue sur le site web de André-Philippe Boulet, un programmeur-analyste qui développe des logiciels web et mobiles depuis 2008.</p>
                 <p class="cta-buttons">
-                    <a href="/a-propos" class="btn-cta"><i class="lni lni-play"></i> À propos</a>
-                    <a href="#" class="btn-cta"><i class="lni lni-popup"></i> Demande de mandat</a>
+                    <a href="/a-propos" class="btn-cta"><i class="lni lni-question-mark-circle"></i> À propos</a>
+                    <a href="#" class="btn-cta"><i class="lni lni-envelope-1"></i> Demande de mandat</a>
                 </p>
             </div>
             <div class="picture">       

@@ -8,15 +8,12 @@ abstract class Entity {
 
     static public $db_table;
       
-    abstract protected function _fields();
+    abstract static protected function _fields();
+    static protected function _metas_fields() { return []; }
 
-
-    protected function _metas_fields() {
-        return [];
-    }
 
     public function fill($data = []) {
-        $fields = array_merge($this->_fields(), $this->_metas_fields()) ;
+        $fields = array_merge(static::_fields(), static::_metas_fields()) ;
         foreach($fields as $name) {
             $this->$name = isset($data[$name]) ? $data[$name] : $this->$name;
         }
@@ -31,12 +28,12 @@ abstract class Entity {
         
         $data = [];
 
-        foreach($this->_fields() as $field) {
+        foreach(static::_fields() as $field) {
             $data[$field] = $this->$field;
         }
         $this->id = Database::query()->insert ( static::$db_table, $data);
 
-        $_metas_fields = $this->_metas_fields();
+        $_metas_fields = static::_metas_fields();
         if( !empty($this->id) && !empty($_metas_fields) ) {
             foreach($_metas_fields as $field) {
                 $data = [
@@ -54,7 +51,7 @@ abstract class Entity {
     public function update() {
         
         $data = [];
-        foreach($this->_fields() as $field) {
+        foreach(static::_fields() as $field) {
             $data[$field] = $this->$field;
         }
 
@@ -63,7 +60,7 @@ abstract class Entity {
         $db->update (static::$db_table, $data);         
 
 
-        $_metas_fields = $this->_metas_fields();
+        $_metas_fields = static::_metas_fields();
         if( !empty($_metas_fields) ) {
             // HOW TO UPDATE METAS (NEW / EXISTING)
             // DELETE ALL OLD METAS AND RECREATE THEM WITH NEW ONES
@@ -136,9 +133,24 @@ abstract class Entity {
         return $output;
     }
 
+    // @todo: remove this
     static public function get_by($field, $val) {
         Database::query()->where($field, $val);
         $output = static::get_all();
+        return $output;
+    }
+
+    static public function find($field, $value) {        
+        $result = Database::query()->where($field, $value)->getOne(static::$db_table);   
+        return static::hydrate($result);
+    }
+    
+    static public function find_all($field, $value) {      
+        $output = [];
+        $result = Database::query()->where($field, $value)->get(static::$db_table);   
+        foreach($result as $item) {
+            $output []= static::hydrate($item);
+        }
         return $output;
     }
 
@@ -151,7 +163,7 @@ abstract class Entity {
             ->where('id', $this->id)
             ->delete(static::$db_table);       
 
-        $_metas_fields = $this->_metas_fields();
+        $_metas_fields = static::_metas_fields();
         if( !empty($_metas_fields) ) {
             Database::query()
                 ->where(static::$db_table.'_id', $this->id)
@@ -159,9 +171,23 @@ abstract class Entity {
         }
         return true;
     }
+
     
 
-    static public function build_from_row($item) {
+    static public function hydrate_all($rows) {
+        $output = [];
+        if( !empty($rows) ) {            
+            foreach($rows as $row) {
+                $output []= static::hydrate($row);
+            }            
+        }
+        return $output;
+    }
+
+    static public function hydrate($item) {
+
+        if( empty($item) ) return false;
+
         $output = new static();
 
         foreach( $item as $key => $value ) {

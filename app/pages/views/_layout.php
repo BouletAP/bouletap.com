@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/medias/css/style.css" />
     <link rel="stylesheet" href="/medias/vendors/lineicons/lineicons.css" />
+    <link rel="stylesheet" href="/medias/vendors/lineicons/dist5.0/lineicons.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

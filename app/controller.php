@@ -18,9 +18,7 @@
     // use controller/method dispatch
     if( is_array($page) ) {
         $controller = $page[0];
-        $method = $page[1];         
-        
-        //require_once APP_PATH . '/' . $controller . ".php";
+        $method = $page[1];                 
 
         $system = new $controller();
 
@@ -29,11 +27,6 @@
             if( !empty($page[2][1]) ) {
                 $args = [$page[2][1], $page[2][1]];
             }
-
-            // if( IS_DEV ) {
-            //     echo 'args<pre>'; print_r($page); echo '</pre>';
-            //     echo 'args<pre>'; print_r($args); echo '</pre>'; die();
-            // }
 
             $system->$method($args);
         }
@@ -45,9 +38,7 @@
     }
     
 
-    // print page content...
-
-    // merge layout + page content and print the html
+    // print page content... merge layout + page content and print the html
     ob_start();
     include(APP_PATH . "/Pages/{$page}");
     $content = ob_get_clean();

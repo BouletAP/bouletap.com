@@ -12,6 +12,8 @@ use Models\Core\Router;
 
 
 Router::add('/ajax', 'ajax.php');
+Router::add('/ajax/get-phone-number', 'PagesController', 'ajax_get_phone_number');
+
 
 Router::add('/', 'PagesController', 'accueil');
 Router::add('/accueil', 'PagesController', 'accueil');
@@ -88,7 +90,9 @@ Router::add('/admin/timesheet/details', 'TimeSheetController', 'details');
 Router::add('/admin/timesheet/upload', 'TimeSheetController', 'upload');
 Router::add('/admin/timesheet/delete/{ARGS}', 'TimeSheetController', 'delete');
 
+
 Router::add('/admin/analytics', 'AnalyticsController', 'dashboard');
+Router::add('/ajax/save-appdata', 'AnalyticsController', 'ajax_save_appdata');
 
 Router::add('*', 'PagesController', 'not_found');
 

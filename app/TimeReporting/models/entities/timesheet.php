@@ -20,7 +20,7 @@ class Timesheet extends \Models\Core\Entity{
     }
     
 
-    protected function _fields() {
+    static protected function _fields() {
         return ["id", "year", "month", "content"];
     }
 

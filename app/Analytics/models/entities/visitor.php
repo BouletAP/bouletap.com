@@ -114,12 +114,21 @@ class Visitor {
 
         return $results;
     }    
-
-
     
     static function hash_token($pass, $salt = "") {
         $pwd = trim($salt."".$pass);
         $hash = hash('sha256', $pwd);
         return $hash;
     }
+
+
+
+
+
+    static function find_by($key, $value) {
+
+        $db = Database::query()->where($key, $value)->get ('visitors');        
+
+        return $results;
+    } 
 }

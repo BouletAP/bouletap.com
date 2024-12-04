@@ -79,7 +79,7 @@
                         </div>
                         <div class="derivatives">
                             <div class="tech-description">
-                                <span class="h5"><i class="lni lni-domain"></i> SASS</span>
+                                <span class="h5"><i class="lni lni-sass"></i> SASS</span>
                                 <p>Sass est un langage de script de préprocesseur pour CSS. Il étend CSS avec des fonctionnalités telles que les variables, l'imbrication et les mixins, améliorant ainsi la maintenabilité et la réutilisation du code. Les fichiers Sass sont compilés en CSS standard, offrant un moyen plus efficace et organisé de styliser les applications Web et les sites Web.</p>
                             </div>    
 
@@ -145,7 +145,7 @@
                                 <p>Laravel est un framework Web PHP qui simplifie et rationalise le développement Web. Connu pour sa syntaxe élégante et ses fonctionnalités expressives, Laravel propose des outils de routage, de mise en cache, de migration de bases de données, etc. Il promeut le modèle architectural MVC, le rendant efficace pour créer des applications Web modernes, évolutives et maintenables.</p>
                             </div>
                             <div class="tech-description">
-                                <span class="h5"><i class="lni lni-domain"></i> RESTful API</span>
+                                <span class="h5"><i class="lni lni-link-2-angular-right"></i> RESTful API</span>
                                 <p>Une API RESTful (Representational State Transfer) est un style architectural pour la conception d'applications en réseau. Il utilise des méthodes HTTP standard (GET, POST, PUT, DELETE) pour effectuer des opérations CRUD (Create, Read, Update, Delete) sur les ressources. Les API RESTful sont sans état, évolutives et largement utilisées pour créer des services Web permettant une communication transparente entre différents systèmes logiciels.</p>
                             </div> 
 
@@ -189,7 +189,7 @@
                         <div class="main-techs tech-1">
 
                             <div class="tech-description">
-                                <span class="h5"><i class="lni lni-wordpress-fill"></i> WordPress</span>
+                                <span class="h5"><i class="lni lni-wordpress"></i> WordPress</span>
                                 <p>WordPress est un système de gestion de contenu (CMS) open source largement utilisé pour la création de sites Web. Réputé pour son interface conviviale et son vaste écosystème de plugins, il permet aux utilisateurs, même ayant des connaissances techniques limitées, de créer et de gérer des sites Web. WordPress prend en charge les blogs, les sites professionnels et bien plus encore, ce qui en fait une plateforme polyvalente pour divers projets Web.</p>
                             </div>  
                         
@@ -287,7 +287,7 @@
                         </div>
                         <div class="derivatives">  
                             <div class="tech-description">
-                                <span class="h5"><i class="lni lni-github-original"></i> GitHub</span>
+                                <span class="h5"><i class="lni lni-git"></i> Git</span>
                                 <p>GitHub est une plateforme Web pour le contrôle de versions et le développement collaboratif de logiciels. Il utilise Git, un système de contrôle de version distribué, pour gérer et suivre les modifications dans les référentiels de code. GitHub offre des fonctionnalités telles que les demandes d'extraction, le suivi des problèmes et des outils de collaboration, ce qui en fait une plateforme centrale permettant aux développeurs de travailler sur des projets, de contribuer et de gérer le code de manière collaborative.</p>
                             </div>
                             <div class="tech-description">
@@ -295,7 +295,7 @@
                                 <p>Docker est une plateforme permettant de développer, d'expédier et d'exécuter des applications dans des conteneurs. Les conteneurs fournissent un environnement léger, portable et cohérent sur différents systèmes. Docker permet aux développeurs de regrouper les applications et leurs dépendances dans des conteneurs, garantissant ainsi un déploiement et une mise à l'échelle transparentes. Il simplifie le développement et le déploiement de logiciels, favorisant l'efficacité et la cohérence.</p>
                             </div>
                             <div class="tech-description">
-                                <span class="h5">SourceTree</span>
+                                <span class="h5"><i class="lni lni-atlassian"></i> SourceTree</span>
                                 <p>SourceTree est un client d'interface utilisateur graphique (GUI) gratuit pour les systèmes de contrôle de version Git et Mercurial. Développé par Atlassian, il simplifie la gestion des référentiels, permettant aux utilisateurs de visualiser et d'interagir avec leur code à version contrôlée. SourceTree fournit une interface intuitive pour des tâches telles que la validation des modifications, la création de branches et la fusion, permettant aux développeurs de travailler plus facilement avec des flux de travail de contrôle de version complexes.</p>
                             </div> 
                             <div class="tech-description">
@@ -332,7 +332,7 @@
                             </div>    
                         
                             <div class="tech-description">
-                                <span class="h5"><i class="lni lni-ux"></i> Gestion DNS</span>
+                                <span class="h5"><i class="lni lni-connectdevelop"></i> Gestion DNS</span>
                                 <p>La gestion DNS implique la supervision et le contrôle des paramètres du système de noms de domaine pour un domaine ou un réseau particulier. Cela inclut des tâches telles que la configuration des enregistrements de domaine (comme A, CNAME, MX), la mise à jour des serveurs de noms et la modification des paramètres DNS pour garantir une résolution précise et fiable du domaine vers l'adresse IP. La gestion DNS est cruciale pour maintenir l'accessibilité et la fonctionnalité d'un site Web.</p>
                             </div> 
                         </div>

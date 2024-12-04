@@ -21,7 +21,7 @@ class PagesController {
     public function contact() {
         echo Models\Core\View::display("Pages/views/contact.php");
     }
-    
+        
     public function credits() {
         echo Models\Core\View::display("Pages/views/credits.php");
     }
@@ -37,5 +37,14 @@ class PagesController {
 
     public function nouveau_site() {
         echo Models\Core\View::display("Pages/views/creation-de-sites-web.php");
+    }
+
+
+    public function ajax_get_phone_number() {
+        $output = [
+            "data" => CURRENT_PHONE_NUMBER
+        ];    
+        echo json_encode($output);
+        exit();
     }
 }

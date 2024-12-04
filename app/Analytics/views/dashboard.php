@@ -1,43 +1,10 @@
-<?php
-    $form = $data['publication_form'];
-?>
-<title>Ajouter un article - APB</title>  
+<title>Statistiques du site - APB</title>  
 <link rel="stylesheet" href="/medias/css/admin.css" />    
 <link rel="stylesheet" href="/medias/css/analytics.css" />    
 
-
-<script>
-    // PUSH INTO FORM OBSERVER / DECORATOR?
-    // ajax pour delete
-    // ajax pour upload d'une image (fresh id how?)
-    function bouletap_killImage(input_name) {
-        if( confirm('Êtes-vous sur de vouloir remplacer l\'image ?') ) {
-            var parent = document.querySelector('input[name="'+input_name+'"]').closest('.image-preview');            
-
-            var current_image = document.querySelector('input[name="'+input_name+'"]').value;
-
-            var new_file_input = document.createElement('input');
-            new_file_input.setAttribute('type', 'file');
-            new_file_input.setAttribute('name', input_name);
-
-            // creer un hidden_field old_image pour la suppression
-            var input_to_delete = document.createElement('input');
-            input_to_delete.setAttribute('type', 'hidden');
-            input_to_delete.setAttribute('name', input_name + "_delete_pending");     
-            input_to_delete.setAttribute('value', current_image);     
-
-            parent.after(new_file_input);
-            parent.after(input_to_delete);            
-            parent.remove();
-        }
-    }
-</script>
-
-
-
 </head>
 
-<body class="home">
+<body class="home admin-analytics">
     <div class="header-container">        
         <?php include(APP_PATH.'/Pages/views/_header.php'); ?>
     </div>
@@ -60,31 +27,105 @@
 
                 <h3></h3>
             </div>
-            <div class="page-admin">
-                
-                <div>
-                    <h1>Entrer un nouvel article</h1>
-
-                    <form method="post" enctype="multipart/form-data">
-                        <div class="form-error-message hide"><span class="error-title">Le formulaire est invalide :</span></div>
-                        
-                        <div><?php echo $form->getField('title')->display(); ?></div>
-                        <div><?php echo $form->getField('short_pitch')->display(); ?></div>
-                        <div>
-                            <span>Image principale + featured</span>
-                            <?php echo $form->getField('image')->display(); ?>
-                        </div>
-                        <div><?php echo $form->getField('content')->display(); ?></div>
-                        <div><?php echo $form->getField('categories')->display(); ?></div>
-
-                        <div>(YYYY-MM-DD)<?php echo $form->getField('published')->display(); ?></div>
-                        <div>Private? <?php echo $form->getField('private')->display(); ?></div>
-
-                        <button type="submit" class="btn-cta" id="btn-contact-submit">Envoyer mon message <i class="lni lni-arrow-right"></i></span></button>
-                    </form>      
+            <div class="analytics page-admin">
+               
+                <div class="controls">
+                    <ul>
+                        <li><a href="#">LIVE</a></li>
+                        <li class="active"><a href="#">Today</a></li>
+                        <li><a href="#">7 days</a></li>
+                        <li><a href="#">4 weeks</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">refresh</a></li>
+                    </ul>
                 </div>
-            </div>
 
+                <div class="charts">
+                    <div class="chart">
+                        <h3><i class="lni lni-user-4"></i> Visitors</h3>
+                        <canvas id="visitors"></canvas>
+                    </div>
+                    <div class="chart">
+                        <h3><i class="lni lni-www-cursor"></i> Page visits</h3>
+                        <canvas id="pages-visited"></canvas>
+                    </div>
+                    <div class="chart">
+                        <h3><i class="lni lni-laptop-phone"></i> Devices</h3>
+                        <canvas id="devices"></canvas>
+                    </div>
+                    <div class="chart">
+                        <h3><i class="lni lni-monitor-mac"></i> Resolutions</h3>
+                        <canvas id="resolutions"></canvas>
+                    </div>
+                    <div class="chart">
+                        <h3><i class="lni lni-globe-1"></i> Origin</h3>
+                        <canvas id="origin"></canvas>
+                    </div>
+                </div>
+
+                <div class="lists">
+
+                    <div class="list">
+                        <h3><i class="lni lni-users"></i> Top Pages</h3>
+                        <table>
+                            <tr>
+                                <th>Slug</th>
+                                <th>Views</th>
+                                <th>Time</th>
+                                <th>Bounce Rate</th>
+                            </tr>
+                            <tr>
+                                <td>ggg</td>
+                                <td>111</td>
+                                <td>www</td>
+                                <td>vvv</td>
+                            </tr>
+                            <?php /*if( !empty($data['last_visits']) ): ?>
+                                <?php foreach($data['last_visits'] as $visit): ?>
+                                    <?php $visitor = $data['visitors'][$visit->visitor_id]; ?>
+                                    <tr>
+                                        <td><?php echo $visitor->ip_address;?></td>
+                                        <td><?php echo ""; //$visit->pages;?></td>
+                                        <td><?php echo ""; //$visit->length;?></td>
+                                        <td><?php echo $visitor->getDevice();?></td>
+                                        <td><?php echo $visitor->getBrowser();?></td>
+                                        <td><?php echo $visitor->getResolution();?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; */?>
+                        </table>
+                    </div>
+
+                    <div class="list">
+                        <h3><i class="lni lni-users"></i> Last visits</h3>
+                        <table>
+                            <tr>
+                                <th>IP</th>
+                                <th>Views</th>
+                                <th>Length</th>
+                                <th>Device</th>
+                                <th>Browser</th>
+                                <th>Resolution</th>
+                            </tr>
+                            <?php if( !empty($data['last_visits']) ): ?>
+                                <?php foreach($data['last_visits'] as $visit): ?>
+                                    <?php $visitor = $data['visitors'][$visit->visitor_id]; ?>
+                                    <tr>
+                                        <td><?php echo $visitor->ip_address;?></td>
+                                        <td><?php echo ""; //$visit->pages;?></td>
+                                        <td><?php echo ""; //$visit->length;?></td>
+                                        <td><?php echo $visitor->getDevice();?></td>
+                                        <td><?php echo $visitor->getBrowser();?></td>
+                                        <td><?php echo $visitor->getResolution();?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
 
         </section>
        

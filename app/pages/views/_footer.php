@@ -12,7 +12,7 @@
             <p>André-Philippe Boulet est un développpeur chaleureux, acharné et passionné qui souhaite aider votre entreprise à atteindre ses objectifs. Par une approche humaine et compréhensible, il utilise les technologies de l’information pour convertir vos besoins d’affaires en résultats.</p>
         </div>
         <div class="action">
-            <a href="#" class="btn-cta"><i class="lni lni-popup"></i> Go</a>
+            <a href="#" class="btn-cta"><i class="lni lni-envelope-1"></i> Go</a>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
             <span class="h3 title">Comment nous joindre</span>
             <ul>
                 <li class="list-with-icons">
-                    <i class="lni lni-home"></i>
+                    <i class="lni lni-home-2"></i>
                     <span>
                         <strong>Bureau à distance</strong><br />
                         196 rue du Richelieu<br />
@@ -36,7 +36,7 @@
                     </span>
                 </li>
                 <li class="list-with-icons">
-                    <i class="lni lni-envelope"></i>
+                    <i class="lni lni-envelope-1"></i>
                     <span><a href="/contact">apb@bouletap.com</a></span>
                 </li>
             </ul>
@@ -44,9 +44,9 @@
                 <ul>
                     <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
                     <li><a href="https://bsky.app/profile/bouletap.bsky.social" title="Bluesky link" target="_blank" rel="nofollow"><i class="ap-icon-bluesky"></i></a></li>
-                    <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github-original"></i></a></li>
-                    <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
+                    <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github"></i></a></li>
+                    <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -68,11 +68,9 @@
             <ul class="navigation">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/a-propos">À Propos</a></li>
-                <li><a href="/services">Services offerts</a></li>
                 <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/services">Services offerts</a></li>
                 <li><a href="/nouvelles">Articles et Nouvelles</a></li>
-                <li><a href="/credits">Crédits et attributions</a></li>
-                <li><a href="/confidentialite">Politique de confidentialité</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
@@ -114,16 +112,22 @@
         <div class="left">
         <a href="#"> © <?php echo date('Y'); ?> - <a href="/credits">André-Philippe Boulet - Tous droits réservés</a></a>
         </div>
-        <div class="right">                    
+        <div class="center">                    
             <div class="socials">  
                 <ul>
                     <li><a href="https://discord.gg/RAE5kkHFKC" title="Discord link" target="_blank" rel="nofollow"><i class="lni lni-discord"></i></a></li>
                     <li><a href="https://bsky.app/profile/bouletap.bsky.social" title="Bluesky link" target="_blank" rel="nofollow"><i class="ap-icon-bluesky"></i></a></li>
-                    <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github-original"></i></a></li>
-                    <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook-original"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin-original"></i></a></li>
+                    <li><a href="https://github.com/bouletap" title="Github link" target="_blank" rel="nofollow"><i class="lni lni-github"></i></a></li>
+                    <li><a href="https://www.facebook.com/logicielsbouletap/" title="Facebook link" target="_blank" rel="nofollow"><i class="lni lni-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/andr%C3%A9-philippe-boulet-50b2b216/" title="LinkedIn link" target="_blank" rel="nofollow"><i class="lni lni-linkedin"></i></a></li>
                 </ul>
             </div>
+        </div>
+        <div class="right">
+            <ul class="menu">
+                <li><a href="/confidentialite">Confidentialité</a></li>
+                <li><a href="/credits">Crédits</a></li>
+            </ul>
         </div>
     </div>  
 </footer>

@@ -1191,17 +1191,23 @@ footer .audit-form .success-message {
 }
 footer .copyrights {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   background-color: #07183A;
   padding: 20px 10px;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 @media only screen and (min-width: 640px) {
   footer .copyrights {
     font-size: 1em;
     flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer .copyrights {
     padding: 20px 30px;
   }
 }
@@ -1219,6 +1225,7 @@ footer .copyrights .socials ul {
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 footer .copyrights .socials ul li {
   font-size: 2em;
@@ -1226,6 +1233,7 @@ footer .copyrights .socials ul li {
 @media only screen and (min-width: 640px) {
   footer .copyrights .socials ul {
     margin-top: 0px;
+    margin-bottom: 0px;
     gap: 20px;
   }
   footer .copyrights .socials ul li {
@@ -1241,6 +1249,22 @@ footer .copyrights .socials ul .ap-icon-bluesky {
   width: 1em;
   height: 1em;
   background-image: none;
+}
+footer .copyrights .right .menu {
+  display: flex;
+  gap: 30px;
+  font-size: 0.8em;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  footer .copyrights .right {
+    width: 100%;
+  }
+  footer .copyrights .right .menu {
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 @media only screen and (min-width: 640px) {
   footer .copyrights {

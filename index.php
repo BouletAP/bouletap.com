@@ -5,9 +5,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/app/bootstrap.php';      
 
-use Models\Services\Analytics;
 
-
-Analytics::start();
+Models\Services\Analytics::start();
 require_once __DIR__ . '/app/controller.php';    
-Analytics::end();
+Models\Services\Analytics::end();

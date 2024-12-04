@@ -12,8 +12,8 @@
         <div class="menu-presentation">
             
             <a href="javascript:;" class="menu-toggle" id="btnMainMenuToggle">
-                <i class="icon-toopen lni lni-menu"></i>
-                <i class="icon-toclose lni lni-close"></i>        
+                <i class="icon-toopen lni lni-menu-cheesburger"></i>
+                <i class="icon-toclose lni lni-xmark-circle"></i>        
             </a>
             
             <div class="company-logo header">            	
@@ -27,7 +27,7 @@
             <div class="lang-container">
                 <div class="socialnetworks">
                     <ul class="pull-right">
-                        <li class="li-phone"><a href="/contact" title="Phone"><i class="lni lni-popup"></i></span> Contact</a></li>
+                        <li class="li-phone"><a href="/contact" title="Phone"><i class="lni lni-envelope-1"></i></span> Contact</a></li>
                         <!--<li class="li-social"><a href="#" title="User Login"><i class="fa fa-user"></i></a></li>-->
                         <li class="language-switcher"></li>
                     </ul>

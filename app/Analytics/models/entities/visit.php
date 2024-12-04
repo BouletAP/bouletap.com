@@ -3,23 +3,42 @@
 namespace Models\Entities;
 
 use Models\Core\Database;
-use Models\Entities\Page;
 
-// DB structure
-// (table: visits)
-// id (int)
-// visitor_id (int)
-// session_id (varchar)
-// data (text)
-// created (int)
-class Visit {
+class Visit extends \Models\Core\Entity {
 
-    private $data;
-    private $last_visit;
+    public $id;
+    public $visitor_id;
+    public $session_id;
+    public $slug;
+    public $actions;
+    public $created;
+    public $updated;
 
-    public $pages_visited;
-    public $current_page;
+    static public $db_table = 'visits';
 
+    public function __construct($data = []) {
+        $this->fill($data);
+    }
+    
+
+    static protected function _fields() {
+        return ["id", "visitor_id", "session_id", "slug", "actions", "created", "updated"];
+    }
+
+
+    static public function find_lastest($limit = 10, $offset = 0) {
+       
+
+        $results = Database::query()
+                        ->orderBy("created", "DESC")
+                        ->get('visits', [$offset, $limit] );
+
+        $visits = static::hydrate_all($results);
+        return $visits;
+    }
+
+
+    /*
 
     public function getData($key = '') {
         if( empty($key) ) 
@@ -94,6 +113,6 @@ class Visit {
 
         $this->pages_visited []= $this->current_page->getData();
         $this->data['data'] = serialize($this->pages_visited);
-    }
+    }*/
 
 }
