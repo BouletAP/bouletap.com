@@ -102,22 +102,20 @@
                         <table>
                             <tr>
                                 <th>IP</th>
-                                <th>Views</th>
-                                <th>Length</th>
                                 <th>Device</th>
                                 <th>Browser</th>
                                 <th>Resolution</th>
+                                <th>Date</th>
                             </tr>
                             <?php if( !empty($data['last_visits']) ): ?>
                                 <?php foreach($data['last_visits'] as $visit): ?>
                                     <?php $visitor = $data['visitors'][$visit->visitor_id]; ?>
                                     <tr>
                                         <td><?php echo $visitor->ip_address;?></td>
-                                        <td><?php echo ""; //$visit->pages;?></td>
-                                        <td><?php echo ""; //$visit->length;?></td>
                                         <td><?php echo $visitor->getDevice();?></td>
                                         <td><?php echo $visitor->getBrowser();?></td>
                                         <td><?php echo $visitor->getResolution();?></td>
+                                        <td><?php echo $visit->getDate();?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php endif; ?>

@@ -8,6 +8,7 @@ require_once __DIR__ . '/models/core/router.php';
 require_once __DIR__ . '/models/core/auth.php';
 require_once __DIR__ . '/models/core/view.php';
 require_once __DIR__ . '/models/core/entity.php';
+require_once __DIR__ . '/models/core/redirection.php';
 
 
 require_once __DIR__ . '/models/entities/page.php';

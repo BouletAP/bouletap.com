@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/medias/css/portfolio.css" />       
     <title>Portfolio de projets - André-Philippe Boulet</title> 
 </head>
-<body class="page-nouvelles page-content">
+<body class="page-nouvelles">
     <div class="header-container">        
         <?php include(APP_PATH.'/Pages/views/_header.php'); ?>
     </div>
@@ -27,7 +27,13 @@
                         <?php foreach($data['projets'] as $projet): ?>
                             <div class="card card-nouvelle">
                                 <div class="img">
-                                    <a href="/projet/<?php echo $projet->slug; ?>"><img src="/uploads/<?php echo $projet->image; ?>" alt="<?php echo $projet->title; ?>"></a>
+                                    <a href="/projet/<?php echo $projet->slug; ?>">
+                                        <?php if( !empty($projet->image) ): ?>
+                                            <img src="/uploads/<?php echo $projet->image; ?>" alt="<?php echo $projet->title; ?>" loading="lazy">
+                                        <?php else: ?>
+                                            <img src="/medias/images/placeholder-default.png" alt="<?php echo $projet->title; ?>" loading="lazy">
+                                        <?php endif; ?>                                        
+                                    </a>
                                     <a href="/portfolio/" class="categories"><?php echo $projet->pastille; ?></a>
                                 </div>
                                 <h3><a href="/projet/<?php echo $projet->slug; ?>"><?php echo $projet->title; ?></a></h3>

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/medias/css/blog.css" />       
     <title>Toutes les nouvelles - André-Philippe Boulet</title> 
 </head>
-<body class="page-nouvelles page-content">
+<body class="page-nouvelles">
     <div class="header-container">        
         <?php include(APP_PATH.'/Pages/views/_header.php'); ?>
     </div>
@@ -30,7 +30,13 @@
                         <?php foreach($data['nouvelles'] as $nouvelle): ?>
                             <div class="card card-nouvelle">
                                 <div class="img">
-                                    <a href="/nouvelle/<?php echo $nouvelle->slug; ?>"><img src="/uploads/<?php echo $nouvelle->image; ?>" alt="<?php echo $nouvelle->title; ?>"></a>
+                                    <a href="/nouvelle/<?php echo $nouvelle->slug; ?>">
+                                        <?php if( !empty($nouvelle->image) ): ?>
+                                            <img src="/uploads/<?php echo $nouvelle->image; ?>" alt="<?php echo $nouvelle->title; ?>" loading="lazy">
+                                        <?php else: ?>
+                                            <img src="/medias/images/placeholder-default.png" alt="<?php echo $nouvelle->title; ?>" loading="lazy">
+                                        <?php endif; ?>
+                                    </a>
                                     <a href="javascript:;" class="categories"><?php echo $nouvelle->categories; ?></a>
                                 </div>
                                 <h3><a href="/nouvelle/<?php echo $nouvelle->slug; ?>"><?php echo $nouvelle->title; ?></a></h3>

@@ -64,6 +64,10 @@ class Router {
             }
         }
 
+        
+        Redirection::attempt($request_uri);
+
+
         $route = static::find_route($request_uri);
     
         if(!$route) {

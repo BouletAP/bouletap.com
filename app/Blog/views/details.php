@@ -6,11 +6,15 @@
 
     <style>
         .section-description {
-            background-image: url('/uploads/<?php echo $nouvelle->image; ?>');
+            <?php if( !empty($nouvelle->image) ): ?>
+                background-image: url('/uploads/<?php echo $nouvelle->image; ?>');
+            <?php else: ?>
+                background-image: url('/medias/images/placeholder-default.png');
+            <?php endif; ?>            
         }
     </style>
 </head>
-<body class="page-nouvelles page-content details-nouvelle">
+<body class="page-nouvelles details-nouvelle">
     <div class="header-container">        
         <?php include(APP_PATH.'/Pages/views/_header.php'); ?>
     </div>

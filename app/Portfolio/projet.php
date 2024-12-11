@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/medias/css/portfolio.css" />       
     <title>Portfolio de projets - André-Philippe Boulet</title> 
 </head>
-<body class="page-nouvelles page-projet page-content">
+<body class="page-nouvelles page-projet">
     <div class="header-container">        
         <?php include(APP_PATH.'/Pages/views/_header.php'); ?>
     </div>

@@ -18,9 +18,9 @@ class AnalyticsController {
         } 
 
 
-        //echo '<pre>'; print_r($_SERVER); echo '</pre>'; die();
 
-        $last_visits = Visit::find_lastest(25);
+        $last_visits = Visit::find_lastest(10);
+        //echo '<pre>'; print_r($last_visits); echo '</pre>'; die();
 
         $visitors = [];
         foreach($last_visits as $visit) {

@@ -37,6 +37,10 @@ class Visit extends \Models\Core\Entity {
         return $visits;
     }
 
+    public function getDate() {
+        return date('Y-m-d H:i:s', $this->created);
+    }
+
 
     /*
 

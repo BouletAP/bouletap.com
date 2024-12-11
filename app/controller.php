@@ -17,6 +17,7 @@
     
     // use controller/method dispatch
     if( is_array($page) ) {
+
         $controller = $page[0];
         $method = $page[1];                 
 

@@ -1,6 +1,7 @@
 <?php
 
 use Models\Core\Router;
+use Models\Core\Redirection;
 
 // New model:
 // Case 1: Router::add("path/to/url", 'Namespace/Controller/Method');
@@ -97,3 +98,6 @@ Router::add('/ajax/save-appdata', 'AnalyticsController', 'ajax_save_appdata');
 Router::add('*', 'PagesController', 'not_found');
 
 
+// 302 = temporary 
+// 301 = permanent (default)
+Redirection::add("/en", "/");
