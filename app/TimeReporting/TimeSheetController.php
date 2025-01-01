@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/models/entities/timesheet.php';
 require_once __DIR__ . '/models/forms/uploadreport.php';
-require_once __DIR__ . '/models/services/ProjectLine.php';
-require_once __DIR__ . '/models/services/ProjectTimesheet.php';
+require_once __DIR__ . '/models/domains/ProjectLine.php';
+require_once __DIR__ . '/models/domains/ProjectTimesheet.php';
 
 use Models\Core\Auth;
 use Models\Core\Database;
@@ -71,7 +71,7 @@ class TimeSheetController {
 
         $upload_form = new Models\Forms\UploadReport();
 
-        $sheets = Timesheet::get_all();
+        $sheets = Timesheet::get_all_ordered();
         $projects = new Models\Services\ProjectTimesheet($sheets);
 
         $data = [

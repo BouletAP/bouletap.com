@@ -1,5 +1,7 @@
 <?php
 
+require_once APP_PATH . '/models/vendor/Parsedown.php';
+
 use Models\Entities\Article;
 use Models\Entities\Projet;
 

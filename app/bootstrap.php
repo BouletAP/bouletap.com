@@ -21,7 +21,7 @@ require_once __DIR__ . '/models/entities/publication.php';
 
 
 require_once __DIR__ . '/models/services/notifications.php';
-require_once __DIR__ . '/models/services/discord.php';
+require_once __DIR__ . '/models/vendor/discord.php';
 
 require_once __DIR__ . '/models/forms/audit_seo.php';
 require_once __DIR__ . '/models/forms/login.php';
@@ -51,7 +51,6 @@ require_once __DIR__ . '/TimeReporting/TimeSheetController.php';
 require_once __DIR__ . '/TimeReporting/models/entities/timesheet.php';
 
 require_once __DIR__ . '/Analytics/models/entities/visitor.php';
-require_once __DIR__ . '/Analytics/models/entities/visitor2.php';
 require_once __DIR__ . '/Analytics/models/entities/visit.php';
 require_once __DIR__ . '/Analytics/models/services/analytics.php';
 require_once __DIR__ . '/Analytics/AnalyticsController.php';

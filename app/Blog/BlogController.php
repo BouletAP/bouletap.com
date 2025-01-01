@@ -5,7 +5,7 @@ use Models\Core\Auth;
 use Models\Entities\Article;
 use BouletAP\Tools\Stringz;
 
-require_once APP_PATH . '/models/services/Parsedown.php';
+require_once APP_PATH . '/models/vendor/Parsedown.php';
 
 class BlogController {
 

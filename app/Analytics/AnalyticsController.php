@@ -5,42 +5,39 @@ use Models\Services\Analytics;
 
 
 use Models\Entities\Visitor;
-use Models\Entities\Visitor2;
 use Models\Entities\Visit;
 
 
 class AnalyticsController {
     
+    public function __construct() {
+        //Analytics::i()->is_trackable = false;
+    }
 
     public function dashboard() {
         if( !Auth::user_can('admin_duty') ) {
             header("Location: /connexion");
         } 
 
-
-
+        $last_visits = Visit::find_lastest(3);
+        echo '<pre>'; print_r($last_visits); echo '</pre>'; 
+        $top_pages = Visit::find_pages(10);
         $last_visits = Visit::find_lastest(10);
+
         //echo '<pre>'; print_r($last_visits); echo '</pre>'; die();
 
         $visitors = [];
         foreach($last_visits as $visit) {
             if( empty($visitors[$visit->visitor_id]) ) {
-                $visitors[$visit->visitor_id] = Visitor2::find('id', $visit->visitor_id);
+                $visitors[$visit->visitor_id] = Visitor::find('id', $visit->visitor_id);
             }
         }
 
-        // foreach($visitors as $visitor) {
-        //     echo '<pre>'; print_r($visitor); echo '</pre>'; 
-        //     $infos = $visitor->getAllUAInfos();
-        //     echo 'infos<pre>'; print_r($infos); echo '</pre>';
-        // }
-        // die();
-
-        // $visitors[$last_visits[0]->visitor_id]->getDevice();
-        // echo '<pre>'; print_r($visitors[$last_visits[0]->visitor_id]); echo '</pre>'; 
-        // echo '<pre>'; print_r($last_visits[0]); echo '</pre>'; die();
-
+        // Top Pages (PageName, Visits, AVGTimeSpent, BounceRate)
+        // Last Visit (IP/VisitorID, PageViewed, DateTime)
+        // Last Visitor (IP, Device, Resolution)
         $data = [
+            "top_pages" => $top_pages,
             "last_visits" => $last_visits,
             "visitors" => $visitors
         ];
@@ -49,7 +46,7 @@ class AnalyticsController {
 
 
 
-    public function ajax_save_appdata() {
+    public function ajax_new_visitor() {
         $visitor_id = (int)$_POST['t'];
 
         if( Analytics::i()->getId() != $visitor_id ) 
@@ -63,6 +60,32 @@ class AnalyticsController {
         $data = ['screen_info' => $screen_info];
         Analytics::i()->visitor->update($data); 
         die();
+    }
+
+
+    /*
+    * 1. Page OnLoad: Create visit info + hash. Print Hash for Interval
+    * 2. Interval: Update visit info with VisitData
+    * 3. OnActionableKPI: Update visit info with ActionData
+    **/
+    public function ajax_update_visit() {
+
+        // pid
+        // y
+
+        $visit = Visit::find('id', (int)$_POST['pid']);
+        $visit->updated = time();
+        $actions = $visit->getActions();
+        
+
+        $action = new stdClass();
+        $action->type = "browse";
+        $action->y_offset = (int)$_POST['y'];
+        $action->timestamp = time();
+
+        $actions []= $action;
+        $visit->actions = $actions;
+        $visit->save();        
     }
     
 }

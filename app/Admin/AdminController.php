@@ -4,7 +4,6 @@ use BouletAP\Tools\Cookies;
 use Models\Core\Auth;
 use Models\Core\Database;
 
-use Models\Entities\Visitor;
 
 //use BouletAP\Framework\Views;
 //use BouletAP\Framework\Ajax;
@@ -27,6 +26,7 @@ class AdminController {
         ];
 
         $form_entries = Models\Entities\Entry::get_last(5);
+        //echo '<pre>'; print_r($form_entries); echo '</pre>'; die();
         if( !empty($form_entries) ) {
 
             
@@ -39,12 +39,10 @@ class AdminController {
             }
         }
 
-        $visitors = Visitor::recent();
 
         $data = [
             'messages_audit' => $contact_messages['audit-seo'],
-            'messages_contact' => $contact_messages['contact'],
-            'visitors' => $visitors
+            'messages_contact' => $contact_messages['contact']
         ];
 
         echo Models\Core\View::display("Admin/views/dashboard.php", $data);

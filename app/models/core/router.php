@@ -8,6 +8,22 @@ class Router {
 
     static public $current_route;
 
+    static public function getSlug() {
+        // tmp, wrong slug
+        return Router::$current_route[0] ."/". Router::$current_route[1];
+    }
+    static public function getRealSlug() {
+        // tmp, wrong slug
+        $slug = static::getSlug();
+        if( !empty( $_POST['rou']) ) {
+            $slog = explode('/', $_POST['rou']);
+            $slug = preg_replace("/[^a-zA-Z0-9]+/", "", $slog[0]);
+            $slug .= "/";
+            $slug .= preg_replace("/[^a-zA-Z0-9]+/", "", $slog[1]);
+        }
+        return $slug;
+    }
+
     static public function add($name, $controllerPath = false, $page = false) {
 
         $params = 0;
@@ -21,13 +37,8 @@ class Router {
 
             $params = count($params) -1;            
         }
-
         
-
-        
-        //self::$routes[$name] = $path;
         self::$routes[$name] = $controllerPath;
-
         if( $page ) {
             self::$routes[$name] = [
                 $controllerPath,
@@ -78,6 +89,7 @@ class Router {
 
         return $route;
     }
+    
 
 
     static public function find_route($uri) {

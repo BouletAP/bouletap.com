@@ -76,6 +76,7 @@
 
         </section>
        
+        <?php /*
         <section>
             <div class="dashboard-col">
                 <div class="col">
@@ -94,6 +95,8 @@
                 </div>
             </div>
         </section>
+        */
+        ?>
 
 
     </div>      

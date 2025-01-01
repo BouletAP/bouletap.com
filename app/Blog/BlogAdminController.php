@@ -4,12 +4,9 @@ require_once APP_PATH . '/Blog/models/forms/ManageNews.php';
 require_once APP_PATH . '/Blog/models/entities/article.php';
 
 
-
-
 use BouletAP\Tools\Stringz;
 use Models\Core\Auth;
 use Models\Entities\Article;
-
 
 
 class BlogAdminController {

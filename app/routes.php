@@ -93,7 +93,8 @@ Router::add('/admin/timesheet/delete/{ARGS}', 'TimeSheetController', 'delete');
 
 
 Router::add('/admin/analytics', 'AnalyticsController', 'dashboard');
-Router::add('/ajax/save-appdata', 'AnalyticsController', 'ajax_save_appdata');
+Router::add('/ajax/save-appdata', 'AnalyticsController', 'ajax_new_visitor');
+Router::add('/ajax/update-appdata', 'AnalyticsController', 'ajax_update_visit');
 
 Router::add('*', 'PagesController', 'not_found');
 

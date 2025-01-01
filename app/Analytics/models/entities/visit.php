@@ -8,7 +8,7 @@ class Visit extends \Models\Core\Entity {
 
     public $id;
     public $visitor_id;
-    public $session_id;
+    public $session_id; // not PHP Session ID, this is a hash for the pageView tracker
     public $slug;
     public $actions;
     public $created;
@@ -25,6 +25,21 @@ class Visit extends \Models\Core\Entity {
         return ["id", "visitor_id", "session_id", "slug", "actions", "created", "updated"];
     }
 
+    static public function find_pages($limit = 10, $offset = 0) {
+        $sql = "
+            SELECT DISTINCT visitor_id, count(*) as visited, slug, created
+            FROM visits
+            GROUP BY slug
+            ORDER BY visited DESC
+        ";
+        $results = Database::query()->rawQuery($sql);
+
+        echo 'find_pages<pre>'; print_r($results); echo '</pre>'; die();
+
+        return $results;
+        // $visits = static::hydrate_all($results);
+        // return $visits;
+    }
 
     static public function find_lastest($limit = 10, $offset = 0) {
        
@@ -37,86 +52,23 @@ class Visit extends \Models\Core\Entity {
         return $visits;
     }
 
+    public function save() {
+        if(is_array($this->actions)) {
+            $this->actions = serialize($this->actions);
+        }
+        parent::save();
+    }
+
+
     public function getDate() {
         return date('Y-m-d H:i:s', $this->created);
     }
 
-
-    /*
-
-    public function getData($key = '') {
-        if( empty($key) ) 
-            return $this->data;
-
-        return !empty($this->data[$key]) ? $this->data[$key] : false;
-    }
-    
-    function __construct($data = false) {
-
-        if( $data ) {
-            $this->data = $data;            
-            $this->current_page = new Page();
-            $this->initVisitedPages($this->getData('data'));
+    public function getActions() {
+        if( empty($this->actions) ) {
+            $this->actions = serialize([]);        
         }
-        else {
-            $this->current_page = new Page();
-        }
+        return unserialize($this->actions);  
     }
-
-    public function initVisitedPages($serialized_page_data) {
-        if( !empty($serialized_page_data) ) {
-            $this->pages_visited = unserialize($serialized_page_data);
-        }
-    }
-
-
-    static public function findLastVisit($visitor_id) {
-
-        $last_visit = false;
-
-        $db = Database::query();
-        $db->where('visitor_id', $visitor_id);
-        $db->orderBy("created","Desc");
-        $results = $db->get('visits', 1);
-        
-        if( !empty ($results) ) {
-            $last_visit = new Visit($results[0]);
-        }
-
-        return $last_visit;
-    }
-
-    static public function initByVisitor($visitor_id) {
-
-        $pageData = "";
-
-        $data = [
-            "visitor_id" => $visitor_id,
-            "session_id"  => session_id(),
-            "data"  => $pageData,
-            "created" => time()
-        ];        
-        $data['id'] = Database::query()->insert ('visits', $data);        
-
-        $visit = new Visit();
-        $visit->data = $data;
-        return $visit;
-    }
-
-    public function update() {
-
-        $id = $this->getData('id');        
-        if(!$id) return false; 
-        
-        $db = Database::query();
-        $db->where('id', $id);
-        $db->update ('visits', $this->data);
-    }
-
-    public function updatePagesVisited() {
-
-        $this->pages_visited []= $this->current_page->getData();
-        $this->data['data'] = serialize($this->pages_visited);
-    }*/
 
 }

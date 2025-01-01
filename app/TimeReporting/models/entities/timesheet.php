@@ -19,6 +19,10 @@ class Timesheet extends \Models\Core\Entity{
         $this->fill($data);
     }
     
+    static public function get_all_ordered() {
+        Database::query()->orderBy("year","Desc")->orderBy("month","Desc");
+        return parent::get_all();
+    }
 
     static protected function _fields() {
         return ["id", "year", "month", "content"];

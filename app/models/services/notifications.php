@@ -15,8 +15,6 @@ class Notifications {
     }
 
 
-
-
     public function display() {
 
         $notifs = $this->getUnreadNotifications();

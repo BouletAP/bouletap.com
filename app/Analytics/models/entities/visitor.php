@@ -2,133 +2,122 @@
 
 namespace Models\Entities;
 
-use BouletAP\Tools\Cookies;
 use Models\Core\Database;
+use BouletAP\Tools\Cookies;
 
+class Visitor extends \Models\Core\Entity {
 
-// DB structure
-// (table: visitors)
-// id (int)
-// session_id (int)
-// user_agent (text)
-// fingerprint (varchar)
-// cookie_id (varchar)
-// new: ip_address (varchar)
-// new: screen_size (varchar)
-// new: data (text)
-class Visitor {
+    public $id;
+    public $session_id;
+    public $cookie_id;
+    public $fingerprint;
+    public $user_agent;
+    public $ip_address;
+    public $screen_info;
+    public $data;
 
-    // id (int)
-    // session_id (int)
-    // user_agent (text)
-    // fingerprint (varchar)
-    // cookie_id (varchar)
-    // ip_address (varchar)
-    // screen_info (varchar)
-    // data (text)
-    private $data;
-    public $is_fresh = false;
+    public $is_first_visit = false;
+    static public $db_table = 'visitors';
 
+    public function __construct($data = []) {
+        $this->fill($data);
+    }
+    
 
-    public function getData($key) {
-        return !empty($this->data[$key]) ? $this->data[$key] : false;
+    static protected function _fields() {
+        return ["id", "session_id", "cookie_id", "fingerprint", "user_agent", "ip_address", "screen_info", "data"];
     }
 
+    public function getAllUAInfos() {
+        require_once(__DIR__.'/../vendor/BrowserDetection.php');
 
-   static  public function recent() {
-        $db = Database::query();
-        $db->orderBy("id", "Desc");
-        $results = $db->get ('visitors');
-        return $results;
+        $Browser = new \foroco\BrowserDetection();
+        $result = $Browser->getAll($this->user_agent);
+        //echo '<pre>'; print_r($result); echo '</pre>'; die();
+        return $result;
+    }
+
+    public function getDevice() {
+        require_once(__DIR__.'/../vendor/BrowserDetection.php');
+
+        $Browser = new \foroco\BrowserDetection();
+        $result = $Browser->getAll($this->user_agent);
+
+        $output = $result['device_type'];
+        if( $output == 'unknown' ) {
+            if( strpos($this->user_agent, 'Googlebot') !== false ) {
+                $output = "GoogleBot";
+            }
+        }
+
+        //echo '<pre>'; print_r($result); echo '</pre>'; die();
+        return $output;
+    }
+
+    public function getBrowser() {
+        require_once(__DIR__.'/../vendor/BrowserDetection.php');
+
+        $Browser = new \foroco\BrowserDetection();
+        $result = $Browser->getAll($this->user_agent);
+        //echo '<pre>'; print_r($result); echo '</pre>'; die();
+        return $result['browser_name'];
+    }
+    
+    public function getResolution() {
+        $screen_info = explode(";", $this->screen_info);
+        if( count($screen_info) > 2 ) {
+            return "{$screen_info[0]}x{$screen_info[1]}";
+        }
+        return "unknown";
     }
 
 
     static public function init() {
 
-        $visitor_data = self::findByPast();
+        $cookie = Cookies::find('user_token');
+        $session = session_id();
+
+        $visitor_data = Database::query()
+                            ->where('cookie_id', $cookie)
+                            ->orWhere('session_id', $session)
+                            ->orderBy('id', "DESC")
+                            ->get ('visitors');
 
         if( empty($visitor_data) ) {
-            $visitor = Visitor::create();
+            $visitor = Visitor::init_new();
             $visitor->is_fresh = true;
         }
         else {
-            $visitor = new Visitor();
-            $visitor->data = $visitor_data[0];
+            $visitor = Visitor::hydrate($visitor_data[0]);
 
             // make sure the cookie isnt altered before next visit
             $cookie = Cookies::find('user_token');
-            $real_cookie_value = $visitor->getData('cookie_id');
+            $real_cookie_value = $visitor->cookie_id;
             if( $cookie != $real_cookie_value ) {
                 Cookies::add('user_token', $real_cookie_value, 3600*24*180);
             }
         }
 
         return $visitor;
-    }  
+    }
 
-
-    static function create() {
+    static function init_new() {
 
         $session_id = session_id();
-        $cookie_token = self::hash_token($session_id, time());
+        $cookie_token = Models\Core\Auth::hash_password($session_id, time());
         Cookies::add('user_token', $cookie_token, 3600*24*180);
 
-        $data = [
-            "session_id" => $session_id,
-            "cookie_id"  => $cookie_token,
-            "user_agent" => $_SERVER['HTTP_USER_AGENT'],
-            "ip_address" => $_SERVER['REMOTE_ADDR'],
-            "fingerprint" => "",
-            "screen_info" => "",
-            "data" => ""
-        ];        
-        $data['id'] = Database::query()->insert ('visitors', $data);        
-
         $visitor = new Visitor();
-        $visitor->data = $data;
+        $visitor->session_id = $session_id;
+        $visitor->cookie_id = $cookie_token;
+        $visitor->user_agent = $$_SERVER['HTTP_USER_AGENT'];
+        $visitor->ip_address = $$_SERVER['REMOTE_ADDR'];
+        $visitor->fingerprint = "";
+        $visitor->screen_info = "";
+        $visitor->data = "";
+        $visitor->save();
+
         return $visitor;
     }
-    
-    
-    public function update($data) {
 
-        $id = $this->getData('id');        
-        if(!$id) return false; 
-        
-        $db = Database::query();
-        $db->where('id', $id);
-        $db->update ('visitors', $data);
-    }
-    
-    // get id by cookie or by session id
-    // (else by fingerprint) @todo
-    static function findByPast() {
-
-        $cookie = Cookies::find('user_token');
-        $session = session_id();
-
-        $db = Database::query();
-        $db->where('cookie_id', $cookie);
-        $db->orWhere('session_id', $session);
-        $results = $db->get ('visitors');
-
-        return $results;
-    }    
-    
-    static function hash_token($pass, $salt = "") {
-        $pwd = trim($salt."".$pass);
-        $hash = hash('sha256', $pwd);
-        return $hash;
-    }
-
-
-
-
-
-    static function find_by($key, $value) {
-
-        $db = Database::query()->where($key, $value)->get ('visitors');        
-
-        return $results;
-    } 
 }

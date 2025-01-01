@@ -75,25 +75,17 @@
                                 <th>Time</th>
                                 <th>Bounce Rate</th>
                             </tr>
-                            <tr>
-                                <td>ggg</td>
-                                <td>111</td>
-                                <td>www</td>
-                                <td>vvv</td>
-                            </tr>
-                            <?php /*if( !empty($data['last_visits']) ): ?>
-                                <?php foreach($data['last_visits'] as $visit): ?>
-                                    <?php $visitor = $data['visitors'][$visit->visitor_id]; ?>
+                            <?php if( !empty($data['top_pages']) ): ?>
+                                <?php foreach($data['top_pages'] as $visit): ?>
+                                    <?php //$visitor = $data['visitors'][$visit->visitor_id]; ?>
                                     <tr>
-                                        <td><?php echo $visitor->ip_address;?></td>
-                                        <td><?php echo ""; //$visit->pages;?></td>
-                                        <td><?php echo ""; //$visit->length;?></td>
-                                        <td><?php echo $visitor->getDevice();?></td>
-                                        <td><?php echo $visitor->getBrowser();?></td>
-                                        <td><?php echo $visitor->getResolution();?></td>
+                                        <td><?php echo $visit->slug;?></td>
+                                        <td><?php echo $visit->visited;?></td>
+                                        <td><?php echo $visit->getAverageTime(); ?></td>
+                                        <td><?php echo $visit->getBounceRate(); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
-                            <?php endif; */?>
+                            <?php endif; ?>
                         </table>
                     </div>
 

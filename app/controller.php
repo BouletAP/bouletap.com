@@ -1,6 +1,7 @@
 <?php
 
     use Models\Core\Router;
+    use Models\Services\Analytics;
         
     $page = Router::run();
 
@@ -17,6 +18,8 @@
     
     // use controller/method dispatch
     if( is_array($page) ) {
+        
+        Analytics::start();
 
         $controller = $page[0];
         $method = $page[1];                 
@@ -35,21 +38,29 @@
             $system->$method();
         }
 
+        //Analytics::end();
         exit();
     }
     
+    //die();
+    // Analytics::start();
 
-    // print page content... merge layout + page content and print the html
-    ob_start();
-    include(APP_PATH . "/Pages/{$page}");
-    $content = ob_get_clean();
+    // // load current page
+    // ob_start();
+    // include(APP_PATH . "/Pages/{$page}");
+    // $content = ob_get_clean();
 
-    ob_start();
-    include(APP_PATH . "/Pages/views/_layout.php");
-    $layout = ob_get_clean();
+    // // load layout
+    // ob_start();
+    // include(APP_PATH . "/Pages/views/_layout.php");
+    // $layout = ob_get_clean();
 
-    $page = str_replace('{{PAGE_CONTENT}}', $content, $layout);
-    echo $page;
+    // // merge layout + page content and print the html
+    // $page = str_replace('{{PAGE_CONTENT}}', $content, $layout);
+    
+    // Analytics::end();
+
+    // echo $page;
     
 
     
